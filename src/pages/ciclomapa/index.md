@@ -10,7 +10,6 @@ cover: './cover.png'
 ---
 
 
-
 # Overview
 
 Today in Brazil we face a big challenge of not having data on the cycling infrastructure available in our cities. This makes it very hard to paint a clear picture of our reality and calculate the relevant metrics to measure the opportunities and impacts to society of improving urban mobility. The most common problems are data not being standardized, making it hard to compare between localities, data not being available publicly or sometimes it not existing at all.
@@ -67,9 +66,8 @@ At this step we validated that our solution was innovative, since there wasn't a
 
 With the references in mind and the typologies well defined I started sketching different ways we could lay out these feature in the screen. The concept always was to have the map as the main thing. Second came the current city in focus, and third the complementay UI elements to control the map such as typology filters, address search field, "about" link and the data download button.
 
-```grid|2
+```grid|1
 ![](./v1.png "The first wireframe validated by the stakeholders. Although it looks very different than the final version, the visual hierarchies didn't change much!")
-![](./v1_modal.png)
 ```
 
 
@@ -88,16 +86,24 @@ The overall system architecture passed by 2 iterations. The first one, way simpl
 ```
 
 
-# (sort of) Branding
+# Branding
 
-With their feedback and some more inspiration down the way it evolved.
+With a very functional first version of the system up and running before the schedule I found myself with some extra time to MAKE IT POP. Based on all the process up to now I've devised some brand principles to start thinking on the more graphical part of the project so we could improve the presentation of this project:
+
+* It should be **serious**, not playful, since we're dealing with important data that can impact how our cities and built. But we're not formal or academic, we want to be **relatable**, so we can speak to the masses.
+* We're **assertive** and **trustworthy**: we're experienced specialists on cycling and technology.
+* **Collaborative**, **communal** and **educative**, since it's based on OpenStreetMaps.
+
+This helped me decide about the he color palette, typography and tone of the UX writing.
+
+
 
 ```grid|1
-![](./final.png "Final visual")
+![](./final.png "Final version of the UI and map style, now with a present brand.")
 ```
 
 ```grid|1
-![](./mobile.png "Mobile flows")
+![](./mobile.png "Mobile flows with the final visual design.")
 ```
 
 
