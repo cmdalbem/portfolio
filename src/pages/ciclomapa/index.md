@@ -73,9 +73,9 @@ Our main insights were:
 
 Extending the benchmarking research now I started looking at more broad inspirations of webapps that had some relation with maps or data visualization.
 
-```grid|1
+<!-- ```grid|1
 ![](./references.png)
-```
+``` -->
 
 With the references in mind and the typologies well defined I started sketching different ways we could lay out these feature in the screen. The concept always was to have the map as the main thing. Second came the current city in focus, and third the complementay UI elements to control the map such as typology filters, address search field, "about" link and the data download button.
 
@@ -105,7 +105,7 @@ To build the UI I chose the amazing [Ant Design](https://ant.design/) components
 ``` 
  
 
-# (kind of) Branding
+# Branding
 
 With a very functional first version of the system up and running ahead of schedule I found myself with some extra time to MAKE IT POP. Based on all the process up to now I've devised some brand principles to start thinking on some visual directions:
 
@@ -113,19 +113,33 @@ With a very functional first version of the system up and running ahead of sched
 * We're **assertive** and **trustworthy**: we're experienced specialists on cycling and technology.
 * **Collaborative**, **communal** and **educative**, since it's based on OpenStreetMaps.
 
-The main colors are dark (heard of dark theme?), which give a "data dashboard" feeling. It also resembles the aerial look of a cityscape at night, with the bike paths lighten up as if they were neon lights. The color palette then discretisizes the gradient from green to red representing the safety and "goodness" of the different typologies.
+The main colors are dark (heard of dark theme?), which give a "data dashboard" feeling. It also resembles the aerial look of a cityscape at night, with the bike paths lighten up as if they were neon lights. The color palette then discretisizes the gradient from green to red representing the safety and "goodness" of the different typologies. These were optimized to the best visibility possible on both the dark map as well as available variation of a satellite map.
 
-```grid|1
+<!-- ```grid|1
 ![](./brand.png)  
-```
+``` -->
+ 
+<jumbo>
+    <img src="./brand.png"/>
+</jumbo>
 
 <jumbo caption="Final version of the UI and map style, now with a present brand.">
     <img src="./final.png"/>
 </jumbo>
 
+<jumbo caption="The variation with satellite imagery as the base map. It was important that the color palette worked for both scenarios. The images were processed to have reduced brightness and saturation to better keep contrast with the UI.">
+    <img src="./final_rj.png"/>
+</jumbo>
+
 <jumbo>
     <img src="./mobile.png"/>
 </jumbo>
+
+<video-container> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./tooltips.mp4" type="video/mp4">
+    </video> 
+</video-container>
 
 
 
@@ -137,7 +151,7 @@ I helped creating some arts to promote the project and our launching webinar in 
 ![](./artes.png)  
 ```
 
-Check below our full webinar, in Portuguese, with participation of the entire team as well as some special guests discussing the overall panorama.
+Check below our full webinar, in Portuguese, with participation of the entire team as well as some special guests discussing the brazilian scene of urban mobility and usage of data in advocacy.
 
 `youtube: https://www.youtube.com/watch?v=IrPPbCnKPsI` 
 
@@ -154,10 +168,11 @@ With the current version in production we wanted to start gathering context to t
     }'>
 </results-banner>
 
-We've just finished this research, and our main conclusions have been:
-* We validated is innovative, i.e. there isn't an alternative tool that does what we do, and that it already brings value to the community by facilitating the visualization and download of OSM data.
-* The tool, however, is considered to be in an early stage and has a big untapped potential. We gathered several suggestions of little improvements that would "round up the edges" and increase the impact of the product. We've also identified that we can improve our advertising of the app and OSM knowledge with tutorials, events and more partnerships with local organizations.
-* We still don't have clarity that more costly features (such as an interactive bike paths editor to manipulate OSM data) have better ROI than the already mentioned low-hanging fruits. Also there's no clear indicative that the product should be pivoted, like changing our Customer Segments or main objectives.
+Our main conclusions have been:
+* We validated CicloMapa is innovative, i.e. there isn't an alternative tool that does what we do, and that it already brings value to the community by facilitating the visualization and download of OSM data.
+* However, the tool is considered to be in an early stage and has a big untapped potential. We gathered several suggestions of little improvements that would "round up the edges" and increase the impact of the product.
+* We can improve our advertising of the app and OSM knowledge with tutorials, events and more partnerships with local organizations.
+* We still don't have clarity that more costly features, such as in-app Bike Path Editor, have better ROI than the already mentioned low-hanging fruits. Also there's no clear indicative that the product should be pivoted, like changing our Customer Segments or main objectives.
 
 This will help us to plan the next steps, which I'll update here as soon as we have news. :)
 
