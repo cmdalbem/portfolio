@@ -22,7 +22,7 @@ class Header extends React.Component {
       url = new URL(window.location.href);
     }
  
-    const tabItemClasses = 'ml3 f6 pa0 fw6 pointer bg-transparent outline-0 bn tab tab--unselected';
+    const tabItemClasses = 'ml4 f6 pa0 fw6 pointer bg-transparent outline-0 bn tab tab--unselected';
     let sections = [
       'About',
       'Case studies',

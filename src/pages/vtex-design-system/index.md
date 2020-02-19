@@ -7,7 +7,6 @@ minibio: "Developing a common language to align and scale product design solutio
 description: "Styleguide was the company's Design System, the home for all our reusable patterns, components and assets related to product design in VTEX. It aimed to be a common language of tools and processes to facilitate how we collaborated and shared knowledge across teams and projects."
 tags: ['design','front-end','product management']
 cover: './cover.png' 
-forceOrder: 2
 ---
   
 
