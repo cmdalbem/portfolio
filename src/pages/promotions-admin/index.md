@@ -1,13 +1,12 @@
 ---
 projectType: 'case study'
-date: "2018-11"
-date2: "Now"
-title: "Promotions Admin"
-minibio: "-"
-description: "-"
-tags: ['design','research','product management']
-cover: './new_admin.png'
-forceOrder: 1
+date: "2019-02"
+date2: "2020-04"
+title: "VTEX Promotions Admin"
+minibio: "Redesigning a complex legacy admin system in an e-commerce platform."
+description: "Rethinking and redesigning one of the core experiences in managing products and marketing strategies in VTEX e-commerce platform."
+tags: ['design','product management']
+cover: './cover.png'
 ---
 
 # Context
@@ -18,93 +17,72 @@ The main challenge of working in such environment is that the product is the sam
 The main touchpoint of our product with the merchants is the Admin. It's where our clients configure and manage everything related to their commerce operations. It's also where most of our design efforts go into.
 
 
-# Introdução
+## The challenge
+This is the main interface where merchants create and manage all kinds of promotions of their e-commerce. It's used by almost 100% of VTEX clients in a daily basis, which results in more than 5000 sessios per day by more than 2000 users. Its users vary, but often they're from Marketing and Commercial teams.
 
-Promoções fazem parte do comércio desde seu início, desde que se começou a negociar produtos também se negociava preços que atraíssem consumidores em fechar negócio. Apesar de o ecommerce ter mudado muito a maneira como pensamos e apresentamos promoções, seus objetivos continuam os mesmos: aumentar as vendas.
+During this project's research we found out it's one of the main strenghts of the platform, offering a lot of flexibity and power that other platforms don't. The result is that more than 50% of all sales have some kind of promotion.
 
-```grid|1
-![](./share.png)
-```
+Despite its power and proven relevance to our customers' business, the product evolution accross more than 7 years have made its concepts and UI a little odd. This was made very clear in a chat with Soncini, who brought a new perspective of customers from a very new and much more demanding market to VTEX: the United States.
 
-## Admin de Promoções
-É a central para gerenciar promoções na sua loja VTEX. É usado por praticamente todos dos clientes numa frequência quase diária - são em média 5000 sessões por dia por mais de 2000 pessoas. Seus usuários variam bastante, mas normalmente estão relacionados aos times Comercial e de Marketing nas operações.
-
-Este módulo se destaca bastante dos concorrentes pela robustez e flexibilidade que ele oferece para cadastrar os mais diversos tipos de promoções. O resultado é que pouco mais de 50% de todas vendas que passam pela VTEX usam algum tipo de promoção.
-
-Apesar do poder do módulo e sua comprovada relevância pro negócio dos nossos clientes as diversas iterações ao longo dos anos fizeram suas telas e conceitos deixarem de fazer sentido quando vistos como um todo. Isso ficou muito claro em um papo com Soncini, que trouxe uma nova perspectiva de clientes de um mercado muito novo para a VTEX e bastante mais exigente: o dos Estados Unidos.
-Isso gerava muitas dúvidas dos usuários de como usar o módulo e as várias diferentes features que foram se acumulando. Descobrimos que de todos módulos da VTEX o de promoções era o 3o com mais perguntas de clientes - foram quase 400 tickets abertos nos últimos 3 meses! Mais do que melhorar a eficiência do nosso time de Suporte para responder tickets nós sempre nos perguntamos: o que poderíamos fazer para evitar que o ticket fosse criado em primeiro lugar? Melhorar a UX é frequentemente a resposta.
+We found that of all VTEX modules, promotions was the 3rd with the most customer questions - almost 400 tickets were opened in the last 3 months. More than improving the efficiency of our Support team to answer tickets, we always ask ourselves: what could we do to prevent the ticket from being created in the first place? It was the UX could be improved a lot.
 
 ```grid|1
 ![](./research_tickets.png)
 ```
 
-
-
-## Quando o produto é uma ferramenta de trabalho
-Apesar de trabalhar com ecommerce nós não desenvolvemos os sites das lojas em si, estas são responsabilidade do nosso largo ecossistema de agências parceiras. O foco do time de produto é no desenvolvimento da plataforma, que deve atender necessidades de negócio complexas e abstraí-las em um sistema poderoso mas ao mesmo tempo fácil de usar.
-Construir uma plataforma corporativa é muito diferente de construir um produto “de consumo”, nós somos uma ferramenta de trabalho da qual as pessoas dependem para tocar seus negócios. Isso nos leva a focar menos em encher os olhos e mais com resolver problemas reais e fazer o dia-a-dia das pessoas mais fácil e produtivo.
+Historically the company's products have been led by the engineers themselves, who usually care more about the product's functionality than other more subjective dimensions such as ease of use. With the recent growth of the Design team at VTEX, the concern with bringing balance to these different dimensions that form the experience of a product has grown. A notable initiative is our Design System that offers components ready to create quality interfaces and consistent with each other as well as guidelines for creating new admins.
 
 ```grid|1
 ![](./maslow.png)
 ```
 
-```grid|1
-![](./github_activity.png)
-```
 
-Ainda assim historicamente os produtos da empresa foram encabeçados pelos próprios engenheiros, que normalmente se preocupam mais com as funcionalidades do produto do que outras dimensões mais subjetivas como facilidade de uso. Com o recente crescimento do time de Design na VTEX tem se crescido a preocupação com trazer um equilíbrio a essas diferentes dimensões que formam a experiência de um produto. Uma iniciativa notável é o nosso Design System que oferece componentes prontos para criar interfaces de qualidade e consistentes entre si além de guidelines para a criação de novos admins.
+# Process 
 
+## Discovery
 
-# Processo
+With some main stakeholder's vision at hand and having understood this was a project worth working on I started devising a research plan to validate some assumptions and understand in more depth where we were getting into. 
 
-Com os insights de Soncini em mãos fomos atrás de outros stakeholders na empresa para enriquecer nossa visão de como o produto era percebido pelos clientes e quais melhorias poderíamos fazer. Nosso foco foi nos Account Managers, que são quem "defende os clientes dentro da VTEX, e defende a VTEX dentro dos clientes". Deles conseguimos entender a importância do produto nas operações, se ele tem atendido bem aos nossos clientes, como ele se compara com a concorrência e ganhamos perspectiva sobre seus potenciais e expectativas.
+we went after other stakeholders in the company to enrich our vision of how the product was perceived by customers and what improvements we could make. Our focus was on Account Managers who, with their own words, "defend customers within VTEX and defend VTEX within customers". My objectives were:
+- Understand the importance of the product to VTEX 
+- How it's perceived by our customers 
+- How it compares with the competition
+- Understand the use cases and business needs
 
 ```grid|1
 ![](./vtexorgchart.png)
 ```
 
+After 10 interviews with internal stakeholders and 8 interviews with customers we concluded that:
+- In fact the module is already quite complete in features, standing out from the competition and being one of the "flagships" in the platform's sales pitches.
+- There were some functionality improvements that could be done, but...
+- The amount of functionality, however, negatively impacts its ease of use. It's not considered intuitive, generate many doubts sometimes even leading the user to make mistakes that can be financially disastrous.
+
 ```grid|1
-![](./account_managers.png)
+![](./research_mosaic.png "The research generated lots of insights, which I summarized in a Miro presentation that was a great reference that we would go back several times during the design and development of this project.") 
 ```
 
-Os Account Managers apesar de cumprirem um papel semelhante ainda assim se diferenciam bastante por tempo de experiência na empresa e pelo tipo de carteira de clientes que atende. 
+Other important findings were concerning other recent team initiatives such as the new Conditions Builder and the Campaigns system are poorly understood both internally and externally and are thus underused. We understood that as an opportunity to rethink these features with the safety of not impacting too many customers.
 
-```grid|1
-![](./research_megatable.png)
-```
 
-Após 10 entrevistas com stakeholders internos e 8 entrevistas com clientes chegamos a uma série de conclusões:
-- De fato o módulo já é bastante completo em funcionalidades, se destacando da concorrência e sendo um dos "carros-chefe" nos argumentos de venda da plataforma.
-- A quantidade de funcionalidades porém impacta negativamente na sua facilidade de uso. As telas não são consideradas intuitivas, geram muitas dúvidas às vezes inclusive levando o usuário a cometer erros que podem ser financeiramente desastrosos.
+## Delving deeper with data
 
-```grid|1
-![](./research_mosaic.png "The research generated lots of insights, which I summarized in a Miro 
-```presentation that was a great reference that we would go back several times during the design and development of this project.")
-
-Também descobrimos que algumas iniciativas do time como o novo Conditions Builder e o sistema de Campanhas são mal compreendidos tanto internamente quanto externamente, e consequentemente são pouco usados. Isso além de um insight é sinal de uma oportunidade de repensar essas funcionalidades com a segurança de não causar impacto em clientes em produção.
-
-<jumbo>
+<!-- <jumbo>
     <img src="./research_painpoints.png"/>
-</jumbo>
+</jumbo> -->
 
+With a bunch of insights, impressions and assumptions at hand we turned to looking at how users actually used promotions at VTEX. In December 2018 alone there were more than 60,000 promotions running on the platform, which is a rich source of data on how users actually the system in real life.
 
-## Olhando para dentro
+Our first step was to validate the hypothesis that the interviewees brought us that Regular Promotions were much more used than the others. This hypothesis was not only confirmed, but the result was shocking because most of the recent team's efforts were focused in a feature very few customers were using.
 
-Com várias insights e impressões de stakeholders em mãos nós nos voltamos a olhar como os usuários de fato já utilizavam promoções na VTEX. Só em Dezembro de 2018 foram mais de 60.000 promoções rodando na plataforma, o que é uma fonte riquíssima de dados de como os usuários realmente utilizam promoções em suas lojas.
-
-Nosso primeiro passo foi validar a hipótese que os entrevistados nos trouxeram de que Promoções Regulares eram muito mais usadas que as outras. Essa hipótese não só foi confirmada como o resultado foi chocante!
-
-```grid|1
+<!-- ```grid|2
 ![](./oldrnb-promotiontypes.png)
-```
-
-```grid|1
 ![](./usageoftypes.png)
-```
+``` -->
 
-Outra informação muito importante pra nós foi entender o real uso das dezenas de condições especiais que o sistema funciona. 
+Another very important information for us was to understand the real use of the dozens of special conditions that the system works.
 
-Essa descoberta nos inspirou a detalhar melhor as funcionalidades de condições que já suportávamos e repensar quais nós continuaríamos suportando. Além disso isso nos ajudou a priorizar quais seriam as primeiras a serem trabalhadas na criação do novo admin.
+This discovery inspired us to better detail the functionality of conditions that we already supported and to rethink which ones we would continue to support. In addition, this helped us to prioritize which would be the first to be worked on in creating the new admin.
 
 ```grid|1
 ![](./conditions_support_table.png)
@@ -118,51 +96,54 @@ Quando olhamos paras datas de expiração usadas nas promoções confirmamos o q
 
 Quando olhamos para a distribuição de quantidade de Produtos que eram listados na parte de escopo de promoção tomamos um susto: alguns clientes chegam a fazer promoções com 999 produtos selecionados MANUALMENTE! Outros números impressionantes também foram encontrados na quantidade de categorias, coleções e marcas usados nos filtros das promoções.
 
-```grid|1
+<!-- ```grid|1
 ![](./scope-oldrnb.png)
 ```
 
 ```grid|1
 ![](./usageofscope.png)
-```
+``` --> 
 
 Abrir algumas dessas promoções que usavam listas infindáveis de itens foi um banho de água fria no time que entendeu a importância de estar mais próximo das necessidades reais dos nossos clientes!
 
 
-## Olhando para o lado
+## Looking around
 
-No processo de pesquisa também aprendemos muito olhando com carinho para outras soluções de mercado. Entendemos de fato como a experiência que oferecíamos podia ser melhor, vimos muitas ideias legais para nos inspirar e conseguimos desenhar uma nova experiência com a clareza e segurança de que estávamos projetando algo tão bom quanto ou melhor do que o que o mercado já oferecia.
+In the research process we also learned a lot by looking carefully at other market solutions. We really understood how the experience we offered could be better, we saw many cool ideas to inspire us and we managed to design a new experience with the clarity and certainty that we were designing something as good as or better than what the market already offered.
 
-Nós olhamos para outras plataformas de ecommerce, desde as gigantes até as pequenas. Olhamos para os apps oferecidos em algumas destas plataformas, para ferramentas externas que são possíveis de serem integradas com elas e até para outras ferramentas não relacionadas a ecommerce mas que traziam conceitos semelhantes de Campanhas e Promoções.
+We look at other ecommerce platforms, from the giants to the small ones. We looked at the apps offered on some of these platforms, for external tools that are possible to be integrated with them and even for other tools not related to ecommerce but that brought similar concepts of Campaigns and Promotions.
 
 
-## Problemas & soluções
-O primeiro e mais notável problema eram os diferentes tipos de Promoção, cujas diferenças não eram sempre claras nem conceitualmente nem visualmente. Quando pomos lado-a-lado as telas de criação e edição dos diferentes tipos de promoção fica muito claro que as diferenças são muito pequenas, e são sempre baseadas no efeito daquela promoção. Nossa solução foi criar um tipo único de promoção.
-
-Before:
-
+# Exploring solutions
+The first and most notable problem was the different types of Promotion, the differences of which were not always clear either conceptually or visually. When we put together the screens for creating and editing the different types of promotion, it is very clear that the differences are very small, and are always based on the effect of that promotion. Our solution was to create a unique type of promotion.
+  
 <jumbo>
     <img src="./all_legacy_screens.png"/>
 </jumbo>
 
-After:
-
 ```grid|1
-![](./new_form.png)
+![](./ia.jpg "Simply organizing better the features.")
 ```
 
-Soma-se a isso o sistema de Campanha e Promoção de Campanha, que, como foi dito anteriormente, causa muitas dúvidas para os usuários da plataforma, visto que o nome Campanha remete a eles um conceito muito diferente do significado adotado pela VTEX. Além disso, esse sistema trouxe ainda mais complexidade para o admin, pois adicionou uma configuração adicional fora do módulo de promoções, para que depois fosse criado um novo tipo de promoção específico para esse cenário que funciona de maneira análoga à promocão regular.
+```grid|1
+![](./beforeafter.jpg) 
+```
+ 
+Added to this is the Campaign and Campaign Promotion system, which, as mentioned above, causes many doubts for users of the platform, since the name Campaign refers to them a concept very different from the meaning adopted by VTEX. In addition, this system brought even more complexity to the admin, as it added an additional configuration outside the promotions module, so that afterwards a new type of promotion specific to this scenario could be created, which works in a similar way to regular promotion.
 
 
 ## Conditions
 
-```grid|1
+<!-- ```grid|1
 ![](./oldrnb-conditions.png)
-```
+``` -->
 
-Sobre as condições de disparo das promoções, que é onde nossa engine hoje brilha pela quantidade de opções, acreditamos que o paradigma de interação não era o melhor. Simplesmente listando todas as opções ocorre que a complexidade da tela fica proporcional à flexibilidade do sistema, o que acaba virando um fator negativo para continuarmos evoluindo o sistema. Na nossa nova solução a complexidade inicial da tela é sempre a mesma independente da quantidade de opções que oferecemos, e esta cresce linearmente ao passo que o usuário demanda maior complexidade de regras de negócio. Resumindo, no novo paradigma a complexidade cresce com a demanda do usuário, e não com o poder do sistema.
+Regarding the trigger conditions for promotions, which is where our engine today shines for the number of options, we believe that the interaction paradigm was not the best. Simply by listing all the options, the complexity of the screen is proportional to the flexibility of the system, which ends up becoming a negative factor for us to continue evolving the system. In our new solution, the initial complexity of the screen is always the same regardless of the number of options we offer, and it grows linearly as the user demands greater complexity of business rules. In short, in the new paradigm, complexity grows with user demand, not with the power of the system.
 
 ```grid|1
+![](./conditions.png)
+```
+<!-- ```grid|1
 ![](./conditions1.png)
 ```
 ```grid|1
@@ -172,67 +153,77 @@ Sobre as condições de disparo das promoções, que é onde nossa engine hoje b
 ![](./conditions3.png)
 ```
 ```grid|1
-![](./conditions4.png)
+![](./conditions4.png) 
+``` -->
+
+A little-known intermediate iteration of this system was Conditions Builder. With it, a new system for evaluating causes was created at RnB, the Conditions Engine, which will be the machine behind the new promotions. The Builder, however, used a condition crud paradigm with visual blocks and drag'n'drop which, despite being quite aesthetically appealing, was unnecessarily complex and bureaucratic. The new UI, which we call "inline conditions", offers a much more accessible and intuitive interaction pattern, in addition to being much more easily integrated into the most distinct flows and screens. While the Builder resembled programming logic, the new solution resembles natural language.
+
+```grid|1
+![](./all_conditions.png "All the conditions the new system could support.")
 ```
 
-Uma iteração intermediária pouco conhecida deste sistema foi o Conditions Builder. Com ele foi criado um sistema novo para avaliação de causas no RnB, o Conditions Engine, que será a máquina por trás das novas promoções. O Builder, porém, usava um paradigma de crud de condições com blocos visuais e drag'n'drop que, apesar de ser bastante apelativo esteticamente, era desnecessariamente complexo e burocrático. A nova UI, que apelidamos de "inline conditions", oferece um padrão de interação muito mais acessível e intuitivo, além de ser muito mais facilmente integrado a fluxos e telas dos mais distintos. Enquanto o Builder lembrava uma lógica de programação, a nova solução lembra linguagem natural.
 
-<jumbo caption="All the conditions the new system could support, without overwhelming the user.">
-    <img src="./all_conditions.png"/>
-</jumbo>
+## Dashboard
 
-
-## Listagem de promoções
-
-A listagem de promoções foi mencionada por alguns também como excessivamente confusa. Ela usa um paradigma de diagramação de conteúdo popularmente conhecido como "card", que é bastante visual mas se comparado com uma simples tabela torna a comparação de dados entre as entidades algo bem mais difícil. Nossa solução foi se alavancar e evoluir o componente Table do Styleguide, desenvolvido especialmente para construção de admins complexos e poderosos sem abrir mão da clareza de informações e intuitividade.
+The list of promotions was also mentioned by some as excessively confusing. It uses a content diagramming paradigm popularly known as "card", which is quite visual but when compared to a simple table it makes comparing data between entities much more difficult. Our solution was to leverage and evolve the Table component of Styleguide, developed especially for building complex and powerful admins without giving up the clarity of information and intuitiveness.
 
 Before:
 ```grid|1
 ![](./oldrnb.png)
 ```
-
+ 
 After:
-
 ```grid|1
 ![](./new_admin.png)
 ```
 
 ```grid|1
-![](./filters.png "The new filters system created during this project's development and integrated into our 
-```Design System.")
+![](./filters.png "The new filters system created during this project's development and integrated into our Design System.")
+```
+ 
 
+## Simulator
 
-## Simulador de promoções
+Another common cause of misunderstanding of the system comes from the way promotions accumulate and compete with each other. This means that, given a scenario with sufficiently complex business rules, the operation of the system becomes more unpredictable, and interrelationships between dozens of promotions can have undesirable effects. For this we are developing a Promotions Simulator where, given a purchase context (a cart) we simulate which promotions would be activated, why this is and what the final effect is. We imagine that this in the future will not only facilitate "debugging" unwanted scenarios but also design new business rules with much more security.
 
-Outra causa comum de incompreensão do sistema vem da maneira como promoções acumulam e concorrem entre si. Isto faz com que, dado um cenário com regras de negócio complexas o suficiente, o funcionamento do sistema fica mais imprevisível, e interrelações entre dezenas de promoções podem acarretar em efeitos indesejados. Para isto estamos desenvolvendo um Simulador de Promoções onde, dado um contexto de compra (um carrinho) nós simulamos quais promoções seriam ativadas, o porquê disso e qual o efeito final. Imaginamos que isso no futuro não só facilitará "debugar" cenários indesejados assim como projetar novas regras de negócio com muito mais segurança.
+```grid|1
+![](./simulator.png)
+```
 
-
-## Visualização em Gantt
+<!-- ## Visualização em Gantt
 
 Para os clientes que costumam se planejar e agendar várias promoções, o novo visualizador em Gantt permitirá facilmente identificar as promoções ao longo do tempo. Ah, e também removemos a necessidade de definir uma data limite - convenhamos, nunca fez sentido obrigar isso.
 
 ```grid|1
 ![](./gantt.png)
+``` -->
+
+
+## Other improvements
+
+A recurring request from customers was to optimize the reuse of promotions settings. For that, we implemented some very simple little features, but we believe that they will speed up the daily lives of some users a lot: the possibility of duplicating promotions and creating one after another.
+
+For the common activity of turning promotions on and off, these actions can be done directly from the listing.
+
+With smart filters, we make it clear to retailers which data can be used to filter the promotions table and which filters are currently active.
+ 
+
+# Measuring success
+
+```grid|1
+![](./heart.jpg)
 ```
 
+ 
+# Further work
 
-## Outras pequenas melhorias
+Of the main problems that we had identified in the initial stages of research, some have already been thought of and have solutions that are under development. Others, we haven't even started to look at them yet, so there is still a lot of work ahead of us.
 
-Um pedido recorrente dos clientes foi para otimizar o reuso de configurações de promoções. Para isso implementamos algumas pequenas funcionalidades muito simples mas que acreditamos que irão acelerar muito o dia-a-dia de alguns usuários: a possibilidade de duplicar promoções e de criar uma após a outra.
+In addition to improvements to the promotions system, there are other projects related to our Merchandising & Marketing experience that relate to the module:
 
-Para a atividade comum de ligar e desligar promoções, estas ações poderão ser feitas diretamente da listagem.
-
-Com os filtros inteligentes deixamos mais claro para os lojistas quais dados podem ser utilizados para filtrar a tabela de promoções e quais filtros estão ativos no momento.
-
-
-# Trabalhos futuros
-Dos principais problemas que havíamos identificado nas etapas inicias de pesquisa alguns já foram pensados e tem soluções que estão em desenvolvimento. Já outros nem começamos a olhar com carinho ainda, então há muito trabalho pela frente ainda.
-
-Além de melhorias no sistema de promoções, há outros projetos relacionados à nossa experiência de Merchandising & Marketing que se relacionam ao módulo:
-
-- **Audiências**: um novo sistema que encapsula as capacidades do RnB de criar públicos-alvo, servindo agora a qualquer outro módulo da VTEX que queira segmentar usuários.
-- **Coupons**: repensar a ligação de coupons com promoções se desprendendo de UTM, mais flexibilidade no controle das condições de uso e gerência em massa.
-- **Coleções**: redesign completo deste antigo módulo, trazendo muito mais eficiência na criação de sortimento de produtos e facilitando o reuso deles em outros módulos.
-- **Métricas de performance/KPIs**: descubra se suas promoções estão lhe ajudando a vender mais e controle o seu budget direto da plataforma, sem precisar exportar planilhas do OMS e usar ferramentas externas para analisar estes dados.
-- **Nested Conditions**: uma melhoria ao componente de "Conditions inline" que permitirá criar lógicas booleanas complexas.
-- **Clusters**: hoje criar clusters exige conhecimentos técnicos em um dos módulos mais legados da VTEX, o Masterdata. Igualmente complicado é usar estes clusters em outros módulos, como o de Promoções.
+- **Audiences**: a new system that encapsulates the capabilities of RnB to create target audiences, now serving any other VTEX module that wants to segment users.
+- **Coupons**: rethink the connection of coupons with promotions coming from UTM, more flexibility in controlling the conditions of use and mass management.
+- **Collections**: complete redesign of this old module, bringing much more efficiency in creating product assortments and facilitating their reuse in other modules.
+- **Performance metrics / KPIs**: find out if your promotions are helping you sell more and control your budget directly from the platform, without having to export WHO spreadsheets and use external tools to analyze this data.
+- **Nested Conditions**: an improvement to the "Conditions inline" component that will allow the creation of complex Boolean logic.
+- **Clusters**: creating clusters today requires technical knowledge in one of the most legacy modules of VTEX, Masterdata. It is equally complicated to use these clusters in other modules, such as Promotions.

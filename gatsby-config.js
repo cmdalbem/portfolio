@@ -28,7 +28,7 @@ module.exports = {
       options: {
         trackingId: 'UA-19085664-5',
         // Puts tracking script in the head instead of the body
-        head: true, 
+        head: true,
         // Setting this parameter is optional
         anonymize: false,
         // Setting this parameter is also optional
@@ -44,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-hotjar`,
       options: {
-        id: 1097552
+        id: 1097552,
       },
     },
     {
@@ -59,9 +59,9 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-images-grid",
+            resolve: 'gatsby-remark-images-grid',
             options: {
-              gridGap: "2%",
+              gridGap: '2%',
               margin: 'auto',
             },
           },
@@ -80,14 +80,14 @@ module.exports = {
           'gatsby-remark-component',
           'gatsby-remark-copy-linked-files',
           {
-            resolve: "gatsby-remark-embed-video",
+            resolve: 'gatsby-remark-embed-video',
             options: {
               width: 800,
               related: false,
               noIframeBorder: true,
-            }
+            },
           },
-          `gatsby-remark-responsive-iframe`
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
@@ -102,12 +102,20 @@ module.exports = {
     },
     'gatsby-plugin-catch-links',
     {
-      resolve: "@halkeye/gatsby-source-goodreads",
+      resolve: '@halkeye/gatsby-source-goodreads',
       options: {
-        developerKey: "toGLdnsikKAbTOmaFiPrw",
-        goodReadsUserId: "14179336",
-        userShelf: "currently-reading"
-      }
-    }
+        developerKey: 'toGLdnsikKAbTOmaFiPrw',
+        goodReadsUserId: '14179336',
+        userShelf: 'currently-reading',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75,
+      },
+    },
   ],
 }
