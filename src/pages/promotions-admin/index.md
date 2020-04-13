@@ -73,6 +73,10 @@ Other important findings were concerning other recent team initiatives such as t
 
 With a bunch of insights, impressions and assumptions at hand we turned to looking at how users actually used promotions at VTEX. In December 2018 alone there were more than 60,000 promotions running on the platform, which is a rich source of data on how users actually the system in real life.
 
+```grid|1
+![](./tableau.png)
+```
+
 Our first step was to validate the hypothesis that the interviewees brought us that Regular Promotions were much more used than the others. This hypothesis was not only confirmed, but the result was shocking because most of the recent team's efforts were focused in a feature very few customers were using.
 
 <!-- ```grid|2
@@ -143,6 +147,11 @@ Regarding the trigger conditions for promotions, which is where our engine today
 ```grid|1
 ![](./conditions.png)
 ```
+
+```grid|1
+![](./complexity.png)
+```
+
 <!-- ```grid|1
 ![](./conditions1.png)
 ```
