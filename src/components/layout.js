@@ -45,7 +45,7 @@ const Layout = ({ children }) => (
             <html lang="en" />
             <link 
               rel="stylesheet"
-              href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+              href="https://unpkg.com/tachyons@4/css/tachyons.min.css"
             />
           </Helmet>
  

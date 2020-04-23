@@ -62,7 +62,7 @@ class IndexPage extends React.Component {
               />
 
               <h1 
-                className="f-subheadline-ns f2 fw4 dark-gray absolute lh-solid top-0 left-3-ns pt5 mt6-ns ml7-ns ml4 mt6 mr3 tl-ns tr"
+                className="f-subheadline-ns f1 fw4 dark-gray absolute lh-solid top-0 left-3-ns pt5-ns mt6-ns ml7-ns ml4 mt6 mr3 tl-ns tr"
                 style={{maxWidth: 650}}>
                 I'm a designer of products and systems.
               </h1>

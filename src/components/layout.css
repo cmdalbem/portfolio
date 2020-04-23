@@ -225,11 +225,13 @@ figure figure {
   font-family: 'Rozha One', 'Muli', sans-serif;
 }
 
-.f-subheadline,
-.f-subheadline-ns {
+/* .f-subheadline-ns {
   font-size: 3.5rem !important;
-  letter-spacing: -3%;
-} 
+} */
+
+@media screen and (min-width: 30em) {
+  .f-subheadline-ns { font-size: 3.5rem !important; }
+}
 
 .h6 {
   height: 32rem;

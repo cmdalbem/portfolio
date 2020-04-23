@@ -272,7 +272,7 @@ class ProjectPage extends React.Component {
         {/* Footer */}
         <div className="flex flex-column bg-near-white mt6 nl6 nr6 ph6 pb6">
           <div className="w-100 tc f2 mv6">
-            <h2>Other projects</h2>
+            <h2 className="f1 fw4 dark-gray">Other projects</h2>
           </div>
 
           <div className="flex flex-row-ns flex-column justify-between mt4">
@@ -280,7 +280,7 @@ class ProjectPage extends React.Component {
               {
                 previous && 
                 <div>
-                  <div className="f3 tl mb3 fw7 black-10 db-ns dn">
+                  <div className="f6 tl mb1 fw7 ttu black-20 db-ns dn">
                     Previous
                   </div>
                   <ProjectCard node={previous} />
@@ -294,7 +294,7 @@ class ProjectPage extends React.Component {
               {
                 next &&
                 <div>
-                  <div className="f3 tr mb3 fw7 black-10 db-ns dn">
+                  <div className="f6 tl mb1 fw7 ttu black-20 db-ns dn">
                     Next
                   </div>
                   <ProjectCard node={next} />
