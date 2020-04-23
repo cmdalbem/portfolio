@@ -61,7 +61,9 @@ class IndexPage extends React.Component {
                 className="parallax__layer--back absolute top-3-ns top-2 mt0-ns mt5 w-80 w-100-ns relative-ns"
               />
 
-              <h1 className="f1-ns f2 fw9 dark-gray absolute lh-solid top-0 left-3-ns pt5 mt6-ns ml7-ns ml4 mt6 mr3 tl-ns tr" style={{maxWidth: 590}}>
+              <h1 
+                className="f-subheadline-ns f2 fw4 dark-gray absolute lh-solid top-0 left-3-ns pt5 mt6-ns ml7-ns ml4 mt6 mr3 tl-ns tr"
+                style={{maxWidth: 650}}>
                 I'm a designer of products and systems.
               </h1>
             </div> 
@@ -69,7 +71,7 @@ class IndexPage extends React.Component {
             <div className="w-10-ns" />
 
             <div className="w-50-ns mt7">
-              <section id="about" className="mb4 mt6-ns mt7 f4 lh-copy dark-gray">
+              <section id="about" className="mb4 mt6-ns mt7 pt4 f4 lh-copy dark-gray">
                 <p>
                   Nice to meet you!
                 </p>

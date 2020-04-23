@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Muli\:100,400,600,700,900`],
+        fonts: [`Muli\:400,600,700,900`, `Rozha One\:400`]
       },
     },
     {

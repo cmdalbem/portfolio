@@ -85,7 +85,7 @@ class ProjectPage extends React.Component {
       createElement: React.createElement,
       components: {
         h1: props => (
-          <h1 className={`f1 tracked-tight fw7 dark-gray mt6-ns mb5-ns mt5 mb4 ${defaultMargins}`}>
+          <h1 className={`f2 tracked-tight fw7 dark-gray mt6-ns mb5-ns mt5 mb4 ${defaultMargins}`}>
             {props.children}
           </h1>
         ), 
@@ -191,7 +191,7 @@ class ProjectPage extends React.Component {
         {/* Heading */}
         <div className="flex flex-row-ns flex-column mt5 mb6">
           <div className="w-30-ns"> 
-            <h1 className="f1 mt0 fw9 mb3 dark-gray lh-solid">
+            <h1 className="f1 mt0 fw4 mb3 dark-gray lh-solid">
               {post.frontmatter.title}
             </h1>
             <div className='f6 gray db-ns dn'>
