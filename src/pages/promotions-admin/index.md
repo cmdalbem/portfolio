@@ -98,17 +98,17 @@ Quando olhamos paras datas de expiração usadas nas promoções confirmamos o q
 ![](./dates.png)
 ```
 
-Quando olhamos para a distribuição de quantidade de Produtos que eram listados na parte de escopo de promoção tomamos um susto: alguns clientes chegam a fazer promoções com 999 produtos selecionados MANUALMENTE! Outros números impressionantes também foram encontrados na quantidade de categorias, coleções e marcas usados nos filtros das promoções.
+<!-- Quando olhamos para a distribuição de quantidade de Produtos que eram listados na parte de escopo de promoção tomamos um susto: alguns clientes chegam a fazer promoções com 999 produtos selecionados MANUALMENTE! Outros números impressionantes também foram encontrados na quantidade de categorias, coleções e marcas usados nos filtros das promoções.
 
-<!-- ```grid|1
+```grid|1
 ![](./scope-oldrnb.png)
 ```
 
 ```grid|1
 ![](./usageofscope.png)
-``` --> 
+``` 
 
-Abrir algumas dessas promoções que usavam listas infindáveis de itens foi um banho de água fria no time que entendeu a importância de estar mais próximo das necessidades reais dos nossos clientes!
+Abrir algumas dessas promoções que usavam listas infindáveis de itens foi um banho de água fria no time que entendeu a importância de estar mais próximo das necessidades reais dos nossos clientes! -->
 
 
 ## Looking around
@@ -201,11 +201,12 @@ Another common cause of misunderstanding of the system comes from the way promot
 
 For tackling this issue we started a side project that will be a new admin inside the Promotions Admin. This new Promotions Simulator will, given a purchase context (a shopping cart) we simulate which promotions would be activated, why this they were activated or not and what the final effects are for the products in that cart.
 
-We imagine that this in the future will not only facilitate debugging unwanted scenarios but empower the merchants to design new business rules with much more assertiveness.
- 
 ```grid|1
 ![](./simulator.png)
 ```
+
+We imagine that this in the future will not only facilitate debugging unwanted scenarios but empower the merchants to design new business rules with much more assertiveness.
+ 
 
 <!-- ## Visualização em Gantt
 
@@ -214,6 +215,42 @@ Para os clientes que costumam se planejar e agendar várias promoções, o novo 
 ```grid|1
 ![](./gantt.png)
 ``` -->
+
+
+## Little big details
+
+As of a work tool that people might have to be using everyday, the small almost forgetable details in the UI that sometimes improve the best the productivity. Here's a couple of these.
+
+First off, we heard some users create a bunch of promotions in sequence. In the sticky footer component of our admin, aside from the "SAVE" button, we added a conveninent "SAVE & ADD NEW" for optimizing this flow.
+
+```grid|1
+![](./saveandaddnew.png) 
+```
+
+Another very common action the users needed was to duplicate existing promotions since very often their commercial campaigns would repeat seasonaly but with important modifications. Other than handy actions that now were available directly from the dashboard, we created the duplicate feature.
+
+```grid|1
+![](./lineactions.png) 
+```
+
+Some merchants want to create a promotion starting of now and just end it when they feel like. Others want it to start next week, last for the whole month and only go live on mondays through fridays from 7:15 to 11:20 and from 14:00 to 18:00.
+
+<video-container> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./advancedscheduling.mp4" type="video/mp4">
+    </video> 
+</video-container>
+
+A pressing concern for some users is the limit - and for others, not. That's why in the new Admin instead of always showing the current usage of limit in the UI we have contextual messages that appear when needed.
+
+```grid|1
+![](./slots1.png) 
+```
+
+```grid|1
+![](./slots2.png) 
+```
+
 
 
 <!-- ## Other improvements
@@ -225,11 +262,11 @@ For the common activity of turning promotions on and off, these actions can be d
 With smart filters, we make it clear to retailers which data can be used to filter the promotions table and which filters are currently active. -->
  
 
-# Measuring success
+<!-- # Measuring success
 
 ```grid|1
 ![](./heart.jpg)
-```
+``` -->
 
 
 
