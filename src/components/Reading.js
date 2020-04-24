@@ -8,10 +8,10 @@ class Reading extends React.Component {
 
         return (
             <>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap nr3">
                     {
                         bookNodes.reading.map(i =>
-                            <Book mode="mini" book={i.node.book}/>
+                            <Book mode="half" book={i.node.book}/>
                         )
                     }
                 </div>
@@ -41,8 +41,8 @@ class Book extends React.Component {
         switch(mode) {
             case 'half':
                 containerClasses += "w-50-ns w-100";
-                titleClasses += 'f6-ns f5'
-                subtitleClasses += 'f7-ns f6'
+                titleClasses += 'f5-ns f5 l'
+                subtitleClasses += 'f7-ns f6 mb1 fw4 gray'
                 break;
             case 'full':
                 containerClasses += "w-100";
@@ -71,11 +71,11 @@ class Book extends React.Component {
                 {
                     mode !== 'mini' &&
                     <div className="flex flex-column ml3 dark-gray">
+                        <div className={subtitleClasses}>
+                            {book.authors[0].name}
+                        </div>
                         <div className={titleClasses}>
                             {book.title}
-                        </div>
-                        <div className={subtitleClasses}>
-                            by {book.authors[0].name}
                         </div>
                     </div>
                 }
