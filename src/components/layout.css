@@ -58,6 +58,12 @@ html {
   /* --dark-gray: #414141; */
   --dark-gray: #4d3d33;
   --light-gray: #eee;
+
+  /* easeOutQuart */
+  /* --global-easing: cubic-bezier(0.25, 1, 0.5, 1); */
+  
+  /* easeOutQuint */
+  --global-easing: cubic-bezier(0.22, 1, 0.36, 1); 
 }
 
 /* * {
@@ -74,12 +80,13 @@ body {
   color: inherit;
 
   text-decoration: none;
-  box-shadow: inset 0 -4px 0 0px var(--orange-light);
+  box-shadow: inset 0 -2px 0 0px var(--orange);
   
-  /* transition: all 0.2s ease; */
+  transition: all 200ms var(--global-easing);
 } 
 .pretty-link:hover {
-  background-color: var(--orange);
+  /* background-color: var(--orange); */
+  box-shadow: inset 0 -1.2em 0 0px var(--orange);
   color: white;
 }
 
@@ -125,7 +132,7 @@ li::before {
 }
 .tab--unselected:hover:before { 
   opacity: 1;
-  animation: slideDown .3s ease-out
+  animation: slideDown .8s var(--global-easing)
 }
 .tab--selected {
   color: var(--dark-gray);
@@ -134,37 +141,33 @@ li::before {
   /* color: var(--blue); */
   color: var(--orange); 
   opacity: 1;
-  animation: slideDown .3s ease-out
+  animation: slideDown .8s var(--global-easing)
 }
 
 .dim {
-  transition: opacity .1s ease-out !important;
+  transition: opacity .3s var(--global-easing) !important;
 } 
 .dim:focus,.dim:hover {
-  opacity: .7 !important;
+  opacity: .6 !important;
 }
 
 .card-shadow {
-  /* box-shadow: 0px 5px 4px -3px rgba(0, 0, 0, 0.1); */
-  /* box-shadow: rgba(0,0,0,0.1) 0 20px 77px, rgba(0,0,0,0.1) 0 10px 24px; */
-  /* box-shadow: 0 15px 35px rgba(90,50,50,.05), 0 5px 15px rgba(0,0,0,.04);  */
   box-shadow: 0 15px 35px rgba(90,50,50,.05), 0 6px 18px -5px rgba(0,0,0,.2);
 
   text-decoration: none;
 }
   
 .project-card--cover {
-  transform: translateY(0px);
+  transform: translateY(0px); 
 }
 
 .project-card--cover,
 .project-card--title,
 .project-card--description,
 .project-card--date {
-  transition: all 0.2s ease-out;
+  transition: all 0.5s var(--global-easing);
 }
 .project-card:hover .project-card--cover {
-  /* box-shadow: 0px 9px 15px -3px rgba(0, 0, 0, 0.1); */
   box-shadow: 0 18px 35px rgba(90,50,50,.1), 0 9px 18px -5px rgba(0,0,0,.3); 
 
   transform: translateY(-4px);
@@ -219,18 +222,12 @@ li::before {
 /* ------------------ */
 
 
-.f-headline,
-.f-headline-ns,
 .f-subheadline,
 .f-subheadline-ns,
 .f1,
 .f1-ns {
   font-family: 'Rozha One', 'Muli', sans-serif;
 }
-
-/* .f-subheadline-ns {
-  font-size: 3.5rem !important;
-} */
 
 @media screen and (min-width: 30em) {
   .f-subheadline-ns { font-size: 3.5rem !important; }
