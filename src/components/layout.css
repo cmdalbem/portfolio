@@ -96,15 +96,15 @@ figure figure {
   margin: 0 !important;
 }
 
-.pretty-bullet {
+li {
+  list-style-type: none;
   position: relative;
 }
-.pretty-bullet:before {
-  content: '・';
+li::before {
+  content: '∙';
   position: absolute;
-  left: -2rem;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
+  left: -1em;
+  font-size: 1em;
 }
 
 .tab {
@@ -183,6 +183,9 @@ figure figure {
 .text-gradient-clip {
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+} 
+.bg-gradient {
+  background: -webkit-linear-gradient(0deg, hsla(32, 91%, 57%, 1), #f5632d);
 } 
 .bg-gradient-1 {
   background: -webkit-linear-gradient(#f52f2d, #f76560);

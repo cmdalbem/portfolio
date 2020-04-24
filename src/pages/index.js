@@ -122,12 +122,6 @@ class IndexPage extends React.Component {
             <Speaking />
           </HomeSection>
 
-          {/* <HomeSection title="Currently">
-            <p className="pretty-bullet">
-              Listening to <b>Lorem</b>, <b>Ipsum</b>.
-            </p>
-          </HomeSection> */}
-
           <HomeSection 
             title="Reading"
             description={(
