@@ -25,10 +25,10 @@ During this project's research we found out it's one of the main strenghts of th
 Despite its power and proven relevance to our customers' business, the product evolution accross more than 7 years have made its concepts and UI a little odd. This was made very clear in a chat with Soncini, who brought a new perspective of customers from a very new and much more demanding market to VTEX: the United States.
 
 We found that of all VTEX modules, promotions was the 3rd with the most customer questions - almost 400 tickets were opened in the last 3 months. More than improving the efficiency of our Support team to answer tickets, we always ask ourselves: what could we do to prevent the ticket from being created in the first place? It was the UX could be improved a lot.
-
+  
 ```grid|1
 ![](./research_tickets.png)
-```
+``` 
 
 Historically the company's products have been led by the engineers themselves, who usually care more about the product's functionality than other more subjective dimensions such as ease of use. With the recent growth of the Design team at VTEX, the concern with bringing balance to these different dimensions that form the experience of a product has grown. A notable initiative is our Design System that offers components ready to create quality interfaces and consistent with each other as well as guidelines for creating new admins.
 
@@ -67,10 +67,6 @@ Other important findings were concerning other recent team initiatives such as t
 
 ## Delving deeper with data
 
-<!-- <jumbo>
-    <img src="./research_painpoints.png"/>
-</jumbo> -->
-
 With a bunch of insights, impressions and assumptions at hand we turned to looking at how users actually used promotions at VTEX. In December 2018 alone there were more than 60,000 promotions running on the platform, which is a rich source of data on how users actually the system in real life.
 
 ```grid|1
@@ -90,12 +86,6 @@ This discovery inspired us to better detail the functionality of conditions that
 
 ```grid|1
 ![](./conditions_support_table.png)
-```
-
-Quando olhamos paras datas de expiração usadas nas promoções confirmamos o que esperávamos: muitas vezes elas não fazem sentido! Usuários que queriam ter promoções que durassem "pra sempre" usavam o Datepicker selecionando a data mais distante possível, o que faz com que uma grande quantidade de promoções tenham duração configurada de 5 anos.
-
-```grid|1
-![](./dates.png)
 ```
 
 <!-- Quando olhamos para a distribuição de quantidade de Produtos que eram listados na parte de escopo de promoção tomamos um susto: alguns clientes chegam a fazer promoções com 999 produtos selecionados MANUALMENTE! Outros números impressionantes também foram encontrados na quantidade de categorias, coleções e marcas usados nos filtros das promoções.
@@ -145,10 +135,6 @@ Added to this is the Campaign and Campaign Promotion system, which, as mentioned
 
 
 ## Conditions builder
-
-<!-- ```grid|1
-![](./oldrnb-conditions.png)
-``` -->
 
 The context-driven conditions system which is where our engine shines. It's very flexible, offering thousands of possible combinations for creating customized promotions.
 
@@ -221,7 +207,7 @@ Para os clientes que costumam se planejar e agendar várias promoções, o novo 
 
 As of a work tool that people might have to be using everyday, the small almost forgetable details in the UI that sometimes improve the best the productivity. Here's a couple of these.
 
-First off, we heard some users create a bunch of promotions in sequence. In the sticky footer component of our admin, aside from the "SAVE" button, we added a conveninent "SAVE & ADD NEW" for optimizing this flow.
+First off, we heard some users create a bunch of promotions in sequence. In the sticky footer component of our admin, aside from the `SAVE` button, we added a conveninent `SAVE & ADD NEW` for optimizing this flow.
 
 ```grid|1
 ![](./saveandaddnew.png) 
@@ -244,13 +230,21 @@ Some merchants want to create a promotion starting of now and just end it when t
 A pressing concern for some users is the limit - and for others, not. That's why in the new Admin instead of always showing the current usage of limit in the UI we have contextual messages that appear when needed.
 
 ```grid|1
-![](./slots1.png) 
+![](./slots.png) 
 ```
+ 
+Given the internal structure of companies it was very common to have problems with multiple people editing the same promotions, either because of internal miscomunication problems or something. We found out it was very common for the Support team to help out clients going through our internal system logs, so our idea was to expose this in an easy-to-use way so clients could self-serve themselves on finding out who edited what and when.
 
 ```grid|1
-![](./slots2.png) 
+![](./history.png) 
 ```
 
+
+<!-- ## Roll out strategy
+
+```grid|1
+![](./announcement.png) 
+``` -->
 
 
 <!-- ## Other improvements
@@ -267,7 +261,6 @@ With smart filters, we make it clear to retailers which data can be used to filt
 ```grid|1
 ![](./heart.jpg)
 ``` -->
-
 
 
  
