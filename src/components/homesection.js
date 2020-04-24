@@ -26,34 +26,20 @@ class HomeSection extends React.Component {
                 </div>
 
                 <div className="mb4 flex flex-row-ns flex-column items-top">
-                    {/* <div className="w-30-ns pt3 pr4-ns db-ns dn">
-                        <div className="w-100 bt bw1 b--near-black"></div>
-                    </div> */}
-
-                    {/* f1-ns f2 fw9 dark-gray absolute lh-solid top-0 left-3-ns pt5 mt6-ns ml7-ns ml4 mt6 mr3 */}
-
                     {
-                        (!fullScreen || description) &&
-                        (
+                        fullScreen ?
+                            <div className='w-100-ns'>
+                                {children}
+                            </div>
+                            :
                             <>
                                 <div className='w-50-ns'></div>
                                 <div className='w-50-ns f5 mt0'>
-                                    {/* {descriptionContent} */}
-                                    {!fullScreen && children }
+                                    { children }
                                 </div>
                             </>
-                        )
                     }
                 </div>
-
-                {
-                    fullScreen &&
-                    <div className={`flex flex-row-ns flex-column`}>
-                        <div className='w-100-ns'>
-                            {children}
-                        </div>
-                    </div>
-                }
             </section>
         )
     };
