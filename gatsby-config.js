@@ -10,7 +10,7 @@ module.exports = {
         name: 'Cristiano Dalbem Portfolio',
         short_name: 'Cristiano Dalbem',
         start_url: '/',
-        // background_color: '#ffffff',
+        background_color: '#ffffff',
         theme_color: '#ffffff',
         display: 'minimal-ui',
         icon: 'src/images/icon.png',
@@ -50,8 +50,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
         name: 'pages',
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -68,7 +75,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 2048,
+              maxWidth: 1440,
               quality: 90,
               linkImagesToOriginal: true,
               showCaptions: true,
@@ -108,14 +115,6 @@ module.exports = {
         goodReadsUserId: '14179336',
         userShelf: 'currently-reading',
       },
-    },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        useMozJpeg: false,
-        stripMetadata: true,
-        defaultQuality: 75,
-      },
-    },
+    }
   ],
 }

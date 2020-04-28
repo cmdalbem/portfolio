@@ -39,8 +39,12 @@ exports.createPages = ({ graphql, actions }) => {
                     minibio
                     projectType
                     tags
-                    cover {
-                      publicURL
+                    cover { 
+                      childImageSharp {
+                        fluid {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
                     }
                   }
                 }

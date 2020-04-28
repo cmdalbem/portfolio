@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link,graphql } from 'gatsby'
+import Img from "gatsby-image"
 
 import rehypeReact from "rehype-react"
 
@@ -186,7 +187,7 @@ class ProjectPage extends React.Component {
           <div className="w-100">
             { 
               post.frontmatter.cover ?
-                <img className="w-100 " alt="" src={post.frontmatter.cover.publicURL} />
+                <Img fluid={post.frontmatter.cover.childImageSharp.fluid} alt=""/>
                 :
                 <div className="w-100 h5 pv7 bg-silver"></div>
             }
@@ -314,7 +315,7 @@ class ProjectPage extends React.Component {
             </Link>
           </div>
         </div>
-      </Layout>
+      </Layout> 
     )
   }
 }
@@ -335,9 +336,6 @@ export const pageQuery = graphql`
                date2
                tags
                team
-               cover {
-                 publicURL
-               }
              }
              fields {
                readingTime {

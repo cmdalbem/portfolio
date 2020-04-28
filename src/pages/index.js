@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from "gatsby-image"
 
 // import ScrollReveal from 'scrollreveal'
 
@@ -55,11 +56,15 @@ class IndexPage extends React.Component {
         <div className="mw9 center">
           <section className="flex flex-row-ns flex-column ">
             <div className="w-40-ns">
-              <img
+              {/* <img
                 src={selfie}
                 alt="Silhouette of a man standing at the top of a hill with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
                 className="parallax__layer--back absolute top-3-ns top-2 mt0-ns mt5 w-80 w-100-ns relative-ns"
-              />
+              /> */}
+              {/* <Img
+                fluid={this.props.data.file.childImageSharp.fluid}
+                alt="Silhouette of a man standing at the top of a hill with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
+              /> */}
 
               <h1 
                 className="f-subheadline-ns f1 fw4 dark-gray absolute lh-solid top-0 left-3-ns pt5-ns mt6-ns ml7-ns ml4 mt6 mr3 tl-ns tr"
@@ -185,9 +190,6 @@ export const pageQuery = graphql`
                    minibio
                    projectType
                    tags
-                   cover {
-                     publicURL
-                   }
                    forceOrder
                  }
                }

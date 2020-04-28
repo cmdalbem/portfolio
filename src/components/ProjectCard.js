@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from "gatsby-image"
 
 import Tag from '../components/Tag.js'
 
@@ -23,14 +24,19 @@ class ProjectCard extends React.Component {
                 to={post.fields.slug} 
             >
                 {
-                    <div
+                    // <div
+                    //     className={`w-100 db project-card--cover cover card-shadow br1 ${mini ? "h4" : "h5-ns h4"}`}
+                    //     // className="w-100 db project-card--cover cover" 
+                    //     style={ post.frontmatter.cover && {
+                    //         backgroundImage: `url(${post.frontmatter.cover.publicURL})`,
+                    //         backgroundPosition: 'center'
+                    //     }}
+                    // ></div>
+                    <Img 
                         className={`w-100 db project-card--cover cover card-shadow br1 ${mini ? "h4" : "h5-ns h4"}`}
-                        // className="w-100 db project-card--cover cover" 
-                        style={ post.frontmatter.cover && {
-                            backgroundImage: `url(${post.frontmatter.cover.publicURL})`,
-                            backgroundPosition: 'center'
-                        }}
-                    ></div>
+                        fluid={post.frontmatter.cover.childImageSharp.fluid}
+                        alt="" 
+                    />
                 }
 
                 {/* <div className="ph3 pv4"> */}
