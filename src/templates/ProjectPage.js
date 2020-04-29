@@ -336,6 +336,18 @@ export const pageQuery = graphql`
                date2
                tags
                team
+               cover {
+                  childImageSharp {
+                    fluid(maxWidth: 1440) {
+                      src
+                      srcSet
+                      base64
+                      aspectRatio
+                      originalImg
+                      sizes  
+                    }
+                  }
+                }
              }
              fields {
                readingTime {

@@ -41,8 +41,13 @@ exports.createPages = ({ graphql, actions }) => {
                     tags
                     cover { 
                       childImageSharp {
-                        fluid {
-                          ...GatsbyImageSharpFluid
+                        fluid(maxWidth: 1440) {
+                          src
+                          srcSet
+                          base64
+                          aspectRatio
+                          originalImg
+                          sizes  
                         }
                       }
                     }
