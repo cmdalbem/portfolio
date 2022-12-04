@@ -5,16 +5,16 @@ import LinksList from './LinksList'
 const Social = () => {
   const items = [
     {
-      label: 'Twitter',
-      url: "https://twitter.com/cmdalbem"
-    },
-    {
       label: 'LinkedIn',
       url: "https://www.linkedin.com/in/cmdalbem/"
     },
     {
       label: 'GitHub',
       url: "https://github.com/cmdalbem/"
+    },
+    {
+      label: 'ADPList',
+      url: "https://adplist.org/mentors/cristiano-dalbem/"
     },
     {
       label: 'Dribbble',
