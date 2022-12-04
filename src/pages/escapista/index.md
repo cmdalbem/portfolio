@@ -8,7 +8,7 @@ description: "Choose a channel and let your mind wander with the continuous stre
 tags: ['design','front-end','product management']
 cover: './cover.png'
 hover: '/covers/escapista.gif'
-forceOrder: 1
+forceOrder: 2
 team: "Cristiano Dalbem, Gabriela Catão."
 color: '#006E6E'
 liveLink: 'http://escapista.app/'
