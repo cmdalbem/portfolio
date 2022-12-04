@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Cristiano Dalbem — Product Design Portfolio',
+    siteUrl: 'https://cristianodalbem.com/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
