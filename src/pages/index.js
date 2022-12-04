@@ -62,8 +62,8 @@ class IndexPage extends React.Component {
                 'I’m a designer bridging the gap',
                 'between Product & Systems',
                 'Design, with a purpose to improve',
-                'how people interact with',
-                'technology to work and be creative.'
+                'how technology empowers people',
+                'to collaborate and be creative.'
               ]}/>
             </div> 
 
