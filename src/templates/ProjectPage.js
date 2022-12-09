@@ -110,6 +110,21 @@ class ProjectPage extends React.Component {
                 }
 
                 {
+                  post.frontmatter.metrics &&
+                  post.frontmatter.metrics.length > 0 &&
+                  <div className="mb4 dark-gray">
+                    <h2 className="f6 fw6 ttu mv2 fw7 mr2">
+                      <span>
+                        Business metrics
+                      </span>
+                    </h2>
+                    <div>
+                      { post.frontmatter.metrics.map(t => capitalize(t)).join(', ') }
+                    </div>
+                  </div>
+                }
+
+                {
                   post.frontmatter.tags &&
                   post.frontmatter.tags.length > 0 &&
                   <div className="mb4 dark-gray">
@@ -171,8 +186,13 @@ class ProjectPage extends React.Component {
                   // </div>
                   <a
                     href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                    className="dib f5 fw6 link pv3 ph5 ba br1 dim"
-                    style={{color: post.frontmatter.color}}
+                    className="dib f5 fw6 link pv3 ph5 ba dim"
+                    style={
+                      { 
+                        backgroundColor : post.frontmatter.color,
+                        color: "#FFFFFF"
+                      }
+                    }
                   >
                     See it live
                   </a>
@@ -251,6 +271,7 @@ export const pageQuery = graphql`
                date2
                liveLink
                tags
+               metrics
                team
                color
                fullWidth

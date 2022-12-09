@@ -6,6 +6,7 @@ title: "Escapista"
 minibio: "A minimalistic webapp for watching curated videos to relax, explore the world & stay home."
 description: "Choose a channel and let your mind wander with the continuous stream of great Slow TV and ambient videos we handpicked for you. Relax with the natural images and sounds while you work, put on your TV or invite your friends to watch together."
 tags: ['design','front-end','product management']
+metrics: ['Video visualizations','Total playback time','Unique users']
 cover: './cover.png'
 hover: '/covers/escapista.gif'
 forceOrder: 2

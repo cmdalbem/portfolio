@@ -3,8 +3,8 @@ projectType: 'case study'
 date: "2019-06"
 date2: "Now"
 title: "CicloMapa"
-minibio: "Democratizing the access to bike maps of brazilian cities with open data."
-description: "An open platform to democratize access to bike maps of brazilian cities, combining the open collaborativity  OpenStreetMap with web technologies and easy-to-use design."
+minibio: "A platform to democratize the access to bike maps of brazilian cities with open data."
+description: "An open platform to democratize access to bike maps of brazilian cities, combining the open collaborativity OpenStreetMap with web technologies and easy-to-use design."
 tags: ['design','front-end','product management']
 cover: './cover.png'
 hover: '/covers/ciclomapa.gif'
