@@ -1,5 +1,5 @@
 ---
-projectType: 'case study'
+projectType: 'project'
 date: "2019-06"
 date2: "Now"
 title: "CicloMapa"
