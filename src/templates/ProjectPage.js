@@ -118,7 +118,7 @@ class ProjectPage extends React.Component {
                         Business metrics
                       </span>
                     </h2>
-                    <div>
+                    <div className="f5 lh-copy">
                       { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
                     </div>
                   </div>
