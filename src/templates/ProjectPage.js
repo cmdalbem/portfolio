@@ -119,7 +119,7 @@ class ProjectPage extends React.Component {
                       </span>
                     </h2>
                     <div>
-                      { post.frontmatter.metrics.map(t => capitalize(t)).join(', ') }
+                      { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
                     </div>
                   </div>
                 }
@@ -134,7 +134,7 @@ class ProjectPage extends React.Component {
                       </span>
                     </h2>
                     <div>
-                      { post.frontmatter.tags.map(t => capitalize(t)).join(', ') }
+                      { post.frontmatter.tags.map(t => capitalize(t)).join('・') }
                       {/* {post.frontmatter.tags.map(tag => (
                         <Tag size="big" key={tag}>
                           {tag}
