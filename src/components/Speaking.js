@@ -5,6 +5,12 @@ import Reveal from 'react-reveal/Reveal';
 const Speaking = () => (
   <Reveal effect="slideUp">
       <Talk
+        title="🇺🇸 CicloMapa: a web platform to democratize access to bike maps with OpenStreetMap."
+        context="Free and Open Source Software for Geospatial (FOSS4G) 2021 Conference"
+        link="https://docs.google.com/presentation/d/1eODEkmsWUezqNhqL5UqS1Vcc6yH9XXGnZ1N--ejfxfQ/edit?usp=sharing"
+      />
+
+      <Talk
         title="🇧🇷 Prototypes (or: A Presentation About Prototypes Made As A Prototype)."
         context="Laboratory of Creative Practices in Software - UFRGS, Specialization in Software Engineering and Innovation, 2020"
         link="https://www.figma.com/proto/wzuas1ACN5n2t9lVyPtnj8/Apresenta%C3%A7%C3%A3o-Prot%C3%B3tipos?node-id=1%3A89&scaling=min-zoom"
