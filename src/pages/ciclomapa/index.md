@@ -1,7 +1,7 @@
 ---
-projectType: 'project'
+projectType: 'case study'
 date: "2019-06"
-date2: "Now"
+date2: "2022-06"
 title: "CicloMapa"
 minibio: "A platform to democratize the access to bike maps of brazilian cities with open data."
 description: "An open platform to democratize access to bike maps of brazilian cities, combining the open collaborativity OpenStreetMap with web technologies and easy-to-use design."
