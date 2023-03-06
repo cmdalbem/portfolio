@@ -180,6 +180,7 @@ export const pageQuery = graphql`
                    date
                    date2
                    title
+                   isPasswordProtected
                    description
                    minibio
                    projectType

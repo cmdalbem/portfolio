@@ -36,6 +36,27 @@ class ResultsBanner extends React.Component {
     }
 }
 
+class ProjectPasswordInput extends React.Component {
+    render() {
+        return (
+            <div class="silver mv7 center mw6 bg-near-white ph5 pv4 br2">
+                <div class="f2">
+                    🔒
+                </div>
+                <div className='f5'>
+                    This project is password-protected. <a href="mailto:cristiano.dalbem@gmail.com" className='pretty-link'>Contact me</a> if you think you should have it.
+                </div>
+                <div className="center mt4">
+                    <input class="input-reset ba b--none bg-white br2 pa3 mb2 db w-100 f5" type="password" id="password" placeholder="Password" aria-describedby="password-desc" />
+                    <a href="#" className="b--orange ba br2 dib dim f5 fw6 link orange pa3 tc w-100"> 
+                        Unlock
+                    </a>
+                </div>
+            </div> 
+        )
+    }
+}
+
 export function markdownRenderer(isFullWidth) {
     const defaultMargins = `center ${isFullWidth ? 'layoutMaxWidth' : 'mw7'}`;
     const bigImageMargins = `nl5-ns nr5-ns nl3-m nr3-m mv6-ns mv5 `;
@@ -118,6 +139,7 @@ export function markdownRenderer(isFullWidth) {
                 </div>
             ),
             "results-banner": ResultsBanner,
+            "project-password-input": ProjectPasswordInput,
             "links-list": props => {
                 let arrayObj = JSON.parse(props.items);
                 let items = arrayObj.map(i => i);

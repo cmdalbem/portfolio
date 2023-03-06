@@ -52,7 +52,7 @@ class ProjectPage extends React.Component {
           <meta name="twitter:title" content={post.frontmatter.title}/>
           <meta name="twitter:description" content={post.frontmatter.minibio}/>
         </Helmet>
-
+        
         {/* <BrowserView>
           <ReadingProgressBar barColor={post.frontmatter.color}/>
         </BrowserView> */}
@@ -270,6 +270,7 @@ export const pageQuery = graphql`
                date
                date2
                liveLink
+               isPasswordProtected
                tags
                metrics
                team

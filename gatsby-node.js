@@ -34,6 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
                     date
                     date2
                     liveLink
+                    isPasswordProtected
                     title
                     forceOrder
                     description

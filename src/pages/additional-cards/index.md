@@ -9,13 +9,8 @@ metrics: ['Incremental NPS', 'Incremental avg purchase volume']
 tags: ['design', 'research']
 color: '#820ad1'
 cover: './cover.png'
+liveLink: "https://blog.nubank.com.br/cartao-de-credito-adicional-do-nubank-tudo-o-que-voce-precisa-saber/"
+isPasswordProtected: true
 ---
 
-<div class="tc silver mv7">
-    <div class="f1">
-        🗝
-    </div>
-    <div>
-        This project is confidential. <a href="mailto:cristiano.dalbem@gmail.com">Contact me</a> for more info.
-    </div>
-</div>
+<project-password-input/>
