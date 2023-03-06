@@ -6,7 +6,7 @@ import { isMobile } from 'react-device-detect';
 
 // import Tag from '../components/Tag.js'
 
-// import { formatDate } from '../components/utils.js'
+import { formatDate } from '../components/utils.js'
 
 class ProjectCard extends React.Component {
     state = {
@@ -18,14 +18,14 @@ class ProjectCard extends React.Component {
         const isShowHover = post.frontmatter.hover && this.state.hover;
         // const mini = this.props.mini;
 
-        // let dateStart = formatDate(post.frontmatter.date, 'YYYY');
-        // let dateEnd = formatDate(post.frontmatter.date2, 'YYYY');
-        // if (dateEnd && dateEnd === dateStart) {
-        //     dateEnd = null;
-        // }
+        let dateStart = formatDate(post.frontmatter.date, 'YYYY');
+        let dateEnd = formatDate(post.frontmatter.date2, 'YYYY');
+        if (dateEnd && dateEnd === dateStart) {
+            dateEnd = null;
+        }
 
         return (
-            <Link
+            <Link 
                 className="project-card link near-black db br1 lh-copy "
                 to={post.fields.slug} 
                 onMouseEnter={() => !isMobile && this.setState({hover: true})}
@@ -48,15 +48,14 @@ class ProjectCard extends React.Component {
 
                 {/* <div className="ph3 pv4"> */}
                 <div className={`pv3`}>
-                    {/* <div className="project-card--date f6 mt0 silver db-ns dn">
-                        {dateStart} {dateEnd && `– ${dateEnd}`}
-                    </div> */}
-
                     {
                         post.frontmatter.title
                         &&
                         <div className="project-card--title f6 near-black mt0 mb0">
-                            {post.frontmatter.title}
+                            {
+                                post.frontmatter.title
+                                + (post.frontmatter.isPasswordProtected ? ' 🔒' : '')
+                            }
                         </div>
                     }
 
@@ -74,6 +73,10 @@ class ProjectCard extends React.Component {
                             {post.frontmatter.minibio}
                         </div>
                     }
+
+                    <div className="project-card--date f6 mt0 silver db-ns dn">
+                        {dateStart} {dateEnd && `– ${dateEnd}`}
+                    </div>
 
                     {/* {
                         post.frontmatter.tags &&

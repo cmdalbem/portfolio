@@ -267,10 +267,10 @@ li::before {
 .project-card:hover .project-card--title {
   color: var(--orange) !important;
 }
-.project-card:hover .project-card--date {
+/* .project-card:hover .project-card--date {
   color: var(--near-black);
   font-weight: 600;
-}
+} */
 .project-card:hover .project-card--description {
   color: black;
 }
