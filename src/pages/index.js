@@ -142,7 +142,7 @@ class IndexPage extends React.Component {
             <Reading bookNodes={bookNodes} />
           </HomeSection> */}
 
-          <HomeSection title="Social">
+          <HomeSection title="Social" description="Other places on the web where you can find me.">
             <Social />
           </HomeSection>
         </div>
