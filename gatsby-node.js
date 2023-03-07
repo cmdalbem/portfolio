@@ -41,6 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
                     minibio
                     projectType
                     tags
+                    isHidden
                     hover
                     cover { 
                       childImageSharp {
@@ -69,9 +70,12 @@ exports.createPages = ({ graphql, actions }) => {
         // Create project pages
         const posts = sortPosts(result.data.allMarkdownRemark.edges);
 
-        _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+        const publicPosts = posts.filter(p => !p.node.frontmatter.isHidden);
+        const privatePosts = posts.filter(p => !!p.node.frontmatter.isHidden);
+
+        _.each(publicPosts, (post, index) => {
+          const previous = index === publicPosts.length - 1 ? null : publicPosts[index + 1].node;
+          const next = index === 0 ? null : publicPosts[index - 1].node;
 
           createPage({
             path: post.node.fields.slug,
@@ -80,6 +84,17 @@ exports.createPages = ({ graphql, actions }) => {
               slug: post.node.fields.slug,
               previous,
               next,
+            },
+          })
+        })
+
+        _.each(privatePosts, (post, index) => {
+          createPage({
+            path: post.node.fields.slug,
+            component: projectPageTemplate,
+            context: {
+              slug: post.node.fields.slug,
+              // @todo: fix this so they could also have a previous/next
             },
           })
         })

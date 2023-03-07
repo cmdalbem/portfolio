@@ -1,6 +1,7 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade';
 import rehypeReact from "rehype-react"
+import {navigate} from 'gatsby';
 
 import LinksList from '../components/LinksList'
 
@@ -37,20 +38,55 @@ class ResultsBanner extends React.Component {
 }
 
 class ProjectPasswordInput extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: '', wrongPassword: false};
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit() {
+        if (this.state.value === 'abacaxi') {
+            const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+            const slug = pathname.replaceAll('/', '');
+            console.debug(slug);
+            navigate(`/.${slug}`);
+        } else {
+            this.setState({wrongPassword: true})
+        }
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
     render() {
         return (
-            <div class="silver mv7 center mw6 bg-near-white ph5 pv4 br2">
-                <div class="f2">
+            <div className="mv7 center mw6 bg-near-white ph5 pv4 br2">
+                <div className="f2">
                     🔒
                 </div>
-                <div className='f5'>
-                    This project is password-protected. <a href="mailto:cristiano.dalbem@gmail.com" className='pretty-link'>Contact me</a> if you think you should have it.
+                <div className='f5 silver'>
+                    <div>This project is password-protected.</div>
+                    <div><a href="mailto:cristiano.dalbem@gmail.com" className='pretty-link'>Contact me</a> if you think you should have it. </div>
                 </div>
                 <div className="center mt4">
-                    <input class="input-reset ba b--none bg-white br2 pa3 mb2 db w-100 f5" type="password" id="password" placeholder="Password" aria-describedby="password-desc" />
-                    <a href="#" className="b--orange ba br2 dib dim f5 fw6 link orange pa3 tc w-100"> 
+                    <input 
+                        className={"input-reset bg-white br2 pa3 db w-100 f5 " + (this.state.wrongPassword ? 'ba b--light-red' : 'b--none')}
+                        type="password" 
+                        placeholder="Password"
+                        value={this.state.value} onChange={this.handleChange}
+                        />
+                    {
+                        this.state.wrongPassword &&
+                        <div className="f6 red mb2">
+                            Wrong password, try again.
+                        </div>
+                    }
+                    <button onClick={this.handleSubmit} className="b--orange bg-transparent mt2 ba br2 dib dim f5 fw6 orange pa2 tc w-100"> 
                         Unlock
-                    </a>
+                    </button>
                 </div>
             </div> 
         )

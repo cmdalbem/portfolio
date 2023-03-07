@@ -38,10 +38,9 @@ function AnimatedHeader(props) {
 
 class IndexPage extends React.Component {
   render() {
-    const posts = sortPosts(this.props.data.allMarkdownRemark.edges);
-
-    console.debug('posts', posts);
-    
+    let posts = sortPosts(this.props.data.allMarkdownRemark.edges);
+    posts = posts.filter(p => !p.node.frontmatter.isHidden);
+  
     const caseStudies = posts.filter(i => i.node.frontmatter.projectType === 'case study');
     const projects = posts.filter(i => i.node.frontmatter.projectType === 'project');
     
@@ -180,6 +179,7 @@ export const pageQuery = graphql`
                    date
                    date2
                    title
+                   isHidden
                    isPasswordProtected
                    description
                    minibio
