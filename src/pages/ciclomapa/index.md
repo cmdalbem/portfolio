@@ -8,7 +8,7 @@ description: "An open platform to democratize access to bike maps of brazilian c
 tags: ['design','front-end','product management']
 cover: './cover.png'
 hover: '/covers/ciclomapa.gif'
-team: "Cristiano Dalbem, Bernardo Serra (product owner, ITDP), Felipe Alves (advisor, UCB)."
+team: "Bernardo Serra (product owner, ITDP), Felipe Alves (advisor, UCB)."
 color: '#4EA76F'
 liveLink: 'https://ciclomapa.org.br/'
 ---

@@ -7,7 +7,7 @@ minibio: "A new home dashboard for an ecommerce platfom."
 description: "A new home for the an e-commerce platform admin, setting the ground for a new generation of Admin UIs."
 tags: ['design']
 cover: './cover.png' 
-team: 'Bruna Aleixo, Cristiano Dalbem, Guilherme Rodrigues, Kevin Chevalier'
+team: 'Bruna Aleixo, Guilherme Rodrigues, Kevin Chevalier'
 color: '#f71b62'
 ---
   

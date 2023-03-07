@@ -149,7 +149,7 @@ class ProjectPage extends React.Component {
                   <div className='mv4 dark-gray'>
                     <h2 className="f6 fw6 ttu mv2 fw7 mr2">
                       <span>
-                        Team
+                        Team mates
                       </span>
                     </h2>
                     <span className="f5 din lh-copy">

@@ -6,7 +6,7 @@ title: "infHub"
 minibio: "A platform for university students to share their projects."
 description: "A platform for university students to share their projects. This project was an important milestone for me, introducing me to the world of front-end development as well as UI design."
 tags: ['front-end','back-end','design']
-team: "César Daudt, Cristiano Dalbem, João Gilberto Gaiewski"
+team: "César Daudt, João Gilberto Gaiewski"
 cover: './cover.png'
 color: '#922924'
 ---

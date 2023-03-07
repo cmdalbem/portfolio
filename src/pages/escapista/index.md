@@ -10,7 +10,7 @@ metrics: ['Video visualizations','Total playback time','Unique users']
 cover: './cover.png'
 hover: '/covers/escapista.gif'
 forceOrder: 2
-team: "Cristiano Dalbem, Gabriela Catão (content curation)"
+team: "Gabriela Catão (content curation)"
 color: '#006E6E'
 liveLink: 'http://escapista.app/'
 --- 
