@@ -130,7 +130,7 @@ class ProjectPage extends React.Component {
                   <div className="mb4 dark-gray">
                     <h2 className="f6 fw6 ttu mv2 fw7 mr2">
                       <span>
-                        Roles
+                        My roles
                       </span>
                     </h2>
                     <div>
@@ -211,9 +211,12 @@ class ProjectPage extends React.Component {
 
       {/* Other projects */}
       <div className="flex flex-column bg-near-white mt6 nl6 nr6 ph6 pb6">
-          <div className="w-100 tc f2 mv6">
-            <h2 className="f1 fw4 dark-gray">Other projects</h2>
-          </div>
+          {
+            (previous || next) &&
+            <div className="w-100 tc f2 mv6">
+              <h2 className="f1 fw4 dark-gray">Other projects</h2>
+            </div>
+          }
 
           <div className="flex flex-row-ns flex-column justify-between mt4">
             <div className="w-40-ns w-100">
