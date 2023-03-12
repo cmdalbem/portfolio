@@ -363,6 +363,12 @@ li::before {
   .f-subheadline-ns { font-size: 54px !important; }
 } */
 
+/* @media screen and (min-width: 30em) {
+  .f4-ns {
+    font-size: 18px !important;
+  }
+} */
+
 .h6 {
   height: 32rem;
 }
