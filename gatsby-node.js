@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+            allMarkdownRemark(sort: {frontmatter: {date: DESC}}, limit: 1000) {
               edges {
                 node {
                   excerpt
@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
                     tags
                     isHidden
                     hover
-                    cover { 
+                    cover {
                       childImageSharp {
                         fluid(maxWidth: 1440) {
                           src
@@ -51,7 +51,7 @@ exports.createPages = ({ graphql, actions }) => {
                           base64
                           aspectRatio
                           originalImg
-                          sizes  
+                          sizes
                         }
                       }
                     }
