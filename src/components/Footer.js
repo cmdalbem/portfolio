@@ -3,34 +3,40 @@ import React from 'react'
 const footerIconsClasses = 'pl4-ns pr0-ns pr3 pl0 dim gray';
 
 const Footer = () => (
-    <div className="flex flex-row-ns flex-column pv6 f6 w-100 gray justify-between layoutMaxWidth center">
-        <div className="mw6-ns lh-copy">
-            Prototyped in <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://www.figma.com/">Figma</a> and handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://www.gatsbyjs.com/">Gatsby.js</a>.
+    <div className="flex flex-row-ns flex-column pv6 w-100 justify-between layoutMaxWidth center">
+        <div className="f7 gray mw6-ns lh-copy">
+            <p className='f5 text-gradient-clip bg-gradient-6'>
+                "Computers are like a bicycle for the mind."
+            </p>
+
+            <div>
+                Prototyped in <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://www.figma.com/">Figma</a> and handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://www.gatsbyjs.com/">Gatsby.js</a>.
+            </div>
             
-            <br/>
-            
-            Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://fonts.google.com/">Google Fonts</a>.
+            <div>
+                Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://fonts.google.com/">Google Fonts</a>.
+            </div>
         </div>
         <div className="mv4 mv0-ns">
+            {/* Email */}
+            <a
+                className={footerIconsClasses}
+                href="mailto:cristiano.dalbem@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" fill='currentColor' height="30px" width="30px" viewBox="0 0 48 48"><path d="M7 40q-1.2 0-2.1-.9Q4 38.2 4 37V11q0-1.2.9-2.1Q5.8 8 7 8h34q1.2 0 2.1.9.9.9.9 2.1v26q0 1.2-.9 2.1-.9.9-2.1.9Zm17-15.4q.25 0 .425-.075t.375-.175L40.5 14.1q.25-.15.375-.4t.125-.55q0-.65-.575-1.025-.575-.375-1.175.025L24 21.9 8.8 12.15q-.6-.4-1.2-.05-.6.35-.6 1 0 .3.15.575.15.275.35.425l15.7 10.25q.2.1.375.175.175.075.425.075Z"/></svg>
+            </a>
+            
+            {/* Twitter */}
             <a
                 className={footerIconsClasses}
                 href="https://twitter.com/cmdalbem">
-                <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill='currentColor'
-                    viewBox='0 0 612 612'>
-                    <path d='M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411 c-24.322,14.379-51.169,24.82-79.775,30.48c-22.907-24.437-55.49-39.658-91.63-39.658c-69.334,0-125.551,56.217-125.551,125.513 c0,9.828,1.109,19.427,3.251,28.606C197.065,206.32,104.556,156.337,42.641,80.386c-10.823,18.51-16.98,40.078-16.98,63.101 c0,43.559,22.181,81.993,55.835,104.479c-20.575-0.688-39.926-6.348-56.867-15.756v1.568c0,60.806,43.291,111.554,100.693,123.104 c-10.517,2.83-21.607,4.398-33.08,4.398c-8.107,0-15.947-0.803-23.634-2.333c15.985,49.907,62.336,86.199,117.253,87.194 c-42.947,33.654-97.099,53.655-155.916,53.655c-10.134,0-20.116-0.612-29.944-1.721c55.567,35.681,121.536,56.485,192.438,56.485 c230.948,0,357.188-191.291,357.188-357.188l-0.421-16.253C573.872,163.526,595.211,141.422,612,116.258z'
-                    />
-                </svg>
-                {/* Twitter */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill='currentColor' viewBox="0 0 30 30" width="30px" height="30px">    <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z"/></svg>
             </a>
+            
+            {/* LinkedIn */}
             <a
                 className={footerIconsClasses}
                 href="https://www.linkedin.com/in/cmdalbem/">
-                <svg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill='currentColor'
-                    viewBox='0 0 430.117 430.117'>
-                    <path d='M430.117,261.543V420.56h-92.188V272.193c0-37.271-13.334-62.707-46.703-62.707 c-25.473,0-40.632,17.142-47.301,33.724c-2.432,5.928-3.058,14.179-3.058,22.477V420.56h-92.219c0,0,1.242-251.285,0-277.32h92.21 v39.309c-0.187,0.294-0.43,0.611-0.606,0.896h0.606v-0.896c12.251-18.869,34.13-45.824,83.102-45.824 C384.633,136.724,430.117,176.361,430.117,261.543z M52.183,9.558C20.635,9.558,0,30.251,0,57.463 c0,26.619,20.038,47.94,50.959,47.94h0.616c32.159,0,52.159-21.317,52.159-47.94C103.128,30.251,83.734,9.558,52.183,9.558z M5.477,420.56h92.184v-277.32H5.477V420.56z'
-                    />
-                </svg>
-                {/* LinkedIn */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill='currentColor' viewBox="0 0 30 30" width="30px" height="30px">    <path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M10.496,8.403 c0.842,0,1.403,0.561,1.403,1.309c0,0.748-0.561,1.309-1.496,1.309C9.561,11.022,9,10.46,9,9.712C9,8.964,9.561,8.403,10.496,8.403z M12,20H9v-8h3V20z M22,20h-2.824v-4.372c0-1.209-0.753-1.488-1.035-1.488s-1.224,0.186-1.224,1.488c0,0.186,0,4.372,0,4.372H14v-8 h2.918v1.116C17.294,12.465,18.047,12,19.459,12C20.871,12,22,13.116,22,15.628V20z"/></svg>
             </a>
         </div>
     </div>
