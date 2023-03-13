@@ -63,8 +63,8 @@ class ProjectPasswordInput extends React.Component {
 
     render() {
         return (
-            <div className="mv7 center mw6 bg-near-white ph5 pv4 br2">
-                <div className="f2">
+            <div className="mv7 center tc mw6 bg-near-white ph5 pv4 br2">
+                <div className="f2 mv4">
                     🔒
                 </div>
                 <div className='f5 silver'>
@@ -73,9 +73,9 @@ class ProjectPasswordInput extends React.Component {
                 </div>
                 <div className="center mt4">
                     <input 
-                        className={"input-reset bg-white br2 pa3 db w-100 f5 " + (this.state.wrongPassword ? 'ba b--light-red' : 'b--none')}
+                        className={"input-reset bg-white br2 pa3 db w-100 f5 sans-serif gray " + (this.state.wrongPassword ? 'ba b--light-red' : 'b--none')}
                         type="password" 
-                        placeholder="Password"
+                        placeholder="Enter password"
                         value={this.state.value} onChange={this.handleChange}
                         />
                     {
@@ -84,7 +84,7 @@ class ProjectPasswordInput extends React.Component {
                             Wrong password, try again.
                         </div>
                     }
-                    <button onClick={this.handleSubmit} className="b--orange bg-transparent mt2 ba br2 dib dim f5 fw6 orange pa2 tc w-100"> 
+                    <button onClick={this.handleSubmit} className="bg-gradient-4 white mt3 bn br2 dib dim f5 pa3 tc w-100"> 
                         Unlock
                     </button>
                 </div>
