@@ -15,17 +15,10 @@ isHidden: true
 
 # Context
 
-# The company
+## The company
 [Nubank](https://nubank.com.br/) was born in 2013 with the mission to fight complexity to empower people in their daily lives by reinventing financial services. It's one of the world’s largest digital banking platforms, serving more than 70 million customers across Brazil, Mexico, and Colombia. As one of the leading technology companies in the world, Nu leverages proprietary technologies and innovative business practices to create new financial solutions and experiences for individuals and SMEs that are simple, intuitive, convenient, low-cost, empowering, and human. Guided by its mission, Nu is fostering access to financial services across Latin America.
 
- 
-## Business & user needs 
-
-Our team's objective was to increase our customer's satisfaction, measured by NPS. Through interviews with our clients, we identified that financial support has an important role in family relationships and there's a strong emotional bond that makes that support so important, with an opportunity to connect providers and dependents on a platform that enables sharing and controlling family finances.
-
-In the same research, we identified that clients want more than just provide financial products to their dependents with safety: they want to leverage their social circle connection to be financially stronger and at the same time they want to separate the shared expenses from the personal ones, keeping privacy and also managing shared expenses better.
-
-## The solution
+## Additional cards
 
 The Additional Card is a common product found in almost every other bank's portfolio. It's an extra physical card that you request for someone you trust, since they'll be able to do purchases in your behalf using your credit line and you'll be liable for paying the bill.
 
@@ -36,6 +29,15 @@ The Additional Card is a common product found in almost every other bank's portf
 Although we see many couples using this product as a way to share their finances or optimize credit benefits, it's a product that works very well for parents wishing to initiate their children in the financial world. In general, it's used for extending someone's purchase power to a dependent that might not have access to credit products.
 
 Since Nubank didn't offer this product, clients have been finding "hacks" to accomplish these goals, such as sharing a single credit card among people in their households, either via the physical card or sharing the information of their virtual cards. This not only could present risks to their data security, but also offered a bad experience for their shared financial lives.
+
+
+# Problem statement
+
+## Business & user needs 
+
+Our team's objective was to increase our customer's satisfaction, measured by NPS. Through interviews with our clients, we identified that financial support has an important role in family relationships and there's a strong emotional bond that makes that support so important, with an opportunity to connect providers and dependents on a platform that enables sharing and controlling family finances.
+
+In the same research, we identified that clients want more than just provide financial products to their dependents with safety: they want to leverage their social circle connection to be financially stronger and at the same time they want to separate the shared expenses from the personal ones, keeping privacy and also managing shared expenses better.
 
 
 ## Defining success
