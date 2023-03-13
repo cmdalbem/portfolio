@@ -1,5 +1,5 @@
 ---
-projectType: 'project'
+projectType: 'case study'
 date: "2021-10"
 date2: "Now"
 title: "Nubank's Additional Cards"
@@ -121,9 +121,9 @@ After exploring many ideas such as new shapes, colors and extra icons on the car
 
 # Results
 
-After many months of internal tests and bug fixes, at the moment of writing this article the team is thrilled that we've just released the product publicly!
+After many months of internal tests and bug fixes, at the moment of writing this article the team is thrilled that we've just released the product publicly! Its launch was covered by most of the big brazilian tech and financial portals, with extensively positive takes.
 
-Until now the main user feedbacks have been requests of features that are either in the making, or it was already in our roadmap. Some of them you can see on the next section "Next steps".
+We've been closely monitoring data and user feedbacks, which have been almost entirely feature requests that are either in the making, or it was already in our roadmap. Some of them you can see on the next section "Next steps".
 
 
 <results-banner

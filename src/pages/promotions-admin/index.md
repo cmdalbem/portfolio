@@ -1,5 +1,5 @@
 ---
-projectType: 'case study'
+projectType: 'project'
 date: "2019-02"
 date2: "2020-04"
 title: "VTEX Promotions Admin"

@@ -1,5 +1,5 @@
 ---
-projectType: 'project'
+projectType: 'case study'
 date: "2021-10"
 date2: "Now"
 title: "Nubank's Additional Cards"
