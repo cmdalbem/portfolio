@@ -127,10 +127,11 @@ After many months of internal tests and bug fixes, at the moment of writing this
 
 We've been closely monitoring data and user feedbacks, which have been almost entirely feature requests that are either in the making, or it was already in our roadmap. Some of them you can see on the next section "Next steps".
 
+Although we can already see an increase in customers' purchase volume we still couldn't reach statistical evidence to assess changes in NPS. As soon we do I'll update here.
 
 <results-banner
     data='{
-        "cards requested": "100,000+",
+        "cards requested": "95,000+",
         "increase in purchase volume": "+ 15%",
         "increased customer NPS": "...?"
     }'>
