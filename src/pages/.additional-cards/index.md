@@ -14,10 +14,12 @@ isHidden: true
 ---
 
 # Context
+
+# The company
 [Nubank](https://nubank.com.br/) was born in 2013 with the mission to fight complexity to empower people in their daily lives by reinventing financial services. It's one of the world’s largest digital banking platforms, serving more than 70 million customers across Brazil, Mexico, and Colombia. As one of the leading technology companies in the world, Nu leverages proprietary technologies and innovative business practices to create new financial solutions and experiences for individuals and SMEs that are simple, intuitive, convenient, low-cost, empowering, and human. Guided by its mission, Nu is fostering access to financial services across Latin America.
 
  
-## User needs 
+## Business & user needs 
 
 Our team's objective was to increase our customer's satisfaction, measured by NPS. Through interviews with our clients, we identified that financial support has an important role in family relationships and there's a strong emotional bond that makes that support so important, with an opportunity to connect providers and dependents on a platform that enables sharing and controlling family finances.
 
@@ -25,13 +27,13 @@ In the same research, we identified that clients want more than just provide fin
 
 ## The solution
 
-The additional card is a common product found in almost every other bank's portfolio. It's an extra physical card that you request for someone you trust, since they'll be able to do purchases in your behalf using your credit line and you'll be liable for paying the bill.
+The Additional Card is a common product found in almost every other bank's portfolio. It's an extra physical card that you request for someone you trust, since they'll be able to do purchases in your behalf using your credit line and you'll be liable for paying the bill.
 
 ```grid|1
 ![](./uvcards.jpg)
 ``` 
 
-Although we see many couples using this product as a way to share their finances or optimize credit benefits, it's a product that works very well for parents wishing to initiate their children in the financial world. Generaly, it's used for extending someone's purchase power to a dependent that might not have access to credit products.
+Although we see many couples using this product as a way to share their finances or optimize credit benefits, it's a product that works very well for parents wishing to initiate their children in the financial world. In general, it's used for extending someone's purchase power to a dependent that might not have access to credit products.
 
 Since Nubank didn't offer this product, clients have been finding "hacks" to accomplish these goals, such as sharing a single credit card among people in their households, either via the physical card or sharing the information of their virtual cards. This not only could present risks to their data security, but also offered a bad experience for their shared financial lives.
 
@@ -47,7 +49,7 @@ Our main mission was to provide a delightful experience for anyone wishing to ex
 
 The traditional Additional Card is a good solution for frequently sharing with high-trust people from your close social circle, but we see this as just the first step. We wanted to build a platform on top of which we'd build other features, expanding the coverage for more diverse use cases. One example is enabling users to share Temporary Virtual Cards, more suited for people willing to share with someone they don't trust so much, or that are less frequent, such as friends in need.
 
-In a broader context, this was the first social product being built at Nubank. For that reason, some members of the team, including me, were selected to work on a cross-team taskforce to build a Social Vision for the whole company - but that's an story for other case study ;) This helped us draw a short, medium and long-term for how this product would evolve from being more card-centric, reusing the current App structure, for a more social experience in the future.
+In a broader context, this was the first social product being built at Nubank. For that reason, some members of the team, including me, were selected to work on a cross-team taskforce to build a Social Vision for the whole company - but that's an story for other case study. ;) This helped us understand how a short-term solution could evolve to a long-term vision, from being card-centric with the current App structure, for a more social experience in the future.
  
 <jumbo caption="A summary of our short, medium and long-term design vision for the product, moving from a card-centric experience to a more relationship-centred.">
     <img src="./longterm.png"/>
@@ -64,33 +66,33 @@ Talking about relationships, this project aimed at building actually two full us
 
 # Prototyping
 
-Our objective designing the request flow was to make it as simple as possible but without compromising transparency with the customer. With the constraint of only being able to offer Additional Cards to customers that are already clients, all we needed was the Holder's CPF number (it's like a brazilian social security number). An additional legal requirement was ask the relationship between them. Although not happy with asking such a personal question here, it provided nice data for understanding better our converting users later.
+Starting with the request flow, our objective was to make it as simple as possible but without compromising transparency with the customer. With the constraint of only being able to offer Additional Cards to who's already a client, all we needed was the Holder's CPF number (it's like a brazilian social security number). An additional legal requirement was ask the relationship between them. Although not happy with asking such a personal question here, it provided nice data for understanding better our converting users later.
 
 <jumbo caption="The card request flow, designed to be very simple without compromising transparency.">
     <img src="./request.png"/>
 </jumbo>
 
-Nubank has a very mature Design System, which we strongly leveraged as a way to quickly tangibilize ideas and speed up the development process.
+Nubank has a very mature Design System, which we strongly leveraged as a way to quickly make ideas tangible and speed up the development process.
 
-But the main challenge of this project was not the onboarding or the request flow, but the actual day-to-day of managing this card and the purchases, and for that I took a step back to understand how Credit Card exists in today's app structure. I noticed we have 3 main areas, and each one had a general theme with specific tasks.
+The main challenge of this project was not the onboarding or the request flow, but the actual day-to-day of managing this card and the purchases, and for that I took a step back to understand how Credit Card exists in today's app structure. I noticed we have 3 main areas, and each one had a general theme with specific tasks.
 
 ```grid|1
 ![](./infoarch.png "Mapping the app's information architecture of everything related to Credit Card")
 ```
 
-Brainstorming with the team about possible ways to solve the problems that were still opened, I've prototype 3 different concepts for the Owner management and 2 for the Holder, exploring in different ways the app architecture. With that it was time to user test them.
+Brainstorming with the team about possible ways to solve the problems that were still open, I've prototyped 3 different concepts for the Owner management and 2 for the Holder, exploring in different ways the app architecture.
 
 ## Concept tests
 
-To better understand user's mental model, our UX Researcher Ana Urquiza and I interviewed 16 customers split into different grupos of card owners and card holders.
+To better understand user's mental model, our UX Researcher Ana Urquiza and I interviewed 16 customers split into different groups of card owners and card holders. This was not a regular usability test, so we focused less on tasks and more in talking with the users using the prototypes as conversation-starters.
 
 ```grid|1 
 ![](./prototype.png "The interactive prototype we used to test the main concepts. There were 3 concepts for the card owner, and 2 for the holder.")
 ``` 
 
-Our main takeways were:
+Our main takeaways were:
 * User mental models were aligned to how the app is currently structured, so the solutions that maintain this status quo performed better and should be prioritized. 
-* We had proposed a solution with filters to better visualize the card's spending. Although this solution performed very well with users, we found out most of the actually used another, more hidden screen. Since we started seen this strong trends since the first interviews, we quickly prototyped a solution there, which proved to be the best according to users.
+* We had proposed a solution with filters to better visualize the card's spending. Although this solution performed very well with users, we found out most users preferred using another part of the app. Seeing this was a strong trend since the first interviews, we quickly prototyped a solution during the research, and it proved to be the best according to users.
 * The relationship-centered architecture vision is very intuitive and perceived as more clear and organized than our current, but the short-term solution works well too.
 
 ```grid|1
@@ -99,44 +101,51 @@ Our main takeways were:
 
 # Plastic design
 
-Since holders might already have another Roxinho with their name, with this project we aimed to offer a better visual differentiation than just the card number on the back.
+Since holders might already have another Nubank credit card with their name, we wanted to offer a better visual differentiation than just the card number on the back.
 
-Raising the main constraints since the beggining was crucial when prioritizing explorations:
-* Different changes in the plastic design had different impacts on the card manufacturing process, ranging from weeks to several months. After internal alignments it was decided we could not afford too long delays for the MVP.
-* There's a social bias on people that need to use an Additional Card, e.g. when going to a bar with friends and paying with a card given by your parents. This led us to explore visually subtle ideas, that would be helpful to the user itself but not call too much attention.
-* Some common customizations we saw in competitors are custom printed names and alternative card colors the user can pick. This was not an option for us for a variety of reasons, but we could leverage this opportunity to bring something innovative.
-* Any permanent plastic differentiation needed to scale for the full family of cards: the regulat credit card, the premium card, the new designs being used in Mexico and Colombia.
+Understanding these main design constraints since the beginning was crucial when exploring the solution space:
+* Design changes could impact the card manufacturing process ranging from weeks to several months.
+* Some Additional Card users suffer from prejudice, e.g. when going to a bar with friends and paying with a card given by your parents, so the design shouldn't call too much attention.
+* The competitors use custom printed names and alternative card colors. While we couldn't do that, it was an opportunity to be innovative.
+* The solution should scale with the a global family of cards: the regular credit card, the premium card, the new designs being used in Mexico and Colombia.
 
 ```grid|1 
 ![](./cardsfamily.png "Nubank's global family of cards. Any change in the Additional Card plastic design would have to adapt and scale to potentially be combined with any of these.")
 ```
 
-After exploring many ideas such as new shapes, colors and extra icons on the card design, I think our final solution is small but elegant: an extra label on the back of the card saying "Compartilhado por" ("shared by") followed by the card owner's name. Not only this helps differentiate among multiple cards, but users mentioned this design values the emotional bond between the two people.
+After exploring many ideas such as new shapes, colors and extra icons on the card design, we moved forward with a solution that is small but elegant: an extra label on the back of the card saying "compartilhado por" ("shared by") followed by the card owner's name. Not only this helps differentiate among multiple cards, but users mentioned this design values the emotional bond between the two people.
  
 ```grid|1
-![](./plastic.png "The new design of the additional card bring a subtle text on the back, helping the user differentiate between their cards and reinforcing the relationship bond.")
+![](./plastic.png "The new design of the Additional Card bring a subtle text on the back, helping the user differentiate between their cards and reinforcing the relationship bond.")
 ```
 
 # Results
 
-After many months of internal tests and bug fixes, at the moment of writing this article we've just released the product publicly. The main user feedbacks have been requests of features that are already in our roadmap, and some of them you can see on the next section of this text.
+After many months of internal tests and bug fixes, at the moment of writing this article the team is thrilled that we've just released the product publicly!
+
+Until now the main user feedbacks have been requests of features that are either in the making, or it was already in our roadmap. Some of them you can see on the next section "Next steps".
+
 
 <results-banner
     data='{
         "cards requested": "100,000+",
-        "average purchase volume": "+ 15%",
-        "customer NPS": "...?"
+        "increase in purchase volume": "+ 15%",
+        "increased customer NPS": "...?"
     }'>
 </results-banner>
 
 
-# Future work
+# Next steps
+
+## Card feed
  
-One of the most requested features is having more visibility on purchases made on a particular additional card. We're implementing a new screen that shows more clearly how much has been spent on that card, with a dedicated transactions feed.
+One of the most requested features is having more visibility on purchases made on a particular Additional Card. We're implementing a new screen that shows more clearly how much has been spent on that card, with a dedicated transactions feed.
 
 ```grid|1
-![](./feed.png "An improved experience for monitoring spendings in the additional card, available for both card owner and holders.")
+![](./feed.png "An improved experience for monitoring spendings in the Additional Card, available for both card owner and holders.")
 ```
+
+## Holder onboarding
 
 We'd like to improve the Card Holder onboarding with a more visual presentation of the main features and where to find them on the app.This might improve customer engagement and reduce churn.
 
@@ -144,11 +153,15 @@ We'd like to improve the Card Holder onboarding with a more visual presentation 
 ![](./onboarding.png "Design proposal for a more visual user onboarding.")
 ```
 
-Many users have been reporting problems understanding what's the card password, which have been impacting our results. We're exploring hypothesis of the problem and possible solutions to experiment on.
+## Password issue
+
+Many users have been reporting problems understanding what's the card password, which have been impacting our results. We've been trying to add more clarifications in key points of the flow, but hasn't been working. We're exploring hypothesis of the problem and possible solutions to experiment on.
  
 ```grid|1
 ![](./password.png "Mapping of hypothesis, solutions and risks related to the password issue.")
 ```
+
+## Customer support tooling
 
 To empower our customer support agents to help customers with anything they need related to Additional Cards we designed several improvements to the CX tool.
 
@@ -159,9 +172,13 @@ To empower our customer support agents to help customers with anything they need
 
 # Learnings & conclusion
 
-* Lorem ipsum
-* Lorem ipsum
-* Lorem ipsum
+This was the longest and most complex project I've developed at Nubank yet. It was also the most complete, end-to-end, since I joined the team right at its start and I'm experiencing it go live now. Here are a few of my main learnings from this experience:
+
+* The product roadmap was reprioritized many times during the process. This was very important since technical challenges were being uncovered. Although it was a little sad to see soo many good ideas being left for later, it was a great exercise for everyone to although think about what is most essential to our users.
+* Nobody in the team expected this to be so hard. Although one might think it's a simple project, because "it's just an extra card", but it was actually the work of remaking the whole credit card experience again, and twice.
+* There's one small part of the product that hasn't been performing well: card holders have been having a hard time understanding what the card password is. We decided to do it differently than any competitor does, and while we did so thinking it was the best for the user, we failed in understanding their mental models.
+* One of the biggest challenges was designing the plastic, which seemed like a daunting task at first but, deeply understanding the problem, uncovering all the constraints and collaborating with multiple people, the solution started to emerge.
+* The product naming was a very polemic and chaotic part, since we went back-and-forth between 2 ideas many times. It was tricky since we didn't have clarity on who'd was responsible for the final decision, but most importantly we acknowledged that the decision rationale was not well communicated.
 
 
 # Links
