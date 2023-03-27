@@ -200,7 +200,7 @@ I was also responsible for designing social media posts that would highlight the
 We were glad with the organic coverage from different media channels, mainly with [Mobilize](https://www.mobilize.org.br/noticias/11986/um-mapa-com-quase-todas-as-ciclovias-do-brasil.html) and [ArchDaily](https://www.archdaily.com.br/br/933497/ciclomapa-um-mapa-colaborativo-da-infraestrutura-cicloviaria-das-cidades-brasileiras) which are big portals specialized on mobility.
 
 <jumbo>
-    <img src="./coverage.png"/>
+    <img src="./coverage.jpg"/>
 </jumbo> 
 
 
