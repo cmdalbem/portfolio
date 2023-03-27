@@ -60,9 +60,8 @@ class IndexPage extends React.Component {
               <AnimatedHeader rows={[
                 'I’m a designer bridging the gap',
                 'between Product & Systems',
-                'Design, with a purpose to improve',
-                'how technology empowers people',
-                'to collaborate and be creative.'
+                'Design with a purpose to improve',
+                'how technology empowers people.'
               ]}/>
             </div> 
 
