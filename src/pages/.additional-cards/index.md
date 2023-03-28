@@ -2,11 +2,12 @@
 projectType: 'case study'
 date: "2021-10"
 date2: "Now"
+lastUpdated: "2023-02"
 title: "Nubank's Additional Cards"
 minibio: "Enabling people to extend their purchase power to loved ones."
 description: "The Additional Card is a common product, available at most banks, that lets users extend their purchase power to others. More than simply an extra physical credit card that lets someone purchase on your behalf, it's one of the main ways many people use to share their financial lives with spouses, parents, children, etc."
 metrics: ['Incremental NPS', 'Incremental avg purchase volume']
-tags: ['design', 'research']
+tags: ['design', 'ux research']
 color: '#820ad1'
 cover: './cover.png'
 liveLink: "https://blog.nubank.com.br/cartao-de-credito-adicional-do-nubank-tudo-o-que-voce-precisa-saber/"
@@ -84,9 +85,9 @@ The main challenge of this project was not the onboarding or the request flow, b
 
 Brainstorming with the team about possible ways to solve the problems that were still open, I've prototyped 3 different concepts for the Owner management and 2 for the Holder, exploring in different ways the app architecture.
 
-## Concept tests
+## Testing concepts with users
 
-To better understand user's mental model, our UX Researcher Ana Urquiza and I interviewed 16 customers split into different groups of card owners and card holders. This was not a regular usability test, so we focused less on tasks and more in talking with the users using the prototypes as conversation-starters.
+To better understand our user's mental model, our UX Researcher Ana Urquiza and I interviewed 16 customers split into different groups of card owners and card holders. This was not a regular usability test, so we focused less on tasks and more in talking with the users using the prototypes as conversation-starters.
 
 ```grid|1 
 ![](./prototype.png "The interactive prototype we used to test the main concepts. There were 3 concepts for the card owner, and 2 for the holder.")
@@ -103,19 +104,16 @@ Our main takeaways were:
 
 # Plastic design
 
-Since holders might already have another Nubank credit card with their name, we wanted to offer a better visual differentiation than just the card number on the back.
-
-Understanding these main design constraints since the beginning was crucial when exploring the solution space:
+Since Card Holders might already have another Nubank Credit Card with their name, we wanted to offer a better visual differentiation than just the card number on the back. Understanding these main design constraints since the beginning was crucial when exploring the solution space:
 * Design changes could impact the card manufacturing process ranging from weeks to several months.
-* Some Additional Card users suffer from prejudice, e.g. when going to a bar with friends and paying with a card given by your parents, so the design shouldn't call too much attention.
-* The competitors use custom printed names and alternative card colors. While we couldn't do that, it was an opportunity to be innovative.
-* The solution should scale with the a global family of cards: the regular credit card, the premium card, the new designs being used in Mexico and Colombia.
+* Some Additional Card users suffer from social prejudice, e.g. when going to a bar with friends and paying with a card given by your parents, so the design shouldn't call too much attention.
+* Competitors use custom printed names and alternative card colors. We couldn't do that, so it was an opportunity to be innovative.
 
 ```grid|1 
-![](./cardsfamily.png "Nubank's global family of cards. Any change in the Additional Card plastic design would have to adapt and scale to potentially be combined with any of these.")
+![](./cardsfamily.png "Nubank's global family of cards, including cards for Brazil, Mexico and Colombia. Any change in the Additional Card plastic design would have to adapt and scale to potentially be combined with any of these.")
 ```
 
-After exploring many ideas such as new shapes, colors and extra icons on the card design, we moved forward with a solution that is small but elegant: an extra label on the back of the card saying "compartilhado por" ("shared by") followed by the card owner's name. Not only this helps differentiate among multiple cards, but users mentioned this design values the emotional bond between the two people.
+After exploring many ideas such as new shapes, colors and extra icons on the card design, we moved forward with a solution that is very elegant in its simplicity: an extra label on the back of the card saying "compartilhado por" ("shared by") followed by the card owner's name. Not only this helps differentiate among multiple cards, but users mentioned this design values the emotional bond between the two people.
  
 ```grid|1
 ![](./plastic.png "The new design of the Additional Card bring a subtle text on the back, helping the user differentiate between their cards and reinforcing the relationship bond.")
@@ -140,28 +138,14 @@ Although we can already see an increase in customers' purchase volume we still c
 
 # Next steps
 
+Here are some of the main improvements we've explored and user tested and might be implemented in the future.
+
 ## Card feed
  
 One of the most requested features is having more visibility on purchases made on a particular Additional Card. We're implementing a new screen that shows more clearly how much has been spent on that card, with a dedicated transactions feed.
 
 ```grid|1
 ![](./feed.png "An improved experience for monitoring spendings in the Additional Card, available for both card owner and holders.")
-```
-
-## Holder onboarding
-
-We'd like to improve the Card Holder onboarding with a more visual presentation of the main features and where to find them on the app.This might improve customer engagement and reduce churn.
-
-```grid|1
-![](./onboarding.png "Design proposal for a more visual user onboarding.")
-```
-
-## Password issue
-
-Many users have been reporting problems understanding what's the card password, which have been impacting our results. We've been trying to add more clarifications in key points of the flow, but hasn't been working. We're exploring hypothesis of the problem and possible solutions to experiment on.
- 
-```grid|1
-![](./password.png "Mapping of hypothesis, solutions and risks related to the password issue.")
 ```
 
 ## Customer support tooling
@@ -171,6 +155,22 @@ To empower our customer support agents to help customers with anything they need
 <jumbo caption="A series of improvements on the customer support tool.">
     <img src="./shufflewidgetfull.png"/>
 </jumbo>
+
+## Holder onboarding
+
+We'd like to improve the Card Holder onboarding with a more visual presentation of the main features and where to find them on the app.This might improve customer engagement and reduce churn.
+
+```grid|1
+![](./onboarding.png "Design proposal for a more visual user onboarding.")
+```
+
+## "What's the card password?"
+
+Many users have been reporting problems understanding what's the card password, which have been impacting our results. We've been trying to add more clarifications in key points of the flow, but it hasn't been working. We're exploring hypothesis of the problem and possible solutions to experiment on.
+ 
+```grid|1
+![](./password.png "Mapping of hypothesis, solutions and risks related to the password issue.")
+```
 
 
 # Learnings & conclusion
