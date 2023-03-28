@@ -2,6 +2,7 @@
 projectType: 'project'
 date: "2019-02"
 date2: "2020-04"
+lastUpdated: "2021-06"
 title: "VTEX Promotions Admin"
 minibio: "Redesigning a complex legacy admin in an e-commerce platform to maximize clients' sales and reduce costs."
 description: "Rethinking and redesigning one of the core experiences in managing products and marketing strategies in VTEX e-commerce platform."

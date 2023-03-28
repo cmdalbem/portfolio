@@ -34,6 +34,11 @@ class ProjectPage extends React.Component {
       dateEnd = null;
     }
 
+    let lastUpdated;
+    if (post.frontmatter.lastUpdated) {
+      lastUpdated = formatDate(post.frontmatter.lastUpdated, 'MMMM YYYY')
+    }
+
     return (
       <Layout location={this.props.location}>
         <Helmet>
@@ -88,7 +93,18 @@ class ProjectPage extends React.Component {
                   </div>
                 }
                 <div className='f5 gray db-ns dn'>
-                  {readingTime.text}
+                  {
+                    readingTime.minutes > 1 &&
+                    readingTime.text
+                  }
+
+                  {
+                    post.frontmatter.lastUpdated &&
+                    <div className='di'>
+                      <span className='ph1'> · </span>
+                      <span>Last updated on {lastUpdated}</span>
+                    </div>
+                  }
                 </div>
               </div>
 
@@ -272,6 +288,7 @@ export const pageQuery = graphql`
                minibio
                date
                date2
+               lastUpdated
                liveLink
                isPasswordProtected
                tags
@@ -297,6 +314,7 @@ export const pageQuery = graphql`
                slug
                readingTime {
                  text
+                 minutes
                }
              }
            }

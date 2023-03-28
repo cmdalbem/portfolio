@@ -2,6 +2,7 @@
 projectType: 'project'
 date: "2016-10"
 date2: "2019-06"
+lastUpdated: "2021-06"
 title: "bike de boa"
 minibio: "Web app for collaboratively mapping safe places in the city to park your bike."
 description: "A cicloactivist project that aims to encoure more people to use bike in the city. With the collaborative web app you can search for safe places to park your bike nearby and map new ones while learning what makes for good and safe bike parking and safer streets."

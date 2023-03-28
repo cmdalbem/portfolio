@@ -33,6 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     date
                     date2
+                    lastUpdated
                     liveLink
                     isPasswordProtected
                     title

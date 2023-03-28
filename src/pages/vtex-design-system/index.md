@@ -2,6 +2,7 @@
 projectType: 'project'
 date: "2018-02"
 date2: "2020-04"
+lastUpdated: "2020-04"
 title: "VTEX Design System"
 minibio: "Developing a common language to align and scale product design solutions for the entire company, and beyond."
 description: "Styleguide was the company's Design System, the home for all our reusable patterns, components and assets related to product design in VTEX. It aimed to be a common language of tools and processes to facilitate how we collaborated and shared knowledge across teams and projects."

@@ -2,6 +2,7 @@
 projectType: 'case study'
 date: "2019-06"
 date2: "2022-06"
+lastUpdated: "2023-03"
 title: "CicloMapa"
 minibio: "A platform to democratize the access to bike maps of brazilian cities with open data."
 description: "An open platform to democratize access to bike maps of brazilian cities, combining the open collaborativity OpenStreetMap with web technologies and easy-to-use design."
@@ -20,19 +21,6 @@ Today in Brazil we face a big challenge of not having data on the cycling infras
 I've teamed up with [UCB (Brazil Cyclists Union)](https://uniaodeciclistas.org.br/) and [ITDP (Transport and Development Policy Institute)](https://itdpbrasil.org/), two important brazilian civil society organizations on cycling and urban mobility, to design and developed the first platform of cycling maps encompassing all Brazilian cities.
 
 We've leveraged the data and collaborativeness of [OpenStreetMap (OSM)](https://www.openstreetmap.org/), a huge global initiative similar to a Wikipedia of maps. I've created an open-source web application, free and accessible from any computer or smartphone, aimed at both the average citizen that doesn't know her city's bike paths, and researchers, who now have easy access to data to develop further analysis.
-
-<jumbo>
-    <img src="./coverage.png"/>
-</jumbo> 
-
-
-<results-banner
-    data='{
-        "brazilian cities": "320+",
-        "users / month": "900+",
-        "pageviews total": "300,000+"
-    }'>
-</results-banner>
 
 
 # Understanding the problem
@@ -73,11 +61,10 @@ We also did a deep dive on everything that was available on the market, from oth
 
 Our main insights were:
 
-* Solutions based on OSM are very technical and hard to understand and operate, and none had clear instructions about the collaborative dimension and how to contribute with the mapping.
+* Solutions based on OSM are very technical and hard to use, and none had clear instructions about the collaborative dimension and how to contribute with the mapping.
 * Bike maps rarely explain their terminologies which are not very friendly to the broad public.
 * When multiple typologies are these are often colored in rather random ways, producing a final result that is not only unappealing but, most importantly, confusing and overwhelming.
-* Almost none of them were responsive and accessible via smartphones.
-* Several local maps had interesting features but couldn't be easily reused for other cities.
+* Almost none were adapted to Mobile devices.
 
 ```grid|1
 ![](./roadmap.jpeg "Prioritizing the features we wanted to develop next.")
@@ -124,7 +111,7 @@ To build the UI I chose [Ant Design](https://ant.design/), which has super high 
 
 For this project I also wanted to try out [Mapbox](https://www.mapbox.com/), an open map library which is built on top of OpenStreetMap. It's also super modern and well done, and offer way more flexibility than any other library I've used before. In addition, it was a pleasure using [Mapbox Studio](https://www.mapbox.com/mapbox-studio), their interactive map customization tool, which is an awesome product and enabled me lots of controls to be creative designing our base map.
  
-```grid|1
+```grid|1 
 ![](./mapbox.png)
 ``` 
 
@@ -197,22 +184,29 @@ I was also responsible for designing social media posts that would highlight the
 ![](./arts.png)
 ```
 
-We were glad with the organic coverage from different media channels, mainly with [Mobilize](https://www.mobilize.org.br/noticias/11986/um-mapa-com-quase-todas-as-ciclovias-do-brasil.html) and [ArchDaily](https://www.archdaily.com.br/br/933497/ciclomapa-um-mapa-colaborativo-da-infraestrutura-cicloviaria-das-cidades-brasileiras) which are big portals specialized on mobility.
+
+# Results
+
+Since its launch we can say that CicloMapa has grown to become the main platform for bike maps in Brazil, even without any money spent in advertising it.
+
+We're glad with the organic coverage from different media channels, mainly with [Mobilize](https://www.mobilize.org.br/noticias/11986/um-mapa-com-quase-todas-as-ciclovias-do-brasil.html) and [ArchDaily](https://www.archdaily.com.br/br/933497/ciclomapa-um-mapa-colaborativo-da-infraestrutura-cicloviaria-das-cidades-brasileiras) which are big portals specialized on mobility. One of ITDP's webinar that presented CicloMapa also got highlighted on [Hacker News's](https://news.ycombinator.com/item?id=30791874) front page, the legendary tech news portal by Y Combinator.
 
 <jumbo>
     <img src="./coverage.jpg"/>
 </jumbo> 
 
-
-# Results
+CicloMapa also had accepted presentations at important conferences, such as [FOSS4G (Free and Open Source for Geospatial Conference)](https://callforpapers.2021.foss4g.org/foss4g2021/talk/TDTR7F/), [Velocity 2018](https://ecf.com/projects/velo-city/velo-city-2018-rio-de-janeiro) and [FMB 10 (Forum Mundial de la Bicicleta)](https://www.youtube.com/watch?v=if5O6F-xC7I)
 
 <results-banner
     data='{
-        "brazilian cities": "320+",
-        "users / month": "900+",
-        "pageviews total": "300,000+"
+        "brazilian cities viewed": "737",
+        "users / month": "400",
+        "pageviews total": "700,000",
+        "avg user rating": "4.4/5"
     }'>
 </results-banner>
+
+This success guaranteed yearly budget updates from the client, which always gave us lots of freedom to design and build the platform's next steps. Proof of this trust is that in 2022, instead of jumping into building all feature requests we received throughout the years, we instead ran a major Product Discovery research that revealed big new opportunities for the platform. This project which might become a new case study here in my website at some point :)
 
 
 ## Links
@@ -220,7 +214,11 @@ We were glad with the organic coverage from different media channels, mainly wit
 <links-list
     items='[
         {
-            "label": "Website",
+            "label": "CicloMapa.org.br",
+            "url": "https://ciclomapa.org.br/"
+        },
+        {
+            "label": "Presentation video @ FOSS4G, 2021",
             "url": "https://ciclomapa.org.br/"
         },
         {
@@ -228,12 +226,12 @@ We were glad with the organic coverage from different media channels, mainly wit
             "url": "https://github.com/cmdalbem/ciclomapa"
         },
         {
-            "label": "Webinar video",
-            "url": "https://www.youtube.com/watch?v=IrPPbCnKPsI"
+            "label": "Educational website [Portuguese]",
+            "url": "https://uniaodeciclistas.org.br/atuacao/ciclomapa/"
         },
         {
-            "label": "How to contribute to OSM (tutorials)",
-            "url": "https://uniaodeciclistas.org.br/atuacao/ciclomapa/"
+            "label": "Launch webinar video, 2019 [Portuguese]",
+            "url": "https://www.youtube.com/watch?v=IrPPbCnKPsI"
         }
     ]'>
 </links-list> 
