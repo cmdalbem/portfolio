@@ -369,6 +369,10 @@ li::before {
   }
 } */
 
+button {
+  cursor: pointer;
+}
+
 .h6 {
   height: 32rem;
 }
