@@ -2,7 +2,7 @@
 projectType: 'case study'
 date: "2021-10"
 date2: "Now"
-lastUpdated: "2023-02"
+lastUpdated: "2023-04"
 title: "Nubank's Additional Cards"
 minibio: "Enabling people to extend their purchase power to loved ones."
 description: "Designing from end-to-end the first social product of the company's portfolio. The Additional Card is an extra card users may request to extend their purchase power to family and friends, and brings all the complexity of a full Credit Card product and meeting the needs of both the card owner and holder."
