@@ -5,7 +5,7 @@ date2: "Now"
 lastUpdated: "2023-04"
 title: "Nubank's Additional Cards"
 minibio: "Enabling people to extend their purchase power to loved ones."
-description: "The Additional Card is a common product, available at most banks, that lets users extend their purchase power to others. More than simply an extra physical credit card that lets someone purchase on your behalf, it's one of the main ways many people use to share their financial lives with spouses, parents, children, etc."
+description: "Designing from end-to-end the first social product of the company's portfolio. The Additional Card is an extra card users may request to extend their purchase power to family and friends. It brings all the complexity of a complete Credit Card product with the challenge of meeting the card owner's and cardholder's needs."
 metrics: ['Incremental NPS', 'Incremental avg purchase volume']
 tags: ['design', 'UX research']
 color: '#820ad1'
