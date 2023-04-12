@@ -113,11 +113,11 @@ After many months of internal tests and bug fixes, at the moment of writing this
 
 For the past months, I've been helping to monitor data and respond to user feedback. Apart from bugs, we're glad that most feature requests are already either in development or on our roadmap. Some of these you can see in the next section, "Next steps".
 
-Although we can already see an increase in customers' Purchase Volume, we still couldn't reach statistical evidence to assess changes in NPS.
+Although we can already see an increase in customers' Purchase Volume (how much each costumer spends on average on their credit card), we still couldn't reach statistical evidence to assess changes in NPS.
 
 <results-banner
     data='{
-        "cards requested": "95,000+",
+        "cards requested": "200,000+",
         "increase in purchase volume": "+ 15%",
         "increased customer NPS": "—"
     }'>
