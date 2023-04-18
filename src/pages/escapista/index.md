@@ -1,5 +1,5 @@
 ---
-projectType: 'project'
+projectType: 'personal'
 date: "2020-08"
 date2: "2021-04"
 title: "Escapista"

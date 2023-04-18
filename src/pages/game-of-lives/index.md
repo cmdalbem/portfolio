@@ -1,5 +1,5 @@
 ---
-projectType: 'project'
+projectType: 'personal'
 date: "2017-06"
 title: "Game of Lives"
 minibio: "A Virtual Reality game that aims to foster empathy for social issues."

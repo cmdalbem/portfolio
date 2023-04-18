@@ -43,6 +43,7 @@ class IndexPage extends React.Component {
   
     const caseStudies = posts.filter(i => i.node.frontmatter.projectType === 'case study');
     const projects = posts.filter(i => i.node.frontmatter.projectType === 'project');
+    const personalProjects = posts.filter(i => i.node.frontmatter.projectType === 'personal');
     
     return (
       <Layout>
@@ -110,10 +111,15 @@ class IndexPage extends React.Component {
           </HomeSection> */}
 
           <HomeSection title="Case studies" fullScreen
-            description="Here's a selection of projects in which I've played a major role and I'm very proud of.">
+            description="Here's a selection of professional projects in which I've played a major role and I'm very proud of.">
             <Projects posts={caseStudies}/> 
             <Projects mini posts={projects} />
-          </HomeSection> 
+          </HomeSection>
+
+          <HomeSection title="Personal projects" fullScreen
+            description="Things I built to help solve people's problems, practice new skills, or just for fun :)">
+            <Projects mini posts={personalProjects} />
+          </HomeSection>
           
           <HomeSection
             title="Speaking"

@@ -1,5 +1,5 @@
 ---
-projectType: 'project'
+projectType: 'personal'
 date: "2007-01"
 date2: "Now"
 title: "Photography"
