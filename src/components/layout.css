@@ -440,3 +440,29 @@ button {
 .gatsby-resp-image-wrapper {
   width: 100%;
 }
+
+/* Dark Mode*/
+@media (prefers-color-scheme:dark) {
+  html {
+    --red: #ED4934;
+    --orange: hsl(27, 100%, 55%);
+    /* --orange-light: hsl(27, 100%, 80%); */
+    /* --blue: #1B9393; */
+    /* --blue-light: hsl(180, 75%, 80%); */
+    --bg-color: hsl(48, 10%, 12%);
+    --bg-color2: hsl(48, 56%, 5%);
+  
+    --dark-gray: hsl(23, 30%, 90%);
+    --near-black: hsl(25, 15%, 85%);
+    --gray: hsl(20, 6%, 70%);
+    --silver: hsl(20, 10%, 60%);
+    --light-gray: hsl(48, 10%, 20%);
+    --near-white: hsl(48, 8%, 15%);
+  }
+
+  .silver { color: var(--silver) !important }
+  .bg-white { background-color: var(--bg-color) !important }
+  .bg-light-gray { background-color: var(--bg-color2) !important }
+  .bg-near-white { background-color: var(--near-white) !important }
+  .b--light-gray { border-color: var(--light-gray) !important }
+  }
