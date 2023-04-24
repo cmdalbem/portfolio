@@ -53,7 +53,7 @@ class IndexPage extends React.Component {
             <div className="relative vh-75 w-100">
               <Img
                 style={{position: 'absolute'}}
-                className="top-0-ns right-0-ns h-100-ns h-75 mt0-ns mt6 w-100 w-50-ns"
+                className="profilePicture top-0-ns right-0-ns h-100-ns h-75 mt0-ns mt6 w-100 w-50-ns"
                 fluid={this.props.data.file.childImageSharp.fluid}
                 alt="Silhouette of a man standing at the top of a hill with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
               />
