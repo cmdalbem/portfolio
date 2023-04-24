@@ -21,76 +21,71 @@ isHidden: true
 
 [Nubank](https://nubank.com.br/) was born in 2013 with the mission to fight complexity to empower people in their daily lives by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 75 million customers across Brazil, Mexico, and Colombia. Nubank is one of the most recognized digital product companies in the country and is often associated with products and services that are simple, intuitive, and transparent.
 
-## Customer Support at Nubank
-Since the creation of Nubank, the founders David, Cris, and Ed had a clear mission in mind: fighting complexity to empower people in their daily lives by reinventing financial services. As difficult as this task is, it was easy to find opportunities for this, and any Brazilian you asked could tell: abusive rates, complex products, and inefficient, cold customer service. This last point is familiar to banking services since we suffer from long waits, countless transfers, limited chatbots, endless menus, and unfriendly attendants in several services we use daily. From the beginning, the founders of Nubank knew that offering an effective, efficient, and humanized service was essential to differentiate the company in the market while compensating for the lack of physical branches.
 
-```grid|1
-![](./xpeer.png)
+## The team dedicated to building internal tools for customer support
+
+Nubank has developed an internal software platform, managed by the Customer Excellent Platform Business Unit (CXP BU), to handle high volumes of customer contact and maintain control over the process. CXP BU monitors operation metrics related to efficiency (e.g. customer waiting time) and quality (e.g. user satisfaction), and serves as a platform team for Developers, Designers, Product Managers, and Xpeers (the customer support agents who use it for daily work).
+
+```grid|1 
+![](./cxp.png "The logo I designed for CXP, the Customer Excellent Platform team.")
 ``` 
 
-And this is how the role of Xpeer was born, which remains today as a fundamental part of the customer experience that Nubank offers. Xpeers are our professionals in customer service and problem-solving. They understand our products and services like a few others. They also know how to listen to customers, understand their problems, and conduct the conversation in ways that respect the customer's time while reinforcing the human aspect of it.
-
-Nubank's customer service numbers are impressive. After all, it takes a lot of work to provide 24-hour support simultaneously in multiple channels for more than 80 million customers in various countries. We won't bother you with too many numbers now, but to give you an idea, since you started reading this article our support team has already assisted more than 200 people!
-
-
-## CXP: a team dedicated to building internal tools for customer support
-
-Nubank is well known for offering great experiences for its customers, from an app that is very easy to use to humanized customer support. But did you know we have lots of people focused on offering a great experience internally too?
-To guarantee that we'd be able to handle all this contact volume and that we will have control over these processes from the beginning, Nubank has invested in developing internally the software platform that supports this entire operation. The CXP BU (Customer Excellente Platform Business Unit) is the team that focuses on monitoring the operation's metrics and developing the products that Xpeers use in their day-to-day work. These metrics can be split into two groups:
-* Efficiency: customer waiting time, agents' idleness, etc.
-* Quality: CSAT (user satisfaction), number of completed calls, etc.
-
-In addition to being a product team, CXP is also what we call a platform team, serving three different layers of users and stakeholders whose needs need to be considered. We provide the tools and documentation that will allow Developers, Designers, and PMs across Nubank. At the same time, Xpeers depend on using it for their daily work. All this without forgetting the main stakeholder impacted by all this work: the customer. 
-
-Only by being a platform, and having a core and small team taking care of this platform, that the software can scale and grow, enabling its users to extend it to suit the needs of their own products and features.
+By having a small team managing the platform, it can scale and grow, allowing users to extend it to suit their own product and feature needs. The main stakeholder impacted by this work is the customer.
  
 ```grid|1
 ![](./stakeholders.png "The 3 layers of the product: the Platform, where people build their custom views, the UI, which agents use for their day-to-day job, and the Customer Support itself which impacts directly the customer.")
 ``` 
 
-The product in the middle of all this is Shuffle, which is the tool used by Xpeers on a day-to-day basis to carry out the vast majority of their work. Like most of the rest of the platform, it was an internal creation of Nubank, made especially for our needs and systems, based on a microservices architecture. Despite looking complex, Shuffle's main screen is divided into 5 main parts, from left to right:
+## The product
+
+The product in the middle of all this is Shuffle, which is the tool used by Xpeers on a day-to-day basis to carry out the vast majority of their work. Like most of the rest of the platform, it was an internal creation of Nubank, made especially for our needs and systems, based on a microservices architecture. Shuffle's main screen is divided into 5 main parts:
 
 <jumbo caption="Shuffle, the main CX Platform tool, and its parts.">
     <img src="./parts.png"/>
 </jumbo> 
 
-* [1] The sidebar on the left offers navigation through the main parts of Shuffle, which are the different service channels. If you are taking the Chat channel, it will also bring the other simultaneous calls that Xpeers can take. Lastly, on the bottom, the Autotake component is where agents choose how many simultaneous calls they want to take.
-* [2] An integrated chat interface with the customer. Apart from the messages of both parts, it shows some metadata such as the predicted contact reason, transfers made previously, and even a complete history of previous contacts from that customer.
-* [3] A "job" or a "ticket" is the representation in the system of a customer issue. This top bar, called Job Bar, is where the agent classifies the issue and controls the job to either mark it as solved or transfer it to another team. Agents can also "skip" a job to the next agent in line. They usually do it if they're already too busy, or believe they're not the best to solve that problem.
-* [4] PersonDeck: The heart of Shuffle, this is where all customer information lives. In it, we have the tags, which identify unique properties of the clients, and the widgets, which encapsulate the information and actions that an Xpeer may need to do during a service. Fun fact: it's called a "deck" because it's made of "cards" - now you might get where the name Shuffle comes from ;)
+* [1] The **sidebar** on the left of Shuffle offers navigation through the different service channels, including Chat, and allows Xpeers to see other simultaneous calls they can take. The Autotake component on the bottom, which I participated on its creation too, allows agents to choose how many simultaneous calls they want to take.
 
-Not visible here, but an essential part of Shuffle is the canned responses system. This feature helps guarantee the quality of service by assisting Xpeers to remember all information that needs to be given to or requested, as well as bringing more consistency to the thousands of attendants. We'll cover this later in this article.
+* [2] Shuffle has an integrated chat interface that displays metadata, such as predicted contact reason, transfers made previously, and a complete history of previous contacts from that customer.
+
+* [3] The top bar of Shuffle, called **Job Bar**, represents a customer issue or ticket, and agents use it to classify the issue, control the job, mark it as solved, or transfer it to another team. Agents can also skip a job to the next agent in line.
+
+* [4] **PersonDeck** is the heart of Shuffle, where all customer information resides. It contains tags that identify unique properties of clients and widgets that encapsulate the information and actions an Xpeer may need to take during a service. (Fun fact: the term "deck" comes from the fact that it's made up of "cards.")
+
+Not visible here, but an essential part of Shuffle is the **Canned Responses System**. This feature helps guarantee the quality of service by assisting Xpeers to remember all information that needs to be given to or requested, as well as bringing more consistency to the thousands of attendants. We'll cover this later in this article.
 
 # Broadening and deepening the understanding of our users
 
-As a designer joining the team, my first reflex was to get to know more about the users: who they are, what they do, and what are their motivations and pain points. Getting close to them was easy since they're Nubank employees. They're colleagues who, if it weren't for Nubank's home office policy, could be sitting next to me. Even so, we realized that not everyone building Shuffle had such close contact, except for occasional meetings with operation leaders or scattered feedback.
+<jumbo caption="Part of the documentation I organized in our team's Notion of all the User Shadowing sessions. I kept metadata about the user like what's their experience and what kind of customer issue they're focused on.">
+    <img src="./shadowings.png"/>
+</jumbo>
 
-A fascinating existing ritual was the Xpeer Xperience: a whole day dedicated to all Nubankers working as an Xpeer. Although the ritual helped put us in the shoes of our users, it was not enough: we'd use different machines than them, have different levels of knowledge, different motivations, and so on. It was crucial to tap into the Xpeer mindset in a more direct, less biased way.
-
-This is how a new ritual was born, the Weekly Shadowing. Once per week, we'd have one hour dedicated to observing Xpeers in their "natural habitat", doing their work while we watched how they used the tools we helped build and maintain. Despite being difficult, it was essential to avoid interacting with the person being observed, as we wanted to have the closest possible experience to their natural behavior. We had to avoid them entering a "demonstration mode", in which they'd involuntarily falsify a way of working that made them seem like better professionals. We provided a little playbook for guests to ensure these kinds of things were clearly aligned before joining the session.
-
-The weekly shadowings, in addition to creating greater empathy and connection between the team and our users, helped reveal great insights and made us review many of the preconceived ideas we had about how the product was actually used. One of the most striking examples is that, for someone who doesn't work with the tool every day, Shuffle can appear as having an overwhelming UI that demands a lot of cognitive effort. But we noticed that when you use this tool every day for several hours, you become professional in using it, and memorize the location of all information and actions - Xpeers were ninjas using Shuffle! If you use any professional tool for work, like Photoshop or Figma, you can relate to this steeper-than--normal learning curve.
+As a designer joining the team my first priority was to understand the users - their motivations, pain points, and how they interacted with the product. Despite having easy access to Nubank employees who were also Xpeers, we realized that there was a need for a more direct, less biased way to tap into the Xpeer mindset. This led to the creation of a new ritual - the weekly shadowing, which involved observing Xpeers in their "natural habitat" for an hour without interacting with them. This allowed us to gain greater empathy and connection with the users, and also helped reveal great insights, making us review many preconceived ideas we had about the product's usage.
 
 ```grid|1
 ![](./shadow_playbook.png "The Shadowing Playbook provided a quick guide for observers to know what themes to pay attention to and other good practices for participating in this kind of session.")
 ``` 
 
-Another important lesson learned was that a large volume of small feedback actually never reached the team. These agents' day-to-day work was very hectic, and they prioritized bringing to us only more severe problems that would affect the operation. Moreover, as creative and resilient people, they often managed to find a way around the small frictions of the tool.
+One important lesson we learned through the weekly shadowings was that a large volume of small feedback never reached the team, and the agents prioritized bringing only severe problems that affected the operation. This meant that they didn't report performance problems on their machines as much, blaming themselves or other factors like the Wi-Fi or VPN. This was a problem that didn't appear during the Xpeer Xperience, as developers and designers at Nubank use high-performing machines.
 
-This meant, for example, that they didn't report the performance problems the tool had on their machine so much - they'd think it was their fault, or they'd blame the wifi or the VPN. This is one of the problems that didn't appear when we did the Xpeer Xperience, as Developers and Designers at Nubank use extremely performant machines. 
+```grid|1
+![](./blueprint.png "A blueprint I designed to summarize some of the learnings we had about how our users work. It depicts how the journey of different stakeholders meet, their main actions and what tools are used. Click to see it larger.")
+``` 
 
-<jumbo caption="A simplified schematic of how the customer's and Xpeer's journeys intersect.">
-    <img src="./journey.png"/>
+We also discovered that despite Shuffle appearing overwhelming to someone who doesn't use it every day, Xpeers who use it for several hours become professional in using it and memorize the location of all information and actions, making them ninjas in using the tool. Finally, we realized that if our mission was to provide tools for the customer support team, then our objectives should be aligned with them. Thus, everything we did to improve Shuffle should impact and improve the operation and ultimately be felt by the customer. These insights led us to create a more effective and user-friendly product for Nubank's employees.
+
+<jumbo caption="The Agents' Pain Points Repository: a live repository for continuous discovery of agents' pain points. These insights can come from multiple research sources, but it's here they find clarity in cohesion. I created this documentation as a to guide whoever would be working on products that are used by agents to consume from and contribute to extend it.">
+    <img src="./repository.gif"/>
 </jumbo>
-
-At the same time, the team, mostly comprised of seasoned back-end developers, was highly attentive to metrics such as system stability and network performance. Still, they only considered the back-end side (e.g., how fast the services respond) and not the front-end side (e.g., how quickly the browser renders the page and makes it available for interaction).
-
-When in doubt about what should be the success metrics of Shuffle we looked at why we did what we did. If our mission was to provide tools for the customer support team, our objectives should be aligned with them. Thus everything we do to improve Shuffle should impact and improve our operation and ultimately be felt by the customer.
 
 
 # Prioritizing the problems and solutions
 
 As a Product Designer, it was not enough to bring dozens of user insights and learnings to the team but also to help them gain clarity on what was most important and what to do next. And here, we're not just talking about focusing on what most impacts the user, but also what impacts the whole: from other users of the platform (which are multilayered, as we covered earlier), the customer itself, and what makes sense for the business and product strategy.
+
+<jumbo caption="Before/after: instead of a full redesign, by compounding multiple small changes we could drastically change the overall look & feel, making users feel like the product was not stuck in time. Most importantly, the changes improved not only form but function, driving real results by impacting the users' productivity and satisfaction with the tool.">
+    <img src="./shuffle_before_after.gif"/>
+</jumbo>
 
 At this point, it was essential to balance the company's strategic drivers, the product's mission, and how different project ideas fit into this. For example, redesigning the interface components and creating a Design System could generate a great visual impact and empower Designers. But, compared to other bigger issues, the usability improvements of these projects would be minimal, and we'd probably not detect a significant increase in agents' productivity.
 
@@ -98,31 +93,38 @@ At this point, it was essential to balance the company's strategic drivers, the 
 ![](./redesigns.jpg "By talking with stakeholders and co-creating with the team we mapped and correlated the main product objectives, improvement ideas, and strategic company drivers. This diagram is a simplified version for presentation purposes. Solid lines represent clear impact and dotted lines indirect impact.")
 ```  
 
-We also realized that there were a lot of "low-hanging fruits": minor, low-effort improvements that improved the users' quality of life and, together, could make a real dent in the product's usability. While we invested in in-depth Discovery to investigate more significant issues, we've tackled these small issues bit by bit, generating a much more positive atmosphere among Xpeers, who said that Shuffle hadn't had improvements for a long time. Here are just some of the examples: 
-* **Notifications**: During Shadowing sessions, we noticed that Xpeers frequently switched to other browser tabs to investigate issues. However, Shuffle did not alert them if there were new customer messages in the meantime. We added sound effects for different notifications and a custom favicon and page title to reflect the status.
-* **Chat panel**: From the very first sessions, we noticed how sluggish it was to type. The problem was so severe that we often observed agents typing their messages in the browser address bar or another simple text editor to later copy and paste into Shuffle. As engineers were migrating this panel's underlying technology, we prioritized delivering better performance.
-* **Autotake**: before, users had to manually request new tickets, which was tiring and inefficient even if there was a keyboard shortcut. In the field, we even heard reports of people leaving small weights on their keyboards to keep pressing the action shortcut. Autotake is, as the name implies, a system with a minimal UI where the Xpeer sets the number of chats they wish to take at the same time, press "play", and the system will automatically allocate these as they come.
-* **Typography**: moving from Open Sans to Inter, we increased the legibility of small text due to it being more optimized for screens. It also reduced screen real-estate usage due to its taller x-height, which works better for high-density designs.
-* **Keyboard shortcuts**: Essential for those who work with professional tools, they were not reliable due to bugs and we identified opportunities for new ones. One example was that there was a shortcut for concluding a job but not for choosing the contact reason from a dropdown menu, which had to be done with the mouse cursor.
+## Low-hanging fruits
 
+We also realized that there were a lot of "low-hanging fruits": minor, low-effort improvements that improved the users' quality of life and, together, could make a real dent in the product's usability.
+
+While we invested in in-depth Discovery to investigate more significant issues, we've tackled these small issues bit by bit, generating a much more positive atmosphere among Xpeers, who said that Shuffle hadn't had improvements for a long time. Here are just some of the examples: 
+* **New notifications**: During Shadowing sessions, we noticed that Xpeers frequently switched to other browser tabs to investigate issues. However, Shuffle did not alert them if there were new customer messages in the meantime. We added sound effects for different notifications and a custom favicon and page title to reflect the status.
 
 ```grid|1
 ![](./notifications.png "Little big details: by cleaning up the browser tab title and showing notifications there, we help agents that need to multitask to not leave the customer waiting. Users also reported this reduced their anxiety of going deep in their problem-solving on other tabs.")
-```  
+```
 
-All these improvements, despite being very difficult to measure their impact individually when shipped, helped give a feeling of a product that was no longer frozen in time and made the Xpeers trust the team and ask for more. Following are two bigger projects we ran while these small changes were being shipped.
+* **Chat panel revamp**: From the very first sessions, we noticed how sluggish it was to type. The problem was so severe that we often observed agents typing their messages in the browser address bar or another simple text editor to later copy and paste into Shuffle. As engineers were migrating this panel's underlying technology, we prioritized delivering better performance.
+* **Autotake**: before, users had to manually request new tickets, which was tiring and inefficient even if there was a keyboard shortcut. In the field, we even heard reports of people leaving small weights on their keyboards to keep pressing the action shortcut. Autotake is, as the name implies, a system with a minimal UI where the Xpeer sets the number of chats they wish to take at the same time, press "play", and the system will automatically allocate these as they come.
+* **Typography update**: moving from Open Sans to Inter, we increased the legibility of small text due to it being more optimized for screens. It also reduced screen real-estate usage due to its taller x-height, which works better for high-density designs.
+* **Mew keyboard shortcuts**: Essential for those who work with professional tools, they were not reliable due to bugs and we identified opportunities for new ones. One example was that there was a shortcut for concluding a job but not for choosing the contact reason from a dropdown menu, which had to be done with the mouse cursor.
+* **Dark mode**: an experimental "mod" I coded myself with just CSS and a Chrome Plugin.
 
-<jumbo caption="Before/after: instead of a full redesign, by compounding multiple small changes we could drastically change the overall look & feel, making users feel like the product was not stuck in time. Most importantly, the changes improved not only form but function, driving real results by impacting the users' productivity and satisfaction with the tool.">
-    <img src="./shuffle_before_after.gif"/>
-</jumbo>
+
+```grid|1
+![](./darkmode.png "An experimental version of a Dark Mode for Shuffle.")
+``` 
+
+All these improvements, despite being very difficult to measure their impact individually when shipped, helped give a feeling of a product that was no longer frozen in time and made the Xpeers trust the team and ask for more.
+
+Following are two bigger projects we ran while these small changes were being shipped.
 
 
 
-# Redesigning the canned responses experience
+
+# Project 1: Redesigning the canned responses experience
 
 While analyzing and organizing the dozens of insights, our attention started to gravitate toward a set of issues regarding how agents used canned responses, which are ready-made answers to common customer questions and problems. Although Shuffle had its own huge database of canned responses with an integrated search engine, most agents preferred to use a sketchy Chrome extension for handling those!
-
-Organizing a repository of all insights we identified was crucial to navigate in this complex and new universe, helping us identify patterns while keeping everyone on the same page.
 
 In addition to bugs that made users lose all their data and usability issues that led to inefficiencies and errors, there was a high-security risk of using an external browser extension over which we had no governance. Apart from these problems, we were leaving on the table a huge opportunity to apply usage data to improve our Artificial Intelligence models, which are the CX platform's cornerstone.
 
@@ -143,8 +145,7 @@ After prototyping and testing several concepts with users, we arrived at a new s
 </jumbo>
  
 
- 
-# Optimizing the visualization of customers' data
+# Project 2: Optimizing the visualization of customers' data
 
 One of the most significant signs that the product had not scaled so well with the company and agents' needs is the Widgets area. While there might have been half a dozen in the beginning, we were currently approaching more than 50 widgets! Even if agents had very different tasks and customer problems to solve, the way Shuffle organized and sorted these widgets was the exact same for everyone.
 
@@ -167,7 +168,9 @@ Since many ideas were on the table, we built several small wireframe prototypes 
 ``` 
 
 We concluded that a "low-hanging fruit" would be to implement filters for the widgets, organizing them by categories. These filters would be "remembered" by Shuffle for each agent, thus making a lot fewer widgets needed to be loaded and potentially improving one of the biggest problems reported by users: the software performance.
+
 Another simple-to-implement feature that would generate a lot of value is favoriting widgets. A simple extra button in the lower right corner would allow users to choose their most used widgets to always be on top of the rest.
+
 Combining these two features would allow an entirely new level of customization of widget visibility and ordering. Although it was not a fully realized flexibility, this was much easier to implement and use than a full-blown PersonDeck editor for each agent.
 
 
@@ -178,9 +181,9 @@ Combining these two features would allow an entirely new level of customization 
 
 # Conclusion & learnings
 
-Designing an internal, professional product such as Shuffle was very different from anything I've done before. However, keeping in mind the principles of good Design, all the rest follows. Here is a summary of the main learnings we had:
+Designing an internal, professional product such as Shuffle was very different from anything I've done before. However, keeping in mind the principles of good Design, all the rest follows. Here is a summary of the main learnings I had:
 * Yes, offering great customer support is a lot about people. But providing the right tools to those people is equally important. Providing a great experience for our Xpeers is one of the best ways of leading by example and inspiring them to offer a great experience to our customers.
 * Putting ourselves in the user's shoes is not enough since we might be very different from them. When the user is so different from the people building the products, the role of Design and Research becomes even more important. Observing the agents in their day-to-day work with Shadowing sessions and doing interviews was arguably the best way to understand them deeply.
 * An internal product that is a platform not only has many stakeholders with potentially conflicting interests, but it also has many users. It's crucial to map them, their needs, and how they intersect or not.
 
-We believe and hope that this work has set a foundation for future work, which is currently being done by an even larger team that nowadays is focusing on improving Shuffle. Even if a complete overhaul of the product was not feasible before due to too many uncertainties, after many learnings, this is being considered and might be a reality very soon. So, stay tuned for future articles on Designing Shuffle.
+I believe and hope that this work has set a foundation for future work, which is currently being done by an even larger team that nowadays is focusing on improving Shuffle. Even if a complete overhaul of the product was not feasible before due to too many uncertainties, after many learnings, this is being considered and might be a reality very soon.
