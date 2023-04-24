@@ -470,6 +470,10 @@ button {
     filter: brightness(.65) contrast(1.5) grayscale(20%);
   }
 
+  img {
+    filter: brightness(0.95);
+  }
+
   .project-card:hover .project-card--cover {
     box-shadow: hsla(0, 29%, 73%, 0.1) 0px 18px 35px, hsla(0, 0%, 50%, 0.3) 0px 9px 18px -5px;
   }
