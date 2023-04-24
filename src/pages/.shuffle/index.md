@@ -116,6 +116,11 @@ While we invested in in-depth Discovery to investigate more significant issues, 
 ```
 
 * **Typography update**: moving from Open Sans to Inter, we increased the legibility of small text due to it being more optimized for screens. It also reduced screen real-estate usage due to its taller x-height, which works better for high-density designs.
+
+```grid|1
+![](./contactreason.png "The Contact Reason Dropdown was a crucial part of the Shuffle UI and was a great "low-hanging fruit". The original version had serious legibility issues, so we quickly redesigned it and added keyboard shortcuts to improve agents' speed when doing this mandatory step.")
+```
+
 * **New keyboard shortcuts**: Essential for those who work with professional tools, they were not reliable due to bugs and we identified opportunities for new ones. One example was that there was a shortcut for concluding a job but not for choosing the contact reason from a dropdown menu, which had to be done with the mouse cursor.
 * **Dark mode**: an experimental "mod" I coded myself with just CSS and a Chrome Plugin.
 
