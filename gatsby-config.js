@@ -80,7 +80,7 @@ module.exports = {
               quality: 90,
               linkImagesToOriginal: true,
               showCaptions: true,
-              backgroundColor: '#ffffff',
+              backgroundColor: 'transparent',
             },
           },
           'gatsby-remark-smartypants',
