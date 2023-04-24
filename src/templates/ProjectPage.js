@@ -202,7 +202,7 @@ class ProjectPage extends React.Component {
                   // </div>
                   <a
                     href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                    className="dib f5 fw6 link pv3 ph5 ba dim"
+                    className="dib f5 fw6 link pv3 ph5 ba bn dim"
                     style={
                       { 
                         backgroundColor : post.frontmatter.color,
