@@ -170,8 +170,17 @@ export function markdownRenderer(isFullWidth) {
                 </div>
             ),
             "video-container": props => (
-                <div className={imageMargins}>
-                    {props.children}
+                <div
+                    className={props.jumbo ? bigImageMargins : imageMargins}
+                    style={props.jumbo ? {maxWidth: 1440, marginLeft: 'auto', marginRight: 'auto'} : {}} // copy styles from gatsby-resp-image-wrapper
+                    >
+                    { props.children }
+                    {
+                        props.caption &&
+                        <figcaption className={defaultMargins + " mt2 f6 dark-gray tc"}>
+                            {props.caption}
+                        </figcaption>
+                    }
                 </div>
             ),
             "results-banner": ResultsBanner,

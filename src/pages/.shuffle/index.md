@@ -16,9 +16,10 @@ isHidden: true
 # Context
 
 ## The company
-```grid|1
+
+<!-- ```grid|1
 ![](./nubank.jpg) 
-``` 
+```  -->
 
 [Nubank](https://nubank.com.br/) was born in 2013 with the mission to fight complexity to empower people in their daily lives by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 75 million customers across Brazil, Mexico, and Colombia. Nubank is one of the most recognized digital product companies in the country and is often associated with products and services that are simple, intuitive, and transparent.
 
@@ -131,10 +132,16 @@ While we invested in in-depth Discovery to investigate more significant issues, 
 
 All these improvements, despite being very difficult to measure their impact individually when shipped, helped give a feeling of a product that was no longer frozen in time and made the Xpeers trust the team and ask for more.
 
-<jumbo caption="Before/after: instead of a full redesign, by compounding multiple small changes we could drastically change the overall look & feel, making users feel like the product was not stuck in time. Most importantly, the changes improved not only form but function, driving real results by impacting the users' productivity and satisfaction with the tool.">
+<!-- <jumbo caption="Before/after: instead of a full redesign, by compounding multiple small changes we could drastically change the overall look & feel, making users feel like the product was not stuck in time. Most importantly, the changes improved not only form but function, driving real results by impacting the users' productivity and satisfaction with the tool.">
     <img src="./shuffle_before_after.gif"/>
-</jumbo>
+</jumbo> -->
 
+<video-container jumbo="true" caption="Before/after: instead of a full redesign, by compounding multiple small changes we could drastically change the overall look & feel, making users feel like the product was not stuck in time. Most importantly, the changes improved not only form but function, driving real results by impacting the users' productivity and satisfaction with the tool."> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./beforeafter.mp4" type="video/mp4">
+    </video> 
+</video-container>
+ 
 Following are two bigger projects we ran while these small changes were being shipped.
 
 
@@ -162,9 +169,15 @@ After prototyping and testing several concepts with users, we arrived at a new s
 * Instead of an interstitial modal that covered the whole screen (think of something like macOS' Spotlight), the winning design was a sidebar that allowed agents to keep an eye on the chat and widgets while searching for canned responses.
 * Several improvements on how the search worked, such as being more flexible with typos and accented characters and also being more contextual, ranking the results based on the agent's team and current case classification.
 
-<jumbo caption="The final prototype for the new Shuffle integrated system for searching, managing and using canned responses.">
+<!-- <jumbo caption="The final prototype for the new Shuffle integrated system for searching, managing and using canned responses.">
     <img src="./macros.gif"/>
-</jumbo>
+</jumbo> -->
+
+<video-container jumbo="true" caption="The final prototype for the new Shuffle integrated system for searching, managing and using canned responses."> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./macros.mp4" type="video/mp4">
+    </video> 
+</video-container>
  
 
 # Project 2: Optimizing the visualization of customers' data
@@ -174,7 +187,7 @@ One of the most significant signs that the product had not scaled so well with t
 During the Shadowing Sessions, we often saw agents overlooking critical info on the customer profile. We hypothesized that this was caused by an interface that had a high cognitive load and poorly structured information architecture and visual hierarchy, all negative effects of that sea of widgets.
 
 ```grid|1
-![](./workshops.png "Doing workshops with the agents was one of the most effective ways to have more clarity on their problems and co-creating solutions. Since we were exploring ways to better organize the widgets information, one of the activities was a classic Information Architecture technique: the Card Sorting.")
+![](./workshops.png "Doing workshops with the agents was one of the most effective ways to have more clarity on their problems and co-creating solutions. Since we were exploring ways to better organize the widgets information, one of the activities was a classic Information Architecture technique: the Card Sorting (click to see it larger).")
 ``` 
 
 From talking with agents, facilitating some co-creation workshops, and taking a close look at the data, we mapped the main objectives and constraints for this project:
@@ -190,7 +203,7 @@ From talking with agents, facilitating some co-creation workshops, and taking a 
 Since many ideas were on the table, we built several small wireframe prototypes to test the different concepts. After user-testing those, we gathered the engineering and product team to discuss them using a Decision Matrix technique.
 
 ```grid|1
-![](./decisionmatrix.png "A snapshot of our Decision Matrix, a framework for prioritizing ideas based on multiple dimensions.")
+![](./decisionmatrix.png "A snapshot of our Decision Matrix, a framework for prioritizing ideas based on multiple dimensions. Click to see it larger.")
 ``` 
 
 We concluded that a "low-hanging fruit" would be to implement filters for the widgets, organizing them by categories. These filters would be "remembered" by Shuffle for each agent, thus making a lot fewer widgets needed to be loaded and potentially improving one of the biggest problems reported by users: the software performance.
