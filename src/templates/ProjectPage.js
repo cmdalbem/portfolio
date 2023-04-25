@@ -58,9 +58,9 @@ class ProjectPage extends React.Component {
           <meta name="twitter:description" content={post.frontmatter.minibio}/>
         </Helmet>
         
-        {/* <BrowserView>
+        <BrowserView>
           <ReadingProgressBar barColor={post.frontmatter.color}/>
-        </BrowserView> */}
+        </BrowserView>
         
         <div className="center layoutMaxWidth">
           {/* Cover image */}
