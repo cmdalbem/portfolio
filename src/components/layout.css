@@ -339,6 +339,9 @@ li::before {
   background-color: var(--bg-color2);
 }
 
+.opacity-animate {
+  transition: opacity 800ms ease-out;
+}
 
 /* ------------------ */
 /* Tachyons Overrides */
@@ -442,8 +445,8 @@ button {
 }
 
 /* Dark Mode*/
-@media (prefers-color-scheme:dark) {
-  html {
+/* @media (prefers-color-scheme:dark) { */
+  body.dark {
     --red: #ED4934;
     --orange: hsl(27, 100%, 55%);
     /* --orange-light: hsl(27, 100%, 80%); */
@@ -460,25 +463,21 @@ button {
     --near-white: hsl(48, 8%, 15%);
   }
 
-  .silver { color: var(--silver) !important }
-  .bg-white { background-color: var(--bg-color) !important }
-  .bg-light-gray { background-color: var(--bg-color2) !important }
-  .bg-near-white { background-color: var(--near-white) !important }
-  .b--light-gray { border-color: var(--light-gray) !important }
+  body.dark .silver { color: var(--silver) !important }
+  body.dark .bg-white { background-color: var(--bg-color) !important }
+  body.dark .bg-light-gray { background-color: var(--bg-color2) !important }
+  body.dark .bg-near-white { background-color: var(--near-white) !important }
+  body.dark .b--light-gray { border-color: var(--light-gray) !important }
   
-  .profilePicture img {
+  body.dark .profilePicture img {
     filter: brightness(.65) contrast(1.5) grayscale(20%);
   }
 
-  img {
+  body.dark img {
     filter: brightness(0.8);
   }
 
-  .project-card:hover .project-card--cover {
+  body.dark .project-card:hover .project-card--cover {
     box-shadow: hsla(0, 29%, 73%, 0.1) 0px 18px 35px, hsla(0, 0%, 50%, 0.3) 0px 9px 18px -5px;
   }
-
-  /* .dim:focus, .dim:hover {
-    filter: brightness(1.5);
-  } */
-}
+/* } */

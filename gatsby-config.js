@@ -4,6 +4,7 @@ module.exports = {
     siteUrl: 'https://cristianodalbem.com/',
   },
   plugins: [
+    'gatsby-plugin-dark-mode',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,

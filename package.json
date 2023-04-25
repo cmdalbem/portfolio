@@ -7,6 +7,7 @@
     "gatsby": "^5.7.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-catch-links": "^5.7.0",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-google-analytics": "^5.7.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-google-tagmanager": "^5.7.0",
