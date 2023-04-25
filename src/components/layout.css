@@ -471,7 +471,7 @@ button {
   }
 
   img {
-    filter: brightness(0.95);
+    filter: brightness(0.7);
   }
 
   .project-card:hover .project-card--cover {
