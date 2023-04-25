@@ -39,14 +39,14 @@ class Header extends React.Component {
         <BrowserView>
           <ThemeToggler>
             {({ theme, toggleTheme }) => (
-              <label className='fixed pa2 mt3 top-1 right-1 pointer dim'>
+              <label className='fixed pa3 bottom-0 left-0 pointer'>
                 <input
                   type="checkbox"
                   className='input-reset'
                   onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
                   checked={theme === 'dark'}
                 />
-                <span className="dark-gray">
+                <span className="gray">
                   <span className="absolute right-0 opacity-animate" style={{opacity: theme === 'dark' ? 1 : 0}}>
                     { moonIcon }
                   </span>
