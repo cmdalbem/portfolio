@@ -147,7 +147,7 @@ class Talk extends React.Component {
           </div> */}
         </div>
 
-        <div className={`mt1 absolute top-0 right-0 bg-white ph2 ${this.state.hover ? 'o-100' : 'o-0'}`}>
+        <div className={`mt1 absolute bottom-0 right-0 bg-white ${this.state.hover ? 'o-100' : 'o-0'}`}>
           View {linkLabel} ↗
         </div>
       </a>
