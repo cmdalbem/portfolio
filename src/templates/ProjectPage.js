@@ -81,13 +81,13 @@ class ProjectPage extends React.Component {
           <Fade duration={1500} delay={1000}>
             <div className="flex flex-row-ns flex-column mb4">
               <div className="w-60-ns">
-                <h1 className="f1 mt0 fw7 mb3 lh-solid tracked-tight" style={{color: post.frontmatter.color}}>
+                <h1 className={`f1 mt0 fw7 mb3 lh-solid tracked-tight ${post.frontmatter.color ? '' : 'dark-gray'}`} style={{color: post.frontmatter.color}}>
                   {post.frontmatter.title}
                 </h1>
                 {
                   post.frontmatter.description &&
-                  <div className="mb3 dark-gray">
-                    <div className='f3 dark-gray lh-copy'>
+                  <div className="mb3 gray">
+                    <div className='f3 gray lh-copy'>
                       {post.frontmatter.description}
                     </div>
                   </div>
@@ -101,7 +101,11 @@ class ProjectPage extends React.Component {
                   {
                     post.frontmatter.lastUpdated &&
                     <div className='di'>
-                      <span className='ph1'> · </span>
+                      {
+                        readingTime.minutes > 1 &&
+                        post.frontmatter.lastUpdated &&
+                          <span className='ph1'> · </span>
+                      }
                       <span>Last updated on {lastUpdated}</span>
                     </div>
                   }
