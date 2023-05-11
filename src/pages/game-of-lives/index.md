@@ -2,7 +2,7 @@
 projectType: 'personal'
 date: "2017-06"
 title: "Game of Lives"
-minibio: "A Virtual Reality game that aims to foster empathy for social issues."
+minibio: "A VR game that aims to foster empathy for social issues. Winner of the first Isobar International Hackathon."
 description: "A story-telling Virtual Reality game that challenges the player to see the world from other people’s eyes. Winner of the first Isobar International Hackathon."
 tags: ['game design']
 team: "André Trevisani, Diego Cunha, Diego Tomasi, Leonardo Schenfeld, Victória Aiello"

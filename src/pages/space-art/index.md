@@ -4,7 +4,7 @@ date: "2004"
 date2: "2007"
 title: "Space Art"
 cover: "./cover.png"
-minibio: "My first contact with digital design, at 14 years old, creating space art wallpapers."
+minibio: "My first contact with Design at 14 years old creating Space Art digital illustrations."
 description: "My first contact with digital art, the birth of my aesthetic self. Making space wallpapers got me started with digital design tools and with a vibrant community of online artists and designers called DeviantArt."
 tags: ['illustrator']
 fullWidth: true

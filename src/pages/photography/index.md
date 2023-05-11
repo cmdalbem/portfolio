@@ -7,7 +7,7 @@ tags: []
 cover: "./cover.png"
 hover: '/covers/photography.gif'
 fullWidth: true
-minibio: "An overview of my photography work since 2007."
+minibio: "One of my oldest hobbies. An overview of my photography work since 2007."
 description: "Photography has been for many years the main way in which I try to express my view of the world: sometimes sensible, sometimes critical, sometimes just aesthetic. This is a special collection of some of the pictures, trips, people and places I hold nearest to my heart."
 --- 
 

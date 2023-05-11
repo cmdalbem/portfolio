@@ -3,8 +3,8 @@ projectType: 'personal'
 date: "2018-05"
 date2: "2018-06"
 title: "Bicicultura PWA"
-minibio: "A simple web app for the biggest brazilian conference on bike culture."
-description: "A simple web app for improving attendees' experience in the biggest brazilian conference on bike culture."
+minibio: "A simple app for the biggest brazilian conference on bike culture I designed and coded as a volunteer."
+description: "A simple Progressive Web App for the biggest brazilian conference on bike culture I designed and coded as a volunteer."
 tags: ['design','front-end']
 roles: "Front-end Development, UX Design"
 cover: './cover.png'
