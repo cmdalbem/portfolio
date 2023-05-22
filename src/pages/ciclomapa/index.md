@@ -30,7 +30,7 @@ We've leveraged the data and collaborativeness of [OpenStreetMap (OSM)](https://
 As the main stakeholders of the project, my first activity was conducting a workshop using the Lean Canvas framework to ensure alignment on what we were going to build.
 
 ```grid|1
-![](./leancanvas.jpg "The Lean Canvas was an useful tool to get alignment on the team of the main aspects of the product.)
+![](./leancanvas.jpg "The Lean Canvas was an useful tool to get alignment on the team of the main aspects of the product.")
 ```
  
 We decided the main problems we wanted to solve were: 
@@ -48,9 +48,9 @@ We also found out some of our “unfair” advantages: UCB and ITDP are two of t
 
 Our first step was diving into OSM documentation and learning about cycling infrastructures. Fortunately, we had on the team a specialist on OSM who helped us abstract the super granular and technical tags into something more accessible.
 
-```grid|1
+<!-- ```grid|1
 ![](./types.png "The main types of bike paths and their respective location in the quality and safety gradient.")
-```
+``` -->
 
 <jumbo caption="Documenting how we'd model the data and the information would be shown to the users, including labels, textual descriptions, and visual representations of data. Spreadsheets are a potent prototyping tool that designers often overlook!">
     <img src="./layers.png"/>
