@@ -100,26 +100,26 @@ With the references in mind and the well-defined typologies, I started sketching
     <img src="./tech.png"/>
 </jumbo>
 
+At this point I was iterating on the prototype and validating with the team and a little user community we created in Telegram. However we knew that such a complex interactive product would be hard to validate solely on Figma prototypes. So, as soon as we had the basic features and mechanics set, I started coding a MVP.
 
 
 # Implementing
 
 As the only developer on the team, it’s always a challenge to separate the engineering and design mindsets in the process. I forced myself to always ideate on Figma first, validating with the peers and creating cards on our Trello board to document the task and prioritize it for development.
 
-The overall system architecture passed by many iterations. I started with straightforward ones to test concepts concerning the [OSM Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API). I slowly added more complexity to mitigate the problems we saw, getting feedback from the stakeholders and always aiming to improve the user experience.
+The overall system architecture passed by many iterations. I started with straightforward ones to test concepts concerning the [OSM Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API). I slowly added more complexity to mitigate the problems we saw, getting feedback from the stakeholders and our user community and always aiming to improve the user experience.
 
 ```grid|1
 ![](./arch.png)
 ```
 
-To build the UI, I chose [Ant Design](https://ant.design/), which has super high-quality React components and excellent documentation. I did all the styling with [TailwindCSS](https://tailwindcss.com/), a fantastic CSS framework.
+To build the UI, I chose [Ant Design](https://ant.design/), which has super high-quality React components and excellent documentation. I did all the styling with [TailwindCSS](https://tailwindcss.com/), a fantastic CSS framework, to customize the Ant components to our visual identity.
 
 For this project, I also wanted to try [Mapbox](https://www.mapbox.com/), an open map library built on top of OpenStreetMap. It’s also super modern and well done and offers way more flexibility than any other library I’ve used. In addition, it was a pleasure using [Mapbox Studio](https://www.mapbox.com/mapbox-studio), their interactive map customization tool, which is a terrific product and enabled me lots of controls to be creative in designing our base map.
  
 ```grid|1 
 ![](./mapbox.png "The Mapbox Studio is a formidable tool with very advanced features for customizing the interactive map that'd be used as the base layer.")
 ``` 
-
 
 
 # Visual design 
@@ -153,7 +153,7 @@ With the typography and basic palette set, I started customizing the Mapbox base
 # Final product
 
 ```grid|1
-![](./ciclomapa.gif) 
+![](./ciclomapa.gif "The map is fully interactive, and I focused on offering a seamless experience for exploring different cities and zoom levels.")  
 ```
 
 ```grid|1
