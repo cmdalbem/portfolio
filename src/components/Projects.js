@@ -16,7 +16,7 @@ class Projects extends React.Component {
         const overflowMargins =  'nl6-ns nr6-ns nl4-m nr4-m pl3-ns nr3'
 
         return (
-            <div className={`flex flex-wrap mb5 ${overflowMargins}`}>
+            <div className={`flex flex-wrap mb5`}>
                 <Reveal effect="slideUp" duration={2000}>
                 {
                     posts.map(({ node }) => {

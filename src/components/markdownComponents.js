@@ -69,7 +69,7 @@ class ProjectPasswordInput extends React.Component {
                 </div>
                 <div className='f5 silver'>
                     <div>This project is password-protected.</div>
-                    <div><a href="mailto:cristiano.dalbem@gmail.com" className='pretty-link'>Contact me</a> if you think you should have it. </div>
+                    <div><a href="mailto:cristiano.dalbem@gmail.com" className='pretty-link'>Contact me</a> if you think you should have access. </div>
                 </div>
                 <div className="center mt4">
                     <input 

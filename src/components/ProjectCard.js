@@ -51,7 +51,7 @@ class ProjectCard extends React.Component {
                     {
                         post.frontmatter.title
                         &&
-                        <div className="project-card--title f6 near-black mt0 mb0">
+                        <div className="project-card--title f5 near-black mt0 mb1">
                             {
                                 post.frontmatter.title
                                 + (post.frontmatter.isPasswordProtected ? ' 🔒' : '')
@@ -69,7 +69,7 @@ class ProjectCard extends React.Component {
 
                     {
                         post.frontmatter.minibio &&
-                        <div className="project-card--description f5 near-black lh-copy measure-narrow">
+                        <div className="project-card--description f6 mb1 near-black lh-copy measure-narrow">
                             {post.frontmatter.minibio}
                         </div>
                     }
