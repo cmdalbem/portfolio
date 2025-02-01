@@ -140,12 +140,11 @@ class Talk extends React.Component {
 
   render() {
     const { title, context, link, linkLabel, language } = this.props;
-    
-    let flag;
-    switch (language) {
-      case 'portuguese': flag="🇧🇷"; break;
-      case 'english': flag="🇬🇧";
+    const flags = {
+      portuguese: "🇧🇷",
+      english: "🇬🇧"
     };
+    const flag = flags[language] || '';
 
     return (
       <a

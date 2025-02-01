@@ -195,7 +195,7 @@ export const pageQuery = graphql`
                    color
                    cover { 
                       childImageSharp {
-                        fluid {
+                        fluid(maxWidth: 1248) {
                           src
                           srcSet
                           base64
