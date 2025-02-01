@@ -3,13 +3,13 @@ projectType: 'personalHighlight'
 date: "2020-08"
 date2: "2021-04"
 title: "Escapista"
-minibio: "A web site for watching videos to relax, explore the world & stay home during the COVID-19 pandemic."
+minibio: "A web site for watching videos to relax, explore the world & stay home. Designed and developed during the COVID-19 pandemic."
 description: "Choose a channel and let your mind wander with the continuous stream of great Slow TV and ambient videos we handpicked for you. Relax with the natural images and sounds while you work, put on your TV or invite your friends to watch together."
 tags: ['design','front-end','product management']
 metrics: ['Video visualizations','Total playback time','Unique users']
 cover: './cover.png'
 hover: '/covers/escapista.gif'
-team: "Gabriela Catão (content curation)"
+team: "Gabriela Catão (product, concept, content curation)"
 color: '#006E6E' 
 liveLink: 'http://escapista.app/'
 --- 
