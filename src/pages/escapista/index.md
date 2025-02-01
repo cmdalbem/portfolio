@@ -1,5 +1,5 @@
 ---
-projectType: 'personal'
+projectType: 'personalHighlight'
 date: "2020-08"
 date2: "2021-04"
 title: "Escapista"
@@ -9,9 +9,8 @@ tags: ['design','front-end','product management']
 metrics: ['Video visualizations','Total playback time','Unique users']
 cover: './cover.png'
 hover: '/covers/escapista.gif'
-forceOrder: 2
 team: "Gabriela Catão (content curation)"
-color: '#006E6E'
+color: '#006E6E' 
 liveLink: 'http://escapista.app/'
 --- 
  

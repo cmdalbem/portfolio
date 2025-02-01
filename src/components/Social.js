@@ -5,32 +5,32 @@ import LinksList from './LinksList'
 const Social = () => {
   const items = [
     {
-      label: 'LinkedIn',
+      label: "LinkedIn",
       url: "https://www.linkedin.com/in/cmdalbem/"
     },
     {
-      label: 'Email',
+      label: "Email",
       url: "mailto:cristiano.dalbem@gmail.com"
     },
     {
-      label: 'ADPList (mentorship)',
-      url: "https://adplist.org/mentors/cristiano-dalbem/"
+      label: "ADPList",
+      url: "https://adplist.org/mentors/cristiano-dalbem/",
+      description: "Free design mentorship"
     },
     {
-      label: 'GitHub (coding projects)',
-      url: "https://github.com/cmdalbem/"
-    },
-    // {
-    //   label: 'Dribbble',
-    //   url: "https://dribbble.com/cmdalbem/"
-    // },
-    {
-      label: 'Goodreads (what I\'m reading)',
-      url: "https://www.goodreads.com/cmdalbem"
+      label: "GitHub",
+      url: "https://github.com/cmdalbem/",
+      description: "Coding projects"
     },
     {
-      label: 'Letterboxd (what I\'m watching)',
-      url: "https://letterboxd.com/cmdalbem/"
+      label: "Goodreads",
+      url: "https://www.goodreads.com/cmdalbem",
+      description: "Books I'm reading"
+    },
+    {
+      label: "Letterboxd",
+      url: "https://letterboxd.com/cmdalbem/",
+      description: "Movies I've watched"
     }
   ];
 

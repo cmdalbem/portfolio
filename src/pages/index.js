@@ -41,10 +41,12 @@ class IndexPage extends React.Component {
     let posts = sortPosts(this.props.data.allMarkdownRemark.edges);
     posts = posts.filter(p => !p.node.frontmatter.isHidden);
   
-    const caseStudies = posts.filter(i => i.node.frontmatter.projectType === 'case study');
-    const projects = posts.filter(i => i.node.frontmatter.projectType === 'project');
-    const personalProjects = posts.filter(i => i.node.frontmatter.projectType === 'personal');
-    
+    const filterPostsByType = (type) => posts.filter(i => i.node.frontmatter.projectType === type);
+    const projectsHighlights = filterPostsByType('projectHighlight');
+    const projects = filterPostsByType('project');
+    const personalHighlights = filterPostsByType('personalHighlight');
+    const personal = filterPostsByType('personal');
+ 
     return (
       <Layout>
         <div className="layoutMaxWidth center">
@@ -112,18 +114,19 @@ class IndexPage extends React.Component {
 
           <HomeSection title="Case studies" fullScreen
             description="Here's a selection of professional projects in which I've played a major role and I'm very proud of.">
-            <Projects posts={caseStudies}/> 
+            <Projects posts={projectsHighlights}/> 
             <Projects mini posts={projects} />
           </HomeSection>
 
           <HomeSection title="Personal projects" fullScreen
             description="Things I built to help solve people's problems, practice new skills, or just for fun :)">
-            <Projects mini posts={personalProjects} />
-          </HomeSection>
+            <Projects posts={personalHighlights} />
+            <Projects mini posts={personal} />
+          </HomeSection> 
           
           <HomeSection
             title="Speaking"
-            description="I try to engage with the community as much as possible, always learning from others and sometimes trying to share some ideas too."
+            // description="I try to engage with the community as much as possible, always learning from others and sometimes trying to share some ideas too."
           > 
             <Speaking />
           </HomeSection>
@@ -146,7 +149,10 @@ class IndexPage extends React.Component {
             <Reading bookNodes={bookNodes} />
           </HomeSection> */}
 
-          <HomeSection title="Social" description="Other places on the web where you can find me.">
+          <HomeSection
+            title="Social"
+            // description="Other places on the web where you can find me."
+          >
             <Social />
           </HomeSection>
         </div>

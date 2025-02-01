@@ -1,5 +1,5 @@
 ---
-projectType: 'case study'
+projectType: 'projectHighlight'
 date: "2019-06"
 date2: "2022-06"
 lastUpdated: "2023-05"

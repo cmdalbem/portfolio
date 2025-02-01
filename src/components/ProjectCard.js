@@ -69,7 +69,7 @@ class ProjectCard extends React.Component {
 
                     {
                         post.frontmatter.minibio &&
-                        <div className="project-card--description f6 mb1 near-black lh-copy measure-narrow">
+                        <div className="project-card--description f6 mb1 near-black lh-copy">
                             {post.frontmatter.minibio}
                         </div>
                     }
