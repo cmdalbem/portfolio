@@ -20,9 +20,33 @@ description: "Photography has been for many years the main way in which I try to
     }'/> -->
 
  
-![](./IMG_20180504_223814_561-01.jpeg "Rio de Janeiro (2020)")
 
 ```grid|2
+![](./000047EBAABA52E6.jpg "Graz (2024)")
+![](./DSCF2795.JPG "Salzburg (2024)")
+```
+
+![](./DSCF2002.JPG "Montserrat (2024)")
+ 
+```grid|2
+![](./DSCF0719.JPG "Barcelona (2024)")
+![](./DSCF0777.JPG "Barcelona (2024)")    
+```
+ 
+```grid|2
+![](./20231103_093238~2.jpg "Tossa de Mar (2023)")
+![](./20240324_163936.jpg "Paris (2023)")  
+```
+
+```grid|2
+![](./20230729_171153.jpg "Bahia (2023)")
+![](./20220722_134246.jpg "Rio de Janeiro (2022)")
+```
+
+![](./IMG_20180504_223814_561-01.jpeg "Rio de Janeiro (2020)")
+
+
+```grid|2 
 ![](./2019-05-0709.44.39.jpg "Rio de Janeiro (2019)")
 ![](./2019-01-2711.17.11.jpg "Florianópolis (2019)")
 ```
@@ -58,7 +82,7 @@ description: "Photography has been for many years the main way in which I try to
 
 ![](./DSC_5806-1.jpg "Svalbard (2014)")
 
-![](./DSC_0745-1.jpg "Norway (2014)")
+<!-- ![](./DSC_0745-1.jpg "Norway (2014)") -->
 
 ![](./14480849921_2f20bc23a8_k.jpg "Parc de Buttes-Chaumont, Paris, France (2014)")
 
