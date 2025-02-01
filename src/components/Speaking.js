@@ -5,53 +5,68 @@ import Reveal from 'react-reveal/Reveal';
 const Speaking = () => (
   <Reveal effect="slideUp">
       <Talk
-        title="🇺🇸 Workshop: Better Data for Better Bicycle Lanes"
+        title='"Design" in "real" "life"'
+        context="SICREDI Design Pass, 2024"
+        link="https://docs.google.com/presentation/d/e/2PACX-1vSFcfUuDr93Z5t7GpPStu7J5zhAi5TT54QWIiW0LWeRhAx9k5I3BmnslXB0JFkHz0vPUST9ljcxzN0a/pub?start=false&loop=false&delayms=10000"
+        linkLabel="slides"
+        language="portuguese"
+      />
+      
+      <Talk
+        title="Workshop: Better Data for Better Bicycle Lanes"
         context="ITDP webinar, 2023"
         link="https://youtu.be/lChW-QSTwq0?t=361"
         linkLabel="video"
+        language="english"
       />
 
       <Talk
-        title="🇺🇸 CicloMapa: a web platform to democratize access to bike maps with OpenStreetMap."
+        title="CicloMapa: a web platform to democratize access to bike maps with OpenStreetMap."
         context="Free and Open Source Software for Geospatial (FOSS4G) 2021 Conference"
         link="https://docs.google.com/presentation/d/1eODEkmsWUezqNhqL5UqS1Vcc6yH9XXGnZ1N--ejfxfQ/edit?usp=sharing"
         linkLabel="slides"
+        language="english"
       />
 
       <Talk
-        title="🇧🇷 Prototypes (or: A Presentation About Prototypes Made As A Prototype)."
+        title="Prototypes (or: A Presentation About Prototypes Made As A Prototype)."
         context="Laboratory of Creative Practices in Software - UFRGS, Specialization in Software Engineering and Innovation, 2020"
         link="https://www.figma.com/proto/wzuas1ACN5n2t9lVyPtnj8/Apresenta%C3%A7%C3%A3o-Prot%C3%B3tipos?node-id=1%3A89&scaling=min-zoom"
         linkLabel="slides"
+        language="portuguese"
       />
 
       <Talk
-        title="🇧🇷 The 3 Pillars for Scaling Design at VTEX"
+        title="The 3 Pillars for Scaling Design at VTEX"
         context="Design at Scale Meetup - Rio de Janeiro & Recife, 2019"
         link="https://www.youtube.com/watch?v=43S4BThGopU"
         linkLabel="video"
+        language="portuguese"
       />
 
       <Talk
-        title="🇧🇷 Generating insights from data in complex B2B products"
+        title="Generating insights from data in complex B2B products"
         context="TheDevelopersConference - Product Management Track. São Paulo 
         & Recife, 2019"
         link="https://docs.google.com/presentation/d/1xDkUiYvJFdY7QShe36kS9pauHzZJhRYnTLz0LNtZ2EY/edit?usp=sharing"
         linkLabel="slides"
+        language="portuguese"
       />
 
       <Talk
-        title="🇧🇷 A new experience to create and manage promotions on VTEX"
+        title="A new experience to create and manage promotions on VTEX"
         context="VTEX Day - São Paulo, 2019"
         link="https://docs.google.com/presentation/d/1eXlEMlTrrYifJIOIWkdEAiz_Pxo0iHnuXr_NhLsjQto/edit?usp=sharing"
         linkLabel="slides"
+        language="portuguese"
       />
 
       <Talk
-        title="🇧🇷 The UX of Urban Mobility - Better Cities to Ride and Live"
+        title="The UX of Urban Mobility - Better Cities to Ride and Live"
         context="Interaction Latin America - Rio de Janeiro, 2018"
         link="https://docs.google.com/presentation/d/1wYfnc6qrscQ26ndJRMlrk82xW-tqHEZpuK_kVjXSofs/edit?usp=sharing"
         linkLabel="slides"
+        language="portuguese"
       />
 
       {/* <Talk
@@ -61,10 +76,11 @@ const Speaking = () => (
       /> */}
 
       <Talk
-        title='🇧🇷 Is it possible to park the bike "de boa"?'
+        title='Is it possible to park the bike "de boa"?'
         context="Bicicultura - Rio de Janeiro, 2018"
         link="https://docs.google.com/presentation/d/1JJvtK1kPmfCg-g06vtmPoQNBgT9BdHZQCGxbXaqZAm8/edit#slide=id.p"
         linkLabel="slides"
+        language="portuguese"
       />
 
       {/* <Talk
@@ -74,24 +90,27 @@ const Speaking = () => (
       /> */}
 
       <Talk
-        title="🇧🇷 Free Multimedia"
+        title="Free Multimedia"
         context="Fórum Internacional Software Livre - Porto Alegre, 2016"
         link="https://musica-libre.org/sprint_multimedia_2016_1"
         linkLabel="website"
+        language="portuguese"
       />
 
       <Talk
-        title="🇧🇷 The first PWA web app for cyclists"
+        title="The first PWA web app for cyclists"
         context="Google IO Extended - Porto Alegre, 2015"
         link="https://docs.google.com/presentation/d/18DyziybC2Benf43OMAd5T7611QULd9oWA1L60rzvrsM/edit#slide=id.p"
         linkLabel="slides"
+        language="portuguese"
       />
 
       <Talk
-        title="🇧🇷 React in the Real World - Reports from the world's largest car rental website"
+        title="React in the Real World - Reports from the world's largest car rental website"
         context="React Meetup - Porto Alegre, 2014"
         link="https://docs.google.com/presentation/d/1RnbQ5beTuvtUFzk6KX3kJXrF25i2WN-ZMcXbhlelktw/edit#slide=id.p"
         linkLabel="slides"
+        language="portuguese"
       />
 
       {/* <Talk
@@ -120,7 +139,13 @@ class Talk extends React.Component {
   }
 
   render() {
-    const { title, context, link, linkLabel } = this.props;
+    const { title, context, link, linkLabel, language } = this.props;
+    
+    let flag;
+    switch (language) {
+      case 'portuguese': flag="🇧🇷"; break;
+      case 'english': flag="🇬🇧";
+    };
 
     return (
       <a
@@ -148,7 +173,7 @@ class Talk extends React.Component {
         </div>
 
         <div className={`mt1 absolute bottom-0 right-0 bg-white ${this.state.hover ? 'o-100' : 'o-0'}`}>
-          View {linkLabel} ↗
+          View {linkLabel} {flag} ↗
         </div>
       </a>
     )
