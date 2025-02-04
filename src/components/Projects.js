@@ -13,8 +13,8 @@ class Projects extends React.Component {
 
         const mini = this.props.mini;
 
-        let classes = mini ? "w-third-ns w-third-m w-50 " : "w-100-ns w-100-m w-100 ";
-        classes += "animatable mv4-ns mv3 pr4-ns pr3-m pr3";
+        let classes = mini ? "w-third-ns w-third-m w-50 pr4-ns pr3-m pr3 " : "w-100-ns w-100-m w-100 ";
+        classes += "animatable mv4-ns mv3 ";
 
         // const globalPadding = 'ph6-ns ph4-m ph3 ';
         const overflowMargins =  'nl6-ns nr6-ns nl4-m nr4-m pl3-ns nr3'
