@@ -17,10 +17,10 @@ import Projects from '../components/Projects'
 import { sortPosts } from '../components/utils.js'
 
 function AnimatedHeader(props) {
-  const {rows} = props;
-  const typography = 'f1-ns f3 fw4 dark-gray mw7 tracked-tight ma0';
+  const {rows, typography} = props;
+  
   return (
-    <div className="absolute top-0 mt7-ns mt4">
+    <>
       {
         rows.map((r,i) =>
           <div className="overflow-hidden">
@@ -32,8 +32,8 @@ function AnimatedHeader(props) {
           </div>
         )
       }
-    </div>
-  )
+    </>
+  );
 }
 
 class IndexPage extends React.Component {
@@ -46,6 +46,8 @@ class IndexPage extends React.Component {
     const projects = filterPostsByType('project');
     const personalHighlights = filterPostsByType('personalHighlight');
     const personal = filterPostsByType('personal');
+
+    const titleTypography = 'f1-ns f3 fw4 dark-gray tracked-tight ma0';
  
     return (
       <Layout>
@@ -60,35 +62,33 @@ class IndexPage extends React.Component {
                 alt="Back of a man walking through a hiking path with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
               />
 
-              <AnimatedHeader rows={[
-                'I’m a designer bridging the gap',
-                'between Product & Systems',
-                'Design with a purpose to improve',
-                'how technology empowers people.'
-              ]}/>
+              <div className="absolute top-0 mt7-ns mt4">
+                {
+                  isMobile ?
+                    <h1 className={titleTypography}>
+                      I’m a self-taught designer with over 8 years of experience designing and building amazing digital products.
+                    </h1>
+                  : <AnimatedHeader
+                      typography={titleTypography} 
+                      rows={[
+                        'I’m a self-taught designer with over',
+                        '8 years of experience designing ', 
+                        'and building amazing digital products.'
+                  ]}/>
+                }
+
+                <div className="pt5 f4 lh-copy gray mw6">
+                  <Fade duration={1500} delay={2800}> 
+                    <p>
+                    I am passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, and I love getting my hands dirty to bring ideas to life.
+                    </p>
+                    <p>
+                    In the companies I've worked for, I impacted millions of people by simplifying their financial lives, enabling award-winning customer support, helping them build and scale their e-commerce, and delivering innovative solutions to some of the world’s biggest brands.
+                    </p>
+                  </Fade>
+                </div>
+              </div>
             </div> 
-
-            {/* <div className="w-20-ns" />
-
-            <div className="w-40-ns mt7-ns">
-              <section id="about" className="mb4 mt6-ns mt4 pt4 f5 lh-copy dark-gray mw6">
-                <Fade duration={1500} delay={800}> 
-                  <p>
-                    Nice to meet you!
-                  </p>
-                  <p>
-                    I'm a designer with a skill set ranging from researching to designing and programming products and systems. I'm interested in solving problems related to the human experience of technology and tools we use to work and express ourselves.
-                  </p>
-                  <p>
-                    My background in Computer Science has biased me towards solutions that are scalable, maintainable and that stand the test of time. This mindset also applies to businesses and their role in the society. I work with purpose, and I like creating stuff that contribute to a more sustainable and equitable world.
-                  </p>
-                  <p>
-                    I'm very curious and I'm always learning different stuff. I find it helps me stay creative, and give me knowledge to find the right problems to solve, as well as the right solutions for them.
-                  </p>
-                </Fade>
-              </section>
-            </div> */}
-
           </section>
 
           {/* <HomeSection title="Work">
@@ -156,7 +156,6 @@ class IndexPage extends React.Component {
             <Social />
           </HomeSection>
         </div>
-
       </Layout>
     );
   } 
