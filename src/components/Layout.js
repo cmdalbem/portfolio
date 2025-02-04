@@ -56,7 +56,7 @@ const Layout = ({ children }) => (
             <Header/>
           </div>
 
-          <div className={`${globalPadding} mt2 mb0`}>
+          <div className={`${globalPadding}`}>
             {/* <AnimatedChildren/> */}
             {children}
           </div>
