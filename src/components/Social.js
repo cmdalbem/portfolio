@@ -13,6 +13,11 @@ const Social = () => {
       url: "mailto:cristiano.dalbem@gmail.com"
     },
     {
+      label: "CV",
+      url: "/cv-feb25.pdf",
+      description: "Updated Feb'25"
+    },
+    {
       label: "ADPList",
       url: "https://adplist.org/mentors/cristiano-dalbem/",
       description: "Free design mentorship"
