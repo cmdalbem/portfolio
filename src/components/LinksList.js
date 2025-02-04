@@ -24,9 +24,13 @@ const LinksList = props => {
               <div className={`text-gradient-clip bg-gradient-${i+1} w-100`}>
                 {l.label}
               </div>
-              <div className='f6 mt2 silver w-100'>
-                {l.description}
-              </div>
+
+              {
+                l.description &&
+                <div className='f6 mt2 silver w-100'>
+                  {l.description}
+                </div>
+              }
             </a>
           )
         }
