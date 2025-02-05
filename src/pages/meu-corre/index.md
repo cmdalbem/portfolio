@@ -14,12 +14,12 @@ liveLink: 'https://meucorre.com.br'
 
   
 --- 
-
+ 
 # Overview
 
-[Meu Corre](https://meucorre.com.br/)  was a social impact entrepeneurship project I co-lead with Igor Dalla Vecchia, an old friend who was doing his Masters on the relationship of brazilian courier workers with platforms. As his background was mostly with Social Sciences, I was the responsible for everything to the product (Discovery, Strategy, Research, UX/UI Design) and to major technical decisions.
+[Meu Corre](https://meucorre.com.br/) was a social impact entrepeneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of brazilian courier workers with platforms. As his background was mostly with Social Sciences, I was the responsible for everything to the product (Discovery, Strategy, Research, UX/UI Design) and to major technical decisions.
 
-We successfully got funded with more than R$ 200.000,00 by important brazilian institutions for entrepeneurship and social impact initiatives such as FAPERJ, CNPq and Fundo Brasil. A part from the money to invest in the app development, for almost 2 years we also had training workshops and mentorship in topics such as entrepreneurship, business and product management.
+We successfully got funded with more than R$ 200.000,00 by important brazilian institutions for entrepeneurship and social impact initiatives such as FAPERJ, CNPq and Fundo Brasil. Apart from financial funding to invest in development we also had access to almost 2 years of workshops and mentorship in topics such as business and product management.
 
 The team behind “Meu Corre” consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app.
 
@@ -34,11 +34,14 @@ Over the course of several months and careful listening, messages were systemati
 
 During this period, I also lived in Rio de Janeiro. Together, we shared professional experiences and reflections on their work demands, discussing the potential for more democratic uses of technology by people. Geographer Igor’s concerns, combined with designer Cristiano’s ideas, resulted in a technology project that aims to cross-reference information and support the organization of delivery workers. This is how Meu Corre was born, a financial management app created exclusively for workers in this category. -->
 
-## The problem
-The “Meu Corre” project was born out of the need to address the challenges faced by delivery workers in Brazil. The idea initially emerged before the pandemic but gained momentum during it when delivery workers played a vital role in helping people stay at home while they were out on the streets, often in precarious conditions.
+The project was born out of the need to address the challenges faced by delivery workers in Brazil. The idea initially emerged before the pandemic but gained momentum during it when delivery workers played a vital role in helping people stay at home while they were out on the streets, often in precarious conditions.
 
 Delivery platforms often entice workers with promises of flexibility and entrepreneurship. However, the reality is much harsher, involving operational costs, financial unpredictability, and a lack of time for personal organization. 
 
+```grid|1
+![](./entregador.jpg "Photo by Alexandre Mota")
+```   
+ 
 <!-- These conditions have made the need for tools that support financial management and organization increasingly clear. -->
 
 
@@ -47,7 +50,7 @@ The project followed a user-centered design methodology since the beginning. Igo
 
 ## Interviewing the workers
 
-Right after joining the project I planned and conducted in-depth interviews with delivery workers from across Brazil to deepend that understand. At this point the objectives were still very broad: to understand their context, routines, background, goals and motivations to work with delivery.
+Right after joining the project I planned and conducted in-depth interviews with delivery workers from across Brazil to deepend that understand. We wanted to have a clear picture of how a typical day for them looks like, and we focused on the challenges they faced. We also tried to understand their networks, consumption of content related to delivery, and their financial organization. Finally, we invited them to zoom out and understand how they got there and what were their medium and long term goals.
 
 ```grid|1
 ![](./interviews.png)
@@ -65,38 +68,38 @@ From these interviews we found out that their main painpoints were:
 
 # Solution
 
-## A lean Design Sprint
+## The "fat" Design Sprint
 
-With the vast amount of data we had we summarized all our findings using the Opportunity Solution Tree diagram. From it we selected a few ideas we though were most promising and I organized a lean version of a full Design Sprint so, at the end of each cycle, we'd have a working prototype that we'd take to test with real users.
+With the vast amount of data, we summarized all our findings using the Opportunity Solution Tree diagram. From it we selected a few ideas we though were most promising and run Design Sprints so, at the end of each cycle, we'd have a working prototype that we'd take to test with real users. Normally Design Sprints are done in an intense week of work, but since this was a sideproject for all of us, we made a "fat" version of the sprint that would last a whole month.
 
 <jumbo caption="The Opportunity Solution Tree is a powerful framework for making sense of a complex project that have many objectives, problems and ideas for solutions. Click to see it larger.">
     <img src="./problemtree.png"/>
 </jumbo> 
+   
+
+
+## The "Financial Strava" concept 
+
+The "winner" concept of those sprints was the "Rates Strava", a kind of app that would merge the sports-tracking app Strava with the specificities of their work as delivery workers. The user would add their earnings and expenses to the app, which would help them track their daily and weekly goals and calculate some personal performance metrics.
+
+What was amazing about this idea was the potential to understand their work at scale, which could be fed back to the workers as dashboards and reports to maximize their earnings: which platforms paid better, what were the best times to work, ...
+
+```grid|1
+![](./storyboard.png "In one of the last steps of the Sprint we voted on our favorite features and the team created a storyboard with the key screens. From here I'd create an interactive prototype to test with real users.")
+``` 
+
+```grid|1
+![](./usertests.png "Table of insights from the first user tests with the winning concept from the Design Sprint. There were 3 sections: profiling questions, usability test and final open questions. Green post-its are positive observations, red negative. Each column is an user, where the last of the summary of all.")
+``` 
+
+We've learned that:
+* Users already had some financial organization but often it was done in pen and paper. This is a great opportunity of presenting the app as an improvement rather than a whole new habit.
+* Inputting earnings one by one won't work! Users do dozens of deliveries per day, every day, and most like to settle their finances in the end of the week. We need to have a feature to add multiple earnings at once.
+* Users compared the metrics with some that the platforms already provide them but that are in general very limited. They liked a lot how we could measure things the platforms can't, and do it cross-platforms in one central place.
+* The dashboards and reports screen were a big fail! We used lots of numbers and charts while this audience has low literacy. The idea is great however, but we might do it as a separate product for a different audience.
+* While almost all users were very excited with the idea of the app, they were not very happy with the idea of having to pay for it. This was not a big surprise, and our mentors already pointed out that we'd need to explore a Freemium business model.
   
-
-
-## The "Rates Central" concept 
-
-
-```grid|1
-![](./storyboard.png)
-``` 
-
-The application focuses on helping delivery workers better manage their finances and increase their earnings through a centralized management tool.
-
-Key Features:
-* Financial Tracking: Simplified recording of both income and expenses, allowing workers to track all their sources of revenue.
-* Customization: Workers can tailor the app to their needs by creating categories for expenses and income sources.
-* Indicator Calculation: Automatic calculation of key indicators such as earnings per hour and per distance.
-* Data Export: The ability to download personal data in spreadsheet format.
-* Free Access: The app is and will remain free for all users.
-
-```grid|1
-![](./usertests.png)
-``` 
-
-
-## Refining and developing
+## Reaching the MVP
 
 Throughout the course of more than 1 year the project was continuously refined as we talked with more users, closed partnerships, developed business model ideas and started development with a software house we hired.
 
@@ -106,13 +109,25 @@ Throughout the course of more than 1 year the project was continuously refined a
 
 The final screens and features can be seen below, which were designed for our Google Play app website.
 
-<jumbo>
+<jumbo> 
     <img src="./googleplay1.png"/>
 </jumbo>
 
 <jumbo>
     <img src="./googleplay2.png"/>
 </jumbo>
+
+Key Features:
+* Financial Tracking: Simplified recording of both income and expenses, allowing workers to track all their sources of revenue.
+* Customization: Workers can tailor the app to their needs by creating categories for expenses and income sources.
+* Indicator Calculation: Automatic calculation of key indicators such as earnings per hour and per distance.
+* Data Export: The ability to download personal data in spreadsheet format.
+* Free Access: The app is and will remain free for all users.
+
+
+## Refining and developing
+
+
 
 
 ## The advocacy flywheel
@@ -133,9 +148,21 @@ These data-driven narratives help amplify the voices of delivery workers, provid
 * Collaborative Approach: Maintain an open invitation for individuals and organizations to collaborate on data treatment and project development.
 
 
-# Learnings & conclusion
+# Results and learnings
 
-## Learn more
+... 
+
+
+<results-banner
+    data='{
+        "app installs in 1 month": "1376",
+        "funding": "R$ 200k",
+        "recorded expenses by users": "83.244",
+        "currently active users": "631"
+    }'>
+</results-banner>
+
+# Learn more
 
 
 <links-list
