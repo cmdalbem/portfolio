@@ -83,7 +83,7 @@ class IndexPage extends React.Component {
                     I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, and I love getting my hands dirty to bring ideas to life.
                     </p>
                     <p>
-                    In the companies I've worked for, I impacted millions of people by simplifying their financial lives, enabling award-winning customer support, helping them build and scale their e-commerce, and delivering innovative solutions to some of the world’s biggest brands.
+                    In the companies I've worked for, I impacted millions of people by simplifying their financial lives, enabling award-winning customer support that is both humane and efficient, and helping them build and scale some of South America's largests e-commerces.
                     </p>
                   </Fade>
                 </div>
