@@ -7,45 +7,46 @@ tags: []
 cover: "./cover.png"
 hover: '/covers/photography.gif'
 fullWidth: true
-minibio: "One of my oldest hobbies. An overview of my photography work since 2007."
-description: "Photography has been for many years the main way in which I try to express my view of the world: sometimes sensible, sometimes critical, sometimes just aesthetic. This is a special collection of some of the pictures, trips, people and places I hold nearest to my heart."
+minibio: "My oldest hobby. Here are some of the favorite pics I took dating back to 2007."
+description: "Photography has been for almost two decades the main way in which I express my view of the world: sometimes sensible, sometimes critical, but always aesthetic. This is a special visual collection of some of the trips, people and places I hold nearest to my heart."
 --- 
-
- 
-<!-- <results-banner
-    data='{
-        "photos uploaded to Flickr": "1,300+",
-        "photos total views": "325,000+",
-        "gallery views": "20,000+"
-    }'/> -->
 
  
 
 ```grid|2
 ![](./000047EBAABA52E6.jpg "Graz (2024)")
-![](./DSCF2795.JPG "Salzburg (2024)")
+![](./DSCF2795.jpg "Salzburg (2024)")
 ```
 
-![](./DSCF2002.JPG "Montserrat (2024)")
- 
-```grid|2
-![](./DSCF0719.JPG "Barcelona (2024)")
-![](./DSCF0777.JPG "Barcelona (2024)")    
+```grid|1
+![](./DSCF2013.jpg "Montserrat (2024)")
 ```
+
+```grid|2 
+![](./DSCF0719.jpg "Barcelona (2024)")
+![](./DSCF0777.jpg "Barcelona (2024)")    
+``` 
  
+![](./DSCF1136.jpg "Barcelona (2024)") 
+  
 ```grid|2
 ![](./20231103_093238~2.jpg "Tossa de Mar (2023)")
-![](./20240324_163936.jpg "Paris (2023)")  
+![](./20240324_163936.jpg "Paris (2023)")   
 ```
-
+ 
 ```grid|2
+![](./20230407_114341.jpg "Rio de Janeiro (2023)") 
 ![](./20230729_171153.jpg "Bahia (2023)")
+``` 
+ 
+```grid|2 
+![](./20230404_170243.jpg "Rio de Janeiro (2022)")
 ![](./20220722_134246.jpg "Rio de Janeiro (2022)")
 ```
 
 ![](./IMG_20180504_223814_561-01.jpeg "Rio de Janeiro (2020)")
 
-
+ 
 ```grid|2 
 ![](./2019-05-0709.44.39.jpg "Rio de Janeiro (2019)")
 ![](./2019-01-2711.17.11.jpg "Florianópolis (2019)")
@@ -54,6 +55,10 @@ description: "Photography has been for many years the main way in which I try to
 ```grid|2
 ![](./2019-09-2610.39.44.jpg "Galicia, Spain (2020)")
 ![](./2019-08-0508.39.06.jpg "Galicia, Spain (2020)")
+``` 
+
+```grid|1
+![](./IMG_20171124_062150921_HDR.jpg "Rio de Janeiro (2017)")
 ``` 
 
 ```grid|2
