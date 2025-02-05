@@ -1,5 +1,5 @@
 ---
-projectType: 'personal'
+projectType: 'personalHighlight'
 date: "2020-11"
 date2: "2024-06"
 title: "Meu Corre"
@@ -17,9 +17,9 @@ liveLink: 'https://meucorre.com.br'
  
 # Overview
 
-[Meu Corre](https://meucorre.com.br/) is a social impact entrepeneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of brazilian courier workers with platforms. I was the responsible for everything concerning the product (Discovery, Strategy, Research, UX/UI Design) and major technical decisions.
+[Meu Corre](https://meucorre.com.br/) is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of brazilian courier workers with platforms. I was the responsible for everything concerning the product (Discovery, Strategy, Research, UX/UI Design) and major technical decisions.
 
-We successfully got funded with more than R$ 200.000,00 by important brazilian institutions for entrepeneurship and social impact initiatives such as FAPERJ, CNPq and Fundo Brasil. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app to the public in April of 2024.
+We successfully got funded with more than R$ 200.000,00 by important brazilian institutions for entrepreneurship and social impact initiatives such as FAPERJ, CNPq and Fundo Brasil. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app to the public in April of 2024.
 
 The team behind “Meu Corre” consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app.
  
@@ -55,10 +55,10 @@ Right after joining the project I planned and conducted in-depth interviews with
 ![](./interviews.png)
 ``` 
 
-From these interviews we found out that their main painpoints were:
+From these interviews we found out that their main pain points were:
 * **Unstable income**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance. Without knowing, they're working as small companies but without any of the knowledge
-* **Lack of support**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaderie, they'd be left all alone. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infraestructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
-* **Rushed routines**: their lives with extremely rushed, from having to take care of their families, extense commutes to the parts of the city that had more activity with delivery apps, and at the same time having to wait long times for restaurantes to prepare the food and for the clients to pick it up.
+* **Lack of support**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
+* **Rushed routines**: their lives with extremely rushed, from having to take care of their families, long commutes to the parts of the city that had more activity with delivery apps, and at the same time having to wait long times for restaurants to prepare the food and for the clients to pick it up.
 
 
 <jumbo caption="At this point we started sketching the first visualizations, such as the classic Journey Map which helped us summarize and make sense of everything we've learned about a typical day of a delivery worker.">
@@ -90,7 +90,7 @@ With the vast amount of data we gathered up to this point, I helped the team sum
 
 Normally Design Sprints are done in an intense week of work, but since this was a sideproject for all of us, we made a "fat" version of the sprint that would last a whole month. Inspired be Design Sprint 2.0 format popularized by AJ&Smart, I organized it like this:
 * **Week 1 - Defining the challenge**: we'll summarize everything we've learned, from all the interviews we've done, countless articles and community posts we've read and hours of videos we've watched.
-* **Week 2 - Produce solutions**: here we'll write "How might we?" statements and brainstorm rought feature ideas.
+* **Week 2 - Produce solutions**: here we'll write "How might we?" statements and brainstorm rough feature ideas.
 * **Week 3 - Voting and storyboard**: next we'll converge on our favorite ideas and try to sketch how these would look like in a storyboard - no need for UI designs here yet, it's all about making tangible our ideas. 
 * **Week 4 - User tests**: finally, with an interactive prototype in hands, we'll test it with real people to get the best feedback possible. 
 
@@ -121,7 +121,7 @@ We've learned that:
 Throughout the course of more than 1 year the project was continuously refined as we talked with more users, closed partnerships, developed business model ideas and started development with a software house we hired.
 
 ```grid|1
-![](./fiocruz.png "A highlight during this phase was our participation on the online workshop 'Health and Workers' Rights in Times of Digital Platforms', a partnership the highly influential Brazilian institutions Fiocruz and DIEESE and the UFRJ and UFF univerisities.")
+![](./fiocruz.png "A highlight during this phase was our participation on the online workshop 'Health and Workers' Rights in Times of Digital Platforms', a partnership the highly influential Brazilian institutions Fiocruz and DIEESE and the UFRJ and UFF universities.")
 ``` 
 
 The final screens and features can be seen below, which were designed for our Google Play app website.
@@ -172,7 +172,7 @@ It's really hard to summarize here in a few paragraphs how much I've learned and
 
 * **Data as empowerment for advocacy**: The project revealed how structured data collection could shift the narrative about gig work from anecdotal grievances to evidence-backed advocacy. By providing delivery workers with actionable insights (such as the true cost of their per-delivery earnings and platform-specific performance), the project underscored the potential for data-driven conversations about fair compensation, worker protections, and better working conditions.
 
-* **Behavioral barriers to financial management**: Even when workers recognized the importance of tracking their finances, psychological barriers often prevente consistent habits. Insights from user research revealed the need for ultra-simple interfaces with powerful features that didn't just rely on rational arguments but tapped into behavioral nudges, such as goal tracking and positive reinforcement.
+* **Behavioral barriers to financial management**: Even when workers recognized the importance of tracking their finances, psychological barriers often prevent consistent habits. Insights from user research revealed the need for ultra-simple interfaces with powerful features that didn't just rely on rational arguments but tapped into behavioral nudges, such as goal tracking and positive reinforcement.
 
 * **Otherness over empathy**: Involving delivery workers in the testing and design process wasn't just a "best practice" but a necessity since these were people with social backgrounds drastically different from ours. However, this collaboration presented challenges — balancing worker participation with their demanding schedules required creative approaches and deep respect for their time. Moreover, it highlighted the power imbalances inherent in design discussions and how those needed to be actively mitigated (see more on ).
 
@@ -189,7 +189,7 @@ Here's a summary of the amazing results we've already amassed since the launch i
     }'>
 </results-banner>
 
-Working on "Meu Corre" was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what meaningful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with likeminded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
+Working on "Meu Corre" was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what meaningful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with like-minded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
 
 # AI Disclaimer
 
