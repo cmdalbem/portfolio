@@ -470,7 +470,7 @@ button {
   body.dark .b--light-gray { border-color: var(--light-gray) !important }
   
   body.dark .profilePicture img {
-    filter: brightness(.65) contrast(1.5) grayscale(20%);
+    filter: brightness(.7) grayscale(20%);
   }
 
   body.dark img {
