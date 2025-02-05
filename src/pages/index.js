@@ -62,7 +62,7 @@ class IndexPage extends React.Component {
                 alt="Back of a man walking through a hiking path with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
               />
 
-              <div className="absolute top-0 mt7-ns mt4">
+              <div className="absolute top-0 mt7-ns mt5">
                 {
                   isMobile ?
                     <h1 className={titleTypography}>
@@ -72,15 +72,15 @@ class IndexPage extends React.Component {
                       typography={titleTypography} 
                       rows={[
                         'I’m a self-taught designer with over',
-                        '8 years of experience designing ', 
-                        'and building amazing digital products.'
+                        '8 years of designing and building', 
+                        'amazing digital products.'
                   ]}/>
                 }
 
-                <div className="pt5 f4 lh-copy gray mw6">
+                <div className="pt5 f4 lh-copy gray mw6 db-ns dn">
                   <Fade duration={1500} delay={2800}> 
                     <p>
-                    I am passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, and I love getting my hands dirty to bring ideas to life.
+                    I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, and I love getting my hands dirty to bring ideas to life.
                     </p>
                     <p>
                     In the companies I've worked for, I impacted millions of people by simplifying their financial lives, enabling award-winning customer support, helping them build and scale their e-commerce, and delivering innovative solutions to some of the world’s biggest brands.

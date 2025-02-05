@@ -47,7 +47,7 @@ class ProjectCard extends React.Component {
                 </div>
 
                 {/* <div className="ph3 pv4"> */}
-                <div className={`pv3`}>
+                <div className="pv3">
                     {
                         post.frontmatter.title
                         &&
