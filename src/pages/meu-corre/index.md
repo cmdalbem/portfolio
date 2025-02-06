@@ -4,7 +4,7 @@ date: "2020-11"
 date2: "2024-06"
 title: "Meu Corre"
 minibio: "Bootstrapping a personal financial management app for delivery workers in Brazil."
-description: "Meu Corre is an app developed to support delivery workers in becoming financially aware during their often precarious daily work routine. By encouraging financial awareness, the app seeks to contribute to the individual organization of each worker as well as serve as a tool for the fight for rights by producing data on an unprecedented scale in Brazil."
+description: "Meu Corre ("My Gig") is an app developed to support delivery workers in becoming financially aware during their often precarious daily work routine. By encouraging financial awareness, the app seeks to contribute to the individual organization of each worker as well as serve as a tool for the fight for rights by producing data on an unprecedented scale in Brazil."
 color: '#F7B700'
 tags: ['design','product management','research','entrepreneur']
 team: "Igor Dalla Vecchia (researcher, entrepreneur), Henrique Nievinski (designer) Caroline Jacobi (social media), Gabriela Hermann (institutional relations), Gabriela Pessoa (researcher), Daniel Dias (developer)"
@@ -17,11 +17,11 @@ liveLink: 'https://meucorre.com.br'
  
 # Overview
 
-[Meu Corre](https://meucorre.com.br/) is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of brazilian courier workers with platforms. I was the responsible for everything concerning the product (Discovery, Strategy, Research, UX/UI Design) and major technical decisions.
+[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of brazilian courier workers with platforms. I was the responsible for everything concerning the product (Discovery, Strategy, Research, UX/UI Design) and major technical decisions.
 
 We successfully got funded with more than R$ 200.000,00 by important brazilian institutions for entrepreneurship and social impact initiatives such as FAPERJ, CNPq and Fundo Brasil. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app to the public in April of 2024.
 
-The team behind “Meu Corre” consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app.
+<!-- The team behind Meu Corre consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app. -->
  
 
 # Problem statement
