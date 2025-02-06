@@ -195,13 +195,9 @@ Here's a summary of the amazing results we've already amassed since the launch i
 
 Working on "Meu Corre" was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what meaningful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with like-minded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
 
-# AI Disclaimer
+#
 
-This case study leveraged modern generative AI technologies to:
-* Summarize and extract key insights from four years of extensive project documentation.
-* Suggest improvements to ensure the writing was concise yet impactful.
-* Assist with grammar refinement, as English is not my primary language.
-All AI-generated content was thoroughly reviewed and manually edited before publishing.
+_This case study leveraged modern generative AI technologies to summarize and extract key insights from four years of extensive project documentation. It also helped me suggesting improvements to ensure the writing was concise yet impactful and grammar checks, as English is not my primary language. All AI-generated content was thoroughly reviewed and manually edited before publishing._
 
 
 # Learn more
