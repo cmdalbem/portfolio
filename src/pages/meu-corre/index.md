@@ -3,13 +3,13 @@ projectType: 'personalHighlight'
 date: "2020-11"
 date2: "2024-06"
 title: "Meu Corre"
-minibio: "Bootstrapping a personal financial management app for delivery workers in Brazil."
-description: "Meu Corre ("My Gig") is an app developed to support delivery workers in becoming financially aware during their often precarious daily work routine. By encouraging financial awareness, the app seeks to contribute to the individual organization of each worker as well as serve as a tool for the fight for rights by producing data on an unprecedented scale in Brazil."
+minibio: "Bootstrapping a personal financial management app for delivery workers."
+description: "Meu Corre (\"My Gig\") is an app developed to support delivery workers in becoming financially aware during their often precarious daily work routine. By encouraging financial awareness, the app seeks to contribute to the individual organization of each worker as well as serve as a tool for the fight for rights by producing data on an unprecedented scale in Brazil and beyond."
 color: '#F7B700'
 tags: ['design','product management','research','entrepreneur']
 team: "Igor Dalla Vecchia (researcher, entrepreneur), Henrique Nievinski (designer) Caroline Jacobi (social media), Gabriela Hermann (institutional relations), Gabriela Pessoa (researcher), Daniel Dias (developer)"
 cover: './cover.png'
-liveLink: 'https://meucorre.com.br'
+liveLink: 'https://play.google.com/store/apps/details?id=br.com.meucorre'
 
 
   
@@ -17,9 +17,9 @@ liveLink: 'https://meucorre.com.br'
  
 # Overview
 
-[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of brazilian courier workers with platforms. I was the responsible for everything concerning the product (Discovery, Strategy, Research, UX/UI Design) and major technical decisions.
+[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of brazilian courier workers with platforms. I was the responsible for everything concerning the product, from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
 
-We successfully got funded with more than R$ 200.000,00 by important brazilian institutions for entrepreneurship and social impact initiatives such as FAPERJ, CNPq and Fundo Brasil. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app to the public in April of 2024.
+We successfully got funded with more than R$ 200.000,00 by important brazilian institutions such as FAPERJ, CNPq and Fundo Brasil. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks and planning on next steps.
 
 <!-- The team behind Meu Corre consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app. -->
  
@@ -56,9 +56,9 @@ Right after joining the project I planned and conducted in-depth interviews with
 ``` 
 
 From these interviews we found out that their main pain points were:
-* **Unstable income**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance. Without knowing, they're working as small companies but without any of the knowledge
-* **Lack of support**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
-* **Rushed routines**: their lives with extremely rushed, from having to take care of their families, long commutes to the parts of the city that had more activity with delivery apps, and at the same time having to wait long times for restaurants to prepare the food and for the clients to pick it up.
+* **Financial instability**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance. Without knowing, they're working as small companies but without any of the knowledge. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper, but they lack discipline and often forget to consider the costs.
+* **Lack of support**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. They're sold the idea of being entrepreneurs, but without any training for that. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
+* **Rushed routines**: their lives are extremely rushed, from having to take care of their families, long commutes to distant parts of the city where there's more activity with delivery apps. At the same time, they often have to wait long times for restaurants to prepare the food and for the clients to pick it up.
 
 
 <jumbo caption="At this point we started sketching the first visualizations, such as the classic Journey Map which helped us summarize and make sense of everything we've learned about a typical day of a delivery worker.">
@@ -70,7 +70,7 @@ From these interviews we found out that their main pain points were:
 
 To build a strong foundation to the following phases we took the opportunity to look around at what kind of applications these workers were using to support their work: maps apps, financial organization apps, social networks, etc.
 
-We also took a close look at how the platform apps looked like - even if we're clearly not in the business of creating another platform, this is their universe and it was important we understand this "vocabulary", be it visual or not.
+I also took a close look at how the platform apps looked like. Even if we're clearly not in the business of creating competition, these apps is our users' universe and it was important we understand this shared vocabulary, both visual (how do they look? what kind of interaction patterns are most common?) and textual (what terms they use? how's the tone of voice?). Often the worker's-side app was completely different from the consumer-side app.
 
 ```grid|1
 ![](./benchmarks.png)
@@ -79,7 +79,7 @@ We also took a close look at how the platform apps looked like - even if we're c
 
 # Exploring solutions
 
-## The "fat" Design Sprint
+## The "fat" Design Sprint 2.0
 
 With the vast amount of data we gathered up to this point, I helped the team summarize all our findings using the Opportunity Solution Tree diagram. From this, we selected a few ideas we though were most promising and I've guided through a Design Sprint to better polish the ideas and have something tangible to test with real users.
 
@@ -150,13 +150,18 @@ After a way too long development phase where we faced thousands of issues, techn
 
 # Next Steps
 
-Here are the main areas the project will continue evolving:
+Since June/2024 I've stepped down from the team to focus on other projects, but I still provide counseling, discuss strategy and contribute on big decisions.
+
+Here are the main areas the project has been evolving since the launch and plans to continue in the near future:
+
 * **Data analysis and reports**: With more and more users recording their earnings and expenses in the app we'll start reaching statistical relevance so we can analyze that data and provide a vast diversity of reports and insights to different audiences, from the workers themselves to researchers and advocacy institutions.
 * **Doubledown on engagement**: There are lots of opportunities to help user build the positive habits of financial management into their daily lives, such as leveraging more push notifications, emails and nudges inside the app.
-* **New partnerships**: Keep seeking additional funding and partnerships to sustain and develop the platform further.
-* **Iterating on core features**: Incorporate feedback from users who are using the tool in their real lives.
+* **Iterating on core features**: Incorporate feedback from users who are using the tool in their real lives to make it more useful and efficient for the core Jobs-To-Be-Dones.
 * **Advanced features**: Invest in features of high impact and high effort that were left out of the MVP, such as Automatic Earnings Sync and Geolocation Tracking.
 * **New audiences**: Stakeholders have shown interest in investing on expanding the tool to new countries and even other gig workers such as Uber drivers. Initial research has shown that could be done without having to change too much the current experience.
+* **New partnerships**: Keep seeking additional funding and partnerships to sustain and develop the platform further.
+
+<!-- print da feature de geolocalização -->
 
 <!-- ## The advocacy flywheel
 
@@ -182,13 +187,15 @@ It's really hard to summarize here in a few paragraphs how much I've learned and
 
 * **Financial sustainability as a social impact project**: Beyond merely securing funding, our experience highlighted how critical it is to position a tool like Meu Corre as a social good solution rather than a profit-driven product, even if going against the will of our initial mentors. Ensuring the app remains accessible and free demands not just partnerships but creative models of sustainability that aligned with our mission to empower gig workers without burdening them financially and, mainly, making sure incentives are aligned.
 
+## Measuring our success
+
 Here's a summary of the amazing results we've already amassed since the launch in April 2024:
 
 <results-banner
     data='{
         "app installs only in 1st month": "1376",
-        "funding": "R$ 200k",
-        "recorded expenses by users": "60.400",
+        "funding raised": "R$ 200k",
+        "recorded expenses in the app": "60.400",
         "currently active users": "631"
     }'>
 </results-banner>
