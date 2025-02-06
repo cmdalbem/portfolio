@@ -186,9 +186,9 @@ Here's a summary of the amazing results we've already amassed since the launch i
 
 <results-banner
     data='{
-        "app installs in 1st month": "1376",
+        "app installs only in 1st month": "1376",
         "funding": "R$ 200k",
-        "recorded expenses by users": "83.244",
+        "recorded expenses by users": "60.400",
         "currently active users": "631"
     }'>
 </results-banner>
