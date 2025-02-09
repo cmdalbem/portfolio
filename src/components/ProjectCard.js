@@ -23,7 +23,7 @@ class ProjectCard extends React.Component {
         if (dateEnd && dateEnd === dateStart) {
             dateEnd = null;
         }
-
+ 
         return (
             <Link 
                 className={"project-card link near-black db br1 lh-copy " + (mini ? 'db-ns flex h-100-ns h4' : '')}
@@ -52,7 +52,7 @@ class ProjectCard extends React.Component {
                     {
                         post.frontmatter.title
                         &&
-                        <div className={"project-card--title near-black mt0 mb1 " + (mini ? 'f5' : 'f3')}>
+                        <div className={"project-card--title near-black mt0 mb1-ns mb0 " + (mini ? 'f5' : 'f3-ns f4')}>
                             {
                                 post.frontmatter.title
                                 + (post.frontmatter.isPasswordProtected ? ' 🔒' : '')

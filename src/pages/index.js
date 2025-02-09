@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Img from "gatsby-image"
 
+import Reveal from 'react-reveal/Reveal';
 import Fade from 'react-reveal/Fade';
 
 import { isMobile } from 'react-device-detect';
@@ -24,7 +25,7 @@ function AnimatedHeader(props) {
       {
         rows.map((r,i) =>
           <div className="overflow-hidden">
-            <Fade bottom cascade={!isMobile} duration={800} delay={400*(i+2)}>
+            <Fade bottom cascade={!isMobile} duration={900} delay={400*i}>
               <h1 className={typography}>
                 { r }
               </h1>
@@ -76,20 +77,47 @@ class IndexPage extends React.Component {
                         'impactful digital products.'
                   ]}/> 
                 }
-
-                <div className="pt5 f4 lh-copy gray mw6 db-ns dn">
-                  <Fade duration={1500} delay={2800}> 
-                    <p>
-                      With the projects I delivered, I impacted the lives of millions of people by simplifying their financial lives, streamlining award-winning customer support, scaling some of Brazil's largest online stores, and promoting active urban mobility that makes our cities more livable and sustainable.
-                    </p>
-                    <p>
-                      I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves to bring ideas to life.
-                    </p>
-                  </Fade>
-                </div>
               </div>
             </div> 
           </section>
+
+{/*           
+          <HomeSection title="About" fullScreen>
+              <AnimatedHeader
+                  typography="f2-ns f3 lh-copy fw4 dark-gray mv0"
+                  rows={[
+                    'With the projects I delivered, I impacted the lives of',
+                    'millions of people by simplifying their financial lives,', 
+                    'streamlining award-winning customer support,',
+                    'scaling some of Brazil\'s largest online stores, and',
+                    'promoting active urban mobility that makes our cities',
+                    'more livable and sustainable.'
+              ]}/> 
+              <AnimatedHeader
+                  typography="f2-ns f3 lh-copy fw4 dark-gray mv0"
+                  rows={[
+                    'I\'m passionate about solving complex problems by',
+                    'designing elegant, sustainable, strategic, and user-', 
+                    'centric solutions across interfaces, products,',
+                    'systems, and platforms. I\'m also a builder, eager to roll',
+                    'up my sleeves to bring ideas to life.',
+              ]}/> 
+          </HomeSection> */}
+
+          <HomeSection title="My approach" fullScreen> 
+            <div className="f2-ns f3 lh-copy fw4 dark-gray measure">
+              <Reveal effect="slideUp" duration={2000} big>
+                  <p>
+                    With the projects I delivered, I impacted the lives of millions of people by simplifying their financial lives, streamlining award-winning customer support, scaling some of Brazil's largest online stores, and promoting active urban mobility that makes our cities more livable and sustainable.
+                  </p>
+              </Reveal>
+              <Reveal effect="slideUp" duration={2000} big>
+                  <p>
+                    I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves to bring ideas to life.
+                  </p>
+              </Reveal>
+            </div>
+          </HomeSection>
 
           {/* <HomeSection title="Work">
             <div className="f4 pb4-ns pb2 mt2 dark-gray lh-copy">
@@ -196,7 +224,6 @@ export const pageQuery = graphql`
                    projectType
                    tags
                    forceOrder
-                   hover
                    color
                    cover { 
                       childImageSharp {

@@ -2,7 +2,7 @@ import React from 'react'
 
 class HomeSection extends React.Component {
     render() {
-        const { title, description, children, fullScreen } = this.props;
+        const { title = "", description, children, fullScreen } = this.props;
         const anchor = title.toLowerCase();
 
         // const containerClasses = `${fullScreen && 'bg-near-white nl4-ns nr4-ns'}`;
@@ -18,9 +18,9 @@ class HomeSection extends React.Component {
         return (
             <section id={anchor} className={`mv7-ns mv4 ${fullScreen ? '' : 'flex-ns w-100'}`}>
                 <div className={`flex flex-column ${fullScreen ? 'w-100' : 'w-50-ns'}`}>
-                    <h2 className="f1-ns f2 lh-solid fw4 mv2-ns mb2 dark-gray left-3-ns tracked-tight">{title}</h2>
+                    <h2 className="f3-ns f3 lh-solid fw7 mv2-ns mb2 dark-gray">{title}</h2>
                     
-                    <div className="left-3-ns mt2">
+                    <div className="mt2-ns mt0">
                         { descriptionContent }
                     </div>
                 </div>
