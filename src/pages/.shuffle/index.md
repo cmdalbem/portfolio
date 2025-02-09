@@ -14,15 +14,20 @@ cover: './cover.png'
 isHidden: true
 ---
 
-# Context
-
-## The company
+# Context 
 
 <!-- ```grid|1
 ![](./nubank.jpg) 
 ```  -->
 
-[Nubank](https://nubank.com.br/) was born in 2013 with the mission to fight complexity to empower people in their daily lives by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 75 million customers across Brazil, Mexico, and Colombia. Nubank is one of the most recognized digital product companies in the country and is often associated with products and services that are simple, intuitive, and transparent.
+## The company 
+[Nubank](https://nubank.com.br/) was born in 2013 with the mission to fight complexity to empower people in their daily lives by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 100 million customers across Brazil, Mexico, and Colombia. Nubank is one of the most recognized digital product companies in the country and is often associated with products and services that are simple, intuitive, and transparent.
+
+## Award-winning customer support
+
+In 2024 Nubank has been awarded for the eighth consecutive year of the [Reclame Aqui Award](https://international.nubank.com.br/company/nubank-wins-reclame-aqui-award-for-the-eighth-consecutive-year), the leading consumer service evaluation platform in Brazil. Nubank also holds the RA 1000 seal, given to companies that stand out for exceptional service quality. Moreover, according to the Brazilian Central Bank, Nubank recorded the lowest complaint rate among the 15 largest financial institutions in the country in the third quarter of 2024.
+
+
 
 
 ## The team
