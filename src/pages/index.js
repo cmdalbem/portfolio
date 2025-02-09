@@ -73,17 +73,17 @@ class IndexPage extends React.Component {
                       rows={[
                         'I’m a self-taught designer with over',
                         '8 years of designing and building', 
-                        'amazing digital products.'
-                  ]}/>
+                        'impactful digital products.'
+                  ]}/> 
                 }
 
                 <div className="pt5 f4 lh-copy gray mw6 db-ns dn">
                   <Fade duration={1500} delay={2800}> 
                     <p>
-                    I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, and I love getting my hands dirty to bring ideas to life.
+                      With the projects I delivered, I improved the lives of millions of people by simplifying their financial lives, enabling award-winning customer support, helping build and scale some of South America's largest e-commerce businesses, and promoting sustainable urban mobility that makes our cities more livable and sustainable.
                     </p>
                     <p>
-                    In the companies I've worked for, I impacted millions of people by simplifying their financial lives, enabling award-winning customer support that is both humane and efficient, and helping them build and scale some of South America's largests e-commerces.
+                      I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves and bring ideas to life.
                     </p>
                   </Fade>
                 </div>
