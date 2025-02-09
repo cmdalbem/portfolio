@@ -80,10 +80,10 @@ class IndexPage extends React.Component {
                 <div className="pt5 f4 lh-copy gray mw6 db-ns dn">
                   <Fade duration={1500} delay={2800}> 
                     <p>
-                      With the projects I delivered, I improved the lives of millions of people by simplifying their financial lives, enabling award-winning customer support, helping build and scale some of South America's largest e-commerce businesses, and promoting sustainable urban mobility that makes our cities more livable and sustainable.
+                      With the projects I delivered, I impacted the lives of millions of people by simplifying their financial lives, streamlining award-winning customer support, scaling some of Brazil's largest online stores, and promoting active urban mobility that makes our cities more livable and sustainable.
                     </p>
                     <p>
-                      I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves and bring ideas to life.
+                      I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves to bring ideas to life.
                     </p>
                   </Fade>
                 </div>
