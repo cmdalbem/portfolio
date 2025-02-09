@@ -26,12 +26,14 @@ class ProjectCard extends React.Component {
 
         return (
             <Link 
-                className="project-card link near-black db br1 lh-copy "
+                className={"project-card link near-black db br1 lh-copy " + (mini ? 'db-ns flex h-100-ns h4' : '')}
                 to={post.fields.slug} 
                 onMouseEnter={() => !isMobile && this.setState({hover: true})}
                 onMouseLeave={() => !isMobile && this.setState({hover: false})}
             >
-                <div className="db br1 w-100 project-card--cover overflow-hidden" style={{paddingBottom: '56.25%', height: 0}}>
+                <div  
+                    className={"db br1 project-card--cover overflow-hidden " + (mini ? "w-100-ns w-50" : "w-100")}
+                    style={ {paddingBottom: '56.25%', height: 0}}>
                     <Img
                         fluid={post.frontmatter.cover.childImageSharp.fluid}
                         className={`w-100 ${isShowHover ? 'dn' : ''}`}
@@ -46,8 +48,7 @@ class ProjectCard extends React.Component {
                     }
                 </div>
 
-                {/* <div className="ph3 pv4"> */}
-                <div className="pv3">
+                <div className={mini ? "pl0-ns pl2 w-100 pv3-ns pv0" : "pv3-ns pv2"}>
                     {
                         post.frontmatter.title
                         &&
@@ -58,14 +59,6 @@ class ProjectCard extends React.Component {
                             }
                         </div>
                     }
-
-                    {/* {
-                        post.frontmatter.description
-                        &&
-                        <div className="project-card--description f6 silver lh-copy">
-                            {post.frontmatter.description}
-                        </div>
-                    } */}
 
                     {
                         post.frontmatter.minibio &&
