@@ -15,8 +15,8 @@ class ProjectCard extends React.Component {
 
     render() {
         const post = this.props.node;
+        const mini = this.props.mini;
         const isShowHover = post.frontmatter.hover && this.state.hover;
-        // const mini = this.props.mini;
 
         let dateStart = formatDate(post.frontmatter.date, 'YYYY');
         let dateEnd = formatDate(post.frontmatter.date2, 'YYYY');
@@ -51,7 +51,7 @@ class ProjectCard extends React.Component {
                     {
                         post.frontmatter.title
                         &&
-                        <div className="project-card--title f5 near-black mt0 mb1">
+                        <div className={"project-card--title near-black mt0 mb1 " + (mini ? 'f5' : 'f3')}>
                             {
                                 post.frontmatter.title
                                 + (post.frontmatter.isPasswordProtected ? ' 🔒' : '')
