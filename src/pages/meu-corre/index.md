@@ -23,6 +23,10 @@ We successfully got funded with more than R$ 200.000,00 by important Brazilian i
 
 <!-- The team behind Meu Corre consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app. -->
  
+```grid|1
+![](./hand.png)
+``` 
+
 
 # Problem statement
 <!-- 
@@ -139,6 +143,10 @@ After a way too long development phase where we faced thousands of issues, techn
 ```grid|1
 ![](./live.png "There were in total 4 live events we held on YouTube to promote the app.")
 ```  
+
+> Super cool app. I use it daily and I have to admit that the app is amazing. It meets the demands I need with my services.
+
+> Excellent app, it can control rides very well week month day very good app without bugs excellent
 
 <!-- Key Features: 
 * Financial Tracking: Simplified recording of both income and expenses, allowing workers to track all their sources of revenue.
