@@ -104,7 +104,7 @@ class IndexPage extends React.Component {
               ]}/> 
           </HomeSection> */}
 
-          <HomeSection title="My impact" className="text-gradient-clip" fullScreen> 
+          <HomeSection title="About me" className="text-gradient-clip" fullScreen> 
             <div className="f2-ns f3 lh-copy fw4 dark-gray measure">
               {/* <Reveal effect="slideUp" duration={2000} big> */}
                   <p>
