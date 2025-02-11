@@ -26,14 +26,12 @@ class ProjectCard extends React.Component {
  
         return (
             <Link 
-                className={"project-card link near-black db br1 lh-copy " + (mini ? 'db-ns flex h-100-ns h4' : '')}
+                className={"project-card link near-black db lh-copy " + (mini ? 'db-ns flex h-100-ns h4' : '')}
                 to={post.fields.slug} 
                 onMouseEnter={() => !isMobile && this.setState({hover: true})}
                 onMouseLeave={() => !isMobile && this.setState({hover: false})}
             >
-                <div  
-                    className={"db br1 project-card--cover overflow-hidden " + (mini ? "w-100-ns w-50" : "w-100")}
-                    style={ {paddingBottom: '56.25%', height: 0}}>
+                <div className={"db br2 project-card--cover overflow-hidden aspect-ratio " + (mini ? "w-100-ns w-50 aspect-ratio--16x9-ns aspect-ratio--1x1" : "w-100 aspect-ratio--16x9 ")}>
                     <Img
                         fluid={post.frontmatter.cover.childImageSharp.fluid}
                         className={`w-100 ${isShowHover ? 'dn' : ''}`}
@@ -67,8 +65,14 @@ class ProjectCard extends React.Component {
                         </div>
                     }
 
-                    <div className="project-card--date f6 mt0 silver db-ns dn">
-                        {dateStart} {dateEnd && `– ${dateEnd}`}
+                    <div className="project-card--date f6 mt0 silver relative overflow-hidden h1">
+                        <span className="absolute silver"
+                        style={{
+                            transform: this.state.hover ? 'translateY(0%)' : 'translateY(-100%)',
+                            transition: "transform 200ms"}
+                        }>
+                            {dateStart} {dateEnd && `– ${dateEnd}`}
+                        </span>
                     </div>
 
                     {/* {
