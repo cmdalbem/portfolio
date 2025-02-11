@@ -9,16 +9,20 @@ description: "Styleguide was the company's Design System, the home for all our r
 metrics: ['Developers productivity','Product NPS']
 tags: ['design','front-end','product management']
 cover: './cover.png' 
-hover: '/covers/styleguide.gif'
+# hover: '/covers/styleguide.gif'
 color: '#f71b62'
 liveLink: 'https://styleguide.vtex.com/'
 ---
   
 
 # Context
-[VTEX](https://vtex.com/) is a brazilian SaaS technology company focused on ecommerce solutions that have a daily impact on the work of thousands of people around the world. More than 2500 leading brands of varying sizes and segments, with operations in 26 countries and in global expansion, rely on VTEX for the online sales of their products.
+[VTEX](https://vtex.com/) is a brazilian SaaS technology company focused on ecommerce solutions that have a daily impact on the work of thousands of people around the world. Leading brands of varying sizes and segments, with operations in 26 countries and in global expansion, rely on VTEX for the online sales of their products.
  
-The main touchpoint of our product with the store owners is the Admin. It's where our clients configure and manage everything related to their operations, and where they'll spend most of their days.
+<!-- The main touchpoint of our product with the store owners is the Admin. It's where our clients configure and manage everything related to their operations, and where they'll spend most of their days. -->
+
+```grid|1
+![](./brands.png)
+```
 
 ## The problem
 
