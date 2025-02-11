@@ -104,18 +104,19 @@ class IndexPage extends React.Component {
               ]}/> 
           </HomeSection> */}
 
-          <HomeSection title="My approach" fullScreen> 
+          <HomeSection title="My impact" className="text-gradient-clip" fullScreen> 
             <div className="f2-ns f3 lh-copy fw4 dark-gray measure">
-              <Reveal effect="slideUp" duration={2000} big>
+              {/* <Reveal effect="slideUp" duration={2000} big> */}
                   <p>
-                    With the projects I delivered, I impacted the lives of millions of people by simplifying their financial lives, streamlining award-winning customer support, scaling some of Brazil's largest online stores, and promoting active urban mobility that makes our cities more livable and sustainable.
+                    With the projects I delivered, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>launching and scaling</span> some of Brazil's largest online brands, and fostering urban cycling <span className='ttext'>making our cities more livable and sustainable</span>.
                   </p>
-              </Reveal>
-              <Reveal effect="slideUp" duration={2000} big>
+              {/* </Reveal> */}
+               {/* <Reveal effect="slideUp" duration={2000} big> */}
                   <p>
-                    I'm passionate about solving complex problems by designing elegant, sustainable, strategic, and user-centric solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves to bring ideas to life.
+                    I'm passionate about solving complex problems by designing <span className='ttext'>user-centric, elegant and strategic</span> solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves to bring ideas to life.
                   </p>
-              </Reveal>
+              {/* </Reveal> */}
+             
             </div>
           </HomeSection>
 
@@ -140,14 +141,14 @@ class IndexPage extends React.Component {
             </div>
           </HomeSection> */}
 
-          <HomeSection title="Case studies" fullScreen
-            description="Here's a selection of professional projects in which I've played a major role and I'm very proud of.">
+          <HomeSection title="Projects" fullScreen
+            description="The stories behind some professional projects in which I've played a major role and I'm very proud of.">
             <Projects posts={projectsHighlights}/> 
             <Projects mini posts={projects} />
           </HomeSection>
 
-          <HomeSection title="Personal projects" fullScreen
-            description="Things I built to help solve people's problems, practice new skills, or just for fun :)">
+          <HomeSection title="Sideprojects" fullScreen
+            description="Things I built to help solve people's problems, learn something new, or just for fun.">
             <Projects posts={personalHighlights} />
             <Projects mini posts={personal} />
           </HomeSection> 

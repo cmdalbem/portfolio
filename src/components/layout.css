@@ -259,13 +259,19 @@ li::before {
 .project-card--description,
 .project-card--date {
   transition: all 0.5s var(--global-easing);
+  opacity: 1;
 }
 .project-card:hover .project-card--cover {
   box-shadow: 0 18px 35px rgba(90,50,50,.1), 0 9px 18px -5px rgba(0,0,0,.3); 
   transform: translateY(-4px);
 }
-.project-card:hover .project-card--title {
+/* .project-card:hover .project-card--title {
   color: var(--orange) !important;
+} */
+.project-card:hover .project-card--title,
+.project-card:hover .project-card--description,
+.project-card:hover .project-card--date {
+  opacity: 0.8;
 }
 /* .project-card:hover .project-card--date {
   color: var(--near-black);
@@ -298,13 +304,22 @@ li::before {
 }
 
 .text-gradient-clip {
+  background-clip: text !important;
   -webkit-background-clip: text !important;
+  background-position: center;
+  background-attachment: fixed;
+}
+.ttext {
   -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 } 
 .bg-gradient--animated {
-  background: -webkit-linear-gradient(0deg, #f5982e, #F52D2D, #f5982e, #F52D2D);
+  background: -webkit-linear-gradient(90deg, #f5982e, #F52D2D, #f5982e, #F52D2D);
   background-size: 300% 100%;
   animation: animatedGradient 1500ms infinite linear;
+} 
+.text-gradient-clip {
+  background-image: -webkit-linear-gradient(90deg, var(--dark-gray),#F52D2D, var(--dark-gray));
 } 
 .bg-gradient {
   background: -webkit-linear-gradient(0deg, #F5882D, #F52D2D);

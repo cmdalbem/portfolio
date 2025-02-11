@@ -21,7 +21,7 @@ const LinksList = props => {
               href={l.url}
               key={l.label}
             >
-              <div className={`text-gradient-clip bg-gradient-${i+1} w-100`}>
+              <div className={`text-gradient-clip w-100 ttext`}>
                 {l.label}
               </div>
 

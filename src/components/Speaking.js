@@ -177,25 +177,38 @@ class Talk extends React.Component {
 
     return (
       <a
-        className={`link dark-gray animatable db pv4-ns pv3 relative lh-copy bb b--light-gray flex justify-between ${this.state.hover ? '' : ''}`}
+        className={`link dark-gray db pv4-ns pv3 h4-ns relative lh-copy bb b--light-gray flex justify-between ${this.state.hover ? '' : ''}`}
         href={link}
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => this.setState({hover: true})}
         onMouseLeave={() => this.setState({hover: false})}
       >
-        <div className="">
-          <div className={`f5 lh-title mb2 ${this.state.hover ? 'orange' : ''}`}>
+        <div className="w-100">
+          <div className="f5 lh-title mb2">
             {title}
           </div>
           
-          <div className="f6 silver">
-            {context}
-          </div>
+          <div className="f6 overflow-hidden h1 relative">
+            <span className="absolute silver"
+              style={{
+                transform: this.state.hover ? 'translateY(-100%)' : 'translateY(0)',
+                transition: "transform 200ms"}
+              }>
+                {date} • {context}
+            </span>
+            <span className="absolute"
+              style={{
+                transform: this.state.hover ? 'translateY(0)' : 'translateY(+100%)',
+                transition: "transform 200ms"}
+              }>
+                {flags[language]} {verbs[linkLabel]} {linkLabel} ↗
+            </span>
+          </div> 
           
-          <div className="f6 silver">
+          {/* <div className="f6 silver">
             {date}
-          </div>
+          </div> */}
           
           {/* <div className="mv2">
             <a className="pretty-link" href={link}>
@@ -204,9 +217,9 @@ class Talk extends React.Component {
           </div> */}
         </div>
 
-        <div className={`mt1 absolute bottom-0 right-0 bg-white ${this.state.hover ? 'o-100' : 'o-0'}`}>
+        {/* <div className={`mt1 absolute bottom-0 right-0 bg-white ${this.state.hover ? 'o-100' : 'o-0'}`}>
           {flags[language]} {verbs[linkLabel]} {linkLabel} ↗
-        </div>
+        </div> */}
       </a>
     )
   }

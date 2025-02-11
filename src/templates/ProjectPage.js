@@ -267,7 +267,7 @@ class ProjectPage extends React.Component {
           </div>
 
           <div className="w-100 tc mt6">
-            <Link to="/#case studies" className="gradient-border text-gradient-clip bg-gradient dim f4 fw6 link pa3 br1">
+            <Link to="/#case studies" className="gradient-border text-gradient-clip ttext dim f4 fw5 link pa3">
               View all projects
             </Link>
           </div>
@@ -300,7 +300,6 @@ export const pageQuery = graphql`
                team
                color
                fullWidth
-               hover
                cover {
                   childImageSharp {
                     fluid(maxWidth: 1440) {
