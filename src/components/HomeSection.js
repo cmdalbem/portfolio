@@ -2,11 +2,12 @@ import React from 'react'
 
 class HomeSection extends React.Component {
     render() {
-        const { title = "", description, children, fullScreen } = this.props;
+        const { title = "", description, children, fullScreen, className } = this.props;
         const anchor = title.toLowerCase();
 
         // const containerClasses = `${fullScreen && 'bg-near-white nl4-ns nr4-ns'}`;
-        const containerClasses = 'mv7-ns mv4 ';
+        let containerClasses = className + ' mv7-ns mv4 ';
+        containerClasses += `${fullScreen ? '' : 'flex-ns w-100'}`;
 
         const descriptionContent = (
             description &&
@@ -16,7 +17,7 @@ class HomeSection extends React.Component {
         );
 
         return (
-            <section id={anchor} className={`mv7-ns mv4 ${fullScreen ? '' : 'flex-ns w-100'}`}>
+            <section id={anchor} className={containerClasses}>
                 <div className={`flex flex-column ${fullScreen ? 'w-100' : 'w-50-ns'}`}>
                     <h2 className="f3-ns f3 lh-solid fw7 mv2-ns mb2 dark-gray">{title}</h2>
                     
