@@ -4,18 +4,23 @@ const footerIconsClasses = 'pl4-ns pr0-ns pr3 pl0 dim gray';
 
 const Footer = () => (
     <div className="flex flex-row-ns flex-column pv6 w-100 justify-between layoutMaxWidth center">
-        <div className="f7 gray mw6-ns lh-copy">
+        <div className="f7 mw6-ns lh-copy">
             <p className='f5'>
                 "Computers are like a bicycle for the mind."
             </p>
 
-            <div>
-                Prototyped in <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://www.figma.com/">Figma</a> and handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://www.gatsbyjs.com/">Gatsby.js</a>.
-            </div>
-            
-            <div>
-                Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray underline" href="https://fonts.google.com/">Google Fonts</a>.
-            </div>
+            <p className='silver'>
+                <div>
+                    Fueled by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://photos.app.goo.gl/XvKqB3ZJCBAsBUbs8">🍌 banana pancakes</a>, <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://loja.badentorrefacao.com.br/">☕️ Brazilian coffee</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://www.oakberry.com/">🫐 açaí</a>.
+                </div>
+                <div>
+                    Handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://www.gatsbyjs.com/">Gatsby</a>.
+                </div>
+                <div>
+                    Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://fonts.google.com/">Google Fonts</a>.
+                </div>
+            </p>
+
         </div>
         <div className="mv4 mv0-ns">
             {/* LinkedIn */}
