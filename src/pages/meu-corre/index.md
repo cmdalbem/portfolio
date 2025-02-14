@@ -4,10 +4,10 @@ date: "2020-11"
 date2: "2024-06"
 title: "Meu Corre"
 minibio: "Bootstrapping a personal financial management app for delivery workers."
-description: "Meu Corre (\"My Gig\") is an app designed to support delivery workers in becoming financially aware during their often precarious daily work routine. By fostering financial awareness, the app not only supports individual organization but also serves as a powerful advocacy tool by generating unprecedented data to inform the fight for workers' rights in Brazil and beyond."
+description: "\"My Gig\" is an app designed to support delivery workers in becoming financially aware during their often precarious daily work routine. By fostering financial awareness, the app not only supports individual organization but also serves as a powerful advocacy tool by generating unprecedented data to inform the fight for workers' rights in Brazil."
 color: '#F7B700'
 tags: ['design','product management','research','entrepreneur']
-team: "Igor Dalla Vecchia (researcher, entrepreneur)・Henrique Nievinski (designer)・Caroline Jacobi (social media)・Gabriela Hermann (institutional relations)・Gabriela Pessoa (researcher)・Daniel Dias (developer)"
+team: "Igor Dalla Vecchia (researcher, geographer)・Henrique Nievinski (designer)・Caroline Jacobi (social media)・Gabriela Hermann (institutional relations)・Gabriela Pessoa (researcher)・Daniel Dias (developer)・Daniel Brito (data scientist)"
 cover: './cover.png'
 liveLink: 'https://play.google.com/store/apps/details?id=br.com.meucorre'
 
@@ -17,17 +17,20 @@ liveLink: 'https://play.google.com/store/apps/details?id=br.com.meucorre'
  
 # Overview
 
-[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was doing his Master on the relationship of Brazilian courier workers with platforms. I was the responsible for everything concerning the product, from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
+[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was a PhD candidate studying on the relationship of Brazilian courier workers with platforms. I was the responsible for everything concerning the product, from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
 
-We successfully got funded with more than R$ 200.000,00 by important Brazilian institutions such as FAPERJ, CNPq and Fundo Brasil. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks and planning on next steps.
+We successfully got funded with more than R$ 200k (~€33k) by FAPERJ, CNPq, and Fundo Brasil, important Brazilian research institutions. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks and planning on next steps.
 
 <!-- The team behind Meu Corre consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app. -->
+
+Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. 
+
  
 ```grid|1
-![](./hand.png)
-``` 
-
-
+![](./hand.png) 
+```   
+  
+  
 # Problem statement
 <!-- 
 ## How it all began
@@ -39,28 +42,28 @@ During this period, I also lived in Rio de Janeiro. Together, we shared professi
 
 The project was born out of our desire to build a tool to help address the challenges faced by delivery workers in Brazil. The idea initially emerged before the pandemic but gained momentum during it when delivery workers played a vital role in helping people stay at home while they were out on the streets, often in precarious conditions.
 
-Delivery platforms often entice workers with promises of flexibility and entrepreneurship. However, the reality is much harsher, involving operational costs, financial unpredictability, and a lack of time for personal organization, not to mention serious health risks.
+Delivery platforms often attract workers with promises of flexibility and entrepreneurship. However, the reality is much harsher, involving operational costs, financial unpredictability, lack of work rights and time for personal organization, not to mention serious health risks.
 
 <jumbo caption="Photo by Alexandre Mota.">
     <img src="./entregador.jpg"/>
 </jumbo>
  
 
-# Research
+# Research 
 
 The project followed a user-centered design methodology since the beginning. Igor had been collecting data from various social media sources, from community posts in Facebook to chat groups in WhatsApp. This helped him notice the first patterns and draft some hypothesis we would build upon.
 
 
 ## Getting closer
 
-Right after joining the project I planned and conducted in-depth interviews with delivery workers from across Brazil to deepen that understanding. We wanted to have a clear picture of how a typical day for them looks like, and we focused on the challenges they faced. We also tried to understand their networks, consumption of content related to delivery, and their financial organization. Finally, we invited them to zoom out and understand how they got there and what were their medium and long term goals.
+Right after joining the project I planned and conducted in-depth interviews with delivery workers from across Brazil to deepen that understanding. Our sample included both bicycle and motorcycle riders, different states, ages and genders. We wanted to have a clear picture of how a typical day for them looks like, and we focused on the challenges they faced. We also tried to understand their networks, consumption of content related to delivery, and their financial organization. Finally, we invited them to zoom out and understand how they got there and what were their medium and long term goals.
 
 ```grid|1
-![](./interviews.png "Some of the first delivery workers we interviewed from different regions of Brazil. Consent was provided to show their images in our project presentations.")
+![](./interview.png "Some of the first delivery workers we interviewed from different regions of Brazil. Consent was provided to show their images in our project presentations.")
 ``` 
 
 From these interviews we found out that their main pain points were:
-* **Financial instability**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. . Without knowing, they're working as small companies but without the tools to support it. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper, but they lack consistency and often forget to consider the costs.
+* **Financial instability**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. . Without knowing, they're working as small companies but without the tools to support it. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper or simple spreadsheets, but they lack consistency and often forget to consider the costs.
 * **Lack of support**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. They're sold the idea of being entrepreneurs, but without any training for that. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
 * **Rushed routines**: their lives are extremely rushed, from having to take care of their families, long commutes to distant parts of the city where there's more activity with delivery apps. At the same time, they often have to wait long times for restaurants to prepare the food and for the clients to pick it up.
 
@@ -83,42 +86,43 @@ I also took a close look at how the platform apps looked like. Even if we're cle
 
 # Exploring solutions
 
-## A Design Sprint semi-marathon
-
 With the vast amount of data we gathered up to this point, I helped the team summarize all our findings using the Opportunity Solution Tree diagram. From this, we selected a few ideas we though were most promising and I've guided through a Design Sprint to better polish the ideas and have something tangible to test with real users.
 
 <jumbo caption="The Opportunity Solution Tree is a powerful framework for making sense of a complex project that have many objectives, problems and ideas for solutions.">
     <img src="./problemtree.png"/>
-</jumbo> 
-   
+</jumbo>    
 
-Normally Design Sprints are done in an intense week of work, but since this was a sideproject for all of us, we made a longer version of the sprint that would last a whole month. Inspired be Design Sprint 2.0 format popularized by AJ&Smart, I organized it like this:
+## A Design Sprint semi-marathon
+
+Normally Design Sprints are done in an intense week of work, but since this was a sideproject for all of us, we made a longer version of the sprint that would last a whole month: each week corresponding to one of the days of the Design Sprint 2.0 format popularized by [https://ajsmart.com/](AJ&Smart).
+
+<!-- I organized it like this:
 * **Week 1 - Defining the challenge**: we'll summarize everything we've learned, from all the interviews we've done, countless articles and community posts we've read and hours of videos we've watched.
 * **Week 2 - Produce solutions**: here we'll write "How might we?" statements and brainstorm rough feature ideas.
 * **Week 3 - Voting and storyboard**: next we'll converge on our favorite ideas and try to sketch how these would look like in a storyboard - no need for UI designs here yet, it's all about making tangible our ideas. 
-* **Week 4 - User tests**: finally, with an interactive prototype in hands, we'll test it with real people to get the best feedback possible. 
+* **Week 4 - User tests**: finally, with an interactive prototype in hands, we'll test it with real people to get the best feedback possible.  -->
 
 
 ## The "Financial Strava" concept 
 
-The "winner" concept of those sprints was the "Financial Strava", a kind of app that would merge the popular sports-tracking app Strava with the specificities of their work as delivery workers. The user would add their earnings and expenses to the app, which would help them track their daily and weekly goals and calculate some personal performance metrics.
+The winner concept was the "Financial Strava", a kind of app that would merge the popular sports-tracking app Strava with the specificities of their work as delivery workers. The user would add their earnings and expenses to the app, which would help them track their daily and weekly goals and calculate some personal performance metrics.
 
-What was amazing about this idea was the potential to understand their work at scale, which could be fed back to the workers as dashboards and reports to maximize their earnings: which platforms paid better, what were the best times to work, ...
+What was amazing about this idea was the potential to understand their work at scale, which could be fed back to the workers as dashboards and reports to maximize their earnings: which platforms paid better and what were the best times to work.
 
 <jumbo caption="In one of the last steps of the Sprint we voted on our favorite features and the team created a storyboard with the key interactions. From here I'd create an interactive prototype to test with real users.">
     <img src="./designsprint.png"/>
 </jumbo> 
 
-```grid|1
+<!-- ```grid|1
 ![](./usertests.png "Table of insights from the first user tests with the winning concept from the Design Sprint. There were 3 sections: profiling questions, usability test and final open questions. Green post-its are positive observations, red negative. Each column is an user, where the last of the summary of all.")
-``` 
+```  --> 
 
-We've learned that:
-* Users already had some financial organization but often it was done in pen and paper. This is a great opportunity of presenting the app as an improvement rather than a whole new habit.
-* Inputting earnings one by one won't work! Users do dozens of deliveries per day, every day, and most like to settle their finances in the end of the week. We need to have a feature to add multiple earnings at once.
-* Users compared the metrics with some that the platforms already provide them but that are in general very limited. They liked a lot how we could measure things the platforms can't, and do it cross-platforms in one central place.
-* The dashboards and reports screen were a big fail! We used lots of numbers and charts while this audience has low literacy. The idea is great however, but we might do it as a separate product for a different audience.
-* While almost all users were very excited with the idea of the app, they were not very happy with the idea of having to pay for it. This was not a big surprise, and our mentors already pointed out that we'd need to explore a Freemium business model.
+The last week of the sprint was dedicated to run users tests with an interactive prototype. With it we've learned that:
+* **Leveraging existing mental models**: Users already had some financial organization but often they felt it was hard to maintain. This is a great opportunity of presenting the app as an improvement rather than a whole new habit.
+* **Multiple input mode**: Inputting earnings one by one might not work for most users. They do dozens of deliveries per day, every day, and most like to settle their finances in the end of the week. This led us to the insight of designing a feature that would enable adding multiple earnings at once.
+* **Metrics are a big win**: Users compared the metrics with some that the platforms already provide them but that are in general very limited. They liked a lot how we could measure things the platforms can't, and do it cross-platforms in one central place.
+* **Charts is a big no-no**: The dashboards and reports screen were a big fail. We used lots of numbers and charts while this audience has limited formal math education. The idea is great however, but we might do it as a separate product for a different audience.
+* **The need for a freemium business model**: While almost all users were very excited with the app, they were not very happy with the idea of having to pay for it. This was not a big surprise, and our mentors already pointed out that we'd need to explore a Freemium business model.
   
 ## Designing and launching a MVP
 
@@ -138,15 +142,15 @@ The final screens and features can be seen below. These were designed for our Go
     <img src="./googleplay2.png"/>
 </jumbo>
 
-After a way too long development phase where we faced thousands of issues, technical challenges and scope cutting, this MVP was successfully launched to the general public with zero known bugs on April of 2024 with several live events we coordinated with partner institutions as well as influential workers on YouTube.
+After a [way too] long development phase where we faced thousands of issues, technical challenges and scope cutting, this MVP was successfully launched to the general public with zero known bugs on April of 2024 with several live events we coordinated with partner institutions as well as influential workers on YouTube.
 
 ```grid|1
 ![](./live.png "There were in total 4 live events we held on YouTube to promote the app.")
 ```  
-
+<!-- 
 > Super cool app. I use it daily and I have to admit that the app is amazing. It meets the demands I need with my services.
 
-> Excellent app, it can control rides very well week month day very good app without bugs excellent
+> Excellent app, it can control rides very well week month day very good app without bugs excellent -->
 
 <!-- Key Features: 
 * Financial Tracking: Simplified recording of both income and expenses, allowing workers to track all their sources of revenue.
@@ -163,11 +167,11 @@ Since June/2024 I've stepped down from the team to focus on other projects, but 
 Here are the main areas the project has been evolving since the launch and plans to continue in the near future:
 
 * **Data analysis and reports**: With more and more users recording their earnings and expenses in the app we'll start reaching statistical relevance so we can analyze that data and provide a vast diversity of reports and insights to different audiences, from the workers themselves to researchers and advocacy institutions.
-* **Doubledown on engagement**: There are lots of opportunities to help user build the positive habits of financial management into their daily lives, such as leveraging more push notifications, emails and nudges inside the app.
+<!-- * **Doubledown on engagement**: There are lots of opportunities to help user build the positive habits of financial management into their daily lives, such as leveraging more push notifications, emails and nudges inside the app. -->
 * **Iterating on core features**: Incorporate feedback from users who are using the tool in their real lives to make it more useful and efficient for the core Jobs-To-Be-Dones.
-* **Advanced features**: Invest in features of high impact and high effort that were left out of the MVP, such as Automatic Earnings Sync and Geolocation Tracking.
-* **New audiences**: Stakeholders have shown interest in investing on expanding the tool to new countries and even other gig workers such as Uber drivers. Initial research has shown that could be done without having to change too much the current experience.
-* **New partnerships**: Keep seeking additional funding and partnerships to sustain and develop the platform further.
+<!-- * **Advanced features**: Invest in features of high impact and high effort that were left out of the MVP, such as Automatic Earnings Sync and Geolocation Tracking. -->
+* **New audiences & partnerships**: Stakeholders have shown interest in investing to expand the tool to new countries and even other gig workers such as Uber drivers. Initial research has shown that could be done without having to change too much the current experience.
+<!-- * **New partnerships**: Keep seeking additional funding and partnerships to sustain and develop the platform further. -->
  
 <jumbo caption="Apart from iterating on the core features, after the launch we started seeking funding to implement some features of high impact and high effort that were left out of the MVP.">
     <img src="./newfeatures.png"/>
@@ -188,12 +192,13 @@ Here's a summary of the amazing results we've already achieved since the launch 
 
 <results-banner
     data='{
-        "app installs (1st month)": "1376",
-        "funding raised": "R$ 200k",
-        "recorded expenses": "60.400",
-        "active users": "631"
+        "raised in funding": "€ 33.000,00",
+        "recorded rides": "60.400",
+        "app installs in 1st month": "1376"
     }'>
 </results-banner>
+
+## Learnings
 
 It's really hard to summarize here in a few paragraphs how much I've learned and grew in almost 4 years of such an intense and different project, but here's an attempt:
 * **Challenging assumptions about user needs**: Delivery workers' challenges extend beyond simplistic assumptions about financial instability. Many workers lacked intuitive tools to track their income and expenses, which highlighted the gap between the tech-driven gig economy narrative of "freedom and entrepreneurship" and the daily, often chaotic reality of delivery work.
@@ -206,15 +211,17 @@ It's really hard to summarize here in a few paragraphs how much I've learned and
 
 <!-- adicionar ref ao "fair design"? -->
 
+
 * **Financial sustainability as a social impact project**: Beyond merely securing funding, our experience highlighted how critical it is to position a tool like Meu Corre as a social good solution rather than a profit-driven product, even if going against the will of our initial mentors. Ensuring the app remains accessible and free demands not just partnerships but creative models of sustainability that aligned with our mission to empower gig workers without burdening them financially and, mainly, making sure incentives are aligned.
 
 
+# Conclusion
 
-Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what meaningful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with like-minded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
+Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with like-minded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
 
 #
 
-_This case study leveraged generative AI technologies to summarize and extract key insights from four years of extensive project documentation. It also helped me suggesting improvements to the writing making it more concise without losing meaning. All AI-generated content was thoroughly reviewed and manually edited before publishing._
+_This case study leveraged generative AI technologies to summarize and extract key insights from four years of extensive project documentation. It also helped me suggesting improvements to the writing. All AI-generated content was thoroughly reviewed and manually edited before publishing._
 
 
 # Learn more
