@@ -113,7 +113,7 @@ class IndexPage extends React.Component {
               {/* </Reveal> */}
                {/* <Reveal effect="slideUp" duration={2000} big> */}
                   <p>
-                    I'm passionate about solving complex problems by designing <span className='ttext'>user-centric, elegant and strategic</span> solutions across interfaces, products, systems, and platforms. I'm also a builder, eager to roll up my sleeves to bring ideas to life.
+                    I'm passionate about solving complex problems by designing <span className='ttext'>user-centric, elegant and strategic</span> solutions across interfaces, products, systems, and platforms. More than a designer, I'm a builder—eager to get <span className='ttext'> hands-on with code</span> to bring ideas to life.
                   </p>
               {/* </Reveal> */}
              
@@ -228,7 +228,7 @@ export const pageQuery = graphql`
                    color
                    cover { 
                       childImageSharp {
-                        fluid(maxWidth: 1248) {
+                        fluid(maxWidth: 1440) {
                           src
                           srcSet
                           base64
