@@ -5,7 +5,7 @@ const footerIconsClasses = 'pl4-ns pr0-ns pr3 pl0 dim gray';
 const Footer = () => (
     <div className="flex flex-row-ns flex-column pv6 w-100 justify-between layoutMaxWidth center">
         <div className="f7 mw6-ns lh-copy">
-            <p className='f5'>
+            <p className='f5 dark-gray'>
                 "Computers are like a bicycle for the mind."
             </p>
 
