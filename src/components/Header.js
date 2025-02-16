@@ -17,23 +17,27 @@ class Header extends React.Component {
 
   render() {
     let isHome=true;
-
     if (typeof window !== `undefined`) {
       isHome = window.location.pathname === '/';
       // url = new URL(window.location.href);
     }
- 
+
+    let headerClasses = 'flex pt4 pb3 center';
+    // headerClasses += isHome ? ` fixed-ns top-0 left-0 right-0 bg-background-color z-2 relative` : '';
+    headerClasses += isHome ? ` layoutMaxWidth fixed-ns top-0 left-0 right-0 z-2 relative` : '';
+    
     const tabItemClasses = 'ml4 f6 pa0 fw4 pointer bg-transparent outline-0 bn tab tab--unselected';
     let sections = [
       'About',
-      'Case studies',
+      'Projects',
       'Speaking',
       'Social'
     ];
     const sectionsSlugs = sections.map( section => section.toLowerCase() );
+
   
     return (
-      <div className='flex pt4 pb3 layoutMaxWidth center'>
+      <div className={headerClasses}>
         <BrowserView>
           <ThemeToggler classes='fixed bottom-0 left-0'/>
         </BrowserView>

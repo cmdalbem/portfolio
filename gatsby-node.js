@@ -35,18 +35,14 @@ exports.createPages = ({ graphql, actions }) => {
                     date2
                     lastUpdated
                     liveLink
-                    isPasswordProtected
                     title
-                    forceOrder
                     description
                     minibio
                     projectType
                     tags
-                    isHidden
-                    hover
                     cover {
                       childImageSharp {
-                        fluid(maxWidth: 1440) {
+                        fluid(maxWidth: 2280) {
                           src
                           srcSet
                           base64

@@ -62,11 +62,152 @@ class ProjectPage extends React.Component {
           <ReadingProgressBar barColor={post.frontmatter.color}/>
         </BrowserView>
         
-        <div className="center layoutMaxWidth">
+        <div className="center">
+          {/* Heading */}
+          <Fade duration={2000} >
+            <div className="flex flex-column mv5">
+              <h1 className={`f-subheadline-ns w-60-ns mt5-ns mt0 fw5 mb3 lh-solid tracked-tight ${post.frontmatter.color ? '' : 'dark-gray'}`} style={{color: post.frontmatter.color}}>
+                {post.frontmatter.title}
+              </h1>
+              <div className="flex flex-row-ns flex-column mt3 mb5">
+                <div className="w-50-ns">
+                  {
+                    post.frontmatter.description &&
+                    <div className="mb3 f3-ns f4 dark-gray lh-copy tracked-tight">
+                      {post.frontmatter.description}
+                    </div>
+                  }
+                  <div className='f5 silver db-ns dn'>
+                    {
+                      readingTime.minutes > 1 &&
+                      readingTime.text
+                    }
+
+                    {
+                      post.frontmatter.lastUpdated &&
+                      <div className='di'>
+                        {
+                          readingTime.minutes > 1 &&
+                          post.frontmatter.lastUpdated &&
+                            <span className='ph1'> · </span>
+                        }
+                        <span>Last updated on {lastUpdated}</span>
+                      </div>
+                    }
+                  </div>
+                </div>
+
+                <div className="w-20-ns">
+                </div>
+
+                <div className="w-30-ns">
+                  {/* {
+                    <div className='mv4 dark-gray'>
+                      <h2 className="f5 mv2 mr2">
+                        <span>
+                          Challenge
+                        </span>
+                      </h2>
+                      <span className="f5 din lh-copy">
+                        {post.frontmatter.minibio}
+                      </span>
+                    </div>
+                  } */}
+
+                  {
+                    post.frontmatter.metrics &&
+                    post.frontmatter.metrics.length > 0 &&
+                    <div className="mb4 dark-gray">
+                      <h2 className="f5 mv2 mr2">
+                        <span>
+                          Metrics
+                        </span>
+                      </h2>
+                      <div className="f5 lh-copy">
+                        { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
+                      </div>
+                    </div>
+                  }
+
+                  {
+                    post.frontmatter.tags &&
+                    post.frontmatter.tags.length > 0 &&
+                    <div className="mb4 dark-gray">
+                      <h2 className="f5 mv2 mr2">
+                        <span>
+                          Roles
+                        </span>
+                      </h2>
+                      <div>
+                        { post.frontmatter.tags.map(t => capitalize(t)).join('・') }
+                        {/* {post.frontmatter.tags.map(tag => (
+                          <Tag size="big" key={tag}>
+                            {tag}
+                          </Tag>
+                        ))} */}
+                      </div>
+                    </div>
+                  }
+
+                  {
+                    post.frontmatter.team &&
+                    <div className='mv4 dark-gray'>
+                      <h2 className="f5 mv2 mr2">
+                        <span>
+                          Teammates
+                        </span>
+                      </h2>
+                      <span className="f5 din lh-copy">
+                        {post.frontmatter.team}
+                      </span>
+                    </div>
+                  }
+
+                  {
+                    <div className="mv4 dark-gray">
+                      <h2 className="f5 mv2 mr2">
+                        <span>
+                          Date
+                        </span>
+                      </h2>
+                      <div className="f5">
+                        {dateStart}
+                        {dateEnd &&
+                          ` – ${dateEnd}`
+                        }
+                      </div>
+                    </div>
+                  }
+
+                  {
+                    post.frontmatter.liveLink &&
+                    // <div className="gradient-border--animated dim ">
+                    //   <a
+                    //     href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
+                    //     className="text-gradient-clip bg-gradient--animated dib f5 fw6 link orange pv3 ph5"
+                    //   >
+                    //     See it live
+                    //   </a>
+                    // </div>
+                    <a
+                      href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
+                      className="dib f5 fw6 link pv3 ph5 ba bn dim br2"
+                      style={{ 
+                          backgroundColor : post.frontmatter.color,
+                          color: "white"
+                      }}>
+                      See it live
+                    </a>
+                  }
+                </div>
+              </div>
+            </div>
+          </Fade>
+
           {/* Cover image */}
-          <div className="flex flex-row-ns flex-column mt5 mb5">
+          <div className="flex flex-row-ns flex-column">
             <div className="w-100">
-              <Reveal effect="clipIn" duration={2000}>
+              <Reveal effect="clipIn" duration={4000}>
                 {
                   post.frontmatter.cover ?
                     <Img fluid={post.frontmatter.cover.childImageSharp.fluid} alt="" />
@@ -76,154 +217,10 @@ class ProjectPage extends React.Component {
               </Reveal>
             </div>
           </div>
-
-          {/* Heading */}
-          <Fade duration={1500} delay={1000}>
-            <div className="flex flex-row-ns flex-column mb4">
-              <div className="w-60-ns">
-                <h1 className={`f1 mt0 fw7 mb3 lh-solid tracked-tight ${post.frontmatter.color ? '' : 'dark-gray'}`} style={{color: post.frontmatter.color}}>
-                  {post.frontmatter.title}
-                </h1>
-                {
-                  post.frontmatter.description &&
-                  <div className="mb3 gray">
-                    <div className='f3 gray lh-copy'>
-                      {post.frontmatter.description}
-                    </div>
-                  </div>
-                }
-                <div className='f5 gray db-ns dn'>
-                  {
-                    readingTime.minutes > 1 &&
-                    readingTime.text
-                  }
-
-                  {
-                    post.frontmatter.lastUpdated &&
-                    <div className='di'>
-                      {
-                        readingTime.minutes > 1 &&
-                        post.frontmatter.lastUpdated &&
-                          <span className='ph1'> · </span>
-                      }
-                      <span>Last updated on {lastUpdated}</span>
-                    </div>
-                  }
-                </div>
-              </div>
-
-              <div className="w-10-ns">
-              </div>
-
-              <div className="w-30-ns">
-                {
-                  <div className='mv4 dark-gray'>
-                    <h2 className="f6 fw6 ttu mv2 fw7 mr2">
-                      <span>
-                        Challenge
-                      </span>
-                    </h2>
-                    <span className="f5 din lh-copy">
-                      {post.frontmatter.minibio}
-                    </span>
-                  </div>
-                }
-
-                {
-                  post.frontmatter.metrics &&
-                  post.frontmatter.metrics.length > 0 &&
-                  <div className="mb4 dark-gray">
-                    <h2 className="f6 fw6 ttu mv2 fw7 mr2">
-                      <span>
-                        Business metrics
-                      </span>
-                    </h2>
-                    <div className="f5 lh-copy">
-                      { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
-                    </div>
-                  </div>
-                }
-
-                {
-                  post.frontmatter.tags &&
-                  post.frontmatter.tags.length > 0 &&
-                  <div className="mb4 dark-gray">
-                    <h2 className="f6 fw6 ttu mv2 fw7 mr2">
-                      <span>
-                        My roles
-                      </span>
-                    </h2>
-                    <div>
-                      { post.frontmatter.tags.map(t => capitalize(t)).join('・') }
-                      {/* {post.frontmatter.tags.map(tag => (
-                        <Tag size="big" key={tag}>
-                          {tag}
-                        </Tag>
-                      ))} */}
-                    </div>
-                  </div>
-                }
-
-                {
-                  post.frontmatter.team &&
-                  <div className='mv4 dark-gray'>
-                    <h2 className="f6 fw6 ttu mv2 fw7 mr2">
-                      <span>
-                        Teammates
-                      </span>
-                    </h2>
-                    <span className="f5 din lh-copy">
-                      {post.frontmatter.team}
-                    </span>
-                  </div>
-                }
-
-                {
-                  <div className="mv4 dark-gray">
-                    <h2 className="f6 fw6 ttu mv2 fw7 mr2">
-                      <span>
-                        Date
-                      </span>
-                    </h2>
-                    <div className="f5">
-                      {dateStart}
-                      {dateEnd &&
-                        ` – ${dateEnd}`
-                      }
-                    </div>
-                  </div>
-                }
-
-                {
-                  post.frontmatter.liveLink &&
-                  // <div className="gradient-border--animated dim ">
-                  //   <a
-                  //     href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                  //     className="text-gradient-clip bg-gradient--animated dib f5 fw6 link orange pv3 ph5"
-                  //   >
-                  //     See it live
-                  //   </a>
-                  // </div>
-                  <a
-                    href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                    className="dib f5 fw6 link pv3 ph5 ba bn dim"
-                    style={
-                      { 
-                        backgroundColor : post.frontmatter.color,
-                        color: "#FFFFFF"
-                      }
-                    }
-                  >
-                    See it live
-                  </a>
-                }
-              </div>
-            </div>
-          </Fade>
         </div>
 
         {/* Content */}
-        <div className="flex flex-column">
+        <div className="flex flex-column center">
           <div className={baseType}>
             { markdownRenderer(post.frontmatter.fullWidth)(post.htmlAst) }
           </div>
@@ -267,7 +264,7 @@ class ProjectPage extends React.Component {
           </div>
 
           <div className="w-100 tc mt6">
-            <Link to="/#case studies" className="gradient-border text-gradient-clip ttext dim f4 fw5 link pa3">
+            <Link to="/#projects" className="dim f3 fw5 link pa3 br2 text-gradient-clip ttext">
               View all projects
             </Link>
           </div>
@@ -294,7 +291,6 @@ export const pageQuery = graphql`
                date2
                lastUpdated
                liveLink
-               isPasswordProtected
                tags
                metrics
                team
@@ -302,7 +298,7 @@ export const pageQuery = graphql`
                fullWidth
                cover {
                   childImageSharp {
-                    fluid(maxWidth: 1440) {
+                    fluid(maxWidth: 2280) {
                       src
                       srcSet
                       base64

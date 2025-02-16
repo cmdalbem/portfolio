@@ -16,7 +16,7 @@ class ResultsBanner extends React.Component {
 
         return (
             <div
-                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pv6 bg-near-white flex flex-row-l flex-column justify-around tl-ns tc"
+                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pv6 bg-near-white flex flex-row-l flex-column justify-around tl-ns tc z-0 relative"
             >
                 {
                     Object.keys(dataObj).map((i, n) => (
@@ -63,17 +63,17 @@ class ProjectPasswordInput extends React.Component {
 
     render() {
         return (
-            <div className="mv7 center tc mw6 bg-near-white ph5 pv4 br2">
-                <div className="f2 mv4">
-                    🔒
+            <div className="mv7-ns mv5 center tc mw6-ns bg-near-white pa4 br2">
+                <div className="f2 mv3 br-100 pa1 h3 w3 center bg-white-70">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 </div>
-                <div className='f5 silver'>
+                <div className='f5 gray'>
                     <div>This project is password-protected.</div>
                     <div><a href="mailto:cristiano.dalbem@gmail.com" className='pretty-link'>Contact me</a> if you think you should have access. </div>
                 </div>
-                <div className="center mt4">
+                <div className="center mt4 tc">
                     <input 
-                        className={"input-reset bg-white br2 pa3 db w-100 f5 sans-serif gray " + (this.state.wrongPassword ? 'ba b--light-red' : 'b--none')}
+                        className={"input-reset bg-white-90 br2 pa3 db w-100 f5 gray tc " + (this.state.wrongPassword ? 'ba b--light-red' : 'b--none')}
                         type="password" 
                         placeholder="Enter password"
                         value={this.state.value} onChange={this.handleChange}
@@ -94,45 +94,45 @@ class ProjectPasswordInput extends React.Component {
 }
 
 export function markdownRenderer(isFullWidth) {
-    const defaultMargins = `center ${isFullWidth ? 'layoutMaxWidth' : 'mw7'}`;
-    const bigImageMargins = `nl5-ns nr5-ns nl3-m nr3-m mv6-ns mv5 tc `;
-    const imageMargins = `${defaultMargins} mv6-ns mv5 `;
+    const defaultMargins = `${isFullWidth ? 'layoutMaxWidth' : 'mw7-ns'}`;
+    const bigImageMargins = `mv6-ns mv5 `;
+    const imageMargins = `${defaultMargins} ml-auto-ns ml0 mr0 mv6-ns mv5 `;
 
     return new rehypeReact({
         createElement: React.createElement,
         components: {
             h1: props => (
-                <h1 className={`f2 lh-title dark-gray fw4 mt6-ns mt5 mb4 ${defaultMargins}`}>
+                <h1 className="f2 lh-title tracked-tight dark-gray fw4 mt6-ns mt5 mw6-ns mb--1-ns position-sticky-ns bg-background-color">
                     {props.children}
                 </h1>
             ),
             h2: props => (
-                <h2 className={`f3 lh-title dark-gray fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
+                <h2 className={`f3 lh-title dark-gray fw4 mt5-ns mt4 mb3-ns mb2 ml-auto-ns ${defaultMargins}`}>
                     {props.children}
                 </h2>
             ),
             h3: props => (
-                <h3 className={`f4-ns f5 lh-title gray fw6 mt4 ${defaultMargins}`}>
+                <h3 className={`f4-ns f5 lh-title gray fw6 mt4 ml-auto-ns ${defaultMargins}`}>
                     {props.children}
                 </h3>
             ),
             p: props => (
-                <p className={`mt0 ${defaultMargins}`}>
-                    {props.children
-                    }</p>
+                <p className={`mt0 ml-auto-ns ${defaultMargins}`}>
+                    {props.children}
+                </p>
             ),
             blockquote: props => (
-                <div className={`mt0 pl4 mv5 f3 gray ${defaultMargins}`} style={{ textIndent: '-.5em' }}>
+                <div className={`mt0 pl4 mv6 f3 gray ml-auto-ns ${defaultMargins}`}>
                     {props.children}
                 </div>
             ),
             ul: props => (
-                <ul className={`${defaultMargins}`}>
+                <ul className={`ml-auto-ns ${defaultMargins}`} style={{paddingInlineStart: 0}}>
                     {props.children}
                 </ul>
             ),
             li: props => (
-                <li className="mb2">
+                <li className="mb2 ml-auto-ns">
                     {props.children}
                 </li>
             ),
@@ -158,12 +158,33 @@ export function markdownRenderer(isFullWidth) {
             code: props => (
                 <code className="f6 bg-light-gray ph2">{props.children}</code>
             ),
+            "quote": props => (
+                <div className={`mt0 mv5 ml-auto-ns ${defaultMargins}`}>
+                    <div className='f3 tracked-tight'>
+                        <span style={{marginLeft: "-0.406em"}}>“</span>
+                        {props.children}
+                        <span className=''>”</span>
+                    </div>
+                    {
+                        props.author &&
+                        <div className='f5 mt2'>
+                            {props.author}
+                            {
+                                props.context && 
+                                <span className='silver ml2'>
+                                    {props.context}
+                                </span>
+                            }
+                        </div>
+                    }
+                </div>
+            ),
             "jumbo": props => (
                 <div className={bigImageMargins}>
                     {props.children}
                     {
                         props.caption &&
-                        <figcaption className={defaultMargins + " mt2 f6 dark-gray tc"}>
+                        <figcaption className={"mt2 f6 dark-gray"}>
                             {props.caption}
                         </figcaption>
                     }
@@ -172,12 +193,12 @@ export function markdownRenderer(isFullWidth) {
             "video-container": props => (
                 <div
                     className={props.jumbo ? bigImageMargins : imageMargins}
-                    style={props.jumbo ? {maxWidth: 1440, marginLeft: 'auto', marginRight: 'auto'} : {}} // copy styles from gatsby-resp-image-wrapper
+                    style={props.jumbo ? {marginLeft: 'auto', marginRight: 'auto'} : {}} // copy styles from gatsby-resp-image-wrapper
                     >
                     { props.children }
                     {
                         props.caption &&
-                        <figcaption className={defaultMargins + " mt2 f6 dark-gray tc"}>
+                        <figcaption className={"mt2 f6 dark-gray"}>
                             {props.caption}
                         </figcaption>
                     }
@@ -190,7 +211,7 @@ export function markdownRenderer(isFullWidth) {
                 let items = arrayObj.map(i => i);
 
                 return (
-                    <p className={`mt0 ${defaultMargins}`}>
+                    <p className={`mt0 ml-auto-ns ${defaultMargins}`}>
                         <LinksList items={items} rows />
                     </p>
                 )

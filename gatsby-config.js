@@ -77,10 +77,12 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1440,
+              maxWidth: 2280,
               quality: 100,
               linkImagesToOriginal: true,
               showCaptions: true,
+              // markdownCaptions: true,
+              disableBgImageOnAlpha: true,
               backgroundColor: 'transparent',
             },
           },
