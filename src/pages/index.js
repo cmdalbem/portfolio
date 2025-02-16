@@ -48,7 +48,7 @@ class IndexPage extends React.Component {
     const personalHighlights = filterPostsByType('personalHighlight');
     const personal = filterPostsByType('personal');
 
-    const titleTypography = 'f1-ns f3 fw4 dark-gray tracked-tight ma0';
+    const titleTypography = 'f1-ns f2 fw4 dark-gray tracked-tight ma0';
  
     return (
       <Layout>
@@ -63,7 +63,7 @@ class IndexPage extends React.Component {
                 alt="Back of a man walking through a hiking path with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
               />
 
-              <div className="absolute top-0 mt7-ns mt5">
+              <div className="absolute top-0 mt7-ns mt2">
                 {
                   isMobile ?
                     <h1 className={titleTypography}>
@@ -105,7 +105,7 @@ class IndexPage extends React.Component {
           </HomeSection> */}
 
           <HomeSection title="About me" fullScreen> 
-            <div className="f2-ns f3 lh-copy fw4 dark-gray measure">
+            <div className="f2-ns f4 lh-copy fw4 dark-gray measure">
               <Reveal effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
                     With the projects I delivered, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>launching and scaling</span> some of Brazil's largest online brands, and fostering urban cycling <span className='ttext'>making our cities more livable and sustainable</span>.
@@ -217,13 +217,10 @@ export const pageQuery = graphql`
                    date
                    date2
                    title
-                   isHidden
-                   isPasswordProtected
                    description
                    minibio
                    projectType
                    tags
-                   forceOrder
                    color
                    cover { 
                       childImageSharp {
