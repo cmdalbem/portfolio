@@ -42,7 +42,7 @@ const Speaking = () => (
 
       <Talk
         title="Prototypes (or: A Presentation About Prototypes Made As A Prototype)."
-        context="Laboratory of Creative Practices in Software - UFRGS, Specialization in Software Engineering and Innovation"
+        context="Laboratory of Creative Practices in Software - UFRGS"
         date={2020}
         link="https://www.figma.com/proto/wzuas1ACN5n2t9lVyPtnj8/Apresenta%C3%A7%C3%A3o-Prot%C3%B3tipos?node-id=1%3A89&scaling=min-zoom"
         linkLabel="slides"
@@ -189,17 +189,17 @@ class Talk extends React.Component {
             {title}
           </div>
           
-          <div className="f6 overflow-hidden h1 relative">
+          <div className="f6 overflow-hidden h2 relative">
             <span className="absolute silver"
               style={{
-                transform: this.state.hover ? 'translateY(-100%)' : 'translateY(0)',
+                transform: this.state.hover ? 'translateY(-150%)' : 'translateY(0)',
                 transition: "transform 200ms"}
               }>
                 {date} • {context}
             </span>
             <span className="absolute"
               style={{
-                transform: this.state.hover ? 'translateY(0)' : 'translateY(+100%)',
+                transform: this.state.hover ? 'translateY(0)' : 'translateY(+150%)',
                 transition: "transform 200ms"}
               }>
                 {flags[language]} {verbs[linkLabel]} {linkLabel} ↗
