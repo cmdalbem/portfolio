@@ -189,8 +189,8 @@ class Talk extends React.Component {
             {title}
           </div>
           
-          <div className="f6 overflow-hidden h2 relative">
-            <span className="absolute silver"
+          <div className="f6 overflow-hidden h2-ns relative">
+            <span className="absolute-ns silver"
               style={{
                 transform: this.state.hover ? 'translateY(-150%)' : 'translateY(0)',
                 transition: "transform 200ms"}
