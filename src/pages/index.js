@@ -104,19 +104,18 @@ class IndexPage extends React.Component {
               ]}/> 
           </HomeSection> */}
 
-          <HomeSection title="About me" className="text-gradient-clip" fullScreen> 
+          <HomeSection title="About me" fullScreen> 
             <div className="f2-ns f3 lh-copy fw4 dark-gray measure">
-              {/* <Reveal effect="slideUp" duration={2000} big> */}
-                  <p>
+              <Reveal effect="slideUp" duration={2000} big>
+                  <p className="text-gradient-clip">
                     With the projects I delivered, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>launching and scaling</span> some of Brazil's largest online brands, and fostering urban cycling <span className='ttext'>making our cities more livable and sustainable</span>.
                   </p>
-              {/* </Reveal> */}
-               {/* <Reveal effect="slideUp" duration={2000} big> */}
-                  <p>
+              </Reveal>
+               <Reveal effect="slideUp" duration={2000} big>
+                  <p className="text-gradient-clip">
                     I'm passionate about solving complex problems by designing <span className='ttext'>user-centric, elegant and strategic</span> solutions across interfaces, products, systems, and platforms. More than a designer, I'm a builder—eager to get <span className='ttext'> hands-on with code</span> to bring ideas to life.
                   </p>
-              {/* </Reveal> */}
-             
+              </Reveal>
             </div>
           </HomeSection>
 
@@ -228,7 +227,7 @@ export const pageQuery = graphql`
                    color
                    cover { 
                       childImageSharp {
-                        fluid(maxWidth: 1440) {
+                        fluid(maxWidth: 2280) {
                           src
                           srcSet
                           base64
