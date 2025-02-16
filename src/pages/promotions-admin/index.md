@@ -8,16 +8,20 @@ minibio: "Redesigning a complex legacy admin in an e-commerce platform to maximi
 description: "Rethinking and redesigning one of the core experiences in managing products and marketing strategies in VTEX e-commerce platform."
 tags: ['design','product management']
 cover: './cover.png'
-hover: '/covers/promotions-admin.gif'
+# hover: '/covers/promotions-admin.gif'
 color: '#f71b62'
 ---
 
 # Context
-VTEX is a global SaaS technology company focused on ecommerce solutions that have a daily impact on the work of thousands of people around the world. More than 2500 leading brands of varying sizes and segments, with operations in 26 countries and in global expansion, rely on VTEX for the online sales of their products.
-
-The main challenge of working in such environment is that the product is the same whether you're a small store or a huge commerce operation. So every solution we design has to leverage a huge diversity of user needs, and build something that works for everybody.
+VTEX is a global SaaS technology company focused on ecommerce solutions that have a daily impact on the work of thousands of people around the world. Leading brands of varying sizes and segments, with operations in 26 countries and in global expansion, rely on VTEX for the online sales of their products.
  
-The main touchpoint of our product with the merchants is the Admin. It's where our clients configure and manage everything related to their commerce operations. It's also where most of our design efforts go into.
+<!-- The main challenge of working in such environment is that the product is the same whether you're a small store or a huge commerce operation. So every solution we design has to leverage a huge diversity of user needs, and build something that works for everybody. -->
+ 
+<!-- The main touchpoint of our product with the merchants is the Admin. It's where our clients configure and manage everything related to their commerce operations. It's also where most of our design efforts go into. -->
+
+```grid|1
+![](./brands.png)
+```
 
 
 ## The challenge
@@ -65,7 +69,7 @@ After almost 20 interviews with both internal stakeholders and customers we conc
 The research generated lots of insights, which I summarized in a Miro presentation (below) that was a great reference that we would go back several times during the design and development of this project.
 
 <jumbo>
-    <img src="./research.gif"/>
+    <img class="w-100 z-0 relative" src="./research.gif"/>
 </jumbo>
 
 

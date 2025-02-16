@@ -8,7 +8,7 @@ description: "Choose a channel and let your mind wander with the continuous stre
 tags: ['design','front-end','product management']
 metrics: ['Video visualizations','Total playback time','Unique users']
 cover: './cover.png'
-hover: '/covers/escapista.gif'
+# hover: '/covers/escapista.gif'
 team: "Gabriela Catão (product, concept, content curation)"
 color: '#006E6E' 
 liveLink: 'http://escapista.app/'
@@ -20,7 +20,7 @@ For a few years, I've been in love with the concept of [Slow TV](https://en.wiki
  
 <!-- ```grid|1 
 ![](./devices.png)
-```  -->
+```  --> 
 
 This project was co-created with [the Reddit Slow TV community](https://www.reddit.com/r/SlowTV/), where we learned about the habits of Slow TV consumption and their desires for a specialized website. One of the main requests: an interface that would be calming, "playing to the affective experience of watching Slow TV itself". The interface design is inspired by Scandinavian design, well-known for its minimalism and elegance - and also the birthplace of the original Slow TV shows.
 

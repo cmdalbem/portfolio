@@ -9,7 +9,7 @@ description: "A cicloactivist project that aims to encoure more people to use bi
 tags: ['design','web development','product management','branding']
 team: "Hannah Kny (advisor urbanist, communication), Tadeu Saldanha (advisor, development), Denner Evaldt (back-end development), Francisco Cenzi (advisor urbanist)."
 cover: './cover.png'
-hover: '/covers/bikedeboa.gif'
+# hover: '/covers/bikedeboa.gif'
 color: '#41A65A'
 liveLink: 'https://www.bikedeboa.com.br/'
 ---
