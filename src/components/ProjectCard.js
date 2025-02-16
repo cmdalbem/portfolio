@@ -48,12 +48,14 @@ class ProjectCard extends React.Component {
 
                 <div className={mini ? "pl0-ns pl2 w-100 pv3-ns pv0" : "pv3-ns pv2"}>
                     {
-                        post.frontmatter.title
-                        &&
+                        post.frontmatter.title &&
                         <div className={"project-card--title near-black mt0 mb1-ns mb0 " + (mini ? 'f5' : 'f3-ns f4')}>
+                            {post.frontmatter.title}
                             {
-                                post.frontmatter.title
-                                + (post.frontmatter.isPasswordProtected ? ' 🔒' : '')
+                                post.frontmatter.isPasswordProtected &&
+                                <span className='ml2 silver'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                </span>
                             }
                         </div>
                     }
