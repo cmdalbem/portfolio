@@ -168,7 +168,7 @@ Tooltips for points of interest have more details, which were curated from the s
 ```
 
 <jumbo caption="Final version of the UI and map style.">
-    <img src="./finalrj.png"/>
+    <img src="./finalrj.png"/> 
 </jumbo>
 
 <!-- <jumbo caption="The variation with satellite imagery as the base map. It was important that the color palette worked for both scenarios. The images were processed to have reduced brightness and saturation to better keep contrast with the UI.">
