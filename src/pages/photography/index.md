@@ -15,7 +15,7 @@ description: "Photography has been for almost two decades the main way in which 
 
 ```grid|2
 ![](./000047EBAABA52E6.jpg "Graz (2024)")
-![](./DSCF2795.jpg "Salzburg (2024)")
+![](./DSCF2795.png "Salzburg (2024)")
 ```
 
 ```grid|1
@@ -23,18 +23,18 @@ description: "Photography has been for almost two decades the main way in which 
 ```
 
 ```grid|2 
-![](./DSCF0719.jpg "Barcelona (2024)")
-![](./DSCF0777.jpg "Barcelona (2024)")    
+![](./DSCF0719.JPG "Barcelona (2024)")
+![](./DSCF0777.JPG "Barcelona (2024)")    
 ``` 
- 
+   
 ![](./DSCF1136.jpg "Barcelona (2024)") 
   
 ```grid|2
 ![](./20231103_093238~2.jpg "Tossa de Mar (2023)")
 ![](./20240324_163936.jpg "Paris (2023)")   
-```
+``` 
  
-```grid|2
+```grid|2 
 ![](./20230407_114341.jpg "Rio de Janeiro (2023)") 
 ![](./20230729_171153.jpg "Bahia (2023)")
 ``` 
