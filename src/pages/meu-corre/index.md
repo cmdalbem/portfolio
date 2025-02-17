@@ -2,6 +2,7 @@
 projectType: 'personalHighlight'
 date: "2020-11"
 date2: "2024-06"
+lastUpdated: "2025-02"
 title: "Meu Corre"
 minibio: "Bootstrapping a personal financial management app for delivery workers."
 description: "\"My Gig\" is an app designed to support delivery workers in becoming financially aware during their often precarious daily work routine. By fostering financial awareness, the app not only supports individual organization but also serves as a powerful advocacy tool by generating unprecedented data to inform the fight for workers' rights in Brazil."
@@ -147,10 +148,6 @@ After a [way too] long development phase where we faced thousands of issues, tec
 ```grid|1
 ![](./live.png "There were in total 4 live events we held on YouTube to promote the app.")
 ```  
-<!-- 
-> Super cool app. I use it daily and I have to admit that the app is amazing. It meets the demands I need with my services.
-
-> Excellent app, it can control rides very well week month day very good app without bugs excellent -->
 
 <!-- Key Features: 
 * Financial Tracking: Simplified recording of both income and expenses, allowing workers to track all their sources of revenue.
@@ -197,6 +194,14 @@ Here's a summary of the amazing results we've already achieved since the launch 
         "app installs in 1st month": "1376"
     }'>
 </results-banner>
+
+Also we've been collecting amazing testimonials of people who has been using the app and expressing how it impacted their lives:
+
+<quote author="Anonymous user">Super cool app. I use it daily and I have to admit that the app is amazing. It meets the demands I need with my services.</quote> 
+
+<quote author="Luiz Henrique">Excellent app, it can control rides very well week month day very good app without bugs excellent.</quote> 
+
+<quote author="Rogerio Alcir" context="São Paulo" >I thank you for making available an app that helps us so much, what I used to do in spreadsheets, was way more complex, today I do my organization in the app. Thank you very much for helping.</quote> 
 
 ## Learnings
 
