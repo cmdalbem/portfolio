@@ -9,18 +9,18 @@ const Footer = () => (
                 "Computers are like a bicycle for the mind."
             </p>
 
-            <p className='silver'>
-                <p className='mt1 mb0'>
+            <div className='silver'>
+                <div className='mt1 mb0'>
                     Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://fonts.google.com/">Google Fonts</a>.
-                </p>
-                <p className='mt1 mb0'>
+                </div>
+                <div className='mt1 mb0'>
                     Handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://www.gatsbyjs.com/">Gatsby</a>.
-                </p>
-                <p className='mt1 mb0'>
+                </div>
+                <div className='mt1 mb0'>
                     Powered by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://loja.badentorrefacao.com.br/">☕️ Brazilian coffee</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://photos.app.goo.gl/XvKqB3ZJCBAsBUbs8">🍌 banana pancakes</a>.
-                </p>
-            </p>
-
+                </div>
+            </div>
+ 
         </div>
         <div className="mv4 mv0-ns">
             {/* LinkedIn */}
