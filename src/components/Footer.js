@@ -10,15 +10,15 @@ const Footer = () => (
             </p>
 
             <p className='silver'>
-                <div>
+                <p className='mt1 mb0'>
                     Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://fonts.google.com/">Google Fonts</a>.
-                </div>
-                <div>
-                    Fueled by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://photos.app.goo.gl/XvKqB3ZJCBAsBUbs8">🍌 banana pancakes</a>, <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://loja.badentorrefacao.com.br/">☕️ Brazilian coffee</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://www.oakberry.com/">🫐 açaí</a>.
-                </div>
-                <div>
+                </p>
+                <p className='mt1 mb0'>
                     Handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://www.gatsbyjs.com/">Gatsby</a>.
-                </div>
+                </p>
+                <p className='mt1 mb0'>
+                    Powered by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://loja.badentorrefacao.com.br/">☕️ Brazilian coffee</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://photos.app.goo.gl/XvKqB3ZJCBAsBUbs8">🍌 banana pancakes</a>.
+                </p>
             </p>
 
         </div>
