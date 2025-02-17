@@ -1,7 +1,7 @@
 ---
-projectType: 'project'
-date: "2021-10"
-date2: "Now"
+projectType: 'projectHighlight'
+date: "2022-02"
+date2: "2024-06"
 lastUpdated: "2023-04"
 title: "Nubank's Additional Cards"
 minibio: "Enabling people to extend their purchase power to loved ones."
@@ -15,7 +15,6 @@ liveLink: "https://blog.nubank.com.br/cartao-de-credito-adicional-do-nubank-tudo
 
 # Context
 
-## The company
 [Nubank](https://nubank.com.br/) was born in 2013 with the mission to fight complexity to empower people in their daily lives by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 75 million customers across Brazil, Mexico, and Colombia. Nubank is one of the most recognized digital product companies in the country and is often associated with products and services that are simple, intuitive, and transparent.
 
 ## What's an Additional Card?
@@ -31,8 +30,6 @@ Although we see many couples using this product as a way to share their finances
 
 # Problem statement
 
-## Business & user needs 
-
 Since Nubank didn't offer this product, we found out that clients have been finding "hacks" to accomplish these goals, such as sharing a single credit card among people in their households, either via the physical card or sharing the information of their virtual cards. These hacks not only could present risks to their data security but also offered a bad experience for their shared financial lives.
 
 Our team's objective was to increase our customer satisfaction, measured by NPS. Through previous interviews with our clients, the Research team identified that financial support has an important role in family relationships, and there's a strong emotional bond that makes that support so important, with an opportunity to connect providers and dependents on a platform that enables sharing and controlling family finances.
@@ -46,7 +43,7 @@ This project aimed at building two full user experiences. This is where the comp
 * **Card Owner**: the person who requests the card and shares their credit line. They need to have visibility of spending, especially when paying the credit card bill, and have control of the card settings, such as defining a spending limit.
 * **Cardholder**: the person who effectively uses the card for purchases. By looking at the competitive landscape, we noticed the holder needs are often not prioritized, leaving users lacking autonomy and visibility. Our focus was providing a native-like experience, so this person would feel like the card was their own.
 
-<jumbo caption="The card owner and the cardholder share many needs, but others are specific to each of these users.">
+<jumbo caption="The card owner and the cardholder share many needs, but others are specific to each of these users. Here, only the pink postits are where needs overlap.">
     <img src="./userstories.jpg"/>
 </jumbo> 
 
@@ -55,13 +52,19 @@ This project aimed at building two full user experiences. This is where the comp
 
 After mapping the main user needs, the next step of the Discovery phase was to start prototyping the ideas we had in mind so we could put them in the user's hands as soon as possible. Nubank has a very mature Design System, which enabled me to make ideas tangible in high fidelity quickly, and later it would speed up the development process.
 
+## Balancing user experience, security and legal requirements
+
 I started with the request flow. My objective was to make it as simple as possible while not compromising transparency with the customer. With the constraint of only being able to offer Additional Cards to those who are already a client, all we needed was the Holder's CPF number (it's like a Brazilian social security number).
 
-An additional legal requirement was to ask about the relationship between them. Although I was not happy with asking such a personal question here, it provided excellent data for understanding better our converting users later.
+Since this flow is open to all users, it was really tricky thinking on what we could and couldn't inform to the user about that CPF. If we inform too much, bad actors can use this flow to reveal personal information about that CPF. If we reveal too little, users can be confused.
+
+An additional legal requirement was to ask about the relationship between them. Although I was not happy with asking such a personal question here, it provided excellent data for understanding better our converting users later. My approach to make this not feel so weird was to add a small copy explaining why we needed that information at that point: "This information is necessary for legal reasons and to ensure security."
 
 <jumbo caption="The card request flow, designed to be very simple without compromising transparency.">
     <img src="./request.png"/>
 </jumbo>
+
+## Leveraging the platform
 
 The main challenge of this project was not the onboarding or the request flow but the actual day-to-day of managing this card and the purchases, and for that, I took a step back to understand how Credit Card exists in today's app structure. I noticed we have three main areas, each with a general theme with specific tasks.
 
@@ -79,7 +82,7 @@ To better understand our user's mental model, our UX Researcher Ana Urquiza and 
 ![](./prototype.png "The interactive prototype we used to test the main concepts. There were 3 concepts for the card owner, and 2 for the holder.")
 ``` 
 
-Our main takeaways were:
+Our main learnings from user tests were:
 * User mental models about credit cards were aligned to how the app was currently structured, so we should prioritize the solutions that maintain the status quo and perform better. 
 * Although the Transactions Feed filter solution performed very well with users, most users preferred using another part of the app. Seeing this was a strong trend since the first interviews, we quickly prototyped a solution for that in the middle of the research, and it proved to be the best according to users.
 * The relationship-centered architecture vision is very intuitive and perceived as more clear and organized than our current one - but the short-term solution works well too.
@@ -88,7 +91,7 @@ Our main takeaways were:
 ![](./concepttests.png)
 ```
 
-# Designing the physical credit card
+# Designing the physical card
 
 Since cardholders might already have another Nubank Credit Card with their name, we wanted to offer a better visual differentiation than just the card number on the back. Understanding these main design constraints since the beginning was crucial when exploring the solution space:
 * Design changes could impact the card manufacturing process ranging from weeks to several months.
@@ -99,7 +102,7 @@ Since cardholders might already have another Nubank Credit Card with their name,
 ![](./cardsfamily.png "Nubank's global family of cards, including cards for Brazil, Mexico, and Colombia. Any change in the Additional Card plastic design would have to adapt and scale to be combined with any of these potentially.")
 ```
 
-In tandem with our Marketing and Creative teams, we explored many ideas, such as new shapes, colors, and extra icons on the card design. After many alignments and a Design Review with the VP of Design, we moved forward with a solution that is very elegant in its simplicity: an extra label on the back of the card saying "compartilhado por" ("shared by") followed by the card owner's name. Not only this helps differentiate among multiple cards, but users mentioned this design values the emotional bond between the two people.
+In collaboration with the Marketing and Brand teams, we explored many ideas such as new shapes, colors, and extra icons on the card design. After many alignments and a Design Review with the VP of Design, we moved forward with a solution that is very elegant in its simplicity: an extra label on the back of the card saying "compartilhado por" ("shared by") followed by the card owner's name. Not only this helps differentiate among multiple cards, but users mentioned this design values the emotional bond between the two people.
  
 ```grid|1
 ![](./plastic.png "The new design of the Additional Card bring a subtle text on the back, helping the user differentiate between their cards and reinforcing the relationship bond.")
