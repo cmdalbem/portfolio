@@ -227,7 +227,7 @@ class ProjectPage extends React.Component {
         </div> 
 
       {/* Other projects */}
-      <div className="flex flex-column bg-near-white mt6 nl6 nr6 ph6 pb6">
+      <div className="flex flex-column bg-near-white mt6 nl6-ns nr6-ns nl3 nr3 ph6-ns ph3 pb6">
           {
             (previous || next) &&
             <div className="w-100 tc f2 mv6">
