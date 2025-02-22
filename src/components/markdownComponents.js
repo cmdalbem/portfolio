@@ -223,8 +223,8 @@ export function markdownRenderer(isFullWidth) {
                 let itemsArray = arrayObj.map(i => i);
                 
                 return (
-                    <div className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pa3 pv6 bg-near-white z-0 relative">
-                        <div className='mw6 mb6'>
+                    <div className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pa3 pv6-ns pv4 bg-near-white z-0 relative">
+                        <div className='mw6 mb6-ns b2'>
                             <h3 className="f3-ns f4 lh-solid fw7 mv2-ns mb2 dark-gray">
                                 { title }
                             </h3>
@@ -240,7 +240,7 @@ export function markdownRenderer(isFullWidth) {
                                 <Fade duration={1500} delay={i*500 - i*200}>
                                     {/* // <div className="ba b--light-gray pa3 br4" key={i}> */}
                                     <div className="mv4" key={i}>
-                                        {/* <div className="f6 mb3">
+                                        {/* <div className="f6">
                                             ({i+1})
                                         </div> */}
                                         <h4 className="mv2 fw4 lh-title">
