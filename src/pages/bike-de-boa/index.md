@@ -26,25 +26,15 @@ The collaborative aspect allows the active participation of citizens, fostering 
 
 This has been a great project to put in practice so many tools and concepts I've been learning in the past years about web development, UX Design and Analytics. Working in bike de boa I've learned how important it is to go beyond aesthetics and Usability to create a great product. And, most of all, beyond just improving hard skills, this has been a project with a social purpose.
 
-<results-banner
-    data='{
-        "avg rating": "4.7/5",
-        "cities mapped": "60+",
-        "unique users every month": "400",
-        "mapped bike racks": "2,800+",
-        "map pins views": "180,000+"
-    }'> 
-</results-banner>
- 
  
 # The problem
 
-> How might we contribute to the local culture of urban cycling using technology to encourage people to bike more?
-
 Most cycling apps at that time seemed to focus too much on routing: how to bike from point A to point B? But how can even the most advanced pathplanning algorithms help you if you happen to live in a city with few to no bike paths and traffic is chaotic and dangerous? This is a cultural problem, and probably no app can fix that. Most of our western cities are car-centric by design, and drivers think they have the streets all to themselves and for their noisy, air-polluting and stress-inducing machines.
 
+<quote>How might we use technology to contribute to the local culture of urban cycling by encouraging people to bike more?</quote>
+
 <jumbo caption="Examples of good and bad bike racks. Can you spot which is which?">
-    <img src="./mosaic.png"/>
+    <img src="./mosaic.png"/> 
 </jumbo>
 
 Bike racks, as they call structures to park bicycles, are made to offer confort and safety to ciclists and even work as some kind of subliminar marketing for the daily ciclist. There is even research that say they can boost local economy by increasing customers and sales.
