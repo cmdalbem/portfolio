@@ -21,9 +21,6 @@ class Projects extends React.Component {
                 gap: '32px'
         }};
 
-        // const globalPadding = 'ph6-ns ph4-m ph3 ';
-        // const overflowMargins =  'nl6-ns nr6-ns nl4-m nr4-m pl3-ns nr3'
-
         return (
             <Reveal effect="slideUp" duration={2000}>
                 <div className="mb5" style={gridStyle}> {

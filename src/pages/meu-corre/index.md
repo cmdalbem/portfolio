@@ -27,8 +27,8 @@ We successfully got funded with more than R$ 200k (~€33k) by FAPERJ, CNPq, and
 Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. 
 
  
-```grid|1
-![](./hand.png) 
+```grid|1 
+![](./rafael.jpg "Rafael de Melo was one of the first delivery workers we got close to and was a key partner during the project. Photo by Caroline Jacobi.") 
 ```   
   
   
@@ -108,8 +108,6 @@ Normally Design Sprints are done in an intense week of work, but since this was 
 
 The winner concept was the "Financial Strava", a kind of app that would merge the popular sports-tracking app Strava with the specificities of their work as delivery workers. The user would add their earnings and expenses to the app, which would help them track their daily and weekly goals and calculate some personal performance metrics.
 
-What was amazing about this idea was the potential to understand their work at scale, which could be fed back to the workers as dashboards and reports to maximize their earnings: which platforms paid better and what were the best times to work.
-
 <jumbo caption="In one of the last steps of the Sprint we voted on our favorite features and the team created a storyboard with the key interactions. From here I'd create an interactive prototype to test with real users.">
     <img src="./designsprint.png"/>
 </jumbo> 
@@ -118,12 +116,31 @@ What was amazing about this idea was the potential to understand their work at s
 ![](./usertests.png "Table of insights from the first user tests with the winning concept from the Design Sprint. There were 3 sections: profiling questions, usability test and final open questions. Green post-its are positive observations, red negative. Each column is an user, where the last of the summary of all.")
 ```  --> 
 
-The last week of the sprint was dedicated to run users tests with an interactive prototype. With it we've learned that:
-* **Leveraging existing mental models**: Users already had some financial organization but often they felt it was hard to maintain. This is a great opportunity of presenting the app as an improvement rather than a whole new habit.
-* **Multiple input mode**: Inputting earnings one by one might not work for most users. They do dozens of deliveries per day, every day, and most like to settle their finances in the end of the week. This led us to the insight of designing a feature that would enable adding multiple earnings at once.
-* **Metrics are a big win**: Users compared the metrics with some that the platforms already provide them but that are in general very limited. They liked a lot how we could measure things the platforms can't, and do it cross-platforms in one central place.
-* **Charts is a big no-no**: The dashboards and reports screen were a big fail. We used lots of numbers and charts while this audience has limited formal math education. The idea is great however, but we might do it as a separate product for a different audience.
-* **The need for a freemium business model**: While almost all users were very excited with the app, they were not very happy with the idea of having to pay for it. This was not a big surprise, and our mentors already pointed out that we'd need to explore a Freemium business model.
+What was amazing about this idea was the potential to understand their work at scale, which could be fed back to the workers as dashboards and reports to maximize their earnings: which platforms paid better and what were the best times to work.
+
+
+The last week of the sprint was dedicated to run users tests with an interactive prototype.
+
+<insights
+    title="Main insights"
+    items='[ 
+    {
+        "title": "A step in financial organization",
+        "description": "Users already take notes on their earnings, but they often felt it was hard to maintain. This is a great opportunity of presenting the app as an improvement, rather than a whole new habit."
+    },{
+        "title": "Adding earnings one by one will not work",
+        "description": "They do dozens of deliveries per day, every day, and most like to settle their finances in the end of the week. This led us to the insight of designing a feature that would enable adding multiple earnings at once."
+    },{
+        "title": "Metrics are a big win",
+        "description": "Users compared the metrics with some that the platforms already provide them but that are in general very limited. They liked a lot how we could measure things the platforms cant, and do it cross-platforms in one central place."
+    },{
+        "title": "Keeping statistics simple",
+        "description": "The dashboards and reports screen were a big fail. We used lots of numbers and charts while this audience has limited formal math education. The idea is great however, but we might do it as a separate product for a different audience."
+    },{
+        "title": "The need for freemium",
+        "description": "While almost all users were very excited with the app, they were not very happy with the idea of having to pay for it. This was not a big surprise, and our mentors already pointed out that wed need to explore a Freemium business model."
+    }]'>
+</insights> 
   
 ## Designing and launching a MVP
 
@@ -183,7 +200,9 @@ The data generated by the "Meu Corre" project serves as a powerful tool for advo
 ![](./advocacy.png)
 ``` -->
 
-# Results and learnings
+
+
+# Results
 
 Here's a summary of the amazing results we've already achieved since the launch in April 2024:
 
@@ -197,13 +216,14 @@ Here's a summary of the amazing results we've already achieved since the launch 
 
 Also we've been collecting amazing testimonials of people who has been using the app and expressing how it impacted their lives:
 
-<quote author="Anonymous user">Super cool app. I use it daily and I have to admit that the app is amazing. It meets the demands I need with my services.</quote> 
+<quote author="Anonymous user" context="Google Play review">Super cool app. I use it daily and I have to admit that the app is amazing. It meets all my needs from my work.</quote> 
 
-<quote author="Luiz Henrique">Excellent app, it can control rides very well week month day very good app without bugs excellent.</quote> 
+<quote author="Rogerio Alcir" context="Received via social media" >I thank you for making available an app that helps us so much, what I used to do in spreadsheets, was way more complex, today I do my organization in the app. Thank you very much for helping.</quote> 
 
-<quote author="Rogerio Alcir" context="São Paulo" >I thank you for making available an app that helps us so much, what I used to do in spreadsheets, was way more complex, today I do my organization in the app. Thank you very much for helping.</quote> 
+<quote author="Luiz Henrique" context="Google Play review">Excellent app, it can control rides very well. Weeks, months, days... very good app without bugs. Excellent.</quote> 
 
-## Learnings
+
+# Learnings
 
 It's really hard to summarize here in a few paragraphs how much I've learned and grew in almost 4 years of such an intense and different project, but here's an attempt:
 * **Challenging assumptions about user needs**: Delivery workers' challenges extend beyond simplistic assumptions about financial instability. Many workers lacked intuitive tools to track their income and expenses, which highlighted the gap between the tech-driven gig economy narrative of "freedom and entrepreneurship" and the daily, often chaotic reality of delivery work.
@@ -216,11 +236,10 @@ It's really hard to summarize here in a few paragraphs how much I've learned and
 
 <!-- adicionar ref ao "fair design"? -->
 
-
 * **Financial sustainability as a social impact project**: Beyond merely securing funding, our experience highlighted how critical it is to position a tool like Meu Corre as a social good solution rather than a profit-driven product, even if going against the will of our initial mentors. Ensuring the app remains accessible and free demands not just partnerships but creative models of sustainability that aligned with our mission to empower gig workers without burdening them financially and, mainly, making sure incentives are aligned.
 
 
-# Conclusion
+## Conclusion
 
 Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with like-minded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
 
@@ -237,16 +256,13 @@ _This case study leveraged generative AI technologies to summarize and extract k
         {
             "label": "Website",
             "url": "https://meucorre.com.br/"
-        },
-        {
+        }, {
             "label": "Download the app (Google Play)",
             "url": "https://play.google.com/store/apps/details?id=br.com.meucorre&hl=pt_PT/"
-        },
-        {
+        }, {
             "label": "Official launch presentation (YouTube)",
             "url": "https://www.youtube.com/live/H0o19wM4AyU?si=7n2MAUWKTGi-7LY2&t=4501"
-        },
-        {
+        }, {
             "label": "Instagram",
             "url": "https://www.instagram.com/meucorreapp/"
         }

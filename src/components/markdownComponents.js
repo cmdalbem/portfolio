@@ -16,16 +16,16 @@ class ResultsBanner extends React.Component {
 
         return (
             <div
-                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pv6 bg-near-white flex flex-row-l flex-column justify-around tl-ns tc z-0 relative"
+                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pv6 bg-near-white flex flex-row-l flex-column justify-around relative"
             >
                 {
                     Object.keys(dataObj).map((i, n) => (
                         <Fade bottom duration={1500} delay={n * 500}>
                             <div className="mv0-ns mv3" key={i}>
-                                <div className="f1 fw1 mt0">
+                                <div className="f1 fw1 mt0 mb0">
                                     {dataObj[i]}
                                 </div>
-                                <div className="f7 gray ttu mb0 tracked">
+                                <div className="gray f5 mr2">
                                     {i}
                                 </div>
                             </div>
@@ -94,45 +94,45 @@ class ProjectPasswordInput extends React.Component {
 }
 
 export function markdownRenderer(isFullWidth) {
-    const defaultMargins = `${isFullWidth ? 'layoutMaxWidth' : 'mw7-ns'}`;
+    const defaultMargins = `${isFullWidth ? 'layoutMaxWidth' : 'mw7-l ml-auto-l'}`;
     const bigImageMargins = `mv6-ns mv5 `;
-    const imageMargins = `${defaultMargins} ml-auto-ns ml0 mr0 mv6-ns mv5 `;
+    const imageMargins = `${defaultMargins} ml0 mr0 mv6-ns mv5 `;
 
     return new rehypeReact({
         createElement: React.createElement,
         components: {
             h1: props => (
-                <h1 className="f2 lh-title tracked-tight dark-gray fw4 mt6-ns mt5 mw6-ns mb--1-ns position-sticky-ns bg-background-color">
+                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mw6-l mt6-l mt5 mb--1-l position-sticky-l bg-background-color-l`}>
                     {props.children}
                 </h1>
             ),
             h2: props => (
-                <h2 className={`f3 lh-title dark-gray fw4 mt5-ns mt4 mb3-ns mb2 ml-auto-ns ${defaultMargins}`}>
+                <h2 className={`f3 lh-title dark-gray fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
                     {props.children}
                 </h2>
             ),
             h3: props => (
-                <h3 className={`f4-ns f5 lh-title gray fw6 mt4 ml-auto-ns ${defaultMargins}`}>
+                <h3 className={`f4-ns f5 lh-title gray fw6 mt4 ${defaultMargins}`}>
                     {props.children}
                 </h3>
             ),
             p: props => (
-                <p className={`mt0 ml-auto-ns ${defaultMargins}`}>
+                <p className={`mt0 ${defaultMargins}`}>
                     {props.children}
                 </p>
             ),
             blockquote: props => (
-                <div className={`mt0 pl4 mv6 f3 gray ml-auto-ns ${defaultMargins}`}>
+                <div className={`mt0 pl4 mv6 f3 gray ${defaultMargins}`}>
                     {props.children}
                 </div>
             ),
             ul: props => (
-                <ul className={`ml-auto-ns ${defaultMargins}`} style={{paddingInlineStart: 0}}>
+                <ul className={`${defaultMargins}`} style={{paddingInlineStart: 0}}>
                     {props.children}
                 </ul>
             ),
             li: props => (
-                <li className="mb2 ml-auto-ns">
+                <li className="mb2 ml-auto-l ">
                     {props.children}
                 </li>
             ),
@@ -147,7 +147,7 @@ export function markdownRenderer(isFullWidth) {
                 </a>
             ),
             hr: props => (
-                <hr className="mv6 bt-0 bb b--black-10" />
+                <hr className="mv6 bt-0 bb b--near-white" />
             ),
             figure: props => (
                 <figure className={imageMargins}>{props.children}</figure>
@@ -159,7 +159,7 @@ export function markdownRenderer(isFullWidth) {
                 <code className="f6 bg-light-gray ph2">{props.children}</code>
             ),
             "quote": props => (
-                <div className={`mt0 mv5 ml-auto-ns ${defaultMargins}`}>
+                <div className={`mt0 mv5 ${defaultMargins}`}>
                     <div className='f3 tracked-tight'>
                         <span style={{marginLeft: "-0.406em"}}>“</span>
                         {props.children}
@@ -211,11 +211,52 @@ export function markdownRenderer(isFullWidth) {
                 let items = arrayObj.map(i => i);
 
                 return (
-                    <p className={`mt0 ml-auto-ns ${defaultMargins}`}>
+                    <p className={`mt0 ${defaultMargins}`}>
                         <LinksList items={items} rows />
                     </p>
                 )
-            }
+            },
+            "insights": props => {
+                const { title, subtitle, items } = props;
+                
+                let arrayObj = JSON.parse(items);
+                let itemsArray = arrayObj.map(i => i);
+                
+                return (
+                    <div className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pa3 pv6 bg-near-white z-0 relative">
+                        <div className='mw6 mb6'>
+                            <h3 className="f3-ns f4 lh-solid fw7 mv2-ns mb2 dark-gray">
+                                { title }
+                            </h3>
+                        
+                            <div className="f4-ns f5 fw5 pr4-ns mb5-ns mb4 mt0-ns mt0 lh-copy measure gray">
+                                { subtitle }
+                            </div>
+                        </div>
+
+                        <div className='grid3-4-ns grid2-4-m'>
+                        {
+                            itemsArray.map((l, i) => (
+                                <Fade duration={1500} delay={i*500 - i*200}>
+                                    {/* // <div className="ba b--light-gray pa3 br4" key={i}> */}
+                                    <div className="mv4" key={i}>
+                                        {/* <div className="f6 mb3">
+                                            ({i+1})
+                                        </div> */}
+                                        <h4 className="mv2 fw4 lh-title">
+                                            {l.title}  
+                                        </h4>
+                                        <div className="gray lh-copy">
+                                            {l.description}
+                                        </div>
+                                    </div>
+                                </Fade>
+                            ))
+                        }
+                        </div>
+                    </div>
+                )
+            },
         },
     }).Compiler;
 }
