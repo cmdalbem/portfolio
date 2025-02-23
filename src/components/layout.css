@@ -672,6 +672,7 @@ button {
     filter: brightness(.7) grayscale(20%);
   }
 
+  body.dark video,
   body.dark img {
     filter: brightness(0.8);
   }
