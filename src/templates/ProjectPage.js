@@ -15,9 +15,11 @@ import ProjectCard from '../components/ProjectCard'
 import ReadingProgressBar from '../components/ReadingProgressBar'
 
 import { markdownRenderer }  from '../components/markdownComponents'
-import { formatDate, capitalize } from '../components/utils.js'
+import { formatDate, capitalize, differenceInYears } from '../components/utils.js'
  
 // import { RightArrow, LeftArrow } from '../components/icons.js'
+
+const HOW_MANY_YEARS_OLD_IS_TOO_OLD = 3;
 
 
 class ProjectPage extends React.Component {
@@ -38,6 +40,9 @@ class ProjectPage extends React.Component {
     if (post.frontmatter.lastUpdated) {
       lastUpdated = formatDate(post.frontmatter.lastUpdated, 'MMMM YYYY')
     }
+
+    const yearsOld = new Date().getFullYear() - new Date(post.frontmatter.date2).getFullYear();
+    const isOldProject = yearsOld > HOW_MANY_YEARS_OLD_IS_TOO_OLD;
 
     return (
       <Layout location={this.props.location}>
@@ -137,6 +142,28 @@ class ProjectPage extends React.Component {
                   } */}
 
                   {
+                    <div className="mv4 dark-gray">
+                      <h2 className="f5 mv2 mr2">
+                        <span>
+                          Date
+                        </span>
+                      </h2>
+                      <div className="f5">
+                        {dateStart}
+                        {dateEnd &&
+                          ` – ${dateEnd}`
+                        }
+                      </div>
+                      {
+                        isOldProject &&
+                        <div className="f6 orange mt2">
+                          ({yearsOld} years old project, take with a grain of salt :)
+                        </div>
+                      }
+                    </div>
+                  }
+
+                  {
                     post.frontmatter.tags &&
                     post.frontmatter.tags.length > 0 &&
                     <div className="mb4 dark-gray">
@@ -167,22 +194,6 @@ class ProjectPage extends React.Component {
                       <span className="f5 din lh-copy">
                         {post.frontmatter.team}
                       </span>
-                    </div>
-                  }
-
-                  {
-                    <div className="mv4 dark-gray">
-                      <h2 className="f5 mv2 mr2">
-                        <span>
-                          Date
-                        </span>
-                      </h2>
-                      <div className="f5">
-                        {dateStart}
-                        {dateEnd &&
-                          ` – ${dateEnd}`
-                        }
-                      </div>
                     </div>
                   }
 
