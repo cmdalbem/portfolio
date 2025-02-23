@@ -77,7 +77,7 @@ class ProjectPage extends React.Component {
                       {post.frontmatter.description}
                     </div>
                   }
-                  <div className='f5 silver db-ns dn'>
+                  <div className='f6 silver db-ns dn'>
                     {
                       readingTime.minutes > 1 &&
                       readingTime.text
@@ -95,6 +95,28 @@ class ProjectPage extends React.Component {
                       </div>
                     }
                   </div>
+
+                  {
+                    post.frontmatter.liveLink &&
+                    // <div className="gradient-border--animated dim ">
+                    //   <a
+                    //     href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
+                    //     className="text-gradient-clip bg-gradient--animated dib f5 fw6 link orange pv3 ph5"
+                    //   >
+                    //     See it live
+                    //   </a>
+                    // </div>
+                    <a
+                      href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
+                      className="dib mv4 f5 fw6 link pv3 ph5 ba dim br2"
+                      style={{ 
+                          // backgroundColor: post.frontmatter.color,
+                          borderColor: post.frontmatter.color,
+                          color: post.frontmatter.color
+                      }}>
+                      See it live
+                    </a>
+                  }
                 </div>
 
                 <div className="w-20-ns">
@@ -179,26 +201,7 @@ class ProjectPage extends React.Component {
                     </div>
                   } 
 
-                  {
-                    post.frontmatter.liveLink &&
-                    // <div className="gradient-border--animated dim ">
-                    //   <a
-                    //     href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                    //     className="text-gradient-clip bg-gradient--animated dib f5 fw6 link orange pv3 ph5"
-                    //   >
-                    //     See it live
-                    //   </a>
-                    // </div>
-                    <a
-                      href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                      className="dib f5 fw6 link pv3 ph5 ba bn dim br2"
-                      style={{ 
-                          backgroundColor : post.frontmatter.color,
-                          color: "white"
-                      }}>
-                      See it live
-                    </a>
-                  }
+                  
                 </div>
               </div>
             </div>
