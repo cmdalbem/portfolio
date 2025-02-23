@@ -35,7 +35,7 @@ html {
   --bg-color: white;
   --bg-color2: #FDFCF8;
 
-  --gray: #514b48;
+  --gray: hsl(20, 5%, 50%);
   --silver: #999;
   /* --near-black: #111111; */
   --near-black: #493e36;
@@ -171,14 +171,15 @@ body {
 .pretty-link {
   color: inherit;
 
-  box-shadow: inset 0 0 0 0px var(--silver);
-  text-decoration: underline solid var(--silver);
+  box-shadow: inset 0 0 0 0px var(--dark-gray);
+  text-decoration: underline dotted var(--gray);
   
-  transition: all 200ms var(--global-easing);
+  transition: box-shadow 200ms var(--global-easing);
 } 
 .pretty-link:hover {
   /* background-color: var(--silver); */
-  box-shadow: inset 0 -1.2em 0 0px var(--silver);
+  box-shadow: inset 0 -1.2em 0 0px var(--dark-gray);
+  text-decoration: none;
   color: var(--light-gray);
 }
 
