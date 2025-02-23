@@ -94,7 +94,7 @@ class ProjectPasswordInput extends React.Component {
 }
 
 export function markdownRenderer(isFullWidth) {
-    const defaultMargins = `${isFullWidth ? 'layoutMaxWidth' : 'mw7-l ml-auto-l'}`;
+    const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'mw7-l ml-auto-l'}`;
     const bigImageMargins = `mv6-ns mv5 `;
     const imageMargins = `${defaultMargins} ml0 mr0 mv6-ns mv5 `;
 
@@ -102,7 +102,7 @@ export function markdownRenderer(isFullWidth) {
         createElement: React.createElement,
         components: {
             h1: props => (
-                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mw6-l mt6-l mt5 mb--1-l position-sticky-l h4-l bg-background-color-l`}>
+                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mw6-l mt6-l mt5 mb--3-l position-sticky-l h4-l bg-background-color-l`}>
                     {props.children}
                 </h1>
             ),
@@ -197,7 +197,7 @@ export function markdownRenderer(isFullWidth) {
             ),
             "video-container": props => (
                 <div
-                    className={props.jumbo ? bigImageMargins : imageMargins}
+                    className={`relative flex flex-column ${props.jumbo ? bigImageMargins : imageMargins}`}
                     style={props.jumbo ? {marginLeft: 'auto', marginRight: 'auto'} : {}} // copy styles from gatsby-resp-image-wrapper
                     >
                     { props.children }
