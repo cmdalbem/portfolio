@@ -102,7 +102,7 @@ export function markdownRenderer(isFullWidth) {
         createElement: React.createElement,
         components: {
             h1: props => (
-                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mw6-l mt6-l mt5 mb--1-l position-sticky-l bg-background-color-l`}>
+                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mw6-l mt6-l mt5 mb--1-l position-sticky-l h4-l bg-background-color-l`}>
                     {props.children}
                 </h1>
             ),
@@ -130,6 +130,11 @@ export function markdownRenderer(isFullWidth) {
                 <ul className={`${defaultMargins}`} style={{paddingInlineStart: 0}}>
                     {props.children}
                 </ul>
+            ),
+            ol: props => (
+                <ol className={`${defaultMargins}`} style={{paddingInlineStart: 0}}>
+                    {props.children}
+                </ol>
             ),
             li: props => (
                 <li className="mb2 ml-auto-l ">
@@ -213,6 +218,13 @@ export function markdownRenderer(isFullWidth) {
                 return (
                     <p className={`mt0 ${defaultMargins}`}>
                         <LinksList items={items} rows />
+                    </p>
+                )
+            },
+            "ai-disclaimer": props => {
+                return (
+                    <p className={`mv6 ${defaultMargins} i gray`}>
+                        This case study leveraged generative AI technologies to help extract key insights from years of extensive project documentation I created. It also helped me suggesting improvements to the writing. All AI-generated content was thoroughly reviewed and manually edited before publishing.
                     </p>
                 )
             },
