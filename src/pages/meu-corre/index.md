@@ -243,9 +243,9 @@ It's really hard to summarize here in a few paragraphs how much I've learned and
 
 Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with like-minded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
 
-#
 
-_This case study leveraged generative AI technologies to summarize and extract key insights from four years of extensive project documentation. It also helped me suggesting improvements to the writing. All AI-generated content was thoroughly reviewed and manually edited before publishing._
+
+<ai-disclaimer/>
 
 
 # Learn more
