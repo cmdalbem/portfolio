@@ -6,7 +6,7 @@ lastUpdated: "2025-02"
 forceOrder: 1
 title: "Nubank's Customer Support Platform"
 minibio: "Designing a new version to improve the productivity and quality of the company's award-winning customer support."
-description: "Shuffle, Nubank's internal CX platform, started in 2014 as a simple CRM tool to show customer information to the agent who was serving a customer. Years later it grew to be much more than that, centralizing all support channels (chat, email and telephone) and dozens of different backoffice jobs. This project aimed to understand better the users and stakeholders expectations of what a new version of this tool could look like. I identified, prototyped and tested solutions to the main painpoints while taking into account strategic drivers to make sure the product was built to scale with the business."
+description: "Shuffle, Nubank's internal CX platform, began in 2014 as a simple CRM tool, and throughout the years it evolved to centralize all support channels and an immense and complex system of backoffice tasks. While tasked to redesign it, I took some steps back to understand user and stakeholder expectations, and then I brainstorm, prototyped, and tested multiple improvements and new features."
 metrics: ['Time Spent per ticket', 'CSAT', 'Developers productivity', 'Platform NPS']
 tags: ['design', 'UX research', 'Product management']
 team: "Lucas Senna (Engineer), Felipe Thomé (Engineer), Rafael Santos (Xpeer), Otto Sporteman (PM), Eder Rodrigues (PM), João Bahia (Business Analyst), et al."
@@ -33,7 +33,7 @@ The Customer Excellent Platform (CXP) was the team responsible for handling high
 
 
 ```grid|1  
-![](./cxp.png "As a sideproject, I helped design a logo for our team. The box with its disassembled parts represents the platform aspect, with its various modules, while the chat bubble in the center reminds us our purpose.")
+![](./cxp.png)
 ```  
 <!-- ```grid|1
 ![](./stakeholders.png "The 3 layers of the product: the Platform, where people build their custom views, the UI, which agents use for their day-to-day job, and the Customer Support itself which impacts directly the customer.")
@@ -108,9 +108,9 @@ While analyzing and organizing the dozens of insights, our attention started to 
 
 In addition to bugs that made users lose all their data and usability issues that led to inefficiencies and errors, there was a high-security risk of using an external browser extension over which we had no governance. Apart from these problems, we were leaving on the table a huge opportunity to apply usage data to improve our Artificial Intelligence models, which are the CX platform's cornerstone.
 
-```grid|1
+<!-- ```grid|1
 ![](./persondecksurvey.png "Making sense of the survey responses. Everytime we'd send an internal survey, Xpeers would flock our forms hundreds of comments.")
-```
+``` -->
 
 After gathering insights from sources such as surveys, in-depth interviews, and our dear Shadowing sessions, we used the Problem-Solution Tree framework to visualize the main opportunities, categorize them and relate them to possible solution ideas.
 
