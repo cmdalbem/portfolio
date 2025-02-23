@@ -196,15 +196,47 @@ figure figure {
   margin: 0 !important;
 }
 
-li {
+ul li {
   list-style-type: none;
   position: relative;
 }
-li::before {
+ul li::before {
   content: '∙';
   position: absolute;
   left: -1em;
   font-size: 1em;
+}
+
+ol {
+  list-style-type: none;
+  position: relative;
+  counter-reset: list-number;
+}
+
+ol li {
+  position: relative;
+}
+
+ol li:before {
+  counter-increment: list-number;
+  content: counter(list-number);
+  
+  position: absolute;
+  left: -2em;
+  top: 0.7em;
+  
+  /* vertical-align: middle; */
+  /* margin-right: .5em; */
+
+  width: 1.5em;
+  height: 1.5em;
+  font-size: .5em;
+  display: inline-flex;
+  align-items: center;
+  justify-content:  center;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
+  color: var(--bg-color);
 }
 
 .tab {
@@ -478,6 +510,10 @@ button {
 
   .mb--1-l {
     margin-bottom: -1em;
+  }
+  
+  .mb--3-l {
+    margin-bottom: -3.5em;
   }
 
   .grid3-3-l {
