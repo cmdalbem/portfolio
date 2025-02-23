@@ -243,7 +243,7 @@ export function markdownRenderer(isFullWidth) {
                                         {/* <div className="f6">
                                             ({i+1})
                                         </div> */}
-                                        <h4 className="mv2 fw4 lh-title">
+                                        <h4 className="mv2 fw4 lh-title dark-gray">
                                             {l.title}  
                                         </h4>
                                         <div className="gray lh-copy">

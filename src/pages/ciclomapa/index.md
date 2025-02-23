@@ -2,7 +2,7 @@
 projectType: 'projectHighlight'
 date: "2019-06"
 date2: "2022-06"
-lastUpdated: "2023-05"
+lastUpdated: "2025-02"
 title: "CicloMapa"
 minibio: "A platform to democratize the access to bike maps of brazilian cities with open data."
 description: "Designing and developing an open platform to democratize access to bike maps of Brazilian cities in collaboration with two of the most urban mobility organizations in the country. We combined the power of the open and collaborative OpenStreetMap, simplifying and making it more beautiful and easy to use."
@@ -33,9 +33,20 @@ As the main stakeholders of the project, my first activity was conducting a work
 
 We decided the main opportunities we wanted to focus on this solution were: 
 
-* **Unified map**: solving for the lack of centralized, standardized, and updated bike maps of Brazilian cities.
-* **Encouraging open collaboration**: OpenStreetMap contributors found it discouraging that there weren’t good applications that reuse its data. Contributing to OSM demands some technical knowledge, and there isn't good documentation written in Portuguese.
-* **Target audience**: although the project could benefit the average urban cyclist, our focus was on advocacy agents of low to medium technical savviness who could benefit from an easier access to up-to-date data. 
+<insights
+    title="Main opportunities"
+    items='[ 
+    {
+        "title": "An unified Brazilian map",
+        "description": "Solving for the lack of centralized, standardized, and up-to-date bike maps of Brazilian cities. Currently cities use different tools which makes data hard to make comparisons."
+    },{
+        "title": "Encouraging open collaboration",
+        "description": "OpenStreetMap contributors found it discouraging that there weren’t good, consumer-facing applications of its data."
+    },{
+        "title": "Democratizing the data",
+        "description": "Although the project could benefit the average urban cyclist, our focus was on advocacy agents of low technical savviness who needed an easier access to up-to-date data."
+    }]'>
+</insights> 
 
 We also found out some of our “unfair” advantages: UCB and ITDP are two of the most prominent organizations of this kind that could invest in this project and would be able to mobilize the community. Also, everyone on the team already had experience with similar projects involving web apps, interactive maps, and OSM data.
 
@@ -46,13 +57,21 @@ We also found out some of our “unfair” advantages: UCB and ITDP are two of t
 
 To start organizing the Information Architecture, our first step was diving into OSM documentation and manuals on cycling infrastructures. Fortunately, we had on the team a specialist on OSM who helped us abstract the technical tags into something more accessible.
 
+I started understanding the main types of bike paths, how they appear in Brazilian cities and what place in the a "quality and safety gradient" they would be placed.
+
+<jumbo>
+    <img src="./types.png"/>
+</jumbo>
+
+I used this spreadsheet to organize the information architecture, documenting how we'd model the data filters, including labels, textual descriptions, and visual representations of data.
+
+<jumbo> 
+    <img src="./layers.png"/>
+</jumbo>
+  
 <!-- ```grid|1
 ![](./types.png "The main types of bike paths and their respective location in the quality and safety gradient.")
 ``` -->
-
-<jumbo caption="Documenting how we'd model the data and the information would be shown to the users, including labels, textual descriptions, and visual representations of data.">
-    <img src="./layers.png"/>
-</jumbo>
 
 I did a deep dive into everything available on the market, from other map-based web apps to some PDF cycling maps from cities worldwide. At this step, we validated that our solution seemed to be innovative and unique since there didn’t seem to exist anything precisely like it. Still, we found intersections with existing solutions that gave us inspiration and new ideas on how to solve the problems. We learned that:
 * Solutions based on OSM are very technical and hard to use, and none had clear instructions about the collaborative dimension and how to contribute to the mapping.
@@ -65,7 +84,7 @@ I did a deep dive into everything available on the market, from other map-based 
 </jumbo>
 
 From these insights I facilitated workshops for brainstorming and prioritizing the main features we wanted to build. One of the frameworks we used to prioritize features in the beginning was the classic Effort/Complexity Matrix. I facilitated workshops with the team to fill the matrix, choose was features we'd build and their order.
-
+ 
 
 ```grid|1
 ![](./roadmap.jpeg "An Effort/Complexity Matrix used to define the features we'd build and their order.")
@@ -101,7 +120,7 @@ With the references in mind and the well-defined typologies, I started sketching
 At this point I was iterating on the prototype and validating with the community. However quickly I realized that such a complex interactive product, with all its interactions and microinteractions would be hard to validate solely on Figma prototypes. So, as soon as we had the basic features and mechanics set, I started moving to code.
 
 
-# Implementing
+# Implementation
 
 As the only developer on the team, it’s always a challenge to separate the engineering and design mindsets in the process. I forced myself to always ideate concepts on Figma first, validating with the peers and creating cards on our Trello board to document the task and prioritize it for development.
 
@@ -111,6 +130,8 @@ The overall system architecture passed by many iterations. I started with straig
 ![](./arch.png)
 ```
 
+## Exploring new technology
+
 To build the UI, I chose [Ant Design](https://ant.design/), a high-quality open React library with excellent documentation. I did all the styling with [TailwindCSS](https://tailwindcss.com/), a fantastic CSS framework, to customize the Ant components to our visual identity and create layouts.
 
 For this project, I also wanted to try [Mapbox](https://www.mapbox.com/), an open map library built on top of OpenStreetMap. It offered much more flexibility and more advanced features compared with the Google Maps SDK I was used to. In addition, it was a pleasure using [Mapbox Studio](https://www.mapbox.com/mapbox-studio), their interactive map customization tool. It's a terrific product and enabled me lots of controls to be creative in designing our base map.
@@ -119,8 +140,16 @@ For this project, I also wanted to try [Mapbox](https://www.mapbox.com/), an ope
 ![](./mapbox.png "The Mapbox Studio is a formidable tool with very advanced features for customizing the interactive map that'd be used as the base layer.")
 ``` 
 
+Beyond just customizing color palettes, the editor allows us to add new data layers, filter what we want to show, how, at what zoom level, and much more. When designing the points of interest layer, I created 2 hierarchy levels based on what are more "complex" data points.
 
-# Visual design 
+```grid|1 
+![](./pois.png)
+``` 
+
+
+
+
+# Visual identity 
 
 <!-- With a very functional first version of the system up and running ahead of schedule I found myself with some extra time to _make it pop_. Based on all the process up to now I've devised some brand principles to start thinking on some visual directions:
  
@@ -142,29 +171,34 @@ With the typography and basic palette set, I started customizing the Mapbox base
 ![](./logo.png) 
 ``` -->
 
-<jumbo caption="Final version of the UI and map style.">
+<jumbo>
     <img src="./finalsp.png"/>
 </jumbo>
 
 
-# Final product
+# Features highlights
 
 The map is fully interactive, and I focused on offering a seamless experience for exploring different cities and zoom levels.
 
 ```grid|1
 ![](./ciclomapa.gif)  
-``` 
+```  
 
-The bike paths have a special, colorful tooltip. On the bottom, shortcuts buttons to edit that data in the OSM official website, or leaving a comment inside CicloMapa.
+The bike paths have a special, colorful tooltip. On the bottom, buttons invite the user to quickly edit that data in the OSM official website, or to leave a comment inside CicloMapa.
  
 ```grid|1
 ![](./tooltip1.png)
 ```
 
+```grid|1
+![](./tooltips.png)
+```
+ 
 Tooltips for points of interest have more details, which were curated from the several metadata present in the OSM nodes. We made a big effort of understanding which were more important for the common user, as well as translating the technical names.
 
-```grid|1
+```grid|2
 ![](./tooltip2.png) 
+![](./tooltip3.png) 
 ```
 
 <jumbo caption="Final version of the UI and map style.">
