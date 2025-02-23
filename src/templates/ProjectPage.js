@@ -115,21 +115,6 @@ class ProjectPage extends React.Component {
                   } */}
 
                   {
-                    post.frontmatter.metrics &&
-                    post.frontmatter.metrics.length > 0 &&
-                    <div className="mb4 dark-gray">
-                      <h2 className="f5 mv2 mr2">
-                        <span>
-                          Metrics
-                        </span>
-                      </h2>
-                      <div className="f5 lh-copy">
-                        { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
-                      </div>
-                    </div>
-                  }
-
-                  {
                     post.frontmatter.tags &&
                     post.frontmatter.tags.length > 0 &&
                     <div className="mb4 dark-gray">
@@ -140,9 +125,9 @@ class ProjectPage extends React.Component {
                       </h2>
                       <div>
                         { post.frontmatter.tags.map(t => capitalize(t)).join('・') }
-                        {/* {post.frontmatter.tags.map(tag => (
-                          <Tag size="big" key={tag}>
-                            {tag}
+                        {/* {post.frontmatter.tags.map(t => (
+                          <Tag size="big" key={t}>
+                            {capitalize(t)}
                           </Tag>
                         ))} */}
                       </div>
@@ -178,6 +163,21 @@ class ProjectPage extends React.Component {
                       </div>
                     </div>
                   }
+
+                  {
+                    post.frontmatter.metrics &&
+                    post.frontmatter.metrics.length > 0 &&
+                    <div className="mb4 dark-gray">
+                      <h2 className="f5 mv2 mr2">
+                        <span>
+                          Metrics
+                        </span>
+                      </h2>
+                      <div className="f5 lh-copy">
+                        { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
+                      </div>
+                    </div>
+                  } 
 
                   {
                     post.frontmatter.liveLink &&
