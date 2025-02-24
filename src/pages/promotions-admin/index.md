@@ -5,7 +5,8 @@ date2: "2020-04"
 lastUpdated: "2021-06"
 title: "VTEX Promotions Admin"
 minibio: "Redesigning a complex legacy admin in an e-commerce platform to maximize clients' sales and reduce costs."
-description: "Rethinking and redesigning one of the core experiences in managing products and marketing strategies in VTEX e-commerce platform."
+description: "Redesigning one of the core experiences in managing products and marketing strategies in VTEX e-commerce platform."
+team: "Mariani Cavalini (Product Manager) · José Lucas Rebelo (Product Expert) · Isaque Lima (Software Engineer) · Alessandra Anyzewski (Software Engineer) · Eric Reis (Software Engineer) · Guilherme Freitas (Software Engineer) "
 tags: ['design','product management']
 cover: './cover.png'
 # hover: '/covers/promotions-admin.gif'
@@ -31,7 +32,7 @@ During this project's research we found out it's one of the main strengths of th
 
 Despite its power and proven relevance to our customers' business, the product evolution across more than 7 years wasn't closely followed by evolution in its UX. This was made very clear in a chat with stakeholders from USA Sales team, who brought a new perspective of customers from a very new and much more demanding market.
 
-We found that of all VTEX modules, promotions was the 3rd with the most customer questions - almost 400 tickets were opened in the last 3 months. More than improving the efficiency of our Support team to answer tickets, we always ask ourselves: what could we do to prevent the ticket from being created in the first place? It was the UX could be improved a lot.
+<!-- We found that of all VTEX modules, promotions was the 3rd with the most customer questions - almost 400 tickets were opened in the last 3 months. More than improving the efficiency of our Support team to answer tickets, we always ask ourselves: what could we do to prevent the ticket from being created in the first place? It was the UX could be improved a lot.
   
 ```grid|1
 ![](./research_tickets.png)
@@ -41,14 +42,14 @@ Historically the company's products have been led by the engineers themselves, w
 
 ```grid|1
 ![](./maslow.png)
-```
+``` -->
 
 
-# Process 
-
-## Discovery
+# Discovery
 
 With some main stakeholder's vision at hand and having understood this was a project worth working on I started devising a research plan to validate some assumptions and understand in more depth where we were getting into. 
+
+## Understanding stakeholders expectations
 
 We went after other stakeholders in the company to enrich our vision of how the product was perceived by customers and what improvements we could make. Our focus was on Account Managers who, with their own words, "defend customers within VTEX and defend VTEX within customers". My objectives were:
 - Understand the importance of the product to VTEX 
@@ -56,9 +57,11 @@ We went after other stakeholders in the company to enrich our vision of how the 
 - How it compares with the competition
 - Understand the use cases and business needs
 
-```grid|1
+<!-- ```grid|1
 ![](./vtexorgchart.png)
-```
+``` -->
+
+## Finding patterns
 
 After almost 20 interviews with both internal stakeholders and customers we concluded many things, in particular:
 - In fact the module already has great features, standing out from the competition and being one of the flagships in the platform's sales pitches.
@@ -66,11 +69,11 @@ After almost 20 interviews with both internal stakeholders and customers we conc
 - The amount of functionality, however, negatively impacts its ease of use. It's not considered intuitive, it raises many doubts and sometimes even leads the user to make mistakes that can be financially disastrous.
 - Some new features recently launched were confusing and didn't get much traction, so we had an opportunity to rethink them as well.
 
-The research generated lots of insights, which I summarized in a Miro presentation (below) that was a great reference that we would go back several times during the design and development of this project.
+<!-- The research generated lots of insights, which I summarized in a Miro presentation (below) that was a great reference that we would go back several times during the design and development of this project.
 
 <jumbo>
     <img class="w-100 z-0 relative" src="./research.gif"/>
-</jumbo>
+</jumbo> -->
 
 
 ## Delving deeper with data
@@ -114,29 +117,30 @@ In the research process we also learned a lot by looking carefully at other mark
 We look at other ecommerce platforms, from the giants to the small ones. We looked at the apps offered on some of these platforms, for external tools that are possible to be integrated with them and even for other tools not related to ecommerce but that brought similar concepts of Campaigns and Promotions. -->
 
 
+ 
 
+# Designing the new admin
 
-# Exploring solutions
-
-## Promotion creation form
-
-The first and most notable problem was the different types of Promotion, the differences of which were not always clear either conceptually or visually. When we put together the screens for creating and editing the different types of promotion, it is very clear that the differences are very small, and are always based on the effect of that promotion. Our solution was to create a unique type of promotion.
+The first and most notable problem was the different types of Promotion, the differences of which were not always clear either conceptually or visually.
   
-<jumbo>
-    <img src="./all_legacy_screens.png"/>
-</jumbo>
-
 ```grid|1
+![](./all_legacy_screens.png)
+``` 
+
+## One promotion to rule them all 
+
+When we put together the screens for creating and editing the different types of promotion, it is very clear that the differences are very small, and are always based on the effect of that promotion. Our solution was to create single type of promotion.
+ 
+<!-- ```grid|1
 ![](./ia.jpg)
-```
+``` -->
 
 <jumbo>
     <img src="./beforeafter.jpg"/>
-</jumbo>
+</jumbo> 
  
 
 <!-- Added to this is the Campaign and Campaign Promotion system, which, as mentioned above, causes many doubts for users of the platform, since the name Campaign refers to them a concept very different from the meaning adopted by VTEX. In addition, this system brought even more complexity to the admin, as it added an additional configuration outside the promotions module, so that afterwards a new type of promotion specific to this scenario could be created, which works in a similar way to regular promotion. -->
-
 
 
 
@@ -150,21 +154,26 @@ The context-driven conditions system which is where our engine shines. It's very
 
 In our new solution, the initial complexity of the screen is always the same regardless of the number of options we offer, and it grows linearly as the user demands greater complexity of business rules. In short, in the new paradigm, complexity grows with user demand, not with the power of the system.
 
+<jumbo>
+    <img src="./conditions.png"/>
+</jumbo>
+
+## Building a conditions grammar
+
+The Conditions component resembles natural language, and it's structured like in the format of `[subject] [verb] [object]`
+
+<jumbo>
+    <img src="./all_conditions.png"/>
+</jumbo>
+
+Enabling the user to progressively build their conditional "statements" leveraging a common interface for all filters. It also accepts a global selector for changing the boolean operation, making the system even more powerful than the previous. This meant the new admin could support all previously existing conditions but enabling many more combinations.
+
+
 <video-container> 
     <video autoPlay controls loop width="100%" type="video/mp4">
         <source src="./conditions.mp4" type="video/mp4">
     </video> 
 </video-container>
-
-The Conditions component resembles natural language, and it's structured like this:
-
-> [subject] [verb] [object]
-
-Enabling the user to progressively build their conditional "statements" leveraging a common interface for all filters. It also accepts a global selector for changing the boolean operation, making the system even more powerful than the previous. This meant the new admin could support all previously existing conditions but enabling many more combinations.
-
-<jumbo>
-    <img src="./all_conditions.png"/>
-</jumbo>
 
 
 
@@ -173,15 +182,24 @@ Enabling the user to progressively build their conditional "statements" leveragi
 
 The list of promotions was also mentioned by some as excessively confusing. It uses a content diagramming paradigm popularly known as "card", which is quite visual but when compared to a simple table it makes comparing data between entities much more difficult. Our solution was to leverage and evolve the Table component of Styleguide, developed especially for building complex and powerful admins without giving up the clarity of information and intuitiveness.
 
+
+## Before
+ 
 ```grid|1
-![](./oldrnb.png "Before")
+![](./oldrnb.png)
 ```
  
-<jumbo caption="After">
+## After  
+ 
+<jumbo>
     <img src="./new_admin.png"/>
 </jumbo>
 
 During this project we created a new filters system, which was integrated into the VTEX Design System and reused in many other admins later. You can read more about this component and the process behind it in my [VTEX Design System case study](https://cristianodalbem.com/vtex-design-system/).
+
+<jumbo>
+    <img src="./FilterBar.png"/>
+</jumbo>
 
 ```grid|1
 ![](./filters.png)
@@ -193,23 +211,24 @@ During this project we created a new filters system, which was integrated into t
 
 Another common cause of misunderstanding of the system comes from the way promotions accumulate or compete with each other. This means that, given a scenario with sufficiently complex business rules, the operation of the system becomes more unpredictable, and interrelationships between dozens of promotions can have undesirable effects, such as making a product price go to zero.
 
-```grid|1
-![](./simulator.png)
-```
+<jumbo>
+    <img src="./simulator.png"/>
+</jumbo>
 
 This new feature for the Promotions Admin simulates for a given shopping cart which promotions would be activated, why is that and the resulting effects for the products in that cart.
  
 
-<!-- ## Visualização em Gantt
+## Gantt Visualization
 
-Para os clientes que costumam se planejar e agendar várias promoções, o novo visualizador em Gantt permitirá facilmente identificar as promoções ao longo do tempo. Ah, e também removemos a necessidade de definir uma data limite - convenhamos, nunca fez sentido obrigar isso.
+For customers who often plan and schedule multiple promotions, the new Gantt viewer will allow them to easily identify promotions over time. 
+
 
 ```grid|1
 ![](./gantt.png)
-``` -->
+```
 
 
-## Little big details
+# Little big details
 
 As of a work tool that people might have to be using everyday, the small almost forgetable details in the UI that sometimes improve the best the productivity. Here's a couple of these.
 
@@ -219,12 +238,17 @@ As of a work tool that people might have to be using everyday, the small almost 
 ![](./saveandaddnew.png) 
 ``` -->
 
+## Better contextual actions
+
 A very common action the users needed was to duplicate existing promotions since very often their commercial campaigns would repeat seasonaly but with important modifications. Other than handy actions that now were available directly from the dashboard, we created the duplicate feature.
 
 ```grid|1
 ![](./lineactions.png) 
 ```
 
+
+## Advanced scheduling
+ 
 Some merchants want to create a promotion starting of now and just end it when they feel like. Others want it to start next week, last for the whole month and only go live on mondays through fridays from 7:15 to 11:20 and from 14:00 to 18:00.
 
 <video-container> 
@@ -232,6 +256,9 @@ Some merchants want to create a promotion starting of now and just end it when t
         <source src="./advancedscheduling.mp4" type="video/mp4">
     </video> 
 </video-container>
+
+
+## Improving quotas visibility
 
 A pressing concern for some users is the limit - and for others, not. That's why in the new Admin instead of always showing the current usage of limit in the UI we have contextual messages that appear when needed.
 
