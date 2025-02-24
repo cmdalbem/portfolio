@@ -14,23 +14,28 @@ color: '#f71b62'
 ---
 
 # Context
-VTEX is a global SaaS technology company focused on ecommerce solutions that have a daily impact on the work of thousands of people around the world. Leading brands of varying sizes and segments, with operations in 26 countries and in global expansion, rely on VTEX for the online sales of their products.
- 
+[VTEX](https://vtex.com/) is a global SaaS technology company focused on ecommerce solutions that have a daily impact on the work of thousands of people around the world. Leading brands of varying sizes and segments, with operations in 26 countries and in global expansion, rely on VTEX for the online sales of their products.
+  
 <!-- The main challenge of working in such environment is that the product is the same whether you're a small store or a huge commerce operation. So every solution we design has to leverage a huge diversity of user needs, and build something that works for everybody. -->
  
 <!-- The main touchpoint of our product with the merchants is the Admin. It's where our clients configure and manage everything related to their commerce operations. It's also where most of our design efforts go into. -->
 
+
 ```grid|1
 ![](./brands.png)
 ```
+<!-- 
+```grid|1
+![](./nyse.jpg)
+``` -->
 
 
 ## The challenge
 The Promotions Admin is the interface where merchants create and manage all kinds of promotions, discounts and other benefits for their e-commerce. It's used by 99% of VTEX clients in a daily basis, which results in more than 5000 sessions per day by more than 2000 users. Its users vary, but often they're in Marketing or Commercial teams.
 
-During this project's research we found out it's one of the main strengths of the platform, offering a lot of flexibility and power that other competitors don't. The result is that more than 50% of all sales have some kind of promotion.
+The powerful promotions system is one of biggest differentiators of the platform. The result is that more than 50% of all sales have some kind of promotion. Despite its power and proven relevance to our customers' business, the product evolution across more than 7 years wasn't closely followed by evolution in its UX.
 
-Despite its power and proven relevance to our customers' business, the product evolution across more than 7 years wasn't closely followed by evolution in its UX. This was made very clear in a chat with stakeholders from USA Sales team, who brought a new perspective of customers from a very new and much more demanding market.
+<!-- This was made very clear in a chat with stakeholders from USA Sales team, who brought a new perspective of customers from a very new and much more demanding market. -->
 
 <!-- We found that of all VTEX modules, promotions was the 3rd with the most customer questions - almost 400 tickets were opened in the last 3 months. More than improving the efficiency of our Support team to answer tickets, we always ask ourselves: what could we do to prevent the ticket from being created in the first place? It was the UX could be improved a lot.
   
@@ -47,15 +52,15 @@ Historically the company's products have been led by the engineers themselves, w
 
 # Discovery
 
-With some main stakeholder's vision at hand and having understood this was a project worth working on I started devising a research plan to validate some assumptions and understand in more depth where we were getting into. 
+<!-- With some main stakeholder's vision at hand and having understood this was a project worth working on I started devising a research plan to validate some assumptions and understand in more depth where we were getting into.  -->
 
-## Understanding stakeholders expectations
+<!-- ## Understanding stakeholders expectations -->
 
-We went after other stakeholders in the company to enrich our vision of how the product was perceived by customers and what improvements we could make. Our focus was on Account Managers who, with their own words, "defend customers within VTEX and defend VTEX within customers". My objectives were:
-- Understand the importance of the product to VTEX 
-- How it's perceived by our customers 
-- How it compares with the competition
-- Understand the use cases and business needs
+We went after other stakeholders in the company to enrich our vision of how the product was perceived by customers and what improvements we could make. Some of the questions we brought were:
+- What's the importance of the product to VTEX?
+- How it's perceived by our customers ?
+- How it compares with the competition?
+- What are the main use cases and business needs?
 
 <!-- ```grid|1
 ![](./vtexorgchart.png)
@@ -63,7 +68,7 @@ We went after other stakeholders in the company to enrich our vision of how the 
 
 ## Finding patterns
 
-After almost 20 interviews with both internal stakeholders and customers we concluded many things, in particular:
+After more than 10 interviews with both internal stakeholders and customers we concluded that:
 - In fact the module already has great features, standing out from the competition and being one of the flagships in the platform's sales pitches.
 - There were some functionality improvements that could be done, but...
 - The amount of functionality, however, negatively impacts its ease of use. It's not considered intuitive, it raises many doubts and sometimes even leads the user to make mistakes that can be financially disastrous.
@@ -83,6 +88,8 @@ With a bunch of insights, impressions and assumptions at hand we turned to looki
 ```grid|1
 ![](./tableau.png)
 ```
+
+## Creating a prioritization framework
 
 Our first step was to validate the hypothesis that the interviewees brought us that Regular Promotions were much more used than the others. This hypothesis was not only confirmed, but the result was shocking because most of the recent team's efforts were focused in a feature very few customers were using.
 
@@ -129,7 +136,7 @@ The first and most notable problem was the different types of Promotion, the dif
 
 ## One promotion to rule them all 
 
-When we put together the screens for creating and editing the different types of promotion, it is very clear that the differences are very small, and are always based on the effect of that promotion. Our solution was to create single type of promotion.
+When we put together the screens for creating and editing the different types of promotion, it's very clear that the differences are very small, and are always based on the effect of that promotion. Our solution was to create single type of promotion, simplifying the information architecture and leveraging more progressive disclosure of the sheer amount of features available.
  
 <!-- ```grid|1
 ![](./ia.jpg)
@@ -144,7 +151,7 @@ When we put together the screens for creating and editing the different types of
 
 
 
-## Conditions builder
+## A brand new Conditions Builder
 
 The context-driven conditions system which is where our engine shines. It's very flexible, offering thousands of possible combinations for creating customized promotions. However we believe that the interaction paradigm was not the best: simply by listing all the options, the complexity of the screen is proportional to the flexibility of the system, which ends up undermining our intentions to keep evolving this system. 
 
@@ -158,7 +165,7 @@ In our new solution, the initial complexity of the screen is always the same reg
     <img src="./conditions.png"/>
 </jumbo>
 
-## Building a conditions grammar
+## A grammar of conditions
 
 The Conditions component resembles natural language, and it's structured like in the format of `[subject] [verb] [object]`
 
@@ -175,6 +182,14 @@ Enabling the user to progressively build their conditional "statements" leveragi
     </video> 
 </video-container>
 
+
+<!-- ## Recursive conditions
+
+Lorem ipsum
+
+```grid|1
+![](./recursive.png)
+``` -->
 
 
 
@@ -195,11 +210,13 @@ The list of promotions was also mentioned by some as excessively confusing. It u
     <img src="./new_admin.png"/>
 </jumbo>
 
-During this project we created a new filters system, which was integrated into the VTEX Design System and reused in many other admins later. You can read more about this component and the process behind it in my [VTEX Design System case study](https://cristianodalbem.com/vtex-design-system/).
+During this project we created a new filters system, which was integrated into the VTEX Design System and reused in many other admins later. 
 
 <jumbo>
     <img src="./FilterBar.png"/>
 </jumbo>
+
+You can read more about this component and the process behind it in my [VTEX Design System case study](https://cristianodalbem.com/vtex-design-system/).
 
 ```grid|1
 ![](./filters.png)
