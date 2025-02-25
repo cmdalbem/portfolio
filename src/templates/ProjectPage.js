@@ -142,7 +142,7 @@ class ProjectPage extends React.Component {
                   } */}
 
                   {
-                    <div className="mv4 dark-gray">
+                    <div className="mb4 dark-gray">
                       <h2 className="f5 mv2 mr2">
                         <span>
                           Date
@@ -166,7 +166,7 @@ class ProjectPage extends React.Component {
                   {
                     post.frontmatter.tags &&
                     post.frontmatter.tags.length > 0 &&
-                    <div className="mb4 dark-gray">
+                    <div className="mv4 dark-gray">
                       <h2 className="f5 mv2 mr2">
                         <span>
                           Roles
