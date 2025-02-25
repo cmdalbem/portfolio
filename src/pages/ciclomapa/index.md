@@ -256,7 +256,7 @@ CicloMapa also had accepted presentations at important conferences, such as [FOS
 This success guaranteed yearly budget updates from the client, which always gave us lots of freedom to design and build the platform's next steps. Proof of this trust is that in 2022, instead of jumping into building all feature requests we received throughout the years, we instead ran a major Product Discovery research that revealed big new opportunities for the platform. This project might become a new case study here on my website at some point :)
 
 
-## Links
+# Links
  
 <links-list
     items='[ 

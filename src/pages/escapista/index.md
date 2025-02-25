@@ -287,7 +287,7 @@ And, of course, we're utterly happy with the several heart-warming user feedback
     <img src="./feedbacks.png"/>   
 </jumbo>
 
-## Links
+# Links
  
 <links-list
     items='[ 
