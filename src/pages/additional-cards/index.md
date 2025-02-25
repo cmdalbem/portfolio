@@ -247,6 +247,7 @@ This was the longest and most complex project I've worked on at Nubank. It was a
 Being able to design something from the very start and seeing it go live was a fantastic experience. The team was excellent too. We collaborated and lot, and everyone involved learned something new.
 
 
+<ai-disclaimer>
 <ai-disclaimer/>
 
 
