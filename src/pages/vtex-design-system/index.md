@@ -21,7 +21,7 @@ liveLink: 'https://styleguide.vtex.com/'
 <!-- The main touchpoint of our product with the store owners is the Admin. It's where our clients configure and manage everything related to their operations, and where they'll spend most of their days. -->
 
 ```grid|1
-![](./brands.png)
+![](./nyse.png) 
 ```
 
 ## A strategic moment
@@ -69,9 +69,9 @@ The last part we developed were the Design Tokens. It was a little later in the 
     <img src="./foundations.png"/>
 </jumbo>
 
-<!-- One important learning was that starting off from an existing system shouldn't have made us lazy on doing research for these visual foundations and making all decisions intentional. Still today new designers sometimes question some decisions, to which we sometimes can only say "well, that's how Tachyons was". -->
-
-
+<!-- One important learning was that starting off from an existing system shouldn't have made us lazy on doing research for these visual foundations and making all decisions intentional. Still today new designers sometimes question some decisions, to which we sometimes can only say "well, that's how Tachyons was". --> 
+ 
+ 
 ## A turning point: the migration to Figma
 
 When we started this project Figma was the new kid on the block. The VTEX Design Team have been using Sketch for years, but at that time it lacked any support for Design Systems or even collaborative work. I quickly got very excited about Figma, so I took the initiative of learning everything I could about it and organizing workshops in the company to have everybody onboard. With everyone's buy in, I started building our new UI Kit in Figma, and I'm also continually helping others and sharing good practices.
@@ -134,20 +134,20 @@ Going through the legacy Admin screens it was clear it wasn't different for us. 
 <jumbo>
     <img src="./four_admins.png"/>
 </jumbo>
-
+ 
 We did an extensive benchmark research in digital products and found out that powerful table components were ubiquitous mainly in B2B products. This gave us lots of ideas of interesting features and possible approaches we could take to create ours. 
 
 ```grid|1
 ![](./table_bench.png "Benchmarking other digital products for the Table component.") 
 ```
    
-## The new data table component
+## The new data table component 
   
 We split the component in subcomponents that we would address one by one, making sure we were intentional in every design detail without being overwhelmed by its complexity.
 
-```grid|1
-![](./table_docs.png)
-```
+<jumbo>
+    <img src="./table_docs.png"/>
+</jumbo>
 
 As with everything about the Design System, the development was totally guided by demands in our projects. Because of that the development had to be halted a priorities changed a few times, which is fairly natural to any project like this. Yet, after a few months we had a working, feature-full version that was already being used by several projects in the company. At the time of this writing at least 10 projects are already reusing it, and more are certainly to come.
 
@@ -165,7 +165,7 @@ Along with tables, another very important part of any admin are filters. We want
 
 ```grid|1
 ![](./filters_table.png)
-``` 
+```  
 
 An audit around the platform revealed we had half a dozen different variations of filters. The problems ranged from bad interaction choices, visual hierarchy, information architecture, discoverability and flexibility.
  
@@ -185,23 +185,20 @@ The direction we chose to take focused in solving the following problems:
 * **Screen real-estate**: some of our products offered from dozens to hundreds of possible filter variations, and we couldn't try to fit them all in the screen.
 * **Live preview**: solutions with drawers made it hard to see the result of filtering directly along with the changing data, which made it harder to use especially if you're exploring data and trying different filter configurations.
 * **Discoverability**: we designed a simple Select component that had typeahead search built-in, so it'd be easy to find filters even in long lists.
-* **Flexibility**: we designed the Statement component to be a standard protocol for the most diverse filters imaginable, at the same time it was a common language to be reused with other components.
+* **Flexibility**: we designed the Statement component to be a standard protocol for the most diverse filters imaginable, at the same time it was a common language to be reused with other components. 
 
-```grid|1
+```grid|1 
 ![](./statements.png "A Statement is an abstract component that has a "subject", a list of possible "verbs" and "objects", and is used inside components like the Filter Bar and the Conditions Builder.")
 ```
 
 ## The Filter Bar HOC
-
+ 
 One way of using our filters system is by using the Filter Bar component, a HOC (high-order component, or component-of-components) that implements common interactions like turning filters on and off, creating new filters and clearing them. In the future we intend it to also implement saving filter preferences.
 
 <jumbo>
-    <img src="./FilterBar.png"/>
+    <img src="./filterbar.jpg"/>
 </jumbo>
-
-
-
-
+ 
 
 
 # Component deep-dive: Conditions Builder
@@ -220,7 +217,7 @@ Looking at other digital products we found out this was a more common pattern th
 We designed a Conditions Builder to be a common pattern for adding multiple conditions with simple (first level) boolean relationships. To chose the boolean operator there's a single global control, which prevents the precedence problem. It also helps users that are not used with boolean logic: either you chose that `all` conditions should be met or that `any` condition should be met. 
 
 Each line is made of a Statement, that same component used in the Filter component.
- 
+  
 <jumbo>
     <img src="./conditions.png"/>
 </jumbo>

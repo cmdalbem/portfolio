@@ -22,12 +22,8 @@ color: '#f71b62'
 
 
 ```grid|1
-![](./brands.png)
+![](./nyse.png) 
 ```
-<!-- 
-```grid|1
-![](./nyse.jpg)
-``` -->
 
 
 ## The challenge
@@ -167,11 +163,11 @@ In our new solution, the initial complexity of the screen is always the same reg
 
 ## A grammar of conditions
 
-The Conditions component resembles natural language, and it's structured like in the format of `[subject] [verb] [object]`
+The Conditions component resembles natural language, and it's structured like in the format of `[subject] [verb] [object]` 
 
 <jumbo>
     <img src="./all_conditions.png"/>
-</jumbo>
+</jumbo> 
 
 Enabling the user to progressively build their conditional "statements" leveraging a common interface for all filters. It also accepts a global selector for changing the boolean operation, making the system even more powerful than the previous. This meant the new admin could support all previously existing conditions but enabling many more combinations.
 
@@ -204,7 +200,7 @@ The list of promotions was also mentioned by some as excessively confusing. It u
 ![](./oldrnb.png)
 ```
  
-## After  
+## After   
  
 <jumbo>
     <img src="./new_admin.png"/>
