@@ -45,7 +45,7 @@ class Header extends React.Component {
         <div className="w-100 flex items-center justify-between">
           <Fade duration={1500}>
             <h1 className="f7">
-              <Link to="/" className="link dim near-black fw6 ttu">
+              <Link to="/" className="link dim near-black fw4 f6">
                 Cristiano Dalbem 
               </Link>
 

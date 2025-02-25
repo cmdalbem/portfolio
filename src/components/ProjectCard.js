@@ -49,7 +49,7 @@ class ProjectCard extends React.Component {
                 <div className={mini ? "pl0-ns pl2 w-100 pv3-ns pv0" : "pv3-ns pv2"}>
                     {
                         post.frontmatter.title &&
-                        <div className={"project-card--title near-black mt0 mb1-ns mb0 " + (mini ? 'f5' : 'f3-ns f4')}>
+                        <div className={"project-card--title near-black mt0 mb1-ns mb0 " + (mini ? 'f5' : 'f3-ns f5')}>
                             {post.frontmatter.title}
                             {
                                 post.frontmatter.isPasswordProtected &&

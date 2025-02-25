@@ -22,10 +22,10 @@ class ResultsBanner extends React.Component {
                     Object.keys(dataObj).map((i, n) => (
                         <Fade bottom duration={1500} delay={n * 500}>
                             <div className="mv0-ns mv3" key={i}>
-                                <div className="f1 fw1 mt0 mb0">
+                                <div className="f2 fw1 mt0 mb0">
                                     {dataObj[i]}
                                 </div>
-                                <div className="gray f5 mr2">
+                                <div className="f5   gray mr2">
                                     {i}
                                 </div>
                             </div>
@@ -102,12 +102,12 @@ export function markdownRenderer(isFullWidth) {
         createElement: React.createElement,
         components: {
             h1: props => (
-                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mw6-l mt6-l mt5 mb--3-l position-sticky-l h4-l bg-background-color-l`}>
+                <h1 className={`f3 lh-title dark-gray fw4 mw6-l mt6-l mt5 mb--4-l position-sticky-l h4-l bg-background-color-l`}>
                     {props.children}
                 </h1>
             ),
             h2: props => (
-                <h2 className={`f3 lh-title dark-gray fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
+                <h2 className={`f3 lh-title fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
                     {props.children}
                 </h2>
             ),
@@ -117,7 +117,7 @@ export function markdownRenderer(isFullWidth) {
                 </h3>
             ),
             p: props => (
-                <p className={`mt0 ${defaultMargins}`}>
+                <p className={`mt0 f4 ${defaultMargins}`}>
                     {props.children}
                 </p>
             ),
@@ -165,7 +165,7 @@ export function markdownRenderer(isFullWidth) {
             ),
             "quote": props => (
                 <div className={`mt0 mv5 ${defaultMargins}`}>
-                    <div className='f3 tracked-tight'>
+                    <div className='f3 tracked-tight lh-title'>
                         <span style={{marginLeft: "-0.406em"}}>“</span>
                         {props.children}
                         <span className=''>”</span>
@@ -237,7 +237,7 @@ export function markdownRenderer(isFullWidth) {
                 return (
                     <div className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pa3 pv6-ns pv4 bg-near-white z-0 relative">
                         <div className='mw6 mb6-ns b2'>
-                            <h3 className="f3-ns f4 lh-solid fw7 mv2-ns mb2 dark-gray">
+                            <h3 className="f3 f4 lh-title fw4 mv2-ns mb2 dark-gray">
                                 { title }
                             </h3>
                         

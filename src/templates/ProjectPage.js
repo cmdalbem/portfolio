@@ -78,7 +78,7 @@ class ProjectPage extends React.Component {
                 <div className="w-50-ns">
                   {
                     post.frontmatter.description &&
-                    <div className="mb3 f3-ns f4 dark-gray lh-copy tracked-tight">
+                    <div className="mb3 f3-ns f4 dark-gray lh-title tracked-tight">
                       {post.frontmatter.description}
                     </div>
                   }
@@ -113,7 +113,7 @@ class ProjectPage extends React.Component {
                     // </div>
                     <a
                       href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                      className="dib mv4 f5 fw6 link pv3 ph5 ba dim br2"
+                      className="dib mt5 mb4 f5 fw6 link pv3 ph5 ba dim br2"
                       style={{ 
                           // backgroundColor: post.frontmatter.color,
                           borderColor: post.frontmatter.color,
@@ -130,10 +130,8 @@ class ProjectPage extends React.Component {
                 <div className="w-30-ns">
                   {/* {
                     <div className='mv4 dark-gray'>
-                      <h2 className="f5 mv2 mr2">
-                        <span>
-                          Challenge
-                        </span>
+                      <h2 className="f5 mv2 fw4 gray">
+                        Challenge
                       </h2>
                       <span className="f5 din lh-copy">
                         {post.frontmatter.minibio}
@@ -143,10 +141,8 @@ class ProjectPage extends React.Component {
 
                   {
                     <div className="mb4 dark-gray">
-                      <h2 className="f5 mv2 mr2">
-                        <span>
-                          Date
-                        </span>
+                      <h2 className="f5 mv2 fw4 gray">
+                        Date
                       </h2>
                       <div className="f5">
                         {dateStart}
@@ -167,10 +163,8 @@ class ProjectPage extends React.Component {
                     post.frontmatter.tags &&
                     post.frontmatter.tags.length > 0 &&
                     <div className="mv4 dark-gray">
-                      <h2 className="f5 mv2 mr2">
-                        <span>
-                          Roles
-                        </span>
+                      <h2 className="f5 mv2 fw4 gray">
+                        Roles
                       </h2>
                       <div>
                         { post.frontmatter.tags.map(t => capitalize(t)).join('・') }
@@ -186,10 +180,8 @@ class ProjectPage extends React.Component {
                   {
                     post.frontmatter.team &&
                     <div className='mv4 dark-gray'>
-                      <h2 className="f5 mv2 mr2">
-                        <span>
-                          Teammates
-                        </span>
+                      <h2 className="f5 mv2 fw4 gray">
+                        Teammates
                       </h2>
                       <span className="f5 din lh-copy">
                         {post.frontmatter.team}
@@ -201,10 +193,8 @@ class ProjectPage extends React.Component {
                     post.frontmatter.metrics &&
                     post.frontmatter.metrics.length > 0 &&
                     <div className="mb4 dark-gray">
-                      <h2 className="f5 mv2 mr2">
-                        <span>
-                          Metrics
-                        </span>
+                      <h2 className="f5 mv2 fw4 gray">
+                        Metrics
                       </h2>
                       <div className="f5 lh-copy">
                         { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
