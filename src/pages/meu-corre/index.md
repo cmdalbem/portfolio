@@ -55,17 +55,19 @@ Delivery platforms often attract workers with promises of flexibility and entrep
 The project followed a user-centered design methodology since the beginning. Igor had been collecting data from various social media sources, from community posts in Facebook to chat groups in WhatsApp. This helped him notice the first patterns and draft some hypothesis we would build upon.
 
 
-## Getting closer
+## Getting closer, even if far away
 
 Right after joining the project I planned and conducted in-depth interviews with delivery workers from across Brazil to deepen that understanding. Our sample included both bicycle and motorcycle riders, different states, ages and genders. We wanted to have a clear picture of how a typical day for them looks like, and we focused on the challenges they faced. We also tried to understand their networks, consumption of content related to delivery, and their financial organization. Finally, we invited them to zoom out and understand how they got there and what were their medium and long term goals.
 
+In some cases their daily lives are so rushed they joined our meetings in the street, in the middle between one delivery and another.
+
 ```grid|1
-![](./interview.png "Some of the first delivery workers we interviewed from different regions of Brazil. Consent was provided to show their images in our project presentations.")
+![](./interview.png)
 ``` 
 
 From these interviews we found out that their main pain points were:
-* **Financial instability**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. . Without knowing, they're working as small companies but without the tools to support it. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper or simple spreadsheets, but they lack consistency and often forget to consider the costs.
-* **Lack of support**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. They're sold the idea of being entrepreneurs, but without any training for that. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
+* **Financial instability**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. . Without knowing, they're working as small companies but without the tools to support it. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper or simple spreadsheets, but they lack consistency and often forget to consider the costs. 
+* **Lack of support and fake promises**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. They're sold the idea of being entrepreneurs, but without any training for that. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
 * **Rushed routines**: their lives are extremely rushed, from having to take care of their families, long commutes to distant parts of the city where there's more activity with delivery apps. At the same time, they often have to wait long times for restaurants to prepare the food and for the clients to pick it up.
 
 
@@ -74,7 +76,7 @@ From these interviews we found out that their main pain points were:
 </jumbo>
 
 
-## Zooming out
+## Zooming out to zoom in
 
 To build a strong foundation to the following phases we took the opportunity to look around at what kind of applications these workers were using to support their work: maps apps, financial organization apps, social networks, etc.
 
@@ -93,9 +95,9 @@ With the vast amount of data we gathered up to this point, I helped the team sum
     <img src="./problemtree.png"/>
 </jumbo>    
 
-## A Design Sprint semi-marathon
+## The Design ~Sprint~ Semi-Marathon
 
-Normally Design Sprints are done in an intense week of work, but since this was a sideproject for all of us, we made a longer version of the sprint that would last a whole month: each week corresponding to one of the days of the Design Sprint 2.0 format popularized by [https://ajsmart.com/](AJ&Smart).
+Normally Design Sprints are done in an intense week of work, but since Meu Corre was a sideproject for all of us, I planned a longer version of the process that would last a whole month: each week corresponding to one of the days of the Design Sprint 2.0 format popularized by [https://ajsmart.com/](AJ&Smart).
 
 <!-- I organized it like this:
 * **Week 1 - Defining the challenge**: we'll summarize everything we've learned, from all the interviews we've done, countless articles and community posts we've read and hours of videos we've watched.
@@ -108,16 +110,15 @@ Normally Design Sprints are done in an intense week of work, but since this was 
 
 The winner concept was the "Financial Strava", a kind of app that would merge the popular sports-tracking app Strava with the specificities of their work as delivery workers. The user would add their earnings and expenses to the app, which would help them track their daily and weekly goals and calculate some personal performance metrics.
 
-<jumbo caption="In one of the last steps of the Sprint we voted on our favorite features and the team created a storyboard with the key interactions. From here I'd create an interactive prototype to test with real users.">
+<!-- <jumbo caption="In one of the last steps of the Sprint we voted on our favorite features and the team created a storyboard with the key interactions. From here I'd create an interactive prototype to test with real users.">
     <img src="./designsprint.png"/>
-</jumbo> 
+</jumbo>  -->
 
 <!-- ```grid|1
 ![](./usertests.png "Table of insights from the first user tests with the winning concept from the Design Sprint. There were 3 sections: profiling questions, usability test and final open questions. Green post-its are positive observations, red negative. Each column is an user, where the last of the summary of all.")
 ```  --> 
 
 What was amazing about this idea was the potential to understand their work at scale, which could be fed back to the workers as dashboards and reports to maximize their earnings: which platforms paid better and what were the best times to work.
-
 
 The last week of the sprint was dedicated to run users tests with an interactive prototype.
 
@@ -128,8 +129,8 @@ The last week of the sprint was dedicated to run users tests with an interactive
         "title": "A step in financial organization",
         "description": "Users already take notes on their earnings, but they often felt it was hard to maintain. This is a great opportunity of presenting the app as an improvement, rather than a whole new habit."
     },{
-        "title": "Adding earnings one by one will not work",
-        "description": "They do dozens of deliveries per day, every day, and most like to settle their finances in the end of the week. This led us to the insight of designing a feature that would enable adding multiple earnings at once."
+        "title": "Recording earnings one by one will not work",
+        "description": "They do dozens of deliveries per day, every day, and most like to settle their finances in the end of the week. This led us to the insight of designing a feature that would enable recording multiple earnings at once."
     },{
         "title": "Metrics are a big win",
         "description": "Users compared the metrics with some that the platforms already provide them but that are in general very limited. They liked a lot how we could measure things the platforms cant, and do it cross-platforms in one central place."
@@ -142,23 +143,87 @@ The last week of the sprint was dedicated to run users tests with an interactive
     }]'>
 </insights> 
   
-## Designing and launching a MVP
+# Building and launching a MVP
 
-Throughout the course of more than 1 year the project was continuously refined as we talked with more users, closed partnerships, developed business model ideas and started development with a software house we hired.
+Throughout the course of the next year the "Financial Strava" was continuously refined as we talked with more users, closed partnerships, developed business model ideas and started development with a software house we hired.
+
+A highlight during this phase was our participation on the online workshop 'Health and Workers' Rights in Times of Digital Platforms', a partnership with teachers and researchers from the highly influential Brazilian institutions [Fundação Oswaldo Cruz (Fiocruz)](https://portal.fiocruz.br/) and [DIEESE](https://www.dieese.org.br/) and the [UFRJ](https://ufrj.br/) and [UFF](https://www.uff.br/) universities. This forum allowed us to deepen our understanding of the users and to expose our ideas to a wider audience.
 
 ```grid|1
-![](./fiocruz.png "A highlight during this phase was our participation on the online workshop 'Health and Workers' Rights in Times of Digital Platforms', a partnership the highly influential Brazilian institutions Fiocruz and DIEESE and the UFRJ and UFF universities.")
+![](./fiocruz.png)
 ``` 
 
-The final screens and features can be seen below. These were designed for our Google Play page:
+## Developing a familiar visual language
+
+When building the foundations for typography, color palette and visual identity, I wanted to make sure the app would engage with our users, who have limited formal education and experience with technology. As low income people in Brazil tend to have Android devices, delivery platforms at that time only made available their app to that ecosystem. For that reason I've built the Design System on top of basic Google Material Design components and patterns, achieving a visual language that would be most familiar to that audience.
+
+<!-- algo de design system -->
+
+
+## A gentle beginning
+
+A special attention was given to the first experience of the user with the app. Although it was designed to be super simple, it does have a bunch of features that are common in the world of financial management apps but can be extremely new to our audience. I've explored empty states to guide the user on what that section is about and what actions we expect from them. 
 
 <jumbo> 
-    <img src="./googleplay1.png"/>
+    <img src="./emptystates.png"/>
 </jumbo>
 
+
+
+## A simple but customizable financial experience
+
+When first signing up, we give the option for the user to customize the experience with what makes sense for them:
+* **Vehicle**: The user can chose one among all mobility modes used by delivery workers. (and yes, although not officially permitted, some do work by foot)
+* **Sources of income**: What platforms do they work for? We prepopulate with all the most popular platforms, but also enable them to add their own.
+* **Expenses**: Again, we offer a bunch of default options for common expenses they might find in their work, but they can also add custom ones.
+* **Goals**: One of the highlights of the app and a brilliant insight the team had from the research, we allow users to track their goals, a very common practice among these workers.
+
+<jumbo> 
+    <img src="./customizations.png"/>
+</jumbo>
+
+
+
+## Optimizing the core interaction: adding earnings
+
+A lot of attention was put in the recording of earnings, since this would be the core activity the user need to do to get value from the app. From our research we understood this could be extremely cumbersome if not handled right, so we introduced 2 features:
+* **Quick add**: for the small, quick earnings of every day, a small modal allows to add it with very few taps.
+* **Multiple earnings**: for the users who like settling their finances in the end of a period like a day or a week, we allow them to add multiple earnings at the same time by just inputting the totals and how many there were.
+ 
+<video-container> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./add.mp4" type="video/mp4">
+    </video> 
+</video-container>
+
+
+
+ 
+## Insightful but approachable metrics
+
+From our learnings from research, we knew we had to be light on the metrics dashboard. That's why we ditched any charts, and focused on metrics some of these workers were already calculating and discussing about among themselves. Some tooltips provided extra explanations for some less obvious ones.
+
+<jumbo> 
+    <img src="./metrics.png"/>
+</jumbo>
+
+
+The final screens and features can be seen below in these promotional assets designed for our [Google Play page](https://play.google.com/store/apps/details?id=br.com.meucorre):
+
+<jumbo> 
+    <img src="./googleplay.png"/>
+</jumbo>
+
+<!-- <jumbo>
+    <img src="./googleplay1.png"/> 
+</jumbo>
 <jumbo>
     <img src="./googleplay2.png"/>
-</jumbo>
+</jumbo> -->
+
+
+
+## The launch
 
 After a [way too] long development phase where we faced thousands of issues, technical challenges and scope cutting, this MVP was successfully launched to the general public with zero known bugs on April of 2024 with several live events we coordinated with partner institutions as well as influential workers on YouTube.
 
@@ -166,7 +231,13 @@ After a [way too] long development phase where we faced thousands of issues, tec
 ![](./live.png "There were in total 4 live events we held on YouTube to promote the app.")
 ```  
 
-<!-- Key Features: 
+I've also helped design our first social media posts, which is always out of my comfort zone, but necessary.
+
+<jumbo> 
+    <img src="./social.png"/>
+</jumbo> 
+
+<!-- Key Features:  
 * Financial Tracking: Simplified recording of both income and expenses, allowing workers to track all their sources of revenue.
 * Customization: Workers can tailor the app to their needs by creating categories for expenses and income sources.
 * Indicator Calculation: Automatic calculation of key indicators such as earnings per hour and per distance.
@@ -176,18 +247,21 @@ After a [way too] long development phase where we faced thousands of issues, tec
 
 # Next Steps
 
-Since June/2024 I've stepped down from the team to focus on other projects, but I still provide counseling, discuss strategy and contribute on big decisions.
+Since June/2024 I've stepped down from the team to focus on other projects, but I still provide counseling, discuss strategy and contribute on big decisions. Here are the main areas the project has been evolving since the launch and plans to continue in the near future:
 
-Here are the main areas the project has been evolving since the launch and plans to continue in the near future:
-
+* **Iterating on core features**: Incorporate feedback from users who are using the tool in their real lives to make it more useful and efficient for the core Jobs-To-Be-Dones. 
 * **Data analysis and reports**: With more and more users recording their earnings and expenses in the app we'll start reaching statistical relevance so we can analyze that data and provide a vast diversity of reports and insights to different audiences, from the workers themselves to researchers and advocacy institutions.
 <!-- * **Doubledown on engagement**: There are lots of opportunities to help user build the positive habits of financial management into their daily lives, such as leveraging more push notifications, emails and nudges inside the app. -->
-* **Iterating on core features**: Incorporate feedback from users who are using the tool in their real lives to make it more useful and efficient for the core Jobs-To-Be-Dones.
 <!-- * **Advanced features**: Invest in features of high impact and high effort that were left out of the MVP, such as Automatic Earnings Sync and Geolocation Tracking. -->
 * **New audiences & partnerships**: Stakeholders have shown interest in investing to expand the tool to new countries and even other gig workers such as Uber drivers. Initial research has shown that could be done without having to change too much the current experience.
 <!-- * **New partnerships**: Keep seeking additional funding and partnerships to sustain and develop the platform further. -->
- 
-<jumbo caption="Apart from iterating on the core features, after the launch we started seeking funding to implement some features of high impact and high effort that were left out of the MVP.">
+
+## Hight impact/effort features
+
+Apart from iterating on the core flows, after the launch we started seeking funding to implement some new features that were left out of the MVP implementation. These were features classified as of high impact but also high effort, so it was strategic the we'd leave it to a second round. Some of these are the Hustle Tracker and the Platform Autosync.
+
+
+<jumbo>
     <img src="./newfeatures.png"/>
 </jumbo> 
 
@@ -245,11 +319,10 @@ Working on Meu Corre was one of those projects that really stuck with me. It pus
 
 
 
-<ai-disclaimer/>
+<ai-disclaimer><ai-disclaimer/>
 
 
 # Learn more
-
 
 <links-list
     items='[ 
@@ -257,7 +330,7 @@ Working on Meu Corre was one of those projects that really stuck with me. It pus
             "label": "Website",
             "url": "https://meucorre.com.br/"
         }, {
-            "label": "Download the app (Google Play)",
+            "label": "App page at Google Play",
             "url": "https://play.google.com/store/apps/details?id=br.com.meucorre&hl=pt_PT/"
         }, {
             "label": "Official launch presentation (YouTube)",
