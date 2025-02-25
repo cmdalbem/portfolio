@@ -16,7 +16,7 @@ cover: './cover.png'
 
 # Context 
 
-[Nubank](https://nubank.com.br/) (NYSE: NU) was born in 2013 with the mission to fight complexity to empower people by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 100 million customers across Brazil, Mexico, and Colombia. Nubank is one of the most recognized digital product companies in the country and is often associated with products and services that are simple, intuitive, and transparent.
+[Nubank](https://nubank.com.br/) (NYSE: NU) was born in 2013 with the mission to fight complexity to empower people by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 100 million customers across Brazil, Mexico, and Colombia. Nubank is considered one of the most innovative companies in the world ([Fast Company](https://www.fastcompany.com/91040515/nubank-most-innovative-companies-2024)) and is often associated with products and services that are simple-to-use, intuitive, and transparent.
 
 ```grid|1 
 ![](./nubank.png) 
