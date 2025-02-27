@@ -18,18 +18,18 @@ liveLink: 'https://play.google.com/store/apps/details?id=br.com.meucorre'
  
 # Overview
 
-[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, an old friend who was a PhD candidate studying on the relationship of Brazilian courier workers with platforms. I was the responsible for everything concerning the product, from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
+[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, a PhD candidate studying on the relationship of Brazilian courier workers with platforms. I was the responsible for everything concerning the product, from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
 
-We successfully got funded with more than R$ 200k (~€33k) by FAPERJ, CNPq, and Fundo Brasil, important Brazilian research institutions. We also had access to almost 2 years of workshops and mentorship in topics such as business and product management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks and planning on next steps.
+We successfully got funded with more than R$ 200k (~€33k) by FAPERJ, CNPq, and Fundo Brasil, important Brazilian research institutions, and gained access to 2 years of mentorship and workshops on Business and Product Management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks and planning on next steps.
 
 <!-- The team behind Meu Corre consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app. -->
-
-Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. 
-
  
 ```grid|1 
 ![](./rafael.jpg "Rafael de Melo was one of the first delivery workers we got close to and was a key partner during the project. Photo by Caroline Jacobi.") 
 ```   
+
+Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. 
+
   
   
 # Problem statement
@@ -52,23 +52,23 @@ Delivery platforms often attract workers with promises of flexibility and entrep
 
 # Research 
 
-The project followed a user-centered design methodology since the beginning. Igor had been collecting data from various social media sources, from community posts in Facebook to chat groups in WhatsApp. This helped him notice the first patterns and draft some hypothesis we would build upon.
+The project followed a user-centered design methodology since the beginning. Igor had been collecting data from social media interactions, from community posts in Facebook to chat groups in WhatsApp. This helped him notice the first patterns and draft hypothesis we would build upon.
 
 
 ## Getting closer, even if far away
 
-Right after joining the project I planned and conducted in-depth interviews with delivery workers from across Brazil to deepen that understanding. Our sample included both bicycle and motorcycle riders, different states, ages and genders. We wanted to have a clear picture of how a typical day for them looks like, and we focused on the challenges they faced. We also tried to understand their networks, consumption of content related to delivery, and their financial organization. Finally, we invited them to zoom out and understand how they got there and what were their medium and long term goals.
+Right after joining the project I planned and conducted in-depth interviews with delivery workers from across Brazil to deepen that understanding. Our sample included both bicycle and motorcycle riders from different regions of the country, ages and genders. We wanted to have a clear picture of how a typical day for them looks like, and we focused on the challenges they faced. We also tried to understand their networks, consumption of content related to delivery, and their financial organization. Finally, we invited them to zoom out and understand how they got there and what were their medium and long term goals.
 
-In some cases their daily lives are so rushed they joined our meetings in the street, in the middle between one delivery and another.
+In some cases their lives were so rushed that they joined our meetings in the street, in the middle between one delivery and another. We made sure the time they spent with us was fairly compensated.
 
 ```grid|1
 ![](./interview.png)
 ``` 
 
 From these interviews we found out that their main pain points were:
-* **Financial instability**: they suffer from a high unpredictability with their financial lives. This kind of work has many invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. . Without knowing, they're working as small companies but without the tools to support it. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper or simple spreadsheets, but they lack consistency and often forget to consider the costs. 
+* **Financial instability**: they suffer from a high unpredictability with their financial lives. Their work has invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. Without knowing, they're working as small companies but without the tools to support it. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper or simple spreadsheets, but they lack consistency and often forget to consider these costs. 
 * **Lack of support and fake promises**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. They're sold the idea of being entrepreneurs, but without any training for that. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
-* **Rushed routines**: their lives are extremely rushed, from having to take care of their families, long commutes to distant parts of the city where there's more activity with delivery apps. At the same time, they often have to wait long times for restaurants to prepare the food and for the clients to pick it up.
+* **Rushed routines**: their lives are extremely rushed, from having to take care of their families, long commutes to distant parts of the city where there's more activity with delivery apps. At the same time, they often have to wait long times for restaurants to prepare the food and for the clients to pick it up. This leaves them without time to study or search for alternatives.
 
 
 <jumbo caption="The classic User Journey Map helped us summarize and make sense of everything we've learned about a typical day of a delivery worker. Click to see it larger.">
@@ -78,7 +78,7 @@ From these interviews we found out that their main pain points were:
 
 ## Zooming out to zoom in
 
-To build a strong foundation to the following phases we took the opportunity to look around at what kind of applications these workers were using to support their work: maps apps, financial organization apps, social networks, etc.
+To build a strong foundation, I took the opportunity to look around at what kind of apps these workers were using to support their work: maps apps, financial organization apps, social networks, etc.
 
 I also took a close look at how the platform apps looked like. Even if we're clearly not in the business of creating competition, these apps is our users' universe and it was important we understand this shared vocabulary, both visual (how do they look? what kind of interaction patterns are most common?) and textual (what terms they use? how's the tone of voice?). Often the worker's-side app was completely different from the consumer-side app.
 
@@ -160,9 +160,9 @@ When building the foundations for typography, color palette and visual identity,
 <!-- algo de design system -->
 
 
-## A gentle beginning
+## Empty states
 
-A special attention was given to the first experience of the user with the app. Although it was designed to be super simple, it does have a bunch of features that are common in the world of financial management apps but can be extremely new to our audience. I've explored empty states to guide the user on what that section is about and what actions we expect from them. 
+A special attention was given to the first experience of the user with the app. Instead of the regular carousel kind of onboarding, which we think ours users would most likely just skip, we gave extra though to the empty states. Some of our features, while common in the world of financial management apps, they can be very new to our audience.
 
 <jumbo> 
     <img src="./emptystates.png"/>
@@ -285,7 +285,7 @@ Here's a summary of the amazing results we've already achieved since the launch 
         "raised in funding": "€ 33.000,00",
         "recorded rides": "60.400",
         "app installs in 1st month": "1376",
-        "articles in the media": "14"
+        "articles in the media": "17"
     }'>
 </results-banner>
 
