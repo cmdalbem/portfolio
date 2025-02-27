@@ -78,7 +78,7 @@ class ProjectPage extends React.Component {
                 <div className="w-50-ns">
                   {
                     post.frontmatter.description &&
-                    <div className="mb3 f3-ns f4 dark-gray lh-title tracked-tight">
+                    <div className="mb3 f3-ns f4 dark-gray lh-copy">
                       {post.frontmatter.description}
                     </div>
                   }
@@ -113,7 +113,7 @@ class ProjectPage extends React.Component {
                     // </div>
                     <a
                       href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                      className="dib mt5 mb4 f5 fw6 link pv3 ph5 ba dim br2"
+                      className="dib mt5 mb4 f5 fw6 link pv3 ph4 ba dim br-pill b--orange"
                       style={{ 
                           // backgroundColor: post.frontmatter.color,
                           borderColor: post.frontmatter.color,
@@ -268,7 +268,7 @@ class ProjectPage extends React.Component {
           </div>
 
           <div className="w-100 tc mt6">
-            <Link to="/#projects" className="dim f3 fw5 link pa3 br2 text-gradient-clip ttext">
+            <Link to="/#projects" className="dim f4 fw5 link ph4 pv3 br2 orange br-pill ba b--orange">
               View all projects
             </Link>
           </div>
