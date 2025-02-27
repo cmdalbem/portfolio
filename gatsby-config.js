@@ -82,7 +82,6 @@ module.exports = {
               linkImagesToOriginal: true,
               showCaptions: true,
               // markdownCaptions: true,
-              disableBgImageOnAlpha: true,
               backgroundColor: 'transparent',
             },
           },
