@@ -63,10 +63,11 @@ In some cases their lives were so rushed that they joined our meetings in the st
 
 ```grid|1
 ![](./interview.png)
-``` 
+```  
 
 From these interviews we found out that their main pain points were:
-* **Financial instability**: they suffer from a high unpredictability with their financial lives. Their work has invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. Without knowing, they're working as small companies but without the tools to support it. At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper or simple spreadsheets, but they lack consistency and often forget to consider these costs. 
+* **Financial instability**: they suffer from a high unpredictability with their financial lives. Their work has invisible operating costs: gas, maintenance, food, cell phone plan, insurance, etc. Without knowing, they're working as small companies but without the tools to support it.
+* **Limited financial organization**: At the same time, some do have some financial organization, like tracking daily/weekly earning goals in pen and paper or simple spreadsheets, but they lack consistency and often forget to consider these costs. 
 * **Lack of support and fake promises**: there's a total lack of structure for these workers - if it weren't for their strong sense of camaraderie, they'd be left all alone. They're sold the idea of being entrepreneurs, but without any training for that. At the time of those interviews, the platforms didn't provide any equipment or facilities, and workers have to depend on public infrastructure (which is quite lacking in most Brazilian cities) or on the good-will of the private sector.
 * **Rushed routines**: their lives are extremely rushed, from having to take care of their families, long commutes to distant parts of the city where there's more activity with delivery apps. At the same time, they often have to wait long times for restaurants to prepare the food and for the clients to pick it up. This leaves them without time to study or search for alternatives.
 
@@ -160,14 +161,14 @@ When building the foundations for typography, color palette and visual identity,
 <!-- algo de design system -->
 
 
-## Empty states
+## Empty states 
 
 A special attention was given to the first experience of the user with the app. Instead of the regular carousel kind of onboarding, which we think ours users would most likely just skip, we gave extra though to the empty states. Some of our features, while common in the world of financial management apps, they can be very new to our audience.
 
 <jumbo> 
     <img src="./emptystates.png"/>
 </jumbo>
-
+ 
 
 
 ## A simple but customizable financial experience
@@ -177,12 +178,12 @@ When first signing up, we give the option for the user to customize the experien
 * **Sources of income**: What platforms do they work for? We prepopulate with all the most popular platforms, but also enable them to add their own.
 * **Expenses**: Again, we offer a bunch of default options for common expenses they might find in their work, but they can also add custom ones.
 * **Goals**: One of the highlights of the app and a brilliant insight the team had from the research, we allow users to track their goals, a very common practice among these workers.
-
+ 
 <jumbo> 
     <img src="./customizations.png"/>
 </jumbo>
 
-
+ 
 
 ## Optimizing the core interaction: adding earnings
 
