@@ -8,7 +8,7 @@ const Speaking = () => (
         title='"Design" in "real" "life"'
         context="SICREDI Design Pass"
         date={2024}
-        link="https://docs.google.com/presentation/d/e/2PACX-1vSFcfUuDr93Z5t7GpPStu7J5zhAi5TT54QWIiW0LWeRhAx9k5I3BmnslXB0JFkHz0vPUST9ljcxzN0a/pub?start=false&loop=false&delayms=10000"
+        link="https://docs.google.com/presentation/d/e/2PACX-1vSFcfUuDr93Z5t7GpPStu7J5zhAi5TT54QWIiW0LWeRhAx9k5I3BmnslXB0JFkHz0vPUST9ljcxzN0a/pub?start=false&loop=false&delayms=10000&slide=id.p"
         linkLabel="slides"
         language="portuguese"
       />

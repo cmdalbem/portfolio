@@ -168,8 +168,8 @@ A special attention was given to the first experience of the user with the app. 
 <jumbo> 
     <img src="./emptystates.png"/>
 </jumbo>
+  
  
-
 
 ## A simple but customizable financial experience
 

@@ -108,7 +108,7 @@ class IndexPage extends React.Component {
             <div className="f2-ns f4 lh-title fw4 dark-gray measure">
               <Reveal effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
-                    With the projects I delivered, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>launching and scaling</span> some of Brazil's largest online brands, and fostering urban cycling <span className='ttext'>making our cities more livable and sustainable</span>.
+                    With the projects I delivered, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>scaling</span> some of Brazil's largest online brands, and fostering urban cycling <span className='ttext'>making our cities more livable and sustainable</span>.
                   </p>
               </Reveal>
                <Reveal effect="slideUp" duration={2000} big>
