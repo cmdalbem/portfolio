@@ -2,7 +2,7 @@
 projectType: 'personalHighlight'
 date: "2020-11"
 date2: "2024-06"
-lastUpdated: "2025-02"
+lastUpdated: "2025-03"
 title: "Meu Corre"
 minibio: "Bootstrapping a personal financial management app for delivery workers."
 description: "\"My Gig\" is an app designed to support delivery workers in becoming financially aware during their often precarious daily work routine. By fostering financial awareness, the app not only supports individual organization but also serves as a powerful advocacy tool by generating unprecedented data to inform the fight for workers' rights in Brazil."
@@ -17,7 +17,7 @@ liveLink: 'https://play.google.com/store/apps/details?id=br.com.meucorre'
 --- 
  
 # Overview
-
+ 
 [Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, a PhD candidate studying on the relationship of Brazilian courier workers with platforms. For over 4 years I led Product, contributing from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
 
 We successfully got funded with more than R$ 200k (~€33k) by FAPERJ, CNPq, and Fundo Brasil, important Brazilian research institutions, and gained access to 2 years of mentorship and workshops on Business and Product Management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks while planning on next steps.

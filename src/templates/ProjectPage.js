@@ -19,7 +19,7 @@ import { formatDate, capitalize, differenceInYears } from '../components/utils.j
  
 // import { RightArrow, LeftArrow } from '../components/icons.js'
 
-const HOW_MANY_YEARS_OLD_IS_TOO_OLD = 3;
+const HOW_MANY_YEARS_OLD_IS_TOO_OLD = 4;
 
 
 class ProjectPage extends React.Component {
