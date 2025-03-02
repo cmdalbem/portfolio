@@ -6,7 +6,7 @@ lastUpdated: "2025-02"
 title: "Meu Corre"
 minibio: "Bootstrapping a personal financial management app for delivery workers."
 description: "\"My Gig\" is an app designed to support delivery workers in becoming financially aware during their often precarious daily work routine. By fostering financial awareness, the app not only supports individual organization but also serves as a powerful advocacy tool by generating unprecedented data to inform the fight for workers' rights in Brazil."
-color: '#F7B700'
+color: '#F2AA00'
 tags: ['design','product management','research','entrepreneur']
 team: "Igor Dalla Vecchia (researcher, geographer)・Henrique Nievinski (designer)・Caroline Jacobi (social media)・Gabriela Hermann (institutional relations)・Gabriela Pessoa (researcher)・Daniel Dias (developer)・Daniel Brito (data scientist)"
 cover: './cover.png'
@@ -18,15 +18,15 @@ liveLink: 'https://play.google.com/store/apps/details?id=br.com.meucorre'
  
 # Overview
 
-[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, a PhD candidate studying on the relationship of Brazilian courier workers with platforms. I was the responsible for everything concerning the product, from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
+[Meu Corre](https://meucorre.com.br/) ("My Gig") is a social impact entrepreneurship project I co-founded with Igor Dalla Vecchia, a PhD candidate studying on the relationship of Brazilian courier workers with platforms. For over 4 years I led Product, contributing from Discovery, Strategy and Research to UX/UI Design and major technical decisions.
 
-We successfully got funded with more than R$ 200k (~€33k) by FAPERJ, CNPq, and Fundo Brasil, important Brazilian research institutions, and gained access to 2 years of mentorship and workshops on Business and Product Management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks and planning on next steps.
+We successfully got funded with more than R$ 200k (~€33k) by FAPERJ, CNPq, and Fundo Brasil, important Brazilian research institutions, and gained access to 2 years of mentorship and workshops on Business and Product Management. This allowed us to successfully launch the app on Google Play in April/2024 and we have been iterating on it with user feedbacks while planning on next steps.
 
 <!-- The team behind Meu Corre consisted of various contributors with diverse expertise, including designers, developers, legal experts, and communication specialists. Special mention goes to delivery workers themselves, who participated in interviews and tests to help shape the app. -->
  
 ```grid|1 
 ![](./rafael.jpg "Rafael de Melo was one of the first delivery workers we got close to and was a key partner during the project. Photo by Caroline Jacobi.") 
-```   
+```
 
 Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. 
 
@@ -160,10 +160,10 @@ When building the foundations for typography, color palette and visual identity,
 
 <!-- algo de design system -->
 
+ 
+## Teaching the user on the go
 
-## Empty states 
-
-A special attention was given to the first experience of the user with the app. Instead of the regular carousel kind of onboarding, which we think ours users would most likely just skip, we gave extra though to the empty states. Some of our features, while common in the world of financial management apps, they can be very new to our audience.
+A special attention was given to the first experience of the user with the app. Instead of the regular carousel kind of onboarding, which we think ours users with their rushed lives would most likely just skip, we gave extra though to the empty states. Some of our features, while common in the world of financial management apps, they can be very new to our audience.
 
 <jumbo> 
     <img src="./emptystates.png"/>
@@ -208,12 +208,12 @@ From our learnings from research, we knew we had to be light on the metrics dash
     <img src="./metrics.png"/>
 </jumbo>
 
-
+<!-- 
 The final screens and features can be seen below in these promotional assets designed for our [Google Play page](https://play.google.com/store/apps/details?id=br.com.meucorre):
 
 <jumbo> 
     <img src="./googleplay.png"/>
-</jumbo>
+</jumbo> -->
 
 <!-- <jumbo>
     <img src="./googleplay1.png"/> 
@@ -223,13 +223,39 @@ The final screens and features can be seen below in these promotional assets des
 </jumbo> -->
 
 
+<!-- ## Hight impact/effort features 
 
-## The launch
+Apart from iterating on the core flows, after the launch we started seeking funding to implement some new features that were left out of the MVP implementation. These were features classified as of high impact but also high effort, so it was strategic the we'd leave it to a second round. -->
+ 
+<!-- <jumbo>
+    <img src="./newfeatures.png"/>
+</jumbo>  -->
+   
+
+## Hustle tracker  
+
+Another solution for automatizing the input of data into the app, the geotracking feature tracks the users' daily rides and automatically identifies the wasted idle time. This allows users to gain a clearer picture of how much time is spent actively working versus waiting, something that we heard is a big pain for them. On the platform side, the anonymized data we collect about their movement in the city provides invaluable insights for advocacy agents and policy makers.
+
+<jumbo>  
+    <img src="./hustletracker.png"/>
+</jumbo> 
+
+
+## Platforms integrations
+
+Automatically import rides' data from different delivery platforms. A highly requested feature since the first research, this feature proved to be way too costly for our MVP, but after the launch we'll seek funding to implement it.
+
+```grid|1
+![](./connect.png)
+```
+
+
+# The launch
 
 After a [way too] long development phase where we faced thousands of issues, technical challenges and scope cutting, this MVP was successfully launched to the general public with zero known bugs on April of 2024 with several live events we coordinated with partner institutions as well as influential workers on YouTube.
 
 ```grid|1
-![](./live.png "There were in total 4 live events we held on YouTube to promote the app.")
+![](./live.png)
 ```  
 
 I've also helped design our first social media posts, which is always out of my comfort zone, but necessary.
@@ -244,27 +270,8 @@ I've also helped design our first social media posts, which is always out of my 
 * Indicator Calculation: Automatic calculation of key indicators such as earnings per hour and per distance.
 * Data Export: The ability to download personal data in spreadsheet format.
 * Free Access: The app is and will remain free for all users. -->
+ 
 
-
-# Next Steps
-
-Since June/2024 I've stepped down from the team to focus on other projects, but I still provide counseling, discuss strategy and contribute on big decisions. Here are the main areas the project has been evolving since the launch and plans to continue in the near future:
-
-* **Iterating on core features**: Incorporate feedback from users who are using the tool in their real lives to make it more useful and efficient for the core Jobs-To-Be-Dones. 
-* **Data analysis and reports**: With more and more users recording their earnings and expenses in the app we'll start reaching statistical relevance so we can analyze that data and provide a vast diversity of reports and insights to different audiences, from the workers themselves to researchers and advocacy institutions.
-<!-- * **Doubledown on engagement**: There are lots of opportunities to help user build the positive habits of financial management into their daily lives, such as leveraging more push notifications, emails and nudges inside the app. -->
-<!-- * **Advanced features**: Invest in features of high impact and high effort that were left out of the MVP, such as Automatic Earnings Sync and Geolocation Tracking. -->
-* **New audiences & partnerships**: Stakeholders have shown interest in investing to expand the tool to new countries and even other gig workers such as Uber drivers. Initial research has shown that could be done without having to change too much the current experience.
-<!-- * **New partnerships**: Keep seeking additional funding and partnerships to sustain and develop the platform further. -->
-
-## Hight impact/effort features
-
-Apart from iterating on the core flows, after the launch we started seeking funding to implement some new features that were left out of the MVP implementation. These were features classified as of high impact but also high effort, so it was strategic the we'd leave it to a second round. Some of these are the Hustle Tracker and the Platform Autosync.
-
-
-<jumbo>
-    <img src="./newfeatures.png"/>
-</jumbo> 
 
  
 <!-- ## The advocacy flywheel
@@ -290,13 +297,33 @@ Here's a summary of the amazing results we've already achieved since the launch 
     }'>
 </results-banner>
 
-Also we've been collecting amazing testimonials of people who has been using the app and expressing how it impacted their lives:
 
-<quote author="Anonymous user" context="Google Play review">Super cool app. I use it daily and I have to admit that the app is amazing. It meets all my needs from my work.</quote> 
+## Reception
+
+We've been collecting amazing testimonials of people who has been using the app and expressing how it impacted their lives:
 
 <quote author="Rogerio Alcir" context="Received via social media" >I thank you for making available an app that helps us so much, what I used to do in spreadsheets, was way more complex, today I do my organization in the app. Thank you very much for helping.</quote> 
 
 <quote author="Luiz Henrique" context="Google Play review">Excellent app, it can control rides very well. Weeks, months, days... very good app without bugs. Excellent.</quote> 
+ 
+<quote author="Anonymous user" context="Google Play review">Super cool app. I use it daily and I have to admit that the app is amazing. It meets all my needs from my work.</quote> 
+
+The project has also been highlighted in various articles in the media, including important outlets in the country.
+
+<jumbo>  
+    <img src="./media.png"/>
+</jumbo>
+ 
+   
+<!-- # Next Steps
+
+Since June/2024 I've stepped down from the team to focus on other projects, but I still provide counseling, discuss strategy and contribute on big decisions. Here are the main areas the project has been evolving since the launch and plans to continue in the near future:
+
+* **Iterating on core features**: Incorporate feedback from users who are using the tool in their real lives to make it more useful and efficient for the core Jobs-To-Be-Dones. 
+* **Data analysis and reports**: With more and more users recording their earnings and expenses in the app we'll start reaching statistical relevance so we can analyze that data and provide a vast diversity of reports and insights to different audiences, from the workers themselves to researchers and advocacy institutions.
+* **Doubledown on engagement**: There are lots of opportunities to help user build the positive habits of financial management into their daily lives, such as leveraging more push notifications, emails and nudges inside the app.
+* **New audiences & partnerships**: Stakeholders have shown interest in investing to expand the tool to new countries and even other gig workers such as Uber drivers. Initial research has shown that could be done without having to change too much the current experience. -->
+
 
 
 # Learnings
