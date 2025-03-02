@@ -26,7 +26,7 @@ This project was co-created with [the Reddit Slow TV community](https://www.redd
 
 ```grid|1 
 ![](./press.png)
-```
+``` 
 
 
 
@@ -96,6 +96,15 @@ In terms of content, the most important aspects seem to be _technical quality_ (
 [Read the full research report.](https://www.notion.so/Slow-TV-Community-Survey-1c0838bac8c84383b49b8f03eaeed04f) 
 
 
+## Asking for permission, not forgiveness
+ 
+We also used it to start contacting our favorite YouTube creators to see what they think. While we didn't get responses from many, everyone that replied was very positive about the idea and some even very excited and thankful, such as [Japan Potato](https://www.youtube.com/channel/UCHG0_GSE0q02ywTfSoq2s3g) and [Chill & Explore](https://www.youtube.com/c/ChillExplore/featured):
+
+ 
+```grid|2  
+![](./creator1.png)
+![](./creator2.png)
+```
 
 
 # Visual identity
@@ -125,18 +134,34 @@ As the scandinavians, japanese culture is also very centered on nature and conte
     <img src="./logo-explorations.png"/>
 </jumbo>
  
+The final logo.
 
 ```grid|1
 ![](./logo.png)
 ```
 
-```grid|1
+The illustration would also be explored in this fun experiment with parallax effect in the landing page, the first time the user comes to Escapista.
+
+<video-container jumbo="true">
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./landing.mp4" type="video/mp4">
+    </video> 
+</video-container>
+
+I also explored the concept even in the small details, such as this message that appears on mobile if you're holding the device in portrait mode.
+
+<!-- ```grid|1
 ![](./banner.png)
-```
+``` -->
 
+<video-container>  
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./rotate.mp4" type="video/mp4">
+    </video> 
+</video-container>
 
-
-# Prototyping
+ 
+# Prototyping 
 
 To kick off exploring UI solutions we did some benchmarks, looking for similar immersive web experiences and TV UI references.
 
@@ -158,30 +183,32 @@ I've explored many alternatives, searching for something that made sense to our 
     <img src="./variations.png"/>
 </jumbo>
 
+The bottom bar component was one that I painstainkly explored, trying to find the perfect balance of useful information about the schedule without damaging the extremely minimalistic visuals.
+
 <jumbo> 
     <img src="./bottombar-explorations.png"/>
+</jumbo> 
+ 
+For the final version I ended up removing several details normally found in video players so I could focus on the bare essentials. The "up next" section, for example, will only appear if the current video is about to end in a few minutes, otherwise it's hidden too.
+ 
+<jumbo> 
+    <img src="./bottombar.png"/>
 </jumbo>
  
 
- For my favorite ones I created simple prototypes to see it in action and get feedback from users. Figma doesn't support videos, but by converting them to GIFs I managed to create fairly realistic prototypes.
+## Fine-tuning interactions and motion
+
+For my favorite ones I created simple prototypes to see it in action and get feedback from users. Figma doesn't support videos, but by converting them to GIFs I managed to create fairly realistic prototypes. 
  
 <!-- <jumbo>
     <img src="./prototype.png"/>
 </jumbo> -->
 
-<video-container> 
+<video-container>  
     <video autoPlay controls loop width="100%" type="video/mp4">
         <source src="./prototype.mp4" type="video/mp4">
     </video> 
 </video-container>
-
-We also used it to start contacting our favorite YouTube creators to see what they think. While we didn't get responses from many, everyone that replied was very positive about the idea and some even very excited and thankful, such as [Japan Potato](https://www.youtube.com/channel/UCHG0_GSE0q02ywTfSoq2s3g) and [Chill & Explore](https://www.youtube.com/c/ChillExplore/featured):
-
-
-```grid|2
-![](./creator1.png)
-![](./creator2.png)
-```
 
 
 <!-- > Thank you so much for reaching out and letting me know about your really great website. I think that’s a brilliant idea and I hope more and more people will discover Slow TV through it. Since Slow TV is still a small niche it’s incredible that you both put so much effort into this very user friendly Website and make it available to a bigger audience who has probably never heard of Slow TV before. I‘m also happy to hear that you and Gabriela enjoy my content and have included me into your selection. I am very glad to be part of your website! -->
@@ -196,9 +223,33 @@ We also used it to start contacting our favorite YouTube creators to see what th
 ![](./creator2.png)
 ``` -->
 
-# Implementing
+## Designing a landing page
 
-The first proof of concept was a very rough prototype made in [Glitch.com](https://glitch.com/), with a simple YouTube iframe player. Seeing that it worked, I started scaffolding a proper webapp stack around it, and linking with Airtable that would be our Database/CMS. By using a YouTube Embedded Player under the hood I could simplify any complexity about storing and streaming videos, but also all views and ad revenue would to the original video creators.
+Later I created a simple landing page that would explain better the main concepts based on the main questions users were bringing. We wanted to bring more clarity to some of our philosophies that guided our UX decisions, for example explaining why there isn't pause of fast-forward buttons.
+
+<video-container jumbo="true">
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./landing2.mp4" type="video/mp4">
+    </video> 
+</video-container>
+
+As an artistic project with a strong set of values I though it was the perfect occasion to put some writing skills to test and try to summarize everything we wanted this project to mean into a manifesto.
+ 
+```grid|1
+![](./manifesto.png)
+```
+ 
+# Implementation
+
+The first proof of concept was a very rough prototype made in [Glitch.com](https://glitch.com/), a fun little sandbox tool.
+
+<!-- ```grid|1 
+![](./glitch.png)
+``` -->
+
+## The tech stack
+
+After some tweaking and seeing the general idea worked, I started scaffolding a proper webapp stack around it linking with Airtable that would be our Database/CMS. By using a YouTube Embedded Player under the hood I could simplify any complexity about storing and streaming videos, but also all views and ad revenue would to the original video creators.
 
 ```grid|1
 ![](./stack.png)
@@ -208,6 +259,8 @@ The first proof of concept was a very rough prototype made in [Glitch.com](https
 ![](./poc.png)
 ``` -->
 
+## Designing a content management system
+
 A lot of our focus was on creating a system for storing, rating and categorizing the videos, all using the super-friendly Airtable interface.
 
 <jumbo>
@@ -216,34 +269,34 @@ A lot of our focus was on creating a system for storing, rating and categorizing
 
 The database is comprised of mainly 3 entities: Videos, Channels and Tags, all which can be edited separately and are linked among themselves just like regular Databases would. This is then connected to the website backend, which retrieves, processes and caches this data and build the video "scheduling".
 
-```grid|2
+```grid|1 
 ![](./airtable2.png) 
+```
+
+```grid|1
 ![](./airtable3.png)  
 ```
 
-Although all the scheduling is "live", just like in a regular Cable TV, there's no actual syncing mechanism. I've developed a simple algorithm that uses the computer clock (which is automatically synced by the Operational System) as a index for videos. This enables anyone sharing the link with a friend or family member to watch the same video, at the same location, while doing a call for example.
+
+## The heart of Escapista: the computeSchedule algorithm
+
+Although all the scheduling is "live", just like in a regular Cable TV, there's no "real" syncing mechanism in the background. I've developed a simple algorithm that uses the computer clock (which is automatically synced by the Operational System) as a index for videos. This enables anyone sharing the link with a friend or family member to watch the same video, provided they're at the same timezone, while doing a call for example.
 
 ```grid|1  
 ![](./algorithm.png)
 ```
+ 
 
-# Publishing
+# Launching and monitoring
 
 We created a launch plan that included [a big launch on ProductHunt](https://www.producthunt.com/posts/escapista), one of the biggest communities for tech products. We were very happy with the result, accumulating more than 270 upvotes and ending up in the top ranked launches for the week and gaining lots of organic traction from posterior blog posts.
-
+ 
 ```grid|1
 ![](./producthunt.png)
 ```
 
-Later I created a simple landing page that would explain better the main concepts based on the main questions users were bringing. We wanted to bring more clarity to some of our philosophies that guided our UX decisions, for example explaining why there isn't pause of fast-forward buttons.
 
-<jumbo>
-    <img src="./landing.png"/>
-</jumbo>
-
-
-
-# Monitoring
+## Measuring what matters
 
 The product metrics were designed inspired by the HEART framework, but instead of using regular dimensions such as Adoption, Engagement, ... we used our own product goals as dimensions for thinking and organizing the different signals and metrics. These were implemented using the new Google Analytics 4, which has a brand new events system.
 
@@ -251,9 +304,11 @@ The product metrics were designed inspired by the HEART framework, but instead o
     <img src="./metrics.png"/>
 </jumbo>
 
-```grid|1
-![](./ganalytics.png)
-``` 
+To measure the quantitative metrics I've implemented custom events in Google Analytics, and this is how the dashboard looks like.
+
+<jumbo>
+    <img src="./ganalytics.png"/>
+</jumbo>
 
 From the qualitative side we also have a Typeform survey embedded on the website that makes it very easy for users to leave feedbacks about their experience.
 <!-- It's made up of 4 simple questions:
@@ -266,9 +321,9 @@ From the qualitative side we also have a Typeform survey embedded on the website
 
 Since the ProductHunt launch we continue being marketed organically by news platforms, blogs, websites and on Social Media in general. For a non-profit project like this one it's great not having to spend any dollar in marketing. 
 
-<jumbo>
-    <img src="./press.png"/>
-</jumbo> 
+```grid|1
+![](./press.png)
+```
 
 Currently we think there's room for improving user stickiness and triggering network effects by encouraging users to share with others. Still, we're quite happy with the amount of hours people have spend on the website, which corresponds to more than 100 entire days watching Slow TV videos.
  
