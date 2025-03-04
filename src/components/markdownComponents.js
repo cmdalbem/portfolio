@@ -94,7 +94,8 @@ class ProjectPasswordInput extends React.Component {
 }
 
 export function markdownRenderer(isFullWidth) {
-    const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'mw7-l ml-auto-l'}`;
+    // const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'mw7-l ml-auto-l'}`;
+    const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'mw7-l center'}`;
     const bigImageMargins = `mv6-ns mv5 `;
     const imageMargins = `${defaultMargins} ml0 mr0 mv6-ns mv5 `;
 
@@ -102,7 +103,8 @@ export function markdownRenderer(isFullWidth) {
         createElement: React.createElement,
         components: {
             h1: props => (
-                <h1 className={`f3 lh-title dark-gray fw4 mw6-l mt6-l mt5 mb--4-l position-sticky-l h4-l bg-background-color-l`}>
+                // <h1 className={`f3 lh-title dark-gray fw4 mw6-l mt6-l mt5 mb--4-l position-sticky-l h4-l bg-background-color-l`}>
+                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mt6-l mt5 ${defaultMargins}`}>
                     {props.children}
                 </h1>
             ),
@@ -165,7 +167,8 @@ export function markdownRenderer(isFullWidth) {
             ),
             "quote": props => (
                 <div className={`mt0 mv5 ${defaultMargins}`}>
-                    <div className='f3 tracked-tight lh-title'>
+                    {/* <div className='f3 tracked-tight lh-title'> */}
+                    <div className='f2-ns f3 tracked-tight lh-title gray'>
                         <span style={{marginLeft: "-0.406em"}}>“</span>
                         {props.children}
                         <span className=''>”</span>
@@ -189,7 +192,8 @@ export function markdownRenderer(isFullWidth) {
                     {props.children}
                     {
                         props.caption &&
-                        <figcaption className={"mt2 f6 dark-gray"}>
+                        <figcaption className={"mt2 f6 dark-gray center tc"}>
+                        {/* <figcaption className={"mt2 f6 dark-gray"}> */}
                             {props.caption}
                         </figcaption>
                     }
