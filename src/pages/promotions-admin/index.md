@@ -6,7 +6,7 @@ lastUpdated: "2021-06"
 title: "VTEX Promotions Admin"
 minibio: "Redesigning a complex legacy admin in an e-commerce platform to maximize clients' sales and reduce costs."
 description: "Redesigning one of the core experiences in managing products and marketing strategies in VTEX e-commerce platform."
-team: "Mariani Cavalini (Product Manager) · José Lucas Rebelo (Product Expert) · Isaque Lima (Software Engineer) · Alessandra Anyzewski (Software Engineer) · Eric Reis (Software Engineer) · Guilherme Freitas (Software Engineer) "
+team: ["Mariani Cavalini (Product Manager)", "José Lucas Rebelo (Product Expert)", "Isaque Lima (Software Engineer)", "Alessandra Anyzewski (Software Engineer)", "Eric Reis (Software Engineer)", "Guilherme Freitas (Software Engineer)"]
 tags: ['design','product management']
 cover: './cover.png'
 # hover: '/covers/promotions-admin.gif'

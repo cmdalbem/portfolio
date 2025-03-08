@@ -10,7 +10,7 @@ tags: ['design','front-end','product management']
 metrics: ['Video visualizations','Total playback time','Unique users']
 cover: './cover.png'
 # hover: '/covers/escapista.gif'
-team: "Gabriela Catão (product, concept, content curation)"
+team: ["Gabriela Catão (product, concept, content curation)"]
 color: '#006E6E' 
 liveLink: 'http://escapista.app/'
 --- 

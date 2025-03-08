@@ -123,7 +123,7 @@ I found it was very fun writing these docs. It was a exercise of empathy, puttin
 I contributed closely with the design and development of several of Design System components. Here are some stories about my favorite ones: the **Table**, the **Filters** and the **Conditions Builder**. All of them were team efforts, but I consider I played a major role in their making.
 
 
-# Component deep-dive: Data Table
+# Data Table
 
 After basic atomic components such as buttons and inputs, Tables are the most used components in Admin screens in almost every digital product.
 
@@ -159,7 +159,7 @@ As with everything about the Design System, the development was totally guided b
 
 
 
-# Component deep-dive: Filters
+# Filters
 
 Along with tables, another very important part of any admin are filters. We wanted to design  a standard filter solution for VTEX that would be powerful enough to work with the overwhelming quantity and complexity of filters needed.
 
@@ -201,7 +201,7 @@ One way of using our filters system is by using the Filter Bar component, a HOC 
  
 
 
-# Component deep-dive: Conditions Builder
+# Conditions Builder
 
 Conditions are statements that have boolean relationships. They are often seen being used in things liks filters, but also in more complex applications like IF-THEN programmable logics.
 

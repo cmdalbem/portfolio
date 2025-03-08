@@ -8,7 +8,7 @@ minibio: "Bootstrapping a personal financial management app for delivery workers
 description: "\"My Gig\" is an app designed to support delivery workers in becoming financially aware during their often precarious daily work routine. By fostering financial awareness, the app not only supports individual organization but also serves as a powerful advocacy tool by generating unprecedented data to inform the fight for workers' rights in Brazil."
 color: '#F2AA00'
 tags: ['design','product management','research','entrepreneur']
-team: "Igor Dalla Vecchia (researcher, geographer)・Henrique Nievinski (designer)・Caroline Jacobi (social media)・Gabriela Hermann (institutional relations)・Gabriela Pessoa (researcher)・Daniel Dias (developer)・Daniel Brito (data scientist)"
+team: ["Igor Dalla Vecchia (researcher, geographer)", "Henrique Nievinski (designer)", "Caroline Jacobi (social media)", "Gabriela Hermann (institutional relations)", "Gabriela Pessoa (researcher)", "Daniel Dias (developer)", "Daniel Brito (data scientist)"]
 cover: './cover.png'
 liveLink: 'https://play.google.com/store/apps/details?id=br.com.meucorre'
 

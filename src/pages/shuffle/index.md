@@ -9,7 +9,7 @@ minibio: "Designing a new version to improve the productivity and quality of the
 description: "Shuffle, Nubank's internal CX platform, began in 2014 as a simple CRM tool, and throughout the years it evolved to centralize all support channels and an immense and complex system of backoffice tasks. While tasked to redesign it, I took some steps back to understand user and stakeholder expectations, and then I brainstorm, prototyped, and tested multiple improvements and new features."
 metrics: ['Time Spent per ticket', 'CSAT', 'Developers productivity', 'Platform NPS']
 tags: ['design', 'UX research', 'Product management']
-team: "Lucas Senna (Engineer), Felipe Thomé (Engineer), Rafael Santos (Xpeer), Otto Sporteman (PM), Eder Rodrigues (PM), João Bahia (Business Analyst), et al."
+team: ["Lucas Senna (Engineer)", "Felipe Thomé (Engineer)", "Rafael Santos (Xpeer)", "Otto Sporteman (PM)", "Eder Rodrigues (PM)", "João Bahia (Business Analyst)", "et al."]
 color: '#820ad1' 
 cover: './cover.png'
 ---

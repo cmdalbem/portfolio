@@ -7,7 +7,8 @@ title: "Nubank's Additional Cards"
 minibio: "Enabling people to extend their purchase power to loved ones."
 description: "Designing from end-to-end the first social product of the company's portfolio. The Additional Card is an extra card users may request to extend their purchase power to family and friends. It brings all the complexity of a complete Credit Card product with the challenge of meeting the card owner's and cardholder's needs."
 metrics: ['Incremental NPS', 'Incremental avg purchase volume']
-tags: ['design', 'UX research']
+tags: ['product design', 'UX research']
+team: ['Gabriela Oeda (PM)', 'Ana Urquiza (UX Research)']
 color: '#820ad1'
 cover: './cover.png'
 liveLink: "https://blog.nubank.com.br/cartao-de-credito-adicional-do-nubank-tudo-o-que-voce-precisa-saber/"

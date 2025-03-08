@@ -9,7 +9,7 @@ description: "Designing and developing an open platform to democratize access to
 tags: ['design','front-end','product management']
 cover: './cover.png'
 # hover: '/covers/ciclomapa.gif'
-team: "Felipe Alves (OSM Technical Advisor), Bernardo Serra (Product Owner), Leonardo Veiga (Product Owner)."
+team: ["Felipe Alves (OSM Technical Advisor)", "Bernardo Serra (Product Owner)", "Leonardo Veiga (Product Owner)"]
 color: '#4EA76F'
 liveLink: 'https://ciclomapa.org.br/'
 ---
