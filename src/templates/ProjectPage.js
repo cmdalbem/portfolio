@@ -9,13 +9,14 @@ import Fade from 'react-reveal/Fade';
 
 import { BrowserView } from 'react-device-detect';
 
-import Tag from '../components/Tag'
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
 import ReadingProgressBar from '../components/ReadingProgressBar'
 
 import { markdownRenderer }  from '../components/markdownComponents'
-import { formatDate, capitalize, differenceInYears } from '../components/utils.js'
+import { formatDate, capitalize } from '../components/utils.js'
+
+import ContentNav from '../components/ContentNav'
  
 // import { RightArrow, LeftArrow } from '../components/icons.js'
 
@@ -29,6 +30,7 @@ class ProjectPage extends React.Component {
     const readingTime = post.fields.readingTime; 
 
     const baseType = 'f4-ns f5 dark-gray lh-copy ';
+    const defaultMargins = "w-60-l mw8-l center";
 
     let dateStart = formatDate(post.frontmatter.date, 'MMMM YYYY');
     let dateEnd = formatDate(post.frontmatter.date2, 'MMMM YYYY');
@@ -43,6 +45,17 @@ class ProjectPage extends React.Component {
 
     const yearsOld = new Date().getFullYear() - new Date(post.frontmatter.date2).getFullYear();
     const isOldProject = yearsOld > HOW_MANY_YEARS_OLD_IS_TOO_OLD;
+
+    console.debug(post.htmlAst);
+
+    const h1s = post.htmlAst.children
+      .filter(c => c.tagName === 'h1')
+      .map(h => h.children[0].value);
+
+    // const h12s = post.htmlAst.children
+    //   .filter(c => c.tagName === 'h1' || c.tagName === 'h2')
+    //   .map(h => ({tag: h.tagName, value: h.children[0].value})); 
+    // console.debug("h12s", h12s);
 
     return (
       <Layout location={this.props.location}>
@@ -71,18 +84,19 @@ class ProjectPage extends React.Component {
           {/* Heading */}
           <Fade duration={2000} >
             <div className="flex flex-column mv5">
-              <h1 className={`f-subheadline-ns w-60-ns mt5-ns mt0 fw5 mb3 lh-solid tracked-tight ${post.frontmatter.color ? '' : 'dark-gray'}`} style={{color: post.frontmatter.color}}>
-                {post.frontmatter.title}
-              </h1>
-              <div className="flex flex-row-ns flex-column mt3 mb5">
-                <div className="w-50-ns">
+              <div className="flex flex-column mt3 mb5">
+                <div className={defaultMargins}>
+                  <h1 className={`f-subheadline-ns mt5-ns mt0 fw5 mb3 lh-solid tracked-tight ${post.frontmatter.color ? '' : 'dark-gray'}`} style={{color: post.frontmatter.color}}>
+                    {post.frontmatter.title}
+                  </h1>
+                  
                   {
                     post.frontmatter.description &&
                     <div className="mb3 f3-ns f4 dark-gray lh-copy">
                       {post.frontmatter.description}
                     </div>
                   }
-                  <div className='f6 silver db-ns dn'>
+                  <div className='f5 gray db-ns dn'>
                     {
                       readingTime.minutes > 1 &&
                       readingTime.text
@@ -123,95 +137,14 @@ class ProjectPage extends React.Component {
                     </a>
                   }
                 </div>
-
-                <div className="w-20-ns">
-                </div>
-
-                <div className="w-30-ns">
-                  {/* {
-                    <div className='mv4 dark-gray'>
-                      <h2 className="f5 mv2 fw4 gray">
-                        Challenge
-                      </h2>
-                      <span className="f5 din lh-copy">
-                        {post.frontmatter.minibio}
-                      </span>
-                    </div>
-                  } */}
-
-                  {
-                    <div className="mb4 dark-gray">
-                      <h2 className="f5 mv2 fw4 gray">
-                        Date
-                      </h2>
-                      <div className="f5">
-                        {dateStart}
-                        {dateEnd &&
-                          ` – ${dateEnd}`
-                        }
-                      </div>
-                      {
-                        isOldProject &&
-                        <div className="f6 orange mt2">
-                          ({yearsOld} years old project, take with a grain of salt :)
-                        </div>
-                      }
-                    </div>
-                  }
-
-                  {
-                    post.frontmatter.tags &&
-                    post.frontmatter.tags.length > 0 &&
-                    <div className="mv4 dark-gray">
-                      <h2 className="f5 mv2 fw4 gray">
-                        Roles
-                      </h2>
-                      <div>
-                        { post.frontmatter.tags.map(t => capitalize(t)).join('・') }
-                        {/* {post.frontmatter.tags.map(t => (
-                          <Tag size="big" key={t}>
-                            {capitalize(t)}
-                          </Tag>
-                        ))} */}
-                      </div>
-                    </div>
-                  }
-
-                  {
-                    post.frontmatter.team &&
-                    <div className='mv4 dark-gray'>
-                      <h2 className="f5 mv2 fw4 gray">
-                        Teammates
-                      </h2>
-                      <span className="f5 din lh-copy">
-                        {post.frontmatter.team}
-                      </span>
-                    </div>
-                  }
-
-                  {
-                    post.frontmatter.metrics &&
-                    post.frontmatter.metrics.length > 0 &&
-                    <div className="mb4 dark-gray">
-                      <h2 className="f5 mv2 fw4 gray">
-                        Metrics
-                      </h2>
-                      <div className="f5 lh-copy">
-                        { post.frontmatter.metrics.map(t => capitalize(t)).join('・') }
-                      </div>
-                    </div>
-                  } 
-
-                  
-                </div>
               </div>
             </div>
           </Fade>
 
           {/* Cover image */}
-          <div className="flex flex-row-ns flex-column">
+          <div className="flex flex-row-ns flex-column relative z-2">
             <div className="w-100">
-              <Reveal effect="clipIn" duration={4000}>
+              <Reveal effect="clipIn" duration={2000}>
                 {
                   post.frontmatter.cover ?
                     <Img fluid={post.frontmatter.cover.childImageSharp.fluid} alt="" />
@@ -223,15 +156,110 @@ class ProjectPage extends React.Component {
           </div>
         </div>
 
+        <ContentNav sections={h1s} />
+
+        <div className={"flex flex-row-ns flex-column mv5 " + defaultMargins}>
+          {/* {
+            <div className='mv4 dark-gray'>
+              <h2 className="f5 mv2 fw4 gray">
+                Challenge
+              </h2>
+              <span className="f5 din lh-copy">
+                {post.frontmatter.minibio}
+              </span>
+            </div>
+          } */}
+
+          {
+            <div className="dark-gray w-100 mr2 mv0-ns mv2">
+              <h2 className="f5 fw4 gray">
+                Date
+              </h2>
+              <div className="f5 lh-copy">
+                {dateStart}
+                {dateEnd &&
+                  ` – ${dateEnd}`
+                }
+              </div>
+              {
+                isOldProject &&
+                <div className="f6 orange mt2">
+                  ({yearsOld} years old project, take with a grain of salt :)
+                </div>
+              }
+            </div>
+          }
+
+          {
+            post.frontmatter.tags &&
+            post.frontmatter.tags.length > 0 &&
+            <div className="dark-gray w-100 mr2 mv0-ns mv2">
+              <h2 className="f5 fw4 gray">
+                Roles
+              </h2>
+              <div className='f5 lh-copy'>
+                { 
+                  post.frontmatter.tags.map(t => (
+                    <div className="mb1"> {capitalize(t)} </div>
+                  ))
+                }
+                {/* { post.frontmatter.tags.map(t => capitalize(t)).join('・') } */}
+                {/* {post.frontmatter.tags.map(t => (
+                  <Tag size="big" key={t}>
+                    {capitalize(t)}
+                  </Tag>
+                ))} */}
+              </div>
+            </div>
+          }
+
+          {
+            post.frontmatter.team &&
+            <div className='dark-gray w-100 mr2 mv0-ns mv2'>
+              <h2 className="f5 fw4 gray">
+                Teammates
+              </h2>
+              <span className="f5 lh-copy">
+                {/* {post.frontmatter.team} */}
+                {
+                  post.frontmatter.team.map(t => ( 
+                    <div className="mb1"> {t} </div>
+                  ))
+                } 
+              </span>
+            </div>
+          }
+
+          {
+            post.frontmatter.metrics &&
+            post.frontmatter.metrics.length > 0 &&
+            <div className="dark-gray w-100">
+              <h2 className="f5 fw4 gray">
+                Metrics
+              </h2>
+              <div className="f5 lh-copy">
+                { 
+                  // post.frontmatter.metrics.map(t => capitalize(t)).join('・')
+                  post.frontmatter.metrics.map(t => (
+                    <div className="mb1"> {capitalize(t)} </div>
+                  ))
+                }
+              </div>
+            </div>
+          } 
+
+          
+        </div>
+
         {/* Content */}
-        <div className="flex flex-column center">
+        <div className="flex flex-column center relative">
           <div className={baseType}>
             { markdownRenderer(post.frontmatter.fullWidth)(post.htmlAst) }
           </div>
         </div> 
 
       {/* Other projects */}
-      <div className="flex flex-column bg-near-white mt6 nl6-ns nr6-ns nl3 nr3 ph6-ns ph3 pb6">
+      <div className="flex flex-column bg-near-white mt6 nl6-ns nr6-ns nl3 nr3 ph6-ns ph3 pb6 relative z-2">
           {
             (previous || next) &&
             <div className="w-100 tc f2 mv6">
