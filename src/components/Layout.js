@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
         isHome = window.location.pathname === '/';
       }
 
-      const globalPadding = 'ph6-ns ph4-m ph3 ';
+      const globalPadding = 'ph5-ns ph4-m ph3 ';
 
       return (
         <div className="parallax">

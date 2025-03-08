@@ -39,7 +39,7 @@ class ReadingProgressBar extends React.Component {
 
         return (
             <div 
-                className="fixed top-0 left-0 right-0 z-1"
+                className="fixed top-0 left-0 right-0 z-3"
                 style={{
                     background: barColor,
                     width: `${this.state.scroll}%`,

@@ -5,6 +5,8 @@ import {navigate} from 'gatsby';
 
 import LinksList from '../components/LinksList'
 
+import { slugify } from '../components/utils.js'
+
 
 class ResultsBanner extends React.Component {
     static defaultProps = {
@@ -16,13 +18,13 @@ class ResultsBanner extends React.Component {
 
         return (
             <div
-                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pv6 bg-near-white flex flex-row-l flex-column justify-around relative"
+                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa7-ns pv6 bg-near-white flex flex-row-l flex-column justify-around relative"
             >
                 {
                     Object.keys(dataObj).map((i, n) => (
                         <Fade bottom duration={1500} delay={n * 500}>
                             <div className="mv0-ns mv3" key={i}>
-                                <div className="f2 fw1 mt0 mb0">
+                                <div className="f1-ns f2 fw1 mt0 mb0">
                                     {dataObj[i]}
                                 </div>
                                 <div className="f5   gray mr2">
@@ -95,8 +97,8 @@ class ProjectPasswordInput extends React.Component {
 
 export function markdownRenderer(isFullWidth) {
     // const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'mw7-l ml-auto-l'}`;
-    const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'mw7-l center'}`;
-    const bigImageMargins = `mv6-ns mv5 `;
+    const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'w-60-l mw8-l center'}`;
+    const bigImageMargins = `mv6-ns mv5 z-2 relative`;
     const imageMargins = `${defaultMargins} ml0 mr0 mv6-ns mv5 `;
 
     return new rehypeReact({
@@ -104,12 +106,12 @@ export function markdownRenderer(isFullWidth) {
         components: {
             h1: props => (
                 // <h1 className={`f3 lh-title dark-gray fw4 mw6-l mt6-l mt5 mb--4-l position-sticky-l h4-l bg-background-color-l`}>
-                <h1 className={`f2 lh-title tracked-tight dark-gray fw4 mt6-l mt5 ${defaultMargins}`}>
+                <h1 id={slugify(props.children[0])} className={`f2 lh-title tracked-tight dark-gray fw4 mt6-l mt5 ${defaultMargins}`}>
                     {props.children}
                 </h1>
             ),
             h2: props => (
-                <h2 className={`f3 lh-title fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
+                <h2 id={slugify(props.children[0])} className={`f3 lh-title fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
                     {props.children}
                 </h2>
             ),
@@ -168,7 +170,7 @@ export function markdownRenderer(isFullWidth) {
             "quote": props => (
                 <div className={`mt0 mv5 ${defaultMargins}`}>
                     {/* <div className='f3 tracked-tight lh-title'> */}
-                    <div className='f2-ns f3 tracked-tight lh-title gray'>
+                    <div className='f2-ns f3 tracked-tight lh-title dark-gray'>
                         <span style={{marginLeft: "-0.406em"}}>“</span>
                         {props.children}
                         <span className=''>”</span>
@@ -179,7 +181,7 @@ export function markdownRenderer(isFullWidth) {
                             {props.author}
                             {
                                 props.context && 
-                                <span className='silver ml2'>
+                                <span className='gray ml2'>
                                     {props.context}
                                 </span>
                             }
@@ -239,7 +241,7 @@ export function markdownRenderer(isFullWidth) {
                 let itemsArray = arrayObj.map(i => i);
                 
                 return (
-                    <div className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pa3 pv6-ns pv4 bg-near-white z-0 relative">
+                    <div className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pa3 pv6-ns pv4 bg-near-white z-2 relative">
                         <div className='mw6 mb6-ns b2'>
                             <h3 className="f3 f4 lh-title fw4 mv2-ns mb2 dark-gray">
                                 { title }
@@ -254,11 +256,11 @@ export function markdownRenderer(isFullWidth) {
                         {
                             itemsArray.map((l, i) => (
                                 <Fade duration={1500} delay={i*500 - i*200}>
-                                    {/* // <div className="ba b--light-gray pa3 br4" key={i}> */}
+                                    {/* <div className="nl3 nr3 pa3 br4" key={i} style={{backgroundColor: 'rgba(0,0,0,0.05)'}}> */}
                                     <div className="mv4" key={i}>
-                                        {/* <div className="f6">
+                                        <div className="f6">
                                             ({i+1})
-                                        </div> */}
+                                        </div>
                                         <h4 className="mv2 fw4 lh-title dark-gray">
                                             {l.title}  
                                         </h4>
