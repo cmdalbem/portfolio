@@ -192,8 +192,11 @@ figure a,
 figure a.pretty-link:hover {
   box-shadow: none;
 }
+
+/* Weird stuff I have to do because Remark nests figures inside figures */
 figure figure {
   margin: 0 !important;
+  width: 100% !important;
 }
 
 ul li {
