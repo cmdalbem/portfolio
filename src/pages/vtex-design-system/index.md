@@ -252,7 +252,7 @@ As mentioned before this was a highly collaborative project involving *many* peo
 
 For more people check the [full list of contributors in the Github repository](https://github.com/vtex/styleguide/graphs/contributors).
 
-# Links
+# See more
 
 <links-list
     items='[

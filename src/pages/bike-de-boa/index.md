@@ -7,7 +7,7 @@ title: "bike de boa"
 minibio: "Web app I built with friends for collaboratively mapping safe places in the city to park your bike."
 description: "A cicloactivist project that aims to encoure more people to use bike in the city. With the collaborative web app you can search for safe places to park your bike nearby and map new ones while learning what makes for good and safe bike parking and safer streets."
 tags: ['design','web development','product management','branding']
-team: ["Hannah Kny (advisor urbanist, communication)", "Tadeu Saldanha (advisor, development)", "Denner Evaldt (back-end development)", "Francisco Cenzi (advisor urbanist)"]
+team: ["Hannah Kny (urbanist, illustrator, communication)", "Tadeu Saldanha (cycling advocacy, development)", "Denner Evaldt (back-end development)", "Francisco Cenzi (advisor urbanist)"]
 cover: './cover.png'
 # hover: '/covers/bikedeboa.gif'
 color: '#41A65A'
@@ -251,7 +251,7 @@ We also were featured in some cool places: cicloactivist and technology conferen
 ```
 
 
-# Links
+# See more
 
 <links-list
     items='[

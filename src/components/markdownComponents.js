@@ -22,8 +22,8 @@ class ResultsBanner extends React.Component {
             >
                 {
                     Object.keys(dataObj).map((i, n) => (
-                        <Fade bottom duration={1500} delay={n * 500}>
-                            <div className="mv0-ns mv3" key={i}>
+                        <Fade bottom duration={1500} delay={n * 500} key={i}>
+                            <div className="mv0-ns mv3">
                                 <div className="f1-ns f2 fw1 mt0 mb0">
                                     {dataObj[i]}
                                 </div>
@@ -255,9 +255,9 @@ export function markdownRenderer(isFullWidth) {
                         <div className='grid3-4-ns grid2-4-m'>
                         {
                             itemsArray.map((l, i) => (
-                                <Fade duration={1500} delay={i*500 - i*200}>
+                                <Fade duration={1500} delay={i*500 - i*200} key={i}>
                                     {/* <div className="nl3 nr3 pa3 br4" key={i} style={{backgroundColor: 'rgba(0,0,0,0.05)'}}> */}
-                                    <div className="mv4" key={i}>
+                                    <div className="mv4">
                                         <div className="f6">
                                             ({i+1})
                                         </div>

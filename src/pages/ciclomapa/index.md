@@ -18,10 +18,15 @@ liveLink: 'https://ciclomapa.org.br/'
 
 Today in Brazil, we face the immense challenge of not having data on the cycling infrastructure available in our cities, which makes it very hard to paint a clear picture of our reality and measure the opportunities and impacts to society of improving urban mobility.
 
+## Strong partners
+
 I've teamed up with [UCB (Brazil Cyclists Union)](https://uniaodeciclistas.org.br/) and [ITDP (Transport and Development Policy Institute)](https://itdpbrasil.org/), two of the most relevant civil society organizations in Brazil for cycling and urban mobility. We set to design and build the first unified platform of cycling maps, encompassing the entirety of the country's cities.
 
-This project leveraged the data and collaborative nature of [OpenStreetMap (OSM)](https://www.openstreetmap.org/), a huge global initiative, like a Wikipedia of maps. I’ve created an open-source web application, free and accessible from any computer or smartphone, aimed at the average citizen who doesn’t know their city’s bike paths and researchers, who now have easy access to data in an unprecedented scale.
+ 
+## Open data
 
+This project leveraged the data and collaborative nature of [OpenStreetMap (OSM)](https://www.openstreetmap.org/), a huge global initiative, like a Wikipedia of maps. I’ve created an open-source web application, free and accessible from any computer or smartphone, aimed at the average citizen who doesn’t know their city’s bike paths and researchers, who now have easy access to data in an unprecedented scale.
+ 
 
 # Understanding the problem 
 
@@ -63,6 +68,8 @@ I started understanding the main types of bike paths, how they appear in Brazili
     <img src="./types.png"/>
 </jumbo>
 
+## Making sense of information
+
 I used this spreadsheet to organize the information architecture, documenting how we'd model the data filters, including labels, textual descriptions, and visual representations of data.
 
 <jumbo> 
@@ -72,6 +79,8 @@ I used this spreadsheet to organize the information architecture, documenting ho
 <!-- ```grid|1
 ![](./types.png "The main types of bike paths and their respective location in the quality and safety gradient.")
 ``` -->
+
+## Benchmark learnings
 
 I did a deep dive into everything available on the market, from other map-based web apps to some PDF cycling maps from cities worldwide. At this step, we validated that our solution seemed to be innovative and unique since there didn’t seem to exist anything precisely like it. Still, we found intersections with existing solutions that gave us inspiration and new ideas on how to solve the problems. We learned that:
 * Solutions based on OSM are very technical and hard to use, and none had clear instructions about the collaborative dimension and how to contribute to the mapping.
@@ -83,15 +92,19 @@ I did a deep dive into everything available on the market, from other map-based 
     <img src="./bench.png"/>
 </jumbo>
 
+## Prioritization
+
 From these insights I facilitated workshops for brainstorming and prioritizing the main features we wanted to build. One of the frameworks we used to prioritize features in the beginning was the classic Effort/Complexity Matrix. I facilitated workshops with the team to fill the matrix, choose was features we'd build and their order.
  
-
 ```grid|1
 ![](./roadmap.jpeg "An Effort/Complexity Matrix used to define the features we'd build and their order.")
 ```
 
 
+
 # Prototyping
+
+## Low-fidelity 
 
 It was important to start with a [low-fidelity Figma prototype](https://www.figma.com/proto/QjH5j2kdQnN1iUZCYxjNsDwt/CicloMapa?node-id=363%3A113&viewport=-3270%2C2793%2C0.45554399490356445&scaling=scale-down-width) to validate the main features and visual hierarchy without putting on the table discussions on visuals—at least for now. Although it looks very different from the final version, the overall experience didn’t change much! We validated this prototype with potential users we started gathering on a small mapping enthusiasts community on Telegram.
 
@@ -124,6 +137,8 @@ At this point I was iterating on the prototype and validating with the community
 
 As the only developer on the team, it’s always a challenge to separate the engineering and design mindsets in the process. I forced myself to always ideate concepts on Figma first, validating with the peers and creating cards on our Trello board to document the task and prioritize it for development.
 
+## Iterating the architecture
+
 The overall system architecture passed by many iterations. I started with straightforward ones to test concepts concerning the [OSM Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API). I slowly added more complexity to mitigate the problems we saw, getting feedback from the stakeholders and our user community and always aiming to improve the user experience.
 
 ```grid|1
@@ -134,10 +149,10 @@ The overall system architecture passed by many iterations. I started with straig
 
 To build the UI, I chose [Ant Design](https://ant.design/), a high-quality open React library with excellent documentation. I did all the styling with [TailwindCSS](https://tailwindcss.com/), a fantastic CSS framework, to customize the Ant components to our visual identity and create layouts.
 
-For this project, I also wanted to try [Mapbox](https://www.mapbox.com/), an open map library built on top of OpenStreetMap. It offered much more flexibility and more advanced features compared with the Google Maps SDK I was used to. In addition, it was a pleasure using [Mapbox Studio](https://www.mapbox.com/mapbox-studio), their interactive map customization tool. It's a terrific product and enabled me lots of controls to be creative in designing our base map.
+For this project, I also wanted to try [Mapbox](https://www.mapbox.com/), an open map library built on top of OpenStreetMap. It offered much more flexibility and more advanced features compared with the Google Maps SDK I was used to. In addition, it was a pleasure using [Mapbox Studio](https://www.mapbox.com/mapbox-studio), their interactive map customization tool that enabled me lots of controls to be creative in designing our base map.
  
 ```grid|1 
-![](./mapbox.png "The Mapbox Studio is a formidable tool with very advanced features for customizing the interactive map that'd be used as the base layer.")
+![](./mapbox.png)
 ``` 
 
 Beyond just customizing color palettes, the editor allows us to add new data layers, filter what we want to show, how, at what zoom level, and much more. When designing the points of interest layer, I created 2 hierarchy levels based on what are more "complex" data points.
@@ -151,21 +166,25 @@ Beyond just customizing color palettes, the editor allows us to add new data lay
 
 # Visual identity 
 
-<!-- With a very functional first version of the system up and running ahead of schedule I found myself with some extra time to _make it pop_. Based on all the process up to now I've devised some brand principles to start thinking on some visual directions:
- 
-* **Serious** instead of playful, since we're dealing with important data that can impact how our cities and built. But we're not formal or academic, we want to be **relatable**, so we can speak to the masses.
+## Principles
+With a very functional first version of the system up and running ahead of schedule I found myself with some extra time to _make it pop_. Based on all the process up to now I've devised some brand principles to start thinking on some visual directions:
+* **Serious** instead of playful, since we're dealing with important data that can impact how our cities and built. But we're not formal or academic, we want to be relatable, so we can speak to the masses.
 * **Assertive** and **trustworthy**: we're experienced specialists on cycling and technology.
 * **Collaborative**, **communal** and **educative**, since it's based on OpenStreetMap. -->
 
 <!-- The main colors are dark because it gives a "data dashboard" vibe. It also resembles the aerial look of a cityscape at night, with the bike paths lighten up as if they were neon lights, which is pretty cool. The color palette is made of steps in a gradient from green to red representing the safety and "goodness" of the different typologies. These were optimized to the best visibility possible on both the dark map as well as available variation of a satellite map. -->
 
-The visual identity draws inspiration from data dashboards from sci-fi movies, with a dark-themed color palette. The map style is highly subdued, making the bike infrastructure look like neon stripes glowing in the dark. Another source of inspiration was the view you have of the city lights from an airplane window, again, with the streets glowing.
+## Inspiration
+
+The brand language draws inspiration from the night view of a city through an airplane window: the streets are glowing with vibrant colors like neon strips. The dark theme helps the data pop, while giving a sentiment of a technical tool.
 
 ```grid|1
-![](./brand.png "The brand language draws inspiration from the night view of a city through an airplane window: the streets are glowing with vibrant colors like neon strips. The dark theme helps the data pop, while giving a sentiment of a technical tool. ") 
+![](./brand.png)
 ```
 
-With the typography and basic palette set, I started customizing the Mapbox base map and the Ant Design components to match the style.
+## Designing the map
+
+With the typography and basic palette set, I started customizing the Mapbox base map and the Ant Design components to match the style. Mapbox Studio is a formidable tool with very advanced features for customizing the interactive map that'd be used as the base layer, going way beyond colors and line widths to advanced data filters.
 
 <!-- ```grid|1
 ![](./logo.png) 
@@ -184,6 +203,8 @@ The map is fully interactive, and I focused on offering a seamless experience fo
 ![](./ciclomapa.gif)  
 ```  
 
+## Custom tooltips
+
 The bike paths have a special, colorful tooltip. On the bottom, buttons invite the user to quickly edit that data in the OSM official website, or to leave a comment inside CicloMapa.
  
 ```grid|1
@@ -193,6 +214,8 @@ The bike paths have a special, colorful tooltip. On the bottom, buttons invite t
 ```grid|1
 ![](./tooltips.png)
 ```
+
+## Points of interest
  
 Tooltips for points of interest have more details, which were curated from the several metadata present in the OSM nodes. We made a big effort of understanding which were more important for the common user, as well as translating the technical names.
 
@@ -208,6 +231,9 @@ Tooltips for points of interest have more details, which were curated from the s
 <!-- <jumbo caption="The variation with satellite imagery as the base map. It was important that the color palette worked for both scenarios. The images were processed to have reduced brightness and saturation to better keep contrast with the UI.">
     <img src="./... .png"/>
 </jumbo>  -->
+
+
+## Interactive and educative filters
 
 Some nice little interaction details are the tooltips on the layers filters. They help educate the user about what each layer type is about.
 
@@ -256,7 +282,7 @@ CicloMapa also had accepted presentations at important conferences, such as [FOS
 This success guaranteed yearly budget updates from the client, which always gave us lots of freedom to design and build the platform's next steps. Proof of this trust is that in 2022, instead of jumping into building all feature requests we received throughout the years, we instead ran a major Product Discovery research that revealed big new opportunities for the platform. This project might become a new case study here on my website at some point :)
 
 
-# Links
+# See more
  
 <links-list
     items='[ 

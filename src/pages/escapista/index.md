@@ -44,6 +44,8 @@ We also learned there's also a growing discussion about "the Netflix effect", a 
     <img src="./clippings.png"/>
 </jumbo> 
 
+## Learning from the community
+
 This project was co-created with [the Reddit Slow TV community](https://www.reddit.com/r/SlowTV/), where we understood the whys and hows of those users. We [posted a survey](https://www.reddit.com/r/SlowTV/comments/iuuwoo/help_me_design_a_slow_tv_app/g5nfv64/?context=3) asking people to help me build this app.
 
 <!-- Some of the things we wanted to find out were:
@@ -55,6 +57,9 @@ This project was co-created with [the Reddit Slow TV community](https://www.redd
 ```grid|1
 ![](./reddit1.png)
 ``` 
+
+
+## Designing in the open
 
 After analysing these responses we made sure to [post again on the community](https://www.reddit.com/r/SlowTV/comments/kccdky/presenting_escapista_a_new_experience_of_watching/) thanking for the interest and the great feedback, sharing [a small report of the main findings](https://www.notion.so/Slow-TV-Community-Survey-1c0838bac8c84383b49b8f03eaeed04f).
 
@@ -131,6 +136,8 @@ Finally, we also reached out to our favorite YouTube creators to see what they t
 
 # Visual identity
 
+## Inspiration
+
 <!-- <jumbo caption="blablabla">
     <img src="./semanticmap.png"/>
 </jumbo> -->
@@ -200,7 +207,8 @@ To kick off exploring UI solutions we did some benchmarks, looking for similar i
 ## Design principles
 
 I've explored many alternatives, searching for something that made sense to our vision of a UI that "play to the same affective experience of watching Slow TV itself", as one survey respondent said. To guide my explorations and help us make decisions, I devised 3 design principles for the product:
-* Minimalism as a way for calm and focus
+
+* Minimalism as a way for calm and focus 
 * Immersive meditation
 * Less controls, more contemplation
 
@@ -288,9 +296,9 @@ I started creating an integration with [Airtable](https://airtable.com/), which 
 ![](./poc.png)
 ``` -->
 
-## Building a content management system
+## Building a CMS
 
-A lot of my focus on the development side was on creating a system for storing, rating and categorizing the videos, all using the super-friendly Airtable interface. This was crucial since the experience was so simple, the curation should be of the highest quality, and we'd invest many and many hours on searching and categorizing the best videos we could find.
+A lot of my focus on the development side was on creating a Content Management System (CMS) for storing, rating and categorizing the videos. This was crucial since the experience was so simple, the curation should be of the highest quality, and we'd invest many and many hours on searching and categorizing the best videos we could find. I chose to use Airtable for the power it provides, enabling to create relationships between data just like a real database, while providing an extremely user-friendly interface. 
 
 <jumbo>
     <img src="./airtable1.png"/>
@@ -322,7 +330,9 @@ Even though the channels' schedules are live, just like in a regular TV channel,
 
 # Launching and monitoring
 
-We created a launch plan that included [a big launch on ProductHunt](https://www.producthunt.com/posts/escapista), one of the biggest communities for tech products. We were very happy with the result, accumulating more than 270 upvotes and ending up in the top ranked launches for the week and gaining lots of organic traction from posterior blog posts.
+## Launch plan
+
+We created a launch plan including the original Reddit community, our personal social media accounts but also [a big launch on ProductHunt](https://www.producthunt.com/posts/escapista), one of the biggest communities for tech products. We were very happy with the result, accumulating more than 270 upvotes and ending up in the top ranked launches for the week and gaining lots of organic traction from posterior blog posts.
  
 ```grid|1
 ![](./producthunt.png)
@@ -331,7 +341,7 @@ We created a launch plan that included [a big launch on ProductHunt](https://www
 
 ## Measuring what matters
 
-The product metrics were designed inspired by the HEART framework, but instead of using regular dimensions such as Adoption, Engagement, ... we used our own product goals as dimensions for thinking and organizing the different signals and metrics. These were implemented using the new Google Analytics 4, which has a brand new events system.
+The product metrics were inspired by the HEART framework, but instead of using regular dimensions such as Adoption, Engagement, ... we used our own product goals as dimensions for thinking and organizing the different signals and metrics. These were implemented using the new Google Analytics 4, which has a brand new events system.
 
 <jumbo>
     <img src="./metrics.png"/>
@@ -352,11 +362,15 @@ From the qualitative side we also have a Typeform survey embedded on the website
 
 # Results
 
+## Media coverage
+
 Since the ProductHunt launch we continue being marketed organically by news platforms, blogs, websites and on Social Media in general. For a non-profit project like this one it's great not having to spend any dollar in marketing. 
 
 ```grid|1
 ![](./press.png)
 ```
+
+## Numbers
 
 We're quite happy with the amount of hours people have spend on the website, which corresponds to more than 100 entire days watching Slow TV videos! 
 
@@ -371,6 +385,9 @@ We're quite happy with the amount of hours people have spend on the website, whi
     }'>
 </results-banner>
 
+ 
+## Testimonials
+
 And, of course, we're utterly happy with the several heart-warming user feedbacks we received already.
   
 <jumbo>
@@ -380,7 +397,7 @@ And, of course, we're utterly happy with the several heart-warming user feedback
 
 <ai-disclaimer></ai-disclaimer>
 
-# Links
+# See more
  
 <links-list
     items='[ 

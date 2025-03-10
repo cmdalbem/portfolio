@@ -96,7 +96,7 @@ With the vast amount of data we gathered up to this point, I helped the team sum
     <img src="./problemtree.png"/>
 </jumbo>    
 
-## The Design ~Sprint~ Semi-Marathon
+## Design Sprint (but semi-marathon style)
 
 Normally Design Sprints are done in an intense week of work, but since Meu Corre was a sideproject for all of us, I planned a longer version of the process that would last a whole month: each week corresponding to one of the days of the Design Sprint 2.0 format popularized by [https://ajsmart.com/](AJ&Smart).
 
@@ -144,7 +144,7 @@ The last week of the sprint was dedicated to run users tests with an interactive
     }]'>
 </insights> 
   
-# Building and launching a MVP
+# Building a MVP
 
 Throughout the course of the next year the "Financial Strava" was continuously refined as we talked with more users, closed partnerships, developed business model ideas and started development with a software house we hired.
 
@@ -154,7 +154,7 @@ A highlight during this phase was our participation on the online workshop 'Heal
 ![](./fiocruz.png)
 ``` 
 
-## Developing a familiar visual language
+## A familiar visual language
 
 When building the foundations for typography, color palette and visual identity, I wanted to make sure the app would engage with our users, who have limited formal education and experience with technology. As low income people in Brazil tend to have Android devices, delivery platforms at that time only made available their app to that ecosystem. For that reason I've built the Design System on top of basic Google Material Design components and patterns, achieving a visual language that would be most familiar to that audience.
 
@@ -171,7 +171,7 @@ A special attention was given to the first experience of the user with the app. 
   
  
 
-## A simple but customizable financial experience
+## Simple but customizable
 
 When first signing up, we give the option for the user to customize the experience with what makes sense for them:
 * **Vehicle**: The user can chose one among all mobility modes used by delivery workers. (and yes, although not officially permitted, some do work by foot)
@@ -185,7 +185,7 @@ When first signing up, we give the option for the user to customize the experien
 
  
 
-## Optimizing the core interaction: adding earnings
+## Optimizing the core interaction
 
 A lot of attention was put in the recording of earnings, since this would be the core activity the user need to do to get value from the app. From our research we understood this could be extremely cumbersome if not handled right, so we introduced 2 features:
 * **Quick add**: for the small, quick earnings of every day, a small modal allows to add it with very few taps.
@@ -202,7 +202,7 @@ A lot of attention was put in the recording of earnings, since this would be the
  
 ## Insightful but approachable metrics
 
-From our learnings from research, we knew we had to be light on the metrics dashboard. That's why we ditched any charts, and focused on metrics some of these workers were already calculating and discussing about among themselves. Some tooltips provided extra explanations for some less obvious ones.
+From our learnings from research, we knew we had to be light on the dashboard, balancing insightful but approachable metrics. That's why we ditched any charts, and focused on metrics some of these workers were already calculating and discussing about among themselves. Some tooltips provided extra explanations for some less obvious ones.
 
 <jumbo> 
     <img src="./metrics.png"/>
@@ -232,7 +232,7 @@ Apart from iterating on the core flows, after the launch we started seeking fund
 </jumbo>  -->
    
 
-## Hustle tracker  
+## The "Hustle Tracker"
 
 Another solution for automatizing the input of data into the app, the geotracking feature tracks the users' daily rides and automatically identifies the wasted idle time. This allows users to gain a clearer picture of how much time is spent actively working versus waiting, something that we heard is a big pain for them. On the platform side, the anonymized data we collect about their movement in the city provides invaluable insights for advocacy agents and policy makers.
 
@@ -250,13 +250,17 @@ Automatically import rides' data from different delivery platforms. A highly req
 ```
 
 
-# The launch
+# The big launch
 
-After a [way too] long development phase where we faced thousands of issues, technical challenges and scope cutting, this MVP was successfully launched to the general public with zero known bugs on April of 2024 with several live events we coordinated with partner institutions as well as influential workers on YouTube.
+## Live events
+
+After many years of work, and a [way too] long development phase with thousands of issues, technical challenges and scope prunning, this MVP was successfully launched to the general public with zero known bugs on April of 2024. We coordinated several live events with partner institutions as well as influential workers on YouTube.
 
 ```grid|1
 ![](./live.png)
 ```  
+
+## Social media
 
 I've also helped design our first social media posts, which is always out of my comfort zone, but necessary.
 
@@ -284,7 +288,7 @@ The data generated by the "Meu Corre" project serves as a powerful tool for advo
 
 
  
-# Results
+# Results and learnings
 
 Here's a summary of the amazing results we've already achieved since the launch in April 2024:
 
@@ -326,7 +330,7 @@ Since June/2024 I've stepped down from the team to focus on other projects, but 
 
 
 
-# Learnings
+## Learnings
 
 It's really hard to summarize here in a few paragraphs how much I've learned and grew in almost 4 years of such an intense and different project, but here's an attempt:
 * **Challenging assumptions about user needs**: Delivery workers' challenges extend beyond simplistic assumptions about financial instability. Many workers lacked intuitive tools to track their income and expenses, which highlighted the gap between the tech-driven gig economy narrative of "freedom and entrepreneurship" and the daily, often chaotic reality of delivery work.
@@ -337,7 +341,7 @@ It's really hard to summarize here in a few paragraphs how much I've learned and
 <!-- adicionar ref ao "fair design"? -->
 
 
-# Conclusion
+## Conclusion
 
 Working on Meu Corre was one of those projects that really stuck with me. It pushed me to step out of my bubble, partner with so many different people, listen without judgment, and rethink what really impactful "solutions" actually look like. The complete story is full of thousands of twists and challenges I had to skip here - but that’s where the best learning happened. More than just building an app, it was about building something we truly believed in, being full responsible for all of it outcomes, connecting with like-minded (or not) people, understanding their hustle, and figuring out how Design can actually make a difference in their lives.
 

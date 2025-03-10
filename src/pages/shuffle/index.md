@@ -171,29 +171,38 @@ Combining these two features would allow an entirely new level of customization 
 
 We also realized that there were a lot of low-hanging fruits: minor, low-effort improvements that improved the users' quality of life and, together, could make a real dent in the product's usability.
 
-While we invested in in-depth Discovery to investigate more significant issues, we've tackled these small issues bit by bit, generating a much more positive atmosphere among Xpeers, who said that Shuffle hadn't had improvements for a long time. Here are just some of the examples: 
-* **New notifications**: I noticed that Xpeers frequently switched to other browser tabs to investigate issues, but Shuffle did not alert them if there were new customer messages in the meantime. We added sound effects for different notifications and a custom favicon and page title to reflect the status.
+While we invested in in-depth Discovery to investigate more significant issues, we've tackled these small issues bit by bit, generating a much more positive atmosphere among Xpeers, who said that Shuffle hadn't had improvements for a long time. Here are just some of the examples.
+
+## New notifications
+I noticed that Xpeers frequently switched to other browser tabs to investigate issues, but Shuffle did not alert them if there were new customer messages in the meantime. We added sound effects for different notifications and a custom favicon and page title to reflect the status.
 
 ```grid|1
 ![](./notifications.png "Little big details: by cleaning up the browser tab title and showing notifications there, we help agents that need to multitask to not leave the customer waiting. Users also reported this reduced their anxiety of going deep in their problem-solving on other tabs.")
 ```
 
-* **Chat panel tech revamp**: From the very first sessions, we noticed how sluggish it was to type. The problem was so severe that we often observed agents typing their messages in the browser address bar or another simple text editor to later copy and paste into Shuffle. As engineers were migrating this panel's underlying technology, I pushed the team to prioritize delivering better performance.
+## Chat panel tech revamp
+From the very first sessions, we noticed how sluggish it was to type. The problem was so severe that we often observed agents typing their messages in the browser address bar or another simple text editor to later copy and paste into Shuffle. As engineers were migrating this panel's underlying technology, I pushed the team to prioritize delivering better performance.
 
-* **Autotake**: before, users had to manually request new tickets, which was tiring and inefficient even if there was a keyboard shortcut. In the field, we even heard reports of people leaving small weights on their keyboards to keep pressing the action shortcut. Autotake is, as the name implies, a system with a minimal UI where the Xpeer sets the number of chats they wish to take at the same time, press "play", and the system will automatically allocate these as they come.
+## Autotake
+Before, users had to manually request new tickets, which was tiring and inefficient even if there was a keyboard shortcut. In the field, we even heard reports of people leaving small weights on their keyboards to keep pressing the action shortcut. Autotake is, as the name implies, a system with a minimal UI where the Xpeer sets the number of chats they wish to take at the same time, press "play", and the system will automatically allocate these as they come.
 
 <jumbo caption="When developing Autotake, an interesting tool I devised to make sense of the problem was a double-headed Opportunity Tree, with one side the agents and the other their managers. This helped us find solutions, in the middle, that could solve the sometimes conflicting needs of these two users. Click to see it larger.">
     <img src="./autotake.jpg"/>
 </jumbo>
 
-* **Typography update**: moving from Open Sans to Inter, we increased the legibility of small text due to it being more optimized for screens. It also reduced screen real-estate usage due to its taller x-height, which works better for high-density designs.
+## Typography updates
+
+Moving from Open Sans to Inter, we increased the legibility of small text due to it being more optimized for screens. It also reduced screen real-estate usage due to its taller x-height, which works better for high-density designs.
 
 ```grid|1
 ![](./contactreason.png "The Contact Reason Dropdown was a crucial part of the Shuffle UI and was a great low-hanging fruit. The original version had serious legibility issues, so we quickly redesigned it and added keyboard shortcuts to improve agents' speed when doing this mandatory step.")
 ```
 
-* **New keyboard shortcuts**: Essential for those who work with professional tools, they were not reliable due to bugs and we identified opportunities for new ones. One example was that there was a shortcut for concluding a job but not for choosing the contact reason from a dropdown menu, which had to be done with the mouse cursor.
-* **Dark mode**: an experimental "mod" I coded myself with just CSS and a Chrome Plugin.
+## New keyboard shortcuts
+Essential for those who work with professional tools, they were not reliable due to bugs and we identified opportunities for new ones. One example was that there was a shortcut for concluding a job but not for choosing the contact reason from a dropdown menu, which had to be done with the mouse cursor.
+
+## Dark mode
+An experimental "mod" I coded myself with just CSS and a Chrome Plugin.
 
 
 ```grid|1

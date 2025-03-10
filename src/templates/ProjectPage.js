@@ -27,7 +27,7 @@ class ProjectPage extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const { previous, next } = this.props.pageContext
-    const readingTime = post.fields.readingTime; 
+    const { readingTime } = post.fields; 
 
     const baseType = 'f4-ns f5 dark-gray lh-copy ';
     const defaultMargins = "w-60-l mw8-l center";
@@ -46,16 +46,9 @@ class ProjectPage extends React.Component {
     const yearsOld = new Date().getFullYear() - new Date(post.frontmatter.date2).getFullYear();
     const isOldProject = yearsOld > HOW_MANY_YEARS_OLD_IS_TOO_OLD;
 
-    console.debug(post.htmlAst);
-
-    const h1s = post.htmlAst.children
-      .filter(c => c.tagName === 'h1')
-      .map(h => h.children[0].value);
-
-    // const h12s = post.htmlAst.children
-    //   .filter(c => c.tagName === 'h1' || c.tagName === 'h2')
-    //   .map(h => ({tag: h.tagName, value: h.children[0].value})); 
-    // console.debug("h12s", h12s);
+    const headings = post.htmlAst.children
+      .filter(c => c.tagName === 'h1' || c.tagName === 'h2')
+      .map(h => ({tag: h.tagName, title: h.children[0].value})); 
 
     return (
       <Layout location={this.props.location}>
@@ -156,7 +149,7 @@ class ProjectPage extends React.Component {
           </div>
         </div>
 
-        <ContentNav sections={h1s} />
+        <ContentNav sections={headings} />
 
         <div className={"flex flex-row-ns flex-column mv5 " + defaultMargins}>
           {/* {
@@ -200,7 +193,7 @@ class ProjectPage extends React.Component {
               <div className='f5 lh-copy'>
                 { 
                   post.frontmatter.tags.map(t => (
-                    <div className="mb1"> {capitalize(t)} </div>
+                    <div className="mb2" key={t}> {capitalize(t)} </div>
                   ))
                 }
                 {/* { post.frontmatter.tags.map(t => capitalize(t)).join('・') } */}
@@ -223,7 +216,7 @@ class ProjectPage extends React.Component {
                 {/* {post.frontmatter.team} */}
                 {
                   post.frontmatter.team.map(t => ( 
-                    <div className="mb1"> {t} </div>
+                    <div className="mb2" key={t}> {t} </div>
                   ))
                 } 
               </span>
@@ -241,7 +234,7 @@ class ProjectPage extends React.Component {
                 { 
                   // post.frontmatter.metrics.map(t => capitalize(t)).join('・')
                   post.frontmatter.metrics.map(t => (
-                    <div className="mb1"> {capitalize(t)} </div>
+                    <div className="mb2" key={t}> {capitalize(t)} </div>
                   ))
                 }
               </div>

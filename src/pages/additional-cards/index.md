@@ -16,6 +16,8 @@ liveLink: "https://blog.nubank.com.br/cartao-de-credito-adicional-do-nubank-tudo
 
 # Context
 
+## The company
+
 [Nubank](https://nubank.com.br/) (NYSE: NU) was born in 2013 with the mission to fight complexity to empower people by reinventing financial services. It's one of the world’s largest digital banking platforms, serving over 100 million customers across Brazil, Mexico, and Colombia. Nubank is considered one of the most innovative companies in the world ([Fast Company](https://www.fastcompany.com/91040515/nubank-most-innovative-companies-2024)) and is often associated with products and services that are simple-to-use, intuitive, and transparent.
 
 ```grid|1 
@@ -33,7 +35,7 @@ Also known as **Authorized User**, **Additional Cardholder** or **Shared Card**,
 Although we see many couples using this product as a way to share their finances or optimize credit benefits, it's a product that works very well for parents wishing to initiate their children into the financial world. In summary, it's a solution for those wanting to extend their purchase power to a dependent that might not have access to credit products.
 
 
-# Problem statement
+## Problem statement
 
 Since Nubank didn't offer this product, we found out that clients have been finding "hacks" to accomplish these goals, such as sharing a single credit card among people in their households. These hacks not only could present risks to their data security but also offered a bad experience for their shared financial lives.
 
@@ -42,7 +44,7 @@ Our team's objective was to increase our customer satisfaction, measured by NPS.
 <!-- Our main mission was to provide a delightful experience for anyone wishing to extend their credit purchase power. Nubank is well known for offering innovative solutions and we didn't want to build something incrementally better but fundamentally different. -->
 
 
-## Two sides of the same card
+## One product, two sides
 
 This project aimed at building two full user experiences. This is where the complexity of this product starts to show: not only do we have to design and implement an entirely new credit card product, but we also have to consider two sides that have things in common but also significant differences. In collaboration with the Product Manager, we mapped the needs of these two users:
 * **Card Owner**: the person who requests the card and shares their credit line. They need to have visibility of spending, especially when paying the credit card bill, and have control of the card settings, such as defining a spending limit.
@@ -70,7 +72,7 @@ I started with the request flow. My objective was to make it as simple as possib
     <img src="./request.png"/>
 </jumbo>
 
-## Balancing user experience, security and legal requirements
+## Balancing security and legal requirements with UX
 
 Since this flow is open to all users, it was really tricky thinking on what we could and couldn't inform to the user about that CPF. If we inform too much, bad actors can use this flow to reveal personal information about that CPF. If we reveal too little, users can be confused.
 
@@ -79,7 +81,7 @@ Since this flow is open to all users, it was really tricky thinking on what we c
 </jumbo>
 
 
-## Leveraging the platform
+## Leveraging a platform
 
 The main challenge of this project was the actual day-to-day of managing this card and the purchases, and for that, I took a step back to understand how Credit Card exists in today's app structure. I noticed we have three main areas, each with a general theme with specific tasks.
 
@@ -101,10 +103,10 @@ To better understand our user's mental model, our UX Researcher Ana Urquiza and 
     title="Main insights"
     items='[ 
     {
-        "title": "Leveraging the existing information architecture",
+        "title": "Validating the existing information architecture",
         "description": "User mental models about credit cards were aligned to how the app was currently structured, so we should prioritize the solutions that maintain the status quo and perform better."
     },{
-        "title": "Adapting midway",
+        "title": "Whats better than filters",
         "description": "Although the Transactions Feed filter solution performed very well with users, most users preferred using another part of the app. Seeing this was a strong trend since the first interviews, we quickly prototyped a solution for that in the middle of the research, and it proved to be the best according to users."
     },{
         "title": "Balancing short and long term",
@@ -116,9 +118,9 @@ To better understand our user's mental model, our UX Researcher Ana Urquiza and 
 ![](./concepttests.png)
 ``` -->
 
-# Extending audiences & benefits
+## Extending audiences & benefits
 
-Although for most of the development process we've been targeting our Core audience, recent business developments enabled us to also extend it new strategic segments: Under 18 and Premium. This led to some last minute tweaks to make sure the experience continue cohesive, but at the same time that it communicated what was most important to each audience. 
+Although for most of the development process we've been targeting our Core audience, recent business developments enabled us to also extend it new strategic segments: Under 18 and Premium. This led to some last minute changes in designs to make sure the experience continue cohesive, but at the same time that it communicated what was most important to each audience. 
 
 ```grid|1
 ![](./plastic2.png)
@@ -220,7 +222,7 @@ Working on this task force in parallel to the Additional Cards project has helpe
 
 
 
-# Results
+# Results & learnings
 
 After many months of internal tests and bug fixes, at the moment of writing this article, the team is thrilled that we've just released the product publicly! Its launch was covered by most of the big Brazilian tech and financial portals, with extensively positive takes.
 
@@ -234,8 +236,6 @@ Although we can already see an increase in customers' Purchase Volume (how much 
     }'>
 </results-banner>
 
-
-# Learnings & conclusion
 
 This was the longest and most complex project I've worked on at Nubank. It was a team effort of dozens of people with various specialties and teams. Here are a few of my main learnings from this experience:
 

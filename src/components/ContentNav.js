@@ -6,7 +6,7 @@ class ContentNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeSection: ''
+      activeH: ''
     };
     this.observer = null;
     this.sectionsRefs = [];
@@ -17,7 +17,7 @@ class ContentNav extends React.Component {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            this.setState({ activeSection: entry.target.id });
+            this.setState({ activeH: entry.target.id });
           }
         });
       },
@@ -50,8 +50,20 @@ class ContentNav extends React.Component {
         return null;
     }
 
-    const sectionsSlugs = sections.map((section) => slugify(section));
-    const tabItemClasses = 'bn tl ph0 pv1 mv0 f6 dim db bg-transparent';
+    const tabItemClasses = 'bn tl ph0 pv1 mb1 f6 db dim bg-transparent';
+
+    let lastH1SectionIndex = -1;
+    sections.forEach((s, i) => {
+        s.slug = slugify(s.title);
+        
+        if (s.tag === 'h1') {
+            // this.sectionsRefs[i] = document.getElementById(s.slug);
+            lastH1SectionIndex = i;
+            s.subsections = [];
+        } else {
+            sections[lastH1SectionIndex].subsections.push(s);
+        }
+    });
 
     console.debug(sections);
 
@@ -68,17 +80,38 @@ class ContentNav extends React.Component {
         }}
       >
         <div className="flex flex-column">
-          {sections.map((section, index) => (
-            <button
-              className={`${tabItemClasses} ${
-                this.state.activeSection === sectionsSlugs[index] ? 'dark-gray' : 'silver'
-              }`}
-              onClick={() => this.scrollToSection(sectionsSlugs[index])}
-              key={section}
-              ref={(el) => (this.sectionsRefs[index] = document.getElementById(sectionsSlugs[index]))}
-            >
-              {section}
-            </button>
+          {sections.map((s, i) => (
+            s.tag === 'h1' &&
+            <div key={s.title}>
+                {/* H1 headings */}
+                <button
+                    className={`${tabItemClasses} ${
+                        this.state.activeH === s.slug ? 'dark-gray' : 'silver'
+                    }`}
+                    onClick={() => this.scrollToSection(s.slug)}
+                    ref={(ref) => this.sectionsRefs[i] = document.getElementById(s.slug)}
+                >
+                    {s.title}
+                </button>
+
+                {/* H2 headings */}
+                {
+                    this.state.activeH === s.slug && s.subsections && s.subsections.length > 0 &&
+                    <div className='pl3 bl b--light-gray mb2'>
+                    {
+                        s.subsections.map((ss) => (
+                            <button
+                                className={`${tabItemClasses} mb1 silver`}
+                                onClick={() => this.scrollToSection(ss.slug)}
+                                key={ss.title}
+                            >
+                                {ss.title}
+                            </button>
+                        ))
+                    }
+                    </div>
+                }
+            </div>
           ))}
         </div>
       </div>

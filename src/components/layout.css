@@ -209,6 +209,9 @@ ul li::before {
   left: -1em;
   font-size: 1em;
 }
+ul li p {
+  width: auto !important;
+}
 
 ol {
   list-style-type: none;
