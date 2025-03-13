@@ -84,7 +84,7 @@ class ContentNav extends React.Component {
 
         return (
             <div
-                className="db-l dn z-1 w-20"
+                className="db-l dn z-1 w-20 pr3"
                 style={{
                     position: 'sticky',
                     top: '2rem',
