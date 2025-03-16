@@ -22,9 +22,12 @@ class Header extends React.Component {
       // url = new URL(window.location.href);
     }
 
-    let headerClasses = 'flex pt4 pb3 center';
+    const globalPadding = this.props.globalPadding || '';
+
+    let headerClasses = this.props.className || '';
+    headerClasses += ' flex pt4 pb3 center ';
     // headerClasses += isHome ? ` fixed-ns top-0 left-0 right-0 bg-background-color z-2 relative` : '';
-    headerClasses += isHome ? ` layoutMaxWidth fixed-ns top-0 left-0 right-0 z-2 relative` : '';
+    headerClasses += isHome ? ` layoutMaxWidth fixed-ns top-0 left-0 right-0 z-2 relative` : globalPadding;
     
     const tabItemClasses = 'ml4 f6 pa0 fw4 pointer bg-transparent outline-0 bn tab tab--unselected';
     let sections = [
@@ -37,7 +40,7 @@ class Header extends React.Component {
 
   
     return (
-      <div className={headerClasses}>
+      <div id="header" className={headerClasses}>
         <BrowserView>
           <ThemeToggler classes='fixed bottom-0 left-0'/>
         </BrowserView>

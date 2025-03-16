@@ -147,12 +147,21 @@ body {
   /* min-height: 100vh; */
 }
 
+#header {
+  left: 4rem;
+  right: 4rem;
+}
 
 /* Mobile */
 @media (max-width: 30em) {
   .react-reveal {
     animation: none !important;
     opacity: 1 !important;
+  }
+
+  #header {
+    left: 1rem;
+    right: 1rem;
   }
 }
 

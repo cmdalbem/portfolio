@@ -48,9 +48,7 @@ const Layout = ({ children }) => (
             <meta name="twitter:description" content="Portfolio of Cristiano Dalbem, a designer of products and systems, with UX case studies of professional and personal projects."/>
           </Helmet>
  
-          <div className={globalPadding}>
-            <Header/>
-          </div>
+          <Header globalPadding={globalPadding}/>
 
           <div className={globalPadding}>
             {/* <AnimatedChildren/> */}
