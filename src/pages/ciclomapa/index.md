@@ -18,13 +18,13 @@ liveLink: 'https://ciclomapa.org.br/'
 
 Today in Brazil, we face the immense challenge of not having data on the cycling infrastructure available in our cities, which makes it very hard to paint a clear picture of our reality and measure the opportunities and impacts to society of improving urban mobility.
 
-## Strong partners
+## Strong partners 
 
 I've teamed up with [UCB (Brazil Cyclists Union)](https://uniaodeciclistas.org.br/) and [ITDP (Transport and Development Policy Institute)](https://itdpbrasil.org/), two of the most relevant civil society organizations in Brazil for cycling and urban mobility. We set to design and build the first unified platform of cycling maps, encompassing the entirety of the country's cities.
 
- 
+  
 ## Open data
-
+ 
 This project leveraged the data and collaborative nature of [OpenStreetMap (OSM)](https://www.openstreetmap.org/), a huge global initiative, like a Wikipedia of maps. I’ve created an open-source web application, free and accessible from any computer or smartphone, aimed at the average citizen who doesn’t know their city’s bike paths and researchers, who now have easy access to data in an unprecedented scale.
  
 
@@ -197,13 +197,27 @@ With the typography and basic palette set, I started customizing the Mapbox base
 
 # Features highlights
 
-The map is fully interactive, and I focused on offering a seamless experience for exploring different cities and zoom levels.
+## Interactive map
 
-```grid|1
-![](./ciclomapa.gif)  
-```  
+The map is fully interactive, and I focused on offering a seamless experience for exploring different cities and zoom levels. Every small detail was painstakingly refined, from how things appear on different zoom levels to transitions and animations when switching cities.
 
-## Custom tooltips
+<video-container> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./ciclomapa.mp4" type="video/mp4">
+    </video> 
+</video-container>
+
+## Interactive and educative filters
+
+Some nice little interaction details are the tooltips on the layers filters. They help educate the user about what each layer type is about.
+
+<video-container> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./tooltips.mp4" type="video/mp4">
+    </video> 
+</video-container>
+ 
+## Custom tooltips 
 
 The bike paths have a special, colorful tooltip. On the bottom, buttons invite the user to quickly edit that data in the OSM official website, or to leave a comment inside CicloMapa.
  
@@ -231,17 +245,6 @@ Tooltips for points of interest have more details, which were curated from the s
 <!-- <jumbo caption="The variation with satellite imagery as the base map. It was important that the color palette worked for both scenarios. The images were processed to have reduced brightness and saturation to better keep contrast with the UI.">
     <img src="./... .png"/>
 </jumbo>  -->
-
-
-## Interactive and educative filters
-
-Some nice little interaction details are the tooltips on the layers filters. They help educate the user about what each layer type is about.
-
-<video-container> 
-    <video autoPlay controls loop width="100%" type="video/mp4">
-        <source src="./tooltips.mp4" type="video/mp4">
-    </video> 
-</video-container>
 
 
 
