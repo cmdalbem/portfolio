@@ -22,6 +22,28 @@ import ContentNav from '../components/ContentNav'
 
 const HOW_MANY_YEARS_OLD_IS_TOO_OLD = 4;
 
+const ROLES_MAP = {
+  'Design': 'Designer',
+  'Product Design': 'Designer',
+  'Product Management': 'Product Manager',
+  'Research': 'Researcher',
+  'UX Research': 'Researcher',
+  'Front-end': 'Developer',
+  'Web Development': 'Developer',
+}
+const ROLE_ICONS = {
+  'Designer': <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pen-tool"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>,
+  
+  'Product Manager': <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-compass"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>,
+  
+  'Researcher': <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zoom-in"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>,
+  
+  'Entrepreneur': <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>,
+  
+  'Developer': <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>,
+  
+  'Branding': <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>,
+}
 
 class ProjectPage extends React.Component {
   render() {
@@ -76,10 +98,10 @@ class ProjectPage extends React.Component {
         <div className="center">
           {/* Heading */}
           <Fade duration={2000} >
-            <div className="flex flex-column mv5">
-              <div className="flex flex-column mt3 mb5">
+            <div className="flex flex-column mv5-ns mv4">
+              <div className="flex flex-column mt3 mb5-ns">
                 <div className={defaultMargins}>
-                  <h1 className={`f-subheadline-ns mt5-ns mt0 fw5 mb3 lh-solid tracked-tight ${post.frontmatter.color ? '' : 'dark-gray'}`} style={{color: post.frontmatter.color}}>
+                  <h1 className={`f-subheadline-ns f mt5-ns mt0 fw5 mb3 lh-solid tracked-tight ${post.frontmatter.color ? '' : 'dark-gray'}`} style={{color: post.frontmatter.color}}>
                     {post.frontmatter.title}
                   </h1>
                   
@@ -120,7 +142,7 @@ class ProjectPage extends React.Component {
                     // </div>
                     <a
                       href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                      className="dib mt5 mb4 f5 fw6 link pv3 ph4 ba dim br-pill b--orange"
+                      className="dib mt5-ns mb4-ns mv2 f5 fw6 link pv3 ph4 ba dim br-pill b--orange"
                       style={{ 
                           // backgroundColor: post.frontmatter.color,
                           borderColor: post.frontmatter.color,
@@ -166,7 +188,7 @@ class ProjectPage extends React.Component {
           {
             <div className="dark-gray w-100 mr2 mv0-ns mv2">
               <h2 className="f5 fw4 gray">
-                Date
+                Timeline
               </h2>
               <div className="f5 lh-copy">
                 {dateStart}
@@ -192,9 +214,15 @@ class ProjectPage extends React.Component {
               </h2>
               <div className='f5 lh-copy'>
                 { 
-                  post.frontmatter.tags.map(t => (
-                    <div className="mb2" key={t}> {capitalize(t)} </div>
-                  ))
+                  post.frontmatter.tags.map(function(t) {
+                    t = capitalize(t);
+                    t = ROLES_MAP[t] || t;
+                    return (
+                      <div className="mb2 flex items-center" key={t}>
+                        {ROLE_ICONS[t]} <span className='mr1'></span> {t}
+                      </div>
+                    )
+                  })
                 }
                 {/* { post.frontmatter.tags.map(t => capitalize(t)).join('・') } */}
                 {/* {post.frontmatter.tags.map(t => (
