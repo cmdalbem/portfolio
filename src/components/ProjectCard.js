@@ -3,9 +3,6 @@ import { Link } from 'gatsby'
 import Img from "gatsby-image"
 
 import { isMobile } from 'react-device-detect';
-
-// import Tag from '../components/Tag.js'
-
 import { formatDate } from '../components/utils.js'
 
 class ProjectCard extends React.Component {
@@ -26,24 +23,24 @@ class ProjectCard extends React.Component {
  
         return (
             <Link 
-                className={"project-card link near-black db lh-copy " + (mini ? 'db-ns flex h-100-ns h4' : '')}
+                className={"project-card link near-black db lh-copy " + (mini ? 'db-ns flex h-100-ns' : '')}
                 to={post.fields.slug} 
-                onMouseEnter={() => !isMobile && this.setState({hover: true})}
-                onMouseLeave={() => !isMobile && this.setState({hover: false})}
+                onMouseEnter={() => this.setState({hover: isMobile ? false : true})}
+                onMouseLeave={() => this.setState({hover: isMobile ? false : false})}
             >
-                <div className={"db br2 project-card--cover overflow-hidden aspect-ratio " + (mini ? "w-100-ns w-50 aspect-ratio--16x9-ns aspect-ratio--1x1" : "w-100 aspect-ratio--16x9 ")}>
+                <div className={"db br2 project-card--cover overflow-hidden " + (mini ? "w-100-ns w-50 h-100 aspect-ratio-ns aspect-ratio--16x9-ns" : "w-100 aspect-ratio aspect-ratio--16x9")}>
                     <Img
                         fluid={post.frontmatter.cover.childImageSharp.fluid}
-                        className={`w-100 ${isShowHover ? 'dn' : ''}`}
+                        className={`w-100  ${isShowHover ? 'dn' : ''}`}
                         alt=""/>
                     
-                    { 
+                    {/* { 
                         !isMobile && 
                         <img
                         src={post.frontmatter.hover}
                         className={`w-100 ${isShowHover ? 'o-100' : 'o-0'}`}
                         style={{objectFit: 'cover'}}/>
-                    }
+                    } */}
                 </div>
 
                 <div className={mini ? "pl0-ns pl2 w-100 pv3-ns pv0" : "pv3-ns pv2"}>
@@ -66,6 +63,10 @@ class ProjectCard extends React.Component {
                             {post.frontmatter.minibio}
                         </div>
                     }
+
+                    <div to="/" className="dn-ns link dib dark-gray f7 fw4 pv1 ph2 mv1 br-pill ba b--light-silver">
+                        Read case study
+                    </div>
 
                     <div className="project-card--date f6 mt0 silver relative overflow-hidden h1">
                         <span className="absolute silver"
