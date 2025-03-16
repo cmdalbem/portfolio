@@ -106,12 +106,12 @@ export function markdownRenderer(isFullWidth) {
         components: {
             h1: props => (
                 // <h1 className={`f3 lh-title dark-gray fw4 mw6-l mt6-l mt5 mb--4-l position-sticky-l h4-l bg-background-color-l`}>
-                <h1 id={slugify(props.children[0])} className={`f2 lh-title tracked-tight dark-gray fw4 mt6-l mt5 ${defaultMargins}`}>
+                <h1 id={slugify(props.children[0])} className={`f2-ns f3 lh-title tracked-tight dark-gray fw4 mt6-l mt5 ${defaultMargins}`}>
                     {props.children}
                 </h1>
             ),
             h2: props => (
-                <h2 id={slugify(props.children[0])} className={`f3 lh-title fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
+                <h2 id={slugify(props.children[0])} className={`f3-ns f4 lh-title fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
                     {props.children}
                 </h2>
             ),
@@ -121,7 +121,7 @@ export function markdownRenderer(isFullWidth) {
                 </h3>
             ),
             p: props => (
-                <p className={`mt0 f4 ${defaultMargins}`}>
+                <p className={`mt0 f4-ns f5 ${defaultMargins}`}>
                     {props.children}
                 </p>
             ),

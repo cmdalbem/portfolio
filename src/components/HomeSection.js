@@ -11,7 +11,7 @@ class HomeSection extends React.Component {
 
         const descriptionContent = (
             description &&
-            <p className="f4-ns f5 fw5 pr4-ns mb5-ns mb4 mt0-ns mt0 lh-copy measure gray">
+            <p className="f4-ns f6 fw5 pr4-ns mb5-ns mb4 mt0-ns mt0 lh-copy measure gray">
                 {description}
             </p>
         );
@@ -19,7 +19,7 @@ class HomeSection extends React.Component {
         return (
             <section id={anchor} className={containerClasses}>
                 <div className={`flex flex-column ${fullScreen ? 'w-100' : 'w-50-ns'}`}>
-                    <h2 className="f3-ns f4 lh-solid fw4 mv2-ns mb2 dark-gray">{title}</h2>
+                    <h2 className="f3-ns f5 lh-solid fw4 mv2-ns mb2 dark-gray">{title}</h2>
                     
                     <div className="mt2-ns mt0">
                         { descriptionContent }
