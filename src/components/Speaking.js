@@ -60,7 +60,7 @@ const Speaking = () => (
 
       <Talk
         title="Generating insights from data in complex B2B products"
-        context="TheDevelopersConference - Product Management Track. São Paulo & Recife"
+        context="TheDevelopersConference (Product Management). São Paulo + Recife"
         date={2019}
         link="https://docs.google.com/presentation/d/1xDkUiYvJFdY7QShe36kS9pauHzZJhRYnTLz0LNtZ2EY/edit?usp=sharing"
         linkLabel="slides"
