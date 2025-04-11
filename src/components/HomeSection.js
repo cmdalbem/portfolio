@@ -11,7 +11,7 @@ class HomeSection extends React.Component {
 
         const descriptionContent = (
             description &&
-            <p className="f4-ns f6 fw5 pr4-ns mb5-ns mb4 mt0-ns mt0 lh-copy measure gray">
+            <p className={`${fullScreen ? 'f4-ns f6' : 'f6'} fw5 pr4-ns mb5-ns mb4 mt0-ns mt0 lh-copy measure gray`}>
                 {description}
             </p>
         );
