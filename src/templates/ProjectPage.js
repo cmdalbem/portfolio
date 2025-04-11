@@ -76,7 +76,7 @@ class ProjectPage extends React.Component {
       <Layout location={this.props.location}>
         <Helmet>
           <html lang="en"/>
-          <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css"/>
+          {/* <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css"/> */}
 
           <title>{post.frontmatter.title}</title>
 
@@ -199,7 +199,7 @@ class ProjectPage extends React.Component {
               {
                 isOldProject &&
                 <div className="f6 orange mt2">
-                  ({yearsOld} years old project, take with a grain of salt :)
+                  {yearsOld} years ago, take with a grain of salt :)
                 </div>
               }
             </div>

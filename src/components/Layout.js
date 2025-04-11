@@ -7,6 +7,7 @@ import image from '../images/selfie.png';
 
 import Header from './Header'
 import Footer from './Footer'
+import './tachyons.min.css'
 import './layout.css'
 
 const Layout = ({ children }) => (
@@ -32,7 +33,7 @@ const Layout = ({ children }) => (
         <div className="parallax">
           <Helmet>
             <html lang="en"/>
-            <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css"/>
+            {/* <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css"/> */}
 
             <title>Cristiano Dalbem — Product Design Portfolio</title>
 
