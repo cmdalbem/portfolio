@@ -10,7 +10,8 @@ import { isMobile } from 'react-device-detect';
 import Layout from '../components/Layout'
  
 import Speaking from '../components/Speaking'
-import Reading from '../components/Reading'
+// import Reading from '../components/Reading'
+import Experience from '../components/Experience'
 import Social from '../components/Social'
 import HomeSection from '../components/HomeSection'
 import Projects from '../components/Projects'
@@ -67,13 +68,13 @@ class IndexPage extends React.Component {
                 {
                   isMobile ?
                     <h1 className={titleTypography}>
-                      I’m a self-taught designer with over 8 years of experience designing and building impactful digital products.
+                      I’m a self-taught designer with over 10 years of experience designing and building impactful digital products.
                     </h1>
                   : <AnimatedHeader
                       typography={titleTypography} 
                       rows={[
                         'I’m a self-taught designer with over',
-                        '8 years of designing and building', 
+                        '10 years of designing and building', 
                         'impactful digital products.'
                   ]}/> 
                 }
@@ -108,37 +109,16 @@ class IndexPage extends React.Component {
             <div className="f2-ns f4 lh-title fw4 dark-gray measure">
               <Reveal effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
-                    With the projects I delivered, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>scaling</span> some of Brazil's largest online brands, and fostering urban cycling <span className='ttext'>making our cities more livable and sustainable</span>.
+                    With the projects I delivered, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>scaling</span> some of Brazil's largest e-commerces, and fostering urban cycling <span className='ttext'>making our cities more livable and sustainable</span>.
                   </p>
               </Reveal>
                <Reveal effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
-                    I'm passionate about solving complex problems by designing <span className='ttext'>user-centric, elegant and strategic</span> solutions across interfaces, products, systems, and platforms. More than a designer, I'm a builder—eager to get <span className='ttext'> hands-on with code</span> to bring ideas to life.
+                    I'm passionate about solving complex problems by designing <span className='ttext'>user-centric, elegant and strategic</span> solutions from interfaces to systems. More than a designer, I'm a builder—eager to get <span className='ttext'> hands-on with code</span> to bring ideas to life.
                   </p>
               </Reveal>
             </div>
           </HomeSection>
-
-          {/* <HomeSection title="Work">
-            <div className="f4 pb4-ns pb2 mt2 dark-gray lh-copy">
-              I'm working as a <b>Product Designer</b> at{' '}
-                <a
-                  className="pretty-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.vtex.com/"
-                >
-                  VTEX
-                  </a>
-                , building the future of e-commerce in one of the biggest ecosystems in
-                the world. I've been contributing in a variety of teams and projects, participating from all project phases, always in search of the right balance between the inherent complexity of the platform, technology constraints and the pains and needs of thousands of users that depend on our platform everyday to run their businesses.
-              <p>
-                In my free time I'm a <b>cicloactivist</b> and I try to apply my skills to improve urban mobility and ultimately contribute for better cities. I've built{' '}
-                <a className="pretty-link" target="_blank" rel="noopener noreferrer" href="https://www.bikedeboa.com.br/" > bike de boa</a> and <a className="pretty-link" target="_blank" rel="noopener noreferrer" href="https://ciclomapa.org.br/" > CicloMapa</a>
-                , two web apps to help urban cyclists in Brazil.
-              </p>
-            </div>
-          </HomeSection> */}
 
           <HomeSection title="Projects" fullScreen
             description="The stories behind some professional projects in which I've played a major role and I'm very proud of.">
@@ -152,6 +132,10 @@ class IndexPage extends React.Component {
             <Projects mini posts={personal} />
           </HomeSection> 
           
+          {/* <HomeSection title="Experience">
+            <Experience />
+          </HomeSection> */}
+
           <HomeSection
             title="Speaking"
             // description="I try to engage with the community as much as possible, always learning from others and sometimes trying to share some ideas too."

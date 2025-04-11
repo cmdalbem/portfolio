@@ -33,6 +33,7 @@ class Header extends React.Component {
     let sections = [
       'About',
       'Projects',
+      'Experience',
       'Speaking',
       'Social'
     ];
