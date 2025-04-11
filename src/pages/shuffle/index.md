@@ -5,7 +5,7 @@ date2: "2021-05"
 lastUpdated: "2025-02"
 forceOrder: 1
 title: "Nubank's Customer Support Platform"
-minibio: "Designing a new version to improve the productivity and quality of the company's award-winning customer support."
+minibio: "Redesigning the fintech award-winning customer support platform to improve the productivity and service quality."
 description: "Shuffle, Nubank's internal CX platform, began in 2014 as a simple CRM tool, and throughout the years it evolved to centralize all support channels and an immense and complex system of backoffice tasks. While tasked to redesign it, I took some steps back to understand user and stakeholder expectations, and then I brainstorm, prototyped, and tested multiple improvements and new features."
 metrics: ['Time Spent per ticket', 'CSAT', 'Developers productivity', 'Platform NPS']
 tags: ['design', 'UX research', 'Product management']
