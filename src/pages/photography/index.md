@@ -6,7 +6,7 @@ title: "Photography"
 tags: []
 cover: "./cover.png"
 # hover: '/covers/photography.gif'
-fullWidth: true
+fullWidth: false
 minibio: "My oldest hobby. Here are some of the favorite pics I took dating back to 2007."
 description: "Photography has been for almost two decades the main way in which I express my view of the world: sometimes sensible, sometimes critical, but always aesthetic. This is a special visual collection of some of the trips, people and places I hold nearest to my heart."
 --- 
