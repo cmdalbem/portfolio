@@ -68,22 +68,23 @@ class IndexPage extends React.Component {
                 {
                   isMobile ?
                     <h1 className={titleTypography}>
-                      I’m a self-taught designer with over 10 years of experience designing and building impactful digital products.
+                      Trained in code, self-taught in, design. For 10 years building impactful, 
+                        digital products for work and for love.
                     </h1>
                   : <AnimatedHeader
                       typography={titleTypography} 
                       rows={[
-                        'I’m a self-taught designer with over',
-                        '10 years of designing and building', 
-                        'impactful digital products.'
+                        'Trained in code, self-taught in',
+                        'design. For 10 years building impactful', 
+                        'digital products for work and for love.'
                   ]}/> 
                 }
               </div>
             </div> 
           </section>
 
-{/*           
-          <HomeSection title="About" fullScreen>
+          
+          {/* <HomeSection title="About" fullScreen>
               <AnimatedHeader
                   typography="f2-ns f3 lh-copy fw4 dark-gray mv0"
                   rows={[
@@ -98,7 +99,7 @@ class IndexPage extends React.Component {
                   typography="f2-ns f3 lh-copy fw4 dark-gray mv0"
                   rows={[
                     'I\'m passionate about solving complex problems by',
-                    'designing elegant, sustainable, strategic, and user-', 
+                    'designing and coding elegant, sustainable, strategic, and user-', 
                     'centric solutions across interfaces, products,',
                     'systems, and platforms. I\'m also a builder, eager to roll',
                     'up my sleeves to bring ideas to life.',
@@ -114,7 +115,7 @@ class IndexPage extends React.Component {
               </Reveal>
                <Reveal effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
-                    I'm passionate about solving complex problems by designing <span className='ttext'>user-centric, elegant and strategic</span> solutions from interfaces to systems. More than a designer, I'm a builder—eager to get <span className='ttext'> hands-on with code</span> to bring ideas to life.
+                    I'm passionate about solving complex problems by <span className='ttext'>coding and designing</span> user-centric, elegant and strategic solutions, from interfaces to systems. More than anything I'm a builder, passionate about <span className='ttext'>making ideas come to life</span>.
                   </p>
               </Reveal>
             </div>
@@ -132,9 +133,9 @@ class IndexPage extends React.Component {
             <Projects mini posts={personal} />
           </HomeSection> 
           
-          {/* <HomeSection title="Experience">
+          <HomeSection title="Experience">
             <Experience />
-          </HomeSection> */}
+          </HomeSection>
 
           <HomeSection
             title="Speaking"
@@ -166,6 +167,7 @@ class IndexPage extends React.Component {
             // description="Other places on the web where you can find me."
           >
             <Social />
+            {/* <section style={{ height: 496, boxShadow: "rgba(142, 151, 158, 0.15) 0px 4px 19px 0px", borderRadius: 16, overflow: "hidden", width: "100%", maxWidth: 650 }} > <iframe src="https://adplist.org/widgets/booking?src=cristiano-dalbem" title="" width="100%" height="100%" loading="lazy" style={{ border: 0 }} /> </section> */}
           </HomeSection>
         </div>
       </Layout>
