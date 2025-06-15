@@ -49,7 +49,7 @@ class ProjectPasswordInput extends React.Component {
     }
 
     handleSubmit() {
-        if (this.state.value === 'abacaxi') {
+        if (this.state.value === 'arandanos') {
             const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
             const slug = pathname.replaceAll('/', '');
             console.debug(slug);
