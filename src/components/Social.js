@@ -14,8 +14,8 @@ const Social = () => {
     },
     {
       label: "CV",
-      url: "/cv-apr25.pdf",
-      description: "Updated April'25"
+      url: "/cv-jun25.pdf",
+      description: "Updated June/25"
     },
     {
       label: "ADPList",
