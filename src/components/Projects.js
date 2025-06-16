@@ -30,7 +30,7 @@ class Projects extends React.Component {
                                     className={classes}
                                     key={node.fields.slug}
                                 >
-                                    <ProjectCard mini={mini} node={node}/>
+                                    <ProjectCard mini={isMobile ? false : mini} node={node}/>
                                 </div>
                             )
                         })
