@@ -4,7 +4,7 @@ date: "2020-11"
 date2: "2024-06"
 lastUpdated: "2025-03"
 title: "Meu Corre"
-minibio: "Bootstrapping a personal financial management app for delivery workers."
+minibio: "Personal financial management app for delivery workers."
 description: "\"My Gig\" is an app designed to support delivery workers in becoming financially aware during their often precarious daily work routine. By fostering financial awareness, the app not only supports individual organization but also serves as a powerful advocacy tool by generating unprecedented data to inform the fight for workers' rights in Brazil."
 color: '#F2AA00'
 tags: ['design','product management','research','entrepreneur']

@@ -4,8 +4,8 @@ date: "2019-06"
 date2: "2022-06"
 lastUpdated: "2025-02"
 title: "CicloMapa"
-minibio: "Designing and building a platform to democratize the access to bike maps of brazilian cities with open data."
-description: "Designing and developing an open platform to democratize access to bike maps of Brazilian cities in collaboration with two of the most urban mobility organizations in the country. We combined the power of the open and collaborative OpenStreetMap, simplifying and making it more beautiful and easy to use."
+minibio: "Democratizing the access to bicycle maps and of brazilian cities with open data."
+description: "Building an open platform to democratize access to bike maps of Brazilian cities in collaboration with two of the most urban mobility organizations in the country. We combined the power of the open and collaborative OpenStreetMap, simplifying and making it more beautiful and easy to use."
 tags: ['design','front-end','product management','branding']
 cover: './cover.png'
 # hover: '/covers/ciclomapa.gif'

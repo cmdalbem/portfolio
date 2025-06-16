@@ -4,7 +4,7 @@ date: "2022-02"
 date2: "2024-06"
 lastUpdated: "2025-02"
 title: "Nubank's Additional Cards"
-minibio: "Enabling people to extend their purchase power to loved ones."
+minibio: "Enabling people to extend their credit to loved ones."
 description: "Designing from end-to-end the first social product of the company's portfolio. The Additional Card is an extra card users may request to extend their purchase power to family and friends. It brings all the complexity of a complete Credit Card product with the challenge of meeting the card owner's and cardholder's needs."
 metrics: ['Incremental NPS', 'Incremental avg purchase volume']
 tags: ['product design', 'UX research']

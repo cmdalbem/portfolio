@@ -4,7 +4,7 @@ date: "2020-08"
 date2: "2021-04"
 lastUpdated: "2025-03"
 title: "Escapista"
-minibio: "Video streaming website I built during the COVID-19 pandemic to help people stay home relaxing and exploring the world."
+minibio: "Video streaming webapp built during the COVID-19 pandemic to help people stay home relaxing and exploring the world."
 description: "Video streaming website I built during the COVID-19 pandemic to help people stay home relaxing and exploring the world. Choose a channel and let your mind wander with the continuous stream of great Slow TV and ambient videos we handpicked for you. Relax with the natural images and sounds while you work, put on your TV or invite your friends to watch together."
 tags: ['design','front-end','product management','branding']
 metrics: ['Video visualizations','Total playback time','Unique users']
