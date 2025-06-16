@@ -97,7 +97,7 @@ class ProjectPasswordInput extends React.Component {
 
 export function markdownRenderer(isFullWidth) {
     // const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'mw7-l ml-auto-l'}`;
-    const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth' : 'w-60-l mw8-l center'}`;
+    const defaultMargins = `relative ${isFullWidth ? 'layoutMaxWidth center' : 'w-60-l mw8-l center'}`;
     const bigImageMargins = `mv6-ns mv5 z-2 relative`;
     const imageMargins = `${defaultMargins} ml0 mr0 mv6-ns mv5 `;
 
