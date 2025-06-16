@@ -3,7 +3,9 @@ import { Link } from 'gatsby'
 import Img from "gatsby-image"
 
 import { isMobile } from 'react-device-detect';
-import { formatDate } from '../components/utils.js'
+import { formatDate, ROLES_MAP, capitalize } from '../components/utils.js'
+
+import Tag from '../components/Tag';
 
 class ProjectCard extends React.Component {
     state = {
@@ -64,6 +66,33 @@ class ProjectCard extends React.Component {
                         </div>
                     }
 
+                    {
+                        post.frontmatter.tags && 
+                        <div className="flex flex-row mt2 nl1">
+                            {
+                                post.frontmatter.tags.map(function(t) {
+                                    t = capitalize(t);
+                                    t = ROLES_MAP[t] || t;
+
+                                    let icon;
+                                    if (t === 'Designer') {
+                                        icon = <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="currentColor"><path d="m307-320-87-360 260-240 260 240-87 360H307Zm63-80h220l61-253-131-121v106q14 10 22 25t8 33q0 29-20.5 49.5T480-540q-29 0-49.5-20.5T410-610q0-18 8-33t22-25v-106L309-653l61 253ZM160-120l22-65q8-25 29-40t47-15h444q26 0 47 15t29 40l22 65H160Z"/></svg>;
+                                        t = 'Design';
+                                    } else if (t === 'Engineer') {
+                                        icon = <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-code"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>;
+                                        t = 'Code';
+                                    } else {
+                                        return null;
+                                    }
+
+                                    return (
+                                        <Tag key={t} icon={icon} fill> {t} </Tag>
+                                    )
+                                })
+                            }
+                        </div>
+                    }
+
                     <div to="/" className="dn-ns link dib dark-gray f7 fw4 pv1 ph2 mv1 br-pill ba b--light-silver">
                         Read case study
                     </div>
@@ -77,18 +106,6 @@ class ProjectCard extends React.Component {
                             {dateStart} {dateEnd && `– ${dateEnd}`}
                         </span>
                     </div>
-
-                    {/* {
-                        post.frontmatter.tags &&
-                        !mini &&
-                        <div className="flex flex-row flex-wrap mt3">
-                            {post.frontmatter.tags.map(tag => (
-                                <Tag key={tag}>
-                                    {tag}
-                                </Tag>
-                            ))}
-                        </div>
-                    } */}
                 </div>
             </Link>
         )

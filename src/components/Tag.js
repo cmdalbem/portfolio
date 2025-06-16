@@ -1,19 +1,28 @@
 import React from 'react'
 
 const Tag = (props) => {
-    let classes = 'br2 ba b--moon-gray gray dib ';
+    const { icon, fill, size } = props;
+    let classes = 'br4 dark-gray dib flex flex-row items-center justify-center ';
+    if (fill) {
+        classes += 'bg-near-white ';
+    } else {
+        classes += 'ba b--light-gray ';
+    }
     // let classes = "br2 ba b--light-gray dark-gray f7 mr2 mt2 pa1";
 
-    if (props.size && props.size === 'big') {
+    if (size && size === 'big') {
         classes += 'f5 mr2 mb2 pv1 ph2';
     } else {
-        classes += 'f7 mr2 mb2 pv0 ph1';
+        classes += 'f7 mr1 mb2 pv1 ph2';
     }
 
     return (
-        <span className={classes}>
+        <div className={classes}>
+            {
+                icon && <div className="mr1 h1 w1">{icon}</div>
+            }
             {props.children}
-        </span>
+        </div>
     );
 }
 
