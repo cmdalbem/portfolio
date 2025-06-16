@@ -6,7 +6,7 @@ title: "Photography"
 tags: []
 cover: "./cover.png"
 # hover: '/covers/photography.gif'
-fullWidth: false
+fullWidth: true
 minibio: "My oldest hobby. Here are some of the favorite pics I took dating back to 2007."
 description: "Photography has been for almost two decades the main way in which I express my view of the world: sometimes sensible, sometimes critical, but always aesthetic. This is a special visual collection of some of the trips, people and places I hold nearest to my heart."
 --- 
@@ -14,23 +14,30 @@ description: "Photography has been for almost two decades the main way in which 
  
 
 ```grid|2
-![](./000047EBAABA52E6.jpg "Graz (2024)")
-![](./DSCF2795.png "Salzburg (2024)")
-```
+![](./DSCF3858.png "The Hague, NE (2025)") 
+![](./20250502_183303-EDIT.jpg "Girona, ES (2025)")
+``` 
 
+```grid|2
+![](./000047EBAABA52E6.jpg "Graz, AT (2024)")
+![](./DSCF2795.png "Salzburg, AT (2024)") 
+```
+ 
 ```grid|1
-![](./DSCF2013.jpg "Montserrat (2024)")
+![](./DSCF2013.jpg "Montserrat, ES (2024)")
 ```
 
 ```grid|2 
-![](./DSCF0719.JPG "Barcelona (2024)")
-![](./DSCF0777.JPG "Barcelona (2024)")    
+![](./DSCF0719.JPG "Barcelona, ES (2024)")
+![](./DSCF0777.JPG "Barcelona, ES (2024)")    
 ``` 
    
-![](./DSCF1136.jpg "Barcelona (2024)") 
+![](./DSCF1136.jpg "Barcelona, ES (2024)") 
+
+![](./DSCF1153.jpg "Barcelona, ES (2024)") 
   
 ```grid|2
-![](./20231103_093238~2.jpg "Tossa de Mar (2023)")
+![](./20231103_093238~2.jpg "Tossa de Mar, ES (2023)")
 ![](./20240324_163936.jpg "Paris (2023)")   
 ``` 
  
@@ -127,19 +134,3 @@ description: "Photography has been for almost two decades the main way in which 
 ![](./2082522736_590e333369_o.jpg "Porto Alegre (2007)")
 ![](./2128127352_009c4ddcf0_k.jpg "Porto Alegre (2007)")
 ```
- 
-
-# See more
-
-<links-list
-    items='[
-        {
-            "label": "Flickr",
-            "url": "https://www.flickr.com/photos/helloninja"
-        },
-        {
-            "label": "Instagram",
-            "url": "https://instagram.com/cmdalbem"
-        }
-    ]'>
-</links-list>
