@@ -668,8 +668,8 @@ button {
   
     --dark-gray: hsl(180, 30%, 90%);
     --near-black: hsl(180, 15%, 85%);
-    --gray: hsl(20, 6%, 70%);
-    --silver: hsl(20, 10%, 60%);
+    --gray: hsl(180, 6%, 70%);
+    --silver: hsl(180, 10%, 60%);
     --light-gray: hsl(180, 10%, 20%);
     --near-white: hsl(180, 8%, 15%);
   }
