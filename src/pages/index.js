@@ -133,9 +133,9 @@ class IndexPage extends React.Component {
             <Projects mini posts={personal} />
           </HomeSection> 
           
-          <HomeSection title="Experience">
+          {/* <HomeSection title="Experience">
             <Experience />
-          </HomeSection>
+          </HomeSection> */}
 
           <HomeSection
             title="Speaking"
