@@ -197,7 +197,7 @@ class ProjectPage extends React.Component {
                     t = ROLES_MAP[t] || t;
                     return (
                       <div className="mb2 flex items-center" key={t}>
-                        <div className='mr1 h1 w1'>{ROLE_ICONS[t]}</div> {t}
+                        {ROLE_ICONS[t]} <span className='mr1'></span> {t}
                       </div>
                     )
                   })
