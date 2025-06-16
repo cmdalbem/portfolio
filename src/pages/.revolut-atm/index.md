@@ -11,7 +11,17 @@ tags: ['design', 'UX research']
 color: '#5A5EE9'
 cover: './cover.png'
 liveLink: "https://www.revolut.com/es-ES/atm/"
-isPasswordProtected: true
+isHidden: true
 ---
 
-<project-password-input/> 
+<div class="tc silver mv7 mw6 center">
+    <div class="f1">
+        🚧
+    </div>
+    <h3>
+        Work in progress
+    </h3>
+    <p>
+        Come back later, or <a href="https://www.figma.com/deck/WNLM6EOethyCCQ9B54njuK" target="_blank" rel="noopener noreferrer">check the slides here</a>.
+    </p>
+</div>

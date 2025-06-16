@@ -122,7 +122,7 @@ class IndexPage extends React.Component {
           </HomeSection>
 
           <HomeSection title="Projects" fullScreen
-            description="The stories behind some professional projects in which I've played a major role and I'm very proud of.">
+            description="The stories behind some of the work I've done for businesses and other clients.">
             <Projects posts={projectsHighlights}/> 
             <Projects mini posts={projects} />
           </HomeSection>
@@ -206,6 +206,8 @@ export const pageQuery = graphql`
                    description
                    minibio
                    projectType
+                   isPasswordProtected
+                   isHidden
                    tags
                    color
                    cover { 
