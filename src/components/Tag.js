@@ -2,7 +2,7 @@ import React from 'react'
 
 const Tag = (props) => {
     const { icon, fill, size } = props;
-    let classes = 'br4 dark-gray dib flex flex-row items-center justify-center ';
+    let classes = 'br3 dark-gray dib flex flex-row items-center justify-center ';
     if (fill) {
         classes += 'bg-near-white ';
     } else {
