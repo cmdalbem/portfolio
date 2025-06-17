@@ -106,6 +106,18 @@ class IndexPage extends React.Component {
               ]}/> 
           </HomeSection> */}
 
+          <HomeSection title="Projects" fullScreen
+            description="The stories behind some of the work I've done for businesses and other clients.">
+            <Projects posts={projectsHighlights}/> 
+            <Projects mini posts={projects} />
+          </HomeSection>
+
+          <HomeSection title="Sideprojects" fullScreen
+            description="Things I built to help solve people's problems, learn something new, or just for fun.">
+            <Projects posts={personalHighlights} />
+            <Projects mini posts={personal} />
+          </HomeSection> 
+
           <HomeSection title="About me" fullScreen> 
             <div className="f2-ns f4 lh-title fw4 dark-gray measure">
               <Reveal effect="slideUp" duration={2000} big>
@@ -120,18 +132,6 @@ class IndexPage extends React.Component {
               </Reveal>
             </div>
           </HomeSection>
-
-          <HomeSection title="Projects" fullScreen
-            description="The stories behind some of the work I've done for businesses and other clients.">
-            <Projects posts={projectsHighlights}/> 
-            <Projects mini posts={projects} />
-          </HomeSection>
-
-          <HomeSection title="Sideprojects" fullScreen
-            description="Things I built to help solve people's problems, learn something new, or just for fun.">
-            <Projects posts={personalHighlights} />
-            <Projects mini posts={personal} />
-          </HomeSection> 
           
           {/* <HomeSection title="Experience">
             <Experience />
