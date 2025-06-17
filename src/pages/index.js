@@ -137,7 +137,9 @@ class IndexPage extends React.Component {
             <Experience />
           </HomeSection> */}
 
-          <HomeSection
+          <img src={'/speaking.png'} alt="" />
+           
+          <HomeSection 
             title="Speaking"
             // description="I try to engage with the community as much as possible, always learning from others and sometimes trying to share some ideas too."
           > 
@@ -181,7 +183,6 @@ export const pageQuery = graphql`
          query {
            file(relativePath: {regex: "\/.*selfie.png\/"}) {
             childImageSharp {
-              # Specify the image processing specifications right in the query.
               fluid {
                 src
                 srcSet
