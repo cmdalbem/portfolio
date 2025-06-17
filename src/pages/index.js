@@ -137,7 +137,9 @@ class IndexPage extends React.Component {
             <Experience />
           </HomeSection> */}
 
-          <img src={'/speaking.png'} alt="" />
+          <Reveal effect="slideUp" duration={2000} big>
+            <img src={'/speaking.png'} alt="" />
+          </Reveal>
            
           <HomeSection 
             title="Speaking"
