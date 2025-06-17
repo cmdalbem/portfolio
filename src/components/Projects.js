@@ -11,7 +11,7 @@ class Projects extends React.Component {
             return <div></div>;
         }
 
-        const classes = "w-100 animatable mt4-ns mb5-ns mv3";
+        const classes = "w-100 animatable";
         
         let gridStyle = {};
         if (mini & !isMobile) {

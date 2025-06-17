@@ -25,7 +25,7 @@ class ProjectCard extends React.Component {
  
         return (
             <Link 
-                className={"project-card link near-black db lh-copy " + (mini ? 'db-ns flex h-100-ns' : '')}
+                className={"project-card link near-black db lh-copy " + (mini ? 'db-ns flex h-100-ns mv2' : 'mt3-ns mb5-ns mv3')}
                 to={post.fields.slug} 
                 onMouseEnter={() => this.setState({hover: isMobile ? false : true})}
                 onMouseLeave={() => this.setState({hover: isMobile ? false : false})}
