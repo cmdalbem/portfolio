@@ -25,30 +25,34 @@ Although it was not the objective, my intense contributions over the years made 
 # Space art
 
 <!--  
-<results-banner
+<results-banner 
     data='{
         "pageviews": "32,000+",
         "comments made": "4,263",
         "experience": "3 years"
-    }'>
+    }'> 
 </results-banner> -->
 
 <jumbo>
-    <img src="./space1.jpg"/>
-</jumbo> 
-
-<jumbo>
-    <img src="./space2.jpg"/>
-</jumbo> 
+    <img src="./space1.png"/>
+</jumbo>  
  
-<jumbo>
-    <img src="./space3.jpg"/>
-</jumbo> 
+```grid|1
+![](./space2.png)  
+``` 
+ 
+```grid|1
+![](./space3.png)
+``` 
 
 <jumbo>
-    <img src="./space4.jpg"/>
-</jumbo> 
+    <img src="./space4.png"/>
+</jumbo>  
 
-<jumbo>
-    <img src="./space5.jpg"/>
-</jumbo> 
+```grid|1
+![](./space6.png)    
+``` 
+
+```grid|1
+![](./space5.png)    
+``` 
