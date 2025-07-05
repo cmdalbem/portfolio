@@ -5,7 +5,7 @@ date2: "2025-04"
 lastUpdated: "2025-06"
 title: "Revolut's ATMs"
 minibio: "Modernising one of banking’s oldest touchpoints for a next-generation of ATMs in Europe."
-description: "End-to-end UX design for the new Revolut-branded ATMs, leveraging modern web technologies to modernise one of banking’s oldest touchpoints and allowing users to withdraw and deposit money, dispense cards and much more. I've helped set the foundations for a brand new medium for the company by leveraging design patterns from both Web and Mobile worlds. Work included also designing the whole Backoffice experience for managing ATMs. Launched in Spain, with future expansion plans in Europe."
+description: "Modernising one of banking’s oldest touchpoints for a next-generation of ATMs in Europe allowing people to easily withdraw and deposit money, dispense free cards and much more. I've helped set the foundations for a brand new medium for the company by leveraging design patterns from both Web and Mobile worlds."
 metrics: ['Brand trust', 'Withdrawal Fee Revenue', 'Activation rate']
 tags: ['design', 'UX research']
 color: '#5A5EE9'
