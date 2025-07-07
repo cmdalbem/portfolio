@@ -29,10 +29,10 @@ class Header extends React.Component {
     // headerClasses += isHome ? ` fixed-ns top-0 left-0 right-0 bg-background-color z-2 relative` : '';
     headerClasses += isHome ? ` layoutMaxWidth fixed-ns top-0 left-0 right-0 z-2 relative` : globalPadding;
     
-    const tabItemClasses = 'ml4 f6 pa0 fw4 pointer bg-transparent outline-0 bn tab tab--unselected';
     let sections = [
-      'About',
       'Projects',
+      'Sideprojects',
+      'About me',
       'Speaking',
       'Social'
     ];
@@ -46,7 +46,7 @@ class Header extends React.Component {
         </BrowserView>
 
         <div className="w-100 flex items-center justify-between">
-          <Fade duration={1500}>
+          {/* <Fade duration={1500}> */}
             <h1 className="f7">
               <Link to="/" className="link dim near-black fw4 f6">
                 Cristiano Dalbem 
@@ -77,7 +77,7 @@ class Header extends React.Component {
                       {
                         sections.map( section => (
                           <button
-                            className={tabItemClasses} 
+                            className='f6 fw4 pv2 ph3 br-pill ml2 fw4 pointer bn outline-0 tab tab--unselected' 
                             onClick={() => this.scrollToSection(section.toLowerCase())}
                             key={section}
                           >
@@ -102,7 +102,7 @@ class Header extends React.Component {
                   </Link>
               }
             </div>
-          </Fade>
+          {/* </Fade> */}
         </div>
       </div>
     );

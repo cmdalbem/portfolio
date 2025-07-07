@@ -35,6 +35,8 @@ html {
   --bg-color: white;
   --bg-color2: #FDFCF8;
 
+  --transparent-frost: rgba(255, 255, 255, 0.7);
+
   --gray: hsl(180, 6%, 50%);
   --near-black: hsl(180, 15%, 25%);
   --dark-gray: hsl(180, 20%, 25%);
@@ -163,6 +165,8 @@ body {
   }
 }
 
+body .bg-transparent-frost { background-color: var(--transparent-frost) !important }
+
 /* @media (min-width: 30.1em) {
   * {
     outline: 1px solid transparent;
@@ -255,6 +259,8 @@ ol li:before {
 .tab {
   position: relative;
   text-decoration: none;
+  background-color: var(--transparent-frost);
+  backdrop-filter: blur(12px);
 }
 .tab:before {
   content: '・';
@@ -665,6 +671,8 @@ button {
     /* --blue-light: hsl(180, 75%, 80%); */
     --bg-color: hsl(180, 10%, 12%);
     --bg-color2: hsl(180, 56%, 5%);
+    
+    --transparent-frost: hsla(180, 10%, 12%, 0.7);
   
     --dark-gray: hsl(180, 30%, 90%);
     --near-black: hsl(180, 15%, 85%);
@@ -679,6 +687,7 @@ button {
   body.dark .bg-white { background-color: var(--bg-color) !important }
   body.dark .bg-light-gray { background-color: var(--bg-color2) !important }
   body.dark .bg-near-white { background-color: var(--near-white) !important }
+  body.dark .bg-transparent-frost { background-color: var(--transparent-frost) !important }
   
   body.dark .b--light-gray { border-color: var(--light-gray) !important }
   body.dark .b--white { border-color: var(--bg-color) !important }
