@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Reveal from 'react-reveal/Reveal';
 import Fade from 'react-reveal/Fade';
 
-import { isMobile } from 'react-device-detect';
+import { isMobile, BrowserView, MobileView } from 'react-device-detect';
 
 import Layout from '../components/Layout'
  
@@ -16,7 +16,9 @@ import Social from '../components/Social'
 import HomeSection from '../components/HomeSection'
 import Projects from '../components/Projects'
 
-import { sortPosts } from '../components/utils.js'
+import P5sketch from '../components/P5sketch'
+
+import { sortPosts, isDark } from '../components/utils.js'
 
 function AnimatedHeader(props) {
   const {rows, typography} = props;
@@ -50,19 +52,25 @@ class IndexPage extends React.Component {
     const personal = filterPostsByType('personal');
 
     const titleTypography = 'f1-ns f2 fw4 dark-gray tracked-tight ma0';
- 
+
     return (
       <Layout>
+         <BrowserView>
+          <P5sketch isDarkMode={isDark()}/>
+        </BrowserView>
+        
         <div className="layoutMaxWidth center">
-          <section id="about" className="flex flex-row-ns flex-column ">
+          <section className="flex flex-row-ns flex-column ">
             {/* <div className="w-40-ns"> */}
             <div className="relative vh-75 w-100">
-              <Img
-                style={{position: 'absolute'}}
-                className="profilePicture top-0-ns right-0-ns h-100-ns h-75 mt0-ns mt6 w-100 w-40-ns"
-                fluid={this.props.data.file.childImageSharp.fluid}
-                alt="Back of a man walking through a hiking path with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
-              />
+              <MobileView>
+                <Img
+                  style={{position: 'absolute'}}
+                  className="profilePicture top-0-ns right-0-ns h-100-ns h-75 mt5-ns mt6 w-100 w-40-ns"
+                  fluid={this.props.data.file.childImageSharp.fluid}
+                  alt="Back of a man walking through a hiking path with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
+                />
+              </MobileView>
 
               <div className="absolute top-0 mt7-ns mt2">
                 {
@@ -127,7 +135,7 @@ class IndexPage extends React.Component {
               </Reveal>
                <Reveal effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
-                    I work solving complex problems by <span className='ttext'>coding and designing</span> user-centric, elegant and strategic solutions, from interfaces to systems. More than anything I'm a builder, passionate about <span className='ttext'>making ideas come to life</span>.
+                    I work solving complex problems by <span className='ttext'>coding and designing</span> user-centric, elegant and strategic solutions, from interfaces to systems. More than anything I'm a builder, passionate about <span className='ttext'>making ideas come to life</span> and <span className='ttext'>sharing</span> the process and learnings along the way.
                   </p>
               </Reveal>
             </div>
