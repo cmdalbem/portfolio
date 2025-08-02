@@ -18,10 +18,10 @@ isHidden: true
     <div class="f1">
         🚧
     </div>
-    <h3>
+    <div class="f4 mb2">
         Work in progress
-    </h3>
-    <p>
+    </div>
+    <div class="f5">
         Come back later, or <a href="https://www.figma.com/deck/WNLM6EOethyCCQ9B54njuK" target="_blank" rel="noopener noreferrer">check the slides here</a>.
     </p>
 </div>
