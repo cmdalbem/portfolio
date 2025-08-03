@@ -53,8 +53,8 @@ class IndexPage extends React.Component {
 
     const titleTypography = 'f1-ns f2 fw4 dark-gray tracked-tight ma0';
 
-    let isDarkMode;
-    if (document) {
+    let isDarkMode = false;
+    if (typeof window !== "undefined" && typeof document !== "undefined") {
       isDarkMode = document.body.classList.contains("dark");
     }
 
