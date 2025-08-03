@@ -11,10 +11,7 @@ const Footer = () => (
 
             <div className='silver'>
                 <div className='mt1 mb0'>
-                    Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://fonts.google.com/">Google Fonts</a>.
-                </div>
-                <div className='mt1 mb0'>
-                    Handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://www.gatsbyjs.com/">Gatsby</a>.
+                    Fonts by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://pangrampangram.com/">Pangram</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://fonts.google.com/">Google Fonts</a>. Handcrafted in <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://reactjs.org/">React</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://www.gatsbyjs.com/">Gatsby</a>. Lorenz Attractor Processing script adapted from <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://openprocessing.org/sketch/1839023">Attractors</a> by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://openprocessing.org/user/175744/?view=sketches">Leb371</a>.
                 </div>
                 <div className='mt1 mb0'>
                     Powered by <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://loja.badentorrefacao.com.br/">☕️ Brazilian coffee</a> and <a target="_blank" rel="noopener noreferrer" className="link gray" href="https://photos.app.goo.gl/XvKqB3ZJCBAsBUbs8">🍌 banana pancakes</a>.
