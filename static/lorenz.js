@@ -18,8 +18,8 @@ let strokeHue;
 
 function updateColors() {
 	backgroundColor = isDarkMode ? "#1c2222" : 255;
-	strokeHue = isDarkMode ? 220 : 20;
-	strokeLightness = isDarkMode ? 10 : 20;
+	strokeHue = isDarkMode ? 20 : 220;
+	strokeLightness = isDarkMode ? 10 : 10;
 }
 updateColors();
 
@@ -97,7 +97,7 @@ class AttractorPoint {
 		if (this.prev.length > TAIL_SIZE) this.prev.shift();
 
 		// Lightness based on the length of the trail for a fade in effect
-		stroke(strokeHue, 30, strokeLightness*(this.prev.length/TAIL_SIZE));
+		stroke(strokeHue, 120, strokeLightness*(this.prev.length/TAIL_SIZE));
 		
 		beginShape();
 		vertex(...this.prev[this.prev.length - 1]);
@@ -115,12 +115,6 @@ class AttractorPoint {
 		}
 		vertex(...this.prev[0]);
 		endShape();
-		
-		// Uncomment to draw a sphere at the front
-		// push();
-		// translate(this.pos.x, this.pos.y, this.pos.z);
-		// sphere(0.5, 3, 3);
-		// pop();
 	}
 }
 
@@ -158,9 +152,10 @@ function newAttractor(type) {
  * Controls the smooth rotation of the shape.
  */
 function mouseControl() {
+	// Only update mouse rotation if mouse is pressed or moved
 	if ((mouseX !== pmouseX || mouseY !== pmouseY)) {
 		mouseVelocity.add((mouseX - pmouseX) / 1000, (pmouseY - mouseY) / 1000);
-		mouseVelocity.mult(0.05);
+		mouseVelocity.mult(0.02);
 		mouseRotation.add(mouseVelocity);
 	}
 	rotateX(-mouseRotation.y);
@@ -198,10 +193,7 @@ function draw() {
 	translate(0, 0, -100);
 	pop();
 
-	// Only update mouse rotation if mouse is pressed or moved
-	// if ((mouseX !== pmouseX || mouseY !== pmouseY)) {
-		mouseControl();
-	// }
+	mouseControl();
 
 	noFill();
 
