@@ -49,7 +49,7 @@ class ProjectCard extends React.Component {
                     {
                         post.frontmatter.title &&
                         <div className={"project-card--title near-black mt0 mb1-ns mb0 " + (mini ? 'f5' : 'f3-ns f5')}>
-                            {post.frontmatter.title}
+                            {post.frontmatter.title} <span className={'silver margin-animate ' + (this.state.hover ? 'ml1' : 'ml0')}>›</span>
                             {
                                 post.frontmatter.isPasswordProtected &&
                                 <span className='ml2 silver'>
@@ -93,15 +93,15 @@ class ProjectCard extends React.Component {
                         </div>
                     }
 
-                    <div to="/" className="dn-ns link dib dark-gray f7 fw4 pv1 ph2 mv1 br-pill ba b--light-silver">
+                    {/* <div to="/" className="dn-ns link dib dark-gray f7 fw4 pv1 ph2 mv1 br-pill ba b--light-silver">
                         Read case study
-                    </div>
+                    </div> */}
 
                     <div className="project-card--date f6 mt0 silver relative overflow-hidden h1">
                         <span className="absolute silver"
                         style={{
                             transform: this.state.hover ? 'translateY(0%)' : 'translateY(-100%)',
-                            transition: "transform 200ms"}
+                            transition: "transform 400ms var(--global-easing)"}
                         }>
                             {dateStart} {dateEnd && `– ${dateEnd}`}
                         </span>
