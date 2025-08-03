@@ -154,14 +154,14 @@ function newAttractor(type) {
 /**
  * Controls the smooth rotation of the shape.
  */
-function orbit() {
-	if (mouseIsPressed) {
-		mouseVelocity.add((mouseX - pmouseX) / 1000, (pmouseY - mouseY) / 1000);
-	}
-	mouseVelocity.mult(0.9);
+function mouseControl() {
+	// if (mouseIsPressed) {
+	mouseVelocity.add((mouseX - pmouseX) / 1000, (pmouseY - mouseY) / 1000);
+	// }
+	mouseVelocity.mult(0.1);
 	mouseRotation.add(mouseVelocity);
-	rotateX(mouseRotation.y);
-	rotateY(mouseRotation.x);
+	rotateX(-mouseRotation.y);
+	rotateY(-mouseRotation.x);
 }
 
 function setup() {
@@ -189,12 +189,13 @@ function draw() {
 	rotateY(time/2000 - PI/10);
 	rotateX(time/1000);
 	background(BACKGROUND_COLOR);
+	blendMode(isDarkMode ? ADD : SUBTRACT);
 
 	push();
 	translate(0, 0, -100);
 	pop();
 
-	orbit();
+	mouseControl();
 	noFill();
 
 	push();
