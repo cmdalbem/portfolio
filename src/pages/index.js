@@ -56,7 +56,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
          <BrowserView>
-          <P5sketch isDarkMode={document.body.classList.contains("dark")}/>
+          <P5sketch/>
         </BrowserView>
         
         <div className="layoutMaxWidth center">
