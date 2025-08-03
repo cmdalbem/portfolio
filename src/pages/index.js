@@ -73,6 +73,7 @@ class IndexPage extends React.Component {
               height: '100%',
               objectFit: 'cover',
               zIndex: -1,
+              filter: isDarkMode ? "brightness(1.05) saturate(0.8)" : ''
             }}
           >
             <source src={isDarkMode ? "/lorenz_dark.mp4" : "/lorenz_light.mp4"} type="video/mp4" />
