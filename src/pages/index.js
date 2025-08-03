@@ -18,7 +18,7 @@ import Projects from '../components/Projects'
 
 import P5sketch from '../components/P5sketch'
 
-import { sortPosts, isDark } from '../components/utils.js'
+import { sortPosts } from '../components/utils.js'
 
 function AnimatedHeader(props) {
   const {rows, typography} = props;
@@ -56,7 +56,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
          <BrowserView>
-          <P5sketch isDarkMode={isDark()}/>
+          <P5sketch isDarkMode={document.body.classList.contains("dark")}/>
         </BrowserView>
         
         <div className="layoutMaxWidth center">

@@ -71,11 +71,3 @@ export const ROLES_MAP = {
   'Front-end': 'Engineer',
   'Web Development': 'Engineer',
 }
-
-export const isDark = () => {
-    // if (typeof window === 'undefined') {
-    //     return false;
-    // }
-//   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return document.body.classList.contains("dark");
-}
