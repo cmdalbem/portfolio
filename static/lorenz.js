@@ -11,13 +11,14 @@ const TAIL_SIZE = 200;
 
 let isDarkMode = false;
 
-let BACKGROUND_COLOR;
-let STROKE_LIGHTNESS;
+let backgroundColor;
+let strokeLightness;
+let strokeHue;
 
 function updateColors() {
-	BACKGROUND_COLOR = isDarkMode ? "#1c2222" : 255;
-	STROKE_HUE = isDarkMode ? 220 : 20;
-	STROKE_LIGHTNESS = isDarkMode ? 10 : 20;
+	backgroundColor = isDarkMode ? "#1c2222" : 255;
+	strokeHue = isDarkMode ? 220 : 20;
+	strokeLightness = isDarkMode ? 10 : 20;
 }
 
 let points = [];
@@ -93,13 +94,8 @@ class AttractorPoint {
 		this.prev.push(this.pos.array());
 		if (this.prev.length > TAIL_SIZE) this.prev.shift();
 
-		//calculates the color of the trail based on the speed of the point
-		// let G;
-		// this.v1.set(createVector(this.prev[this.prev.length-1][0],this.prev[this.prev.length-1][1],this.prev[this.prev.length-1][2]));
-		// this.v2.set(createVector(this.prev[this.prev.length-2][0],this.prev[this.prev.length-2][1],this.prev[this.prev.length-2][2]));
-		// this.mod = p5.Vector.sub(this.v1,this.v2);
-		// G = this.mod.mag();
-		stroke(STROKE_HUE, 30, STROKE_LIGHTNESS*(this.prev.length/TAIL_SIZE));
+		// Lightness based on the length of the trail for a fade in effect
+		stroke(strokeHue, 30, strokeLightness*(this.prev.length/TAIL_SIZE));
 		
 		beginShape();
 		vertex(...this.prev[this.prev.length - 1]);
@@ -158,7 +154,7 @@ function mouseControl() {
 	// if (mouseIsPressed) {
 	mouseVelocity.add((mouseX - pmouseX) / 1000, (pmouseY - mouseY) / 1000);
 	// }
-	mouseVelocity.mult(0.1);
+	mouseVelocity.mult(0.05);
 	mouseRotation.add(mouseVelocity);
 	rotateX(-mouseRotation.y);
 	rotateY(-mouseRotation.x);
@@ -178,7 +174,7 @@ function setup() {
 	perspective(PI / 4, width / height, 1, 1000);
 	colorMode(HSL);
 	blendMode(isDarkMode ? ADD : SUBTRACT);
-	camera(0, 0, 80);
+	camera(0, 0, 70);
 
 	newAttractor(0);
 }
@@ -188,7 +184,7 @@ function draw() {
 	
 	rotateY(time/2000 - PI/10);
 	rotateX(time/1000);
-	background(BACKGROUND_COLOR);
+	background(backgroundColor);
 	blendMode(isDarkMode ? ADD : SUBTRACT);
 
 	push();
@@ -199,7 +195,7 @@ function draw() {
 	noFill();
 
 	push();
-	translate(0, 0, -20);
+	translate(10, 0, -20); // slight x offset
 	for (let pt of points) {
 		for (let i = 0; i < 10; i++) pt.calculate(stepSpeed);
 		pt.draw();
