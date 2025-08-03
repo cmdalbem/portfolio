@@ -30,7 +30,7 @@ class ProjectCard extends React.Component {
                 onMouseEnter={() => this.setState({hover: isMobile ? false : true})}
                 onMouseLeave={() => this.setState({hover: isMobile ? false : false})}
             >
-                <div className={"db project-card--cover overflow-hidden " + (mini ? "w-100-ns w-50 h-100 aspect-ratio-ns aspect-ratio--16x9-ns" : "w-100 aspect-ratio aspect-ratio--16x9")}>
+                <div className={"db br2 project-card--cover overflow-hidden " + (mini ? "w-100-ns w-50 h-100 aspect-ratio-ns aspect-ratio--16x9-ns" : "w-100 aspect-ratio aspect-ratio--16x9")}>
                     <Img
                         fluid={post.frontmatter.cover.childImageSharp.fluid}
                         className={`w-100  ${isShowHover ? 'dn' : ''}`}
