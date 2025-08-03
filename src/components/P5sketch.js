@@ -15,14 +15,13 @@ export default function P5SketchLoader({ isDarkMode }) {
           window.setLorenzDarkMode(isDarkMode);
         }
 
-        // @todo Can't do this with SSR
-        // const observer = new MutationObserver(() => {
-        //   const isDark = document.body.classList.contains("dark");
-        //   if (window.setLorenzDarkMode) {
-        //     window.setLorenzDarkMode(isDark);
-        //   }
-        // });
-        // observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+        const observer = new MutationObserver(() => {
+          const isDark = document.body.classList.contains("dark");
+          if (window.setLorenzDarkMode) {
+            window.setLorenzDarkMode(isDark);
+          }
+        });
+        observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
 
       }
       document.body.appendChild(sketchScript);
