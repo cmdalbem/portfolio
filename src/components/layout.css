@@ -21,7 +21,7 @@
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap'); */
 
 
 /* Global */
@@ -434,15 +434,15 @@ ol li:before {
   letter-spacing: -3px;
 } */
 
-.f-subheadline,
+/* .f-subheadline,
 .f-subheadline-ns,
 .f1,
 .f1-ns,
 h1,
 h2 {
-  /* font-family: 'Gosha Sans', 'Object Sans', sans-serif; */
+  font-family: 'Gosha Sans', 'Object Sans', sans-serif;
   font-family: 'Space Grotesk', 'Object Sans', sans-serif;
-}
+} */
 
 /* @media screen and (max-width: 1280px) {
   .f1-ns { font-size: 54px !important; }
