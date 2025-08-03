@@ -8,6 +8,7 @@ const ATTRACTORS = [
 
 const NUM_POINTS = 100;
 const TAIL_SIZE = 200;
+// let TAIL_SIZE = Math.max(100, Math.min(200, Math.floor(window.innerWidth / 10))); // Adaptive trail size
 
 let isDarkMode = false;
 
@@ -20,11 +21,12 @@ function updateColors() {
 	strokeHue = isDarkMode ? 220 : 20;
 	strokeLightness = isDarkMode ? 10 : 20;
 }
+updateColors();
 
 let points = [];
 let colorSeed;
 let stepSpeed;
-let time = 0;
+let currentTime = 0;
 
 let mouseRotation, mouseVelocity;
 
@@ -34,7 +36,7 @@ let mouseRotation, mouseVelocity;
 class AttractorPoint {
 	constructor(x, y, z, color, type) {
 		this.pos = createVector(x, y, z);
-		this.prev = [this.pos.array(), this.pos.array()];
+		this.prev = [this.pos.array()]; // Only push initial position once
 		this.color = color;
 		this.type = type;
 		this.h = null;
@@ -51,7 +53,7 @@ class AttractorPoint {
 	 */
 	calculate(dt) {
 		let { x, y, z } = this.pos;
-		let next = createVector();
+		let next = this.pos.copy();
 
 		switch (this.type) {
 			case 0: // Lorenz
@@ -101,14 +103,19 @@ class AttractorPoint {
 		vertex(...this.prev[this.prev.length - 1]);
 		let R = 1;
 		for (let i = this.prev.length - 2; i >= 0; i -= R) {
-			let v1 = createVector(...this.prev[i]);
-			let v2 = createVector(...this.prev[i + 1]);
-			let G = p5.Vector.sub(v1, v2).mag();
-			R = constrain(round(5 / (G + 1)), 1, TAIL_SIZE / 2);
-			vertex(...this.prev[i]);
+			let v1 = this.prev[i];
+			let v2 = this.prev[i + 1];
+			let G = Math.sqrt(
+				(v1[0] - v2[0]) ** 2 +
+				(v1[1] - v2[1]) ** 2 +
+				(v1[2] - v2[2]) ** 2
+			);
+			R = constrain(Math.round(5 / (G + 1)), 1, TAIL_SIZE / 2);
+			vertex(...v1);
 		}
 		vertex(...this.prev[0]);
 		endShape();
+		
 		// Uncomment to draw a sphere at the front
 		// push();
 		// translate(this.pos.x, this.pos.y, this.pos.z);
@@ -151,11 +158,11 @@ function newAttractor(type) {
  * Controls the smooth rotation of the shape.
  */
 function mouseControl() {
-	// if (mouseIsPressed) {
-	mouseVelocity.add((mouseX - pmouseX) / 1000, (pmouseY - mouseY) / 1000);
-	// }
-	mouseVelocity.mult(0.05);
-	mouseRotation.add(mouseVelocity);
+	if ((mouseX !== pmouseX || mouseY !== pmouseY)) {
+		mouseVelocity.add((mouseX - pmouseX) / 1000, (pmouseY - mouseY) / 1000);
+		mouseVelocity.mult(0.05);
+		mouseRotation.add(mouseVelocity);
+	}
 	rotateX(-mouseRotation.y);
 	rotateY(-mouseRotation.x);
 }
@@ -180,10 +187,10 @@ function setup() {
 }
 
 function draw() {
-	time++;
+	currentTime++;
 	
-	rotateY(time/2000 - PI/10);
-	rotateX(time/1000);
+	rotateY(currentTime/2000 - PI/10);
+	rotateX(currentTime/1000);
 	background(backgroundColor);
 	blendMode(isDarkMode ? ADD : SUBTRACT);
 
@@ -191,7 +198,11 @@ function draw() {
 	translate(0, 0, -100);
 	pop();
 
-	mouseControl();
+	// Only update mouse rotation if mouse is pressed or moved
+	// if ((mouseX !== pmouseX || mouseY !== pmouseY)) {
+		mouseControl();
+	// }
+
 	noFill();
 
 	push();
