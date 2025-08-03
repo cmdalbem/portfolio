@@ -53,24 +53,44 @@ class IndexPage extends React.Component {
 
     const titleTypography = 'f1-ns f2 fw4 dark-gray tracked-tight ma0';
 
+    let isDarkMode;
+    if (document) {
+      isDarkMode = document.body.classList.contains("dark");
+    }
+
     return (
       <Layout>
          <BrowserView>
           <P5sketch/>
         </BrowserView>
+
+        <MobileView>
+          <video autoPlay loop muted playsInline style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: -1,
+            }}
+          >
+            <source src={isDarkMode ? "/lorenz_dark.mp4" : "/lorenz_light.mp4"} type="video/mp4" />
+          </video>
+        </MobileView>
         
         <div className="layoutMaxWidth center">
           <section className="flex flex-row-ns flex-column ">
             {/* <div className="w-40-ns"> */}
             <div className="relative vh-75 w-100">
-              <MobileView>
+              {/* <MobileView>
                 <Img
                   style={{position: 'absolute'}}
                   className="profilePicture top-0-ns right-0-ns h-100-ns h-75 mt5-ns mt6 w-100 w-40-ns"
                   fluid={this.props.data.file.childImageSharp.fluid}
                   alt="Back of a man walking through a hiking path with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
                 />
-              </MobileView>
+              </MobileView> */}
 
               <div className="absolute top-0 mt7-ns mt2">
                 {
