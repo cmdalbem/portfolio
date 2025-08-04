@@ -6,8 +6,8 @@ const ATTRACTORS = [
 	// { o: 0.1, p: 0.1, b: 14 }           // Rossler
 ];
 
-const NUM_POINTS = 100;
-const TAIL_SIZE = 200;
+const NUM_POINTS = 200;
+const TAIL_SIZE = 300;
 // let TAIL_SIZE = Math.max(100, Math.min(200, Math.floor(window.innerWidth / 10))); // Adaptive trail size
 
 let isDarkMode = false;
@@ -19,7 +19,7 @@ let strokeHue;
 function updateColors() {
 	backgroundColor = isDarkMode ? "#1c2222" : 255;
 	strokeHue = isDarkMode ? 20 : 220;
-	strokeLightness = isDarkMode ? 10 : 10;
+	strokeLightness = isDarkMode ? 10 : 20;
 }
 updateColors();
 
@@ -128,7 +128,7 @@ function newAttractor(type) {
 	// Initial values for each attractor type
 	let s = 1, x = 1, y = 1, z = 1;
 	switch (type) {
-		case 0: s = 20; stepSpeed = 0.0005; break;
+		case 0: s = 20; stepSpeed = 0.0002; break;
 		case 1: s = 1; stepSpeed = 0.0005; break;
 		case 2: s = 0.01; stepSpeed = 0.01; break;
 		case 3: s = 1; x = 20; y = 20; z = 0; stepSpeed = 0.002; break;
@@ -183,6 +183,10 @@ function setup() {
 
 function draw() {
 	currentTime++;
+
+	if (currentTime%30 == 0) {
+		addRandomPoint();
+	}
 	
 	rotateY(currentTime/2000 - PI/10);
 	rotateX(currentTime/1000);
@@ -204,6 +208,17 @@ function draw() {
 		pt.draw();
 	}
 	pop();
+}
+
+function addRandomPoint() {
+	points.shift();
+	points.push(new AttractorPoint(
+		random(100, -100),
+		random(100, -100),
+		random(100, -100),
+		strokeHue,
+		0
+	));
 }
 
 window.setLorenzDarkMode = function (isDark) {
