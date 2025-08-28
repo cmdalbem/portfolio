@@ -6,7 +6,14 @@ lastUpdated: "2020-04"
 title: "VTEX Design System"
 minibio: "Developing a common language to align and scale product design solutions for the entire company, and beyond."
 description: "Styleguide was the company's Design System, the home for all our reusable patterns, components and assets related to product design in VTEX. It aimed to be a common language of tools and processes to facilitate how we collaborated and shared knowledge across teams and projects."
-metrics: ['Developers productivity','Product NPS']
+team: [
+    "Raphael Simoens (Designer)",
+    "Jonatas Maia (Designer)",
+    "Breno Calazans (Front-end)",
+    "Kevin Chevalier (Front-end)",
+    "Guilherme Freitas (Front-end)",
+    "Eric Reis (Front-end)",
+    "Lucas Bebber (Front-end)"]
 tags: ['design','front-end','product management']
 cover: './cover.png' 
 # hover: '/covers/styleguide.gif'
@@ -127,7 +134,7 @@ I contributed closely with the design and development of several of Design Syste
 
 After basic atomic components such as buttons and inputs, Tables are the most used components in Admin screens in almost every digital product.
 
-## Identifying the biggest inconsistencies in the platform
+## Diagnosing inconsistencies
 
 Going through the legacy Admin screens it was clear it wasn't different for us. Most of them were comprised of mostly a big fat table and some controls such as column sorting, search, filtering, importing and exporting. These are examples of 4 admins that were designed in different times of the company and almost felt like 4 different platforms.
 
@@ -137,9 +144,9 @@ Going through the legacy Admin screens it was clear it wasn't different for us. 
  
 We did an extensive benchmark research in digital products and found out that powerful table components were ubiquitous mainly in B2B products. This gave us lots of ideas of interesting features and possible approaches we could take to create ours. 
 
-```grid|1
+<!-- ```grid|1
 ![](./table_bench.png "Benchmarking other digital products for the Table component.") 
-```
+``` -->
    
 ## The new data table component 
   
@@ -206,7 +213,7 @@ One way of using our filters system is by using the Filter Bar component, a HOC 
 Conditions are statements that have boolean relationships. They are often seen being used in things liks filters, but also in more complex applications like IF-THEN programmable logics.
 
 
-## Looking for inspiration
+## A common pattern in the market
 
 Looking at other digital products we found out this was a more common pattern than we initially thought, *especially* on the more advanced products. Some were truly inspiring, while others not that much. One common pitfall was giving control to each boolean operator individually, which can lead the user into creating unintentional precedence mistakes (e.g. in `a OR b AND c` the `AND` has precedence, but the user might not know that). Others had poor visual design, which made it look overwhelming and more complex it actually was.
 
@@ -224,9 +231,35 @@ Each line is made of a Statement, that same component used in the Filter compone
  
 It can also be extended to allow nesting of conditions, enabling the user to express complex booleans equations in an intuitive way.
 
-```grid|1
+```grid|1 
 ![](./conditions_advanced.png)
 ``` 
+
+## Application
+
+When applied to a feature like the Promotions Admin, the initial complexity of the screen is always the same regardless of the number of options we offer, and it grows linearly as the user demands greater complexity of business rules. In short, in the new paradigm, complexity grows with user demand, not with the power of the system.
+
+
+```grid|1
+![](./complexity.png)
+```
+
+## A grammar of conditions
+
+The Conditions component resembles natural language, and it's structured like in the format of `[subject] [verb] [object]` 
+
+<jumbo>
+    <img src="./all_conditions.png"/>
+</jumbo> 
+
+Enabling the user to progressively build their conditional "statements" leveraging a common interface for all filters. It also accepts a global selector for changing the boolean operation, making the system even more powerful than the previous. This meant the new admin could support all previously existing conditions but enabling many more combinations.
+
+
+<video-container> 
+    <video autoPlay controls loop width="100%" type="video/mp4">
+        <source src="./conditions.mp4" type="video/mp4">
+    </video> 
+</video-container>
  
 # Next steps
 
