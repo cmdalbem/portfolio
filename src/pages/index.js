@@ -16,7 +16,7 @@ import Social from '../components/Social'
 import HomeSection from '../components/HomeSection'
 import Projects from '../components/Projects'
 
-import P5sketch from '../components/p5sketch'
+import P5sketch from '../components/P5sketch.js'
 
 import { sortPosts } from '../components/utils.js'
 
