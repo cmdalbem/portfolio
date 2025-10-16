@@ -5,6 +5,15 @@ import Reveal from 'react-reveal/Reveal';
 const Speaking = () => (
   <Reveal effect="slideUp">
       <Talk
+        title='Tales of an Audiophile'
+        context="Ashby Lightning Talks"
+        date={2025}
+        link="https://docs.google.com/presentation/d/1sXL_lh8uFIWNMBCuyAWfuaOJ_qYDJVK6WUs4fhUEOvs/edit?usp=sharing"
+        linkLabel="slides"
+        language="english"
+      />
+
+      <Talk
         title='"Design" in "real" "life"'
         context="SICREDI Design Pass"
         date={2024}
