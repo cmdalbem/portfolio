@@ -41,11 +41,11 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=22.0.0"
+    "node": "22.x"
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_DEV_SSR=true gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
