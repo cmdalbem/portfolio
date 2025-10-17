@@ -29,7 +29,7 @@ function AnimatedHeader(props) {
         rows.map((r,i) =>
           <div className="overflow-hidden" key={i}>
             <Fade bottom cascade={!isMobile} duration={900} delay={400*i}>
-              <h1 className={typography}>
+              <h1 className={typography} style={{opacity: 0}}>
                 { r }
               </h1>
             </Fade>
