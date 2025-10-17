@@ -167,6 +167,13 @@ body {
   }
 } */
 
+/* Prevent flash of unstyled content before animations load */
+@media (min-width: 30.01em) {
+  .react-reveal {
+    opacity: 0;
+  }
+}
+
 /* Mobile */
 @media (max-width: 30em) {
   .react-reveal {
