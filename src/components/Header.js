@@ -2,10 +2,28 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Fade from 'react-reveal/Fade';
-import { BrowserView } from 'react-device-detect';
 import Scrollspy from 'react-scrollspy'
 
 import ThemeToggler from '../components/ThemeToggler'
+import { isFunctionOrClass } from '../components/reveal-ssr-helper';
+
+// Fallback component for SSR when Fade is not available
+const FadeOrDiv = isFunctionOrClass(Fade) ? Fade : (({ children }) => <div>{children}</div>);
+
+// Handle SSR - react-device-detect is nulled during build
+function BrowserViewFallback({ children }) {
+    return <>{children}</>;
+}
+
+let BrowserView = BrowserViewFallback;
+if (typeof window !== 'undefined') {
+    try {
+        const deviceDetect = require('react-device-detect');
+        BrowserView = deviceDetect.BrowserView || BrowserViewFallback;
+    } catch (e) {
+        BrowserView = BrowserViewFallback;
+    }
+}
 
 class Header extends React.Component {
   scrollToSection(sectionId) {
@@ -46,7 +64,7 @@ class Header extends React.Component {
         </BrowserView>
 
         <div className="w-100 flex items-center justify-between">
-          {/* <Fade duration={1500}> */}
+          {/* <FadeOrDiv duration={1500}> */}
             <h1 className="f7">
               <Link to="/" className="link dim near-black fw4 f6">
                 Cristiano Dalbem 
@@ -102,7 +120,7 @@ class Header extends React.Component {
                   </Link>
               }
             </div>
-          {/* </Fade> */}
+          {/* </FadeOrDiv> */}
         </div>
       </div>
     );

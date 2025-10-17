@@ -14,4 +14,4 @@ liveLink: "https://www.revolut.com/es-ES/atm/"
 isPasswordProtected: true
 ---
 
-<project-password-input/> 
+This project is password protected.

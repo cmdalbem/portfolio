@@ -1,11 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Img from "gatsby-image"
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 import Reveal from 'react-reveal/Reveal';
 import Fade from 'react-reveal/Fade';
+import { isFunctionOrClass } from '../components/reveal-ssr-helper';
 
-import { isMobile, BrowserView, MobileView } from 'react-device-detect';
+// Fallback components for SSR when react-reveal is not available
+const RevealOrDiv = isFunctionOrClass(Reveal) ? Reveal : (({ children }) => <div>{children}</div>);
+const FadeOrDiv = isFunctionOrClass(Fade) ? Fade : (({ children }) => <div>{children}</div>);
 
 import Layout from '../components/Layout'
  
@@ -20,6 +23,31 @@ import P5sketch from '../components/P5sketch.js'
 
 import { sortPosts } from '../components/utils.js'
 
+// Handle SSR - react-device-detect is nulled during build
+function BrowserViewFallback({ children }) {
+    return <>{children}</>;
+}
+
+function MobileViewFallback() {
+    return null;
+}
+
+let isMobile = false;
+let BrowserView = BrowserViewFallback;
+let MobileView = MobileViewFallback;
+if (typeof window !== 'undefined') {
+    try {
+        const deviceDetect = require('react-device-detect');
+        isMobile = deviceDetect.isMobile || false;
+        BrowserView = deviceDetect.BrowserView || BrowserViewFallback;
+        MobileView = deviceDetect.MobileView || MobileViewFallback;
+    } catch (e) {
+        isMobile = false;
+        BrowserView = BrowserViewFallback;
+        MobileView = MobileViewFallback;
+    }
+}
+
 function AnimatedHeader(props) {
   const {rows, typography} = props;
   
@@ -28,11 +56,11 @@ function AnimatedHeader(props) {
       {
         rows.map((r,i) =>
           <div className="overflow-hidden" key={i}>
-            <Fade bottom cascade={!isMobile} duration={900} delay={400*i}>
+            <FadeOrDiv bottom cascade={!isMobile} duration={900} delay={400*i}>
               <h1 className={typography}>
                 { r }
               </h1>
-            </Fade>
+            </FadeOrDiv>
           </div>
         )
       }
@@ -85,10 +113,10 @@ class IndexPage extends React.Component {
             {/* <div className="w-40-ns"> */}
             <div className="relative vh-75 w-100">
               {/* <MobileView>
-                <Img
+                <GatsbyImage
                   style={{position: 'absolute'}}
                   className="profilePicture top-0-ns right-0-ns h-100-ns h-75 mt5-ns mt6 w-100 w-40-ns"
-                  fluid={this.props.data.file.childImageSharp.fluid}
+                  image={this.props.data.file.childImageSharp.gatsbyImageData}
                   alt="Back of a man walking through a hiking path with silhouettes of mountains in the background. I like mountains because they offer great insights about life in general. Like: we're never quite sure of how tall are the mountains just over the ones that are nearest to us, all we have to do is keep climbing and taking care of our own pair of legs."
                 />
               </MobileView> */}
@@ -149,16 +177,16 @@ class IndexPage extends React.Component {
 
           <HomeSection title="About me" fullScreen> 
             <div className="f2-ns f4 lh-title fw4 dark-gray measure">
-              <Reveal effect="slideUp" duration={2000} big>
+              <RevealOrDiv effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
                     With the products I shipped, I impacted the lives of millions of people by <span className='ttext'>simplifying</span> their financial lives, <span className='ttext'>streamlining efficient and humane</span> customer support, <span className='ttext'>scaling</span> some of Brazil's largest e-commerces, and fostering urban cycling <span className='ttext'>making cities more livable and sustainable</span>.
                   </p>
-              </Reveal>
-               <Reveal effect="slideUp" duration={2000} big>
+              </RevealOrDiv>
+               <RevealOrDiv effect="slideUp" duration={2000} big>
                   <p className="text-gradient-clip">
                     I work solving complex problems by <span className='ttext'>coding and designing</span> user-centric, elegant and strategic solutions, from interfaces to systems. More than anything I'm a builder, passionate about <span className='ttext'>making ideas come to life</span> and <span className='ttext'>sharing</span> the process and learnings along the way.
                   </p>
-              </Reveal>
+              </RevealOrDiv>
             </div>
           </HomeSection>
           
@@ -166,9 +194,9 @@ class IndexPage extends React.Component {
             <Experience />
           </HomeSection> */}
 
-          <Reveal effect="slideUp" duration={2000} big>
+          <RevealOrDiv effect="slideUp" duration={2000} big>
             <img src={'/speaking.png'} alt="" />
-          </Reveal>
+          </RevealOrDiv>
            
           <HomeSection 
             title="Speaking"
@@ -214,14 +242,10 @@ export const pageQuery = graphql`
          query {
            file(relativePath: {regex: "\/.*selfie.png\/"}) {
             childImageSharp {
-              fluid {
-                src
-                srcSet
-                base64
-                aspectRatio
-                originalImg
-                sizes  
-              }
+              gatsbyImageData(
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           },
            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -238,22 +262,17 @@ export const pageQuery = graphql`
                    description
                    minibio
                    projectType
-                   isPasswordProtected
-                   isHidden
                    tags
                    color
-                   cover { 
-                      childImageSharp {
-                        fluid(maxWidth: 2280) {
-                          src
-                          srcSet
-                          base64
-                          aspectRatio
-                          originalImg
-                          sizes  
-                        }
-                      }
-                    }
+                  cover { 
+                     childImageSharp {
+                       gatsbyImageData(
+                         width: 2280
+                         placeholder: BLURRED
+                         formats: [AUTO, WEBP, AVIF]
+                       )
+                     }
+                   }
                  }
                }
              }

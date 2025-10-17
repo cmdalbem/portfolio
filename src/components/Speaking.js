@@ -1,9 +1,13 @@
 import React from 'react'
 
 import Reveal from 'react-reveal/Reveal';
+import { isFunctionOrClass } from '../components/reveal-ssr-helper';
+
+// Fallback component for SSR when Reveal is not available
+const RevealOrDiv = isFunctionOrClass(Reveal) ? Reveal : (({ children }) => <div>{children}</div>);
 
 const Speaking = () => (
-  <Reveal effect="slideUp">
+  <RevealOrDiv effect="slideUp">
       <Talk
         title='Tales of an Audiophile'
         context="Ashby Lightning Talks"
@@ -164,7 +168,7 @@ const Speaking = () => (
         date={2013}
         link="https://docs.google.com/presentation/d/1djDV4rN1B3gyP-ODDjxwNMGlvgfExUyxe47l8n7tI_w/edit#slide=id.p"
       /> */}
-    </Reveal>
+    </RevealOrDiv>
 )
 
 class Talk extends React.Component {

@@ -42,14 +42,11 @@ exports.createPages = ({ graphql, actions }) => {
                     tags
                     cover {
                       childImageSharp {
-                        fluid(maxWidth: 2280) {
-                          src
-                          srcSet
-                          base64
-                          aspectRatio
-                          originalImg
-                          sizes
-                        }
+                        gatsbyImageData(
+                          width: 2280
+                          placeholder: BLURRED
+                          formats: [AUTO, WEBP, AVIF]
+                        )
                       }
                     }
                   }
@@ -66,6 +63,11 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create project pages
         const posts = sortPosts(result.data.allMarkdownRemark.edges);
+        // const posts = result.data.allMarkdownRemark.edges;
+
+        // const onlyHighlights = posts.filter(
+        //   i => i.node.frontmatter.projectType === 'projectHighlight'
+        //   || i.node.frontmatter.projectType === 'personalHighlight');
 
         const publicPosts = posts.filter(p => !p.node.frontmatter.isHidden);
         const privatePosts = posts.filter(p => !!p.node.frontmatter.isHidden);
@@ -73,15 +75,21 @@ exports.createPages = ({ graphql, actions }) => {
         _.each(publicPosts, (post, index) => {
           const previous = index === publicPosts.length - 1 ? null : publicPosts[index + 1].node;
           const next = index === 0 ? null : publicPosts[index - 1].node;
+          // const previous = onlyHighlights[0].node;
+          // const next = onlyHighlights[1].node;
+
+          // sanitize slug to avoid accidental leading dots ("/.slug/")
+          const safeSlug = post.node.fields.slug.replace(/^\./, '');
 
           createPage({
-            path: post.node.fields.slug,
+            path: safeSlug,
             component: projectPageTemplate,
             context: {
-              slug: post.node.fields.slug,
+              slug: safeSlug,
               previous,
               next,
             },
+            defer: safeSlug === '/additional-cards/',
           })
         })
 
@@ -124,6 +132,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           },
           {
             test: /react-device-detect/,
+            use: loaders.null(),
+          },
+          {
+            test: /react-reveal/,
             use: loaders.null(),
           },
         ],

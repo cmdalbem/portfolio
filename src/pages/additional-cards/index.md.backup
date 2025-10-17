@@ -1,0 +1,22 @@
+---
+projectType: 'project'
+date: "2022-02"
+date2: "2024-06"
+lastUpdated: "2025-02"
+title: "Nubank's Additional Cards"
+minibio: "Enabling people to extend their credit to loved ones."
+description: "Designing from end-to-end the first social product of the company's portfolio. The Additional Card is an extra card users may request to extend their purchase power to family and friends. It brings all the complexity of a complete Credit Card product with the challenge of meeting the card owner's and cardholder's needs."
+metrics: ['Incremental NPS', 'Incremental avg purchase volume']
+tags: ['product design', 'UX research']
+team: ['Gabriela Oeda (PM)', 'Ana Urquiza (UX Research)']
+color: '#820ad1'
+cover: './cover.png'
+liveLink: "https://blog.nubank.com.br/cartao-de-credito-adicional-do-nubank-tudo-o-que-voce-precisa-saber/"
+--- 
+
+# Context
+
+## The company
+
+[Nubank](https://nubank.com.br/) (NYSE: NU) was born in 2013 with the mission to fight complexity to empower people by reinventing financial services. It's one of the world's largest digital banking platforms, serving over 100 million customers across Brazil, Mexico, and Colombia. Nubank is considered one of the most innovative companies in the world ([Fast Company](https://www.fastcompany.com/91040515/nubank-most-innovative-companies-2024)) and is often associated with products and services that are simple-to-use, intuitive, and transparent.
+

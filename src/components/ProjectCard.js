@@ -1,11 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Img from "gatsby-image"
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import { isMobile } from 'react-device-detect';
 import { formatDate, ROLES_MAP, capitalize } from '../components/utils.js'
 
 import Tag from '../components/Tag';
+
+// Handle SSR - react-device-detect is nulled during build
+let isMobile = false;
+if (typeof window !== 'undefined') {
+    try {
+        const deviceDetect = require('react-device-detect');
+        isMobile = deviceDetect.isMobile;
+    } catch (e) {
+        // Fail silently during SSR
+    }
+}
 
 class ProjectCard extends React.Component {
     state = {
@@ -31,8 +41,8 @@ class ProjectCard extends React.Component {
                 onMouseLeave={() => this.setState({hover: isMobile ? false : false})}
             >
                 <div className={"db br2 project-card--cover overflow-hidden " + (mini ? "w-100-ns w-50 h-100 aspect-ratio-ns aspect-ratio--16x9-ns" : "w-100 aspect-ratio aspect-ratio--16x9")}>
-                    <Img
-                        fluid={post.frontmatter.cover.childImageSharp.fluid}
+                    <GatsbyImage
+                        image={post.frontmatter.cover.childImageSharp.gatsbyImageData}
                         className={`w-100  ${isShowHover ? 'dn' : ''}`}
                         alt=""/>
                     

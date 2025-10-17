@@ -2,12 +2,17 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import { Link,graphql } from 'gatsby'
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Reveal from 'react-reveal/Reveal';
 import Fade from 'react-reveal/Fade';
+import { isFunctionOrClass } from '../components/reveal-ssr-helper';
 
 import { BrowserView } from 'react-device-detect';
+
+// Fallback components for SSR when react-reveal is not available
+const RevealOrDiv = isFunctionOrClass(Reveal) ? Reveal : (({ children }) => <div>{children}</div>);
+const FadeOrDiv = isFunctionOrClass(Fade) ? Fade : (({ children }) => <div>{children}</div>);
 
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
@@ -60,7 +65,7 @@ class ProjectPage extends React.Component {
 
           <meta property="og:title" content={post.frontmatter.title}/>
           <meta property="og:description" content={post.frontmatter.description}/>
-          <meta property="og:image" content={'https://www.cristianodalbem.com' + post.frontmatter.cover.childImageSharp.fluid.src}/>
+          <meta property="og:image" content={'https://www.cristianodalbem.com' + post.frontmatter.cover.childImageSharp.resize.src}/>
           <meta property="og:url" content={'https://www.cristianodalbem.com' + post.fields.slug}/>
           <meta property="og:type" content="website"/>
 
@@ -75,7 +80,7 @@ class ProjectPage extends React.Component {
         
         <div className="center">
           {/* Heading */}
-          <Fade duration={2000} >
+          <FadeOrDiv duration={2000} >
             <div className="flex flex-column mv5-ns mv4">
               <div className="flex flex-column mt3 mb5-ns">
                 <div className={defaultMargins}>
@@ -132,19 +137,19 @@ class ProjectPage extends React.Component {
                 </div>
               </div>
             </div>
-          </Fade>
+          </FadeOrDiv>
 
           {/* Cover image */}
           <div className="flex flex-row-ns flex-column relative z-2">
             <div className="w-100">
-              <Reveal effect="clipIn" duration={2000}>
+              <RevealOrDiv effect="clipIn" duration={2000}>
                 {
                   post.frontmatter.cover ?
-                    <Img fluid={post.frontmatter.cover.childImageSharp.fluid} alt="" />
+                    <GatsbyImage image={getImage(post.frontmatter.cover)} alt="" />
                     :
                     <div className="w-100 h5 pv7 bg-silver"></div>
                 }
-              </Reveal>
+              </RevealOrDiv>
             </div>
           </div>
         </div>
@@ -321,23 +326,20 @@ export const pageQuery = graphql`
                date
                date2
                lastUpdated
-               isHidden
-               isPasswordProtected
                liveLink
                tags
                metrics
                team
                color
-               fullWidth
                cover {
                   childImageSharp {
-                    fluid(maxWidth: 2280) {
+                    gatsbyImageData(
+                      width: 2280
+                      placeholder: BLURRED
+                      formats: [AUTO, WEBP, AVIF]
+                    )
+                    resize(width: 1200) {
                       src
-                      srcSet
-                      base64
-                      aspectRatio
-                      originalImg
-                      sizes  
                     }
                   }
                 }

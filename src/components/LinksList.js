@@ -1,6 +1,10 @@
 import React from 'react'
 
 import Reveal from 'react-reveal/Reveal';
+import { isFunctionOrClass } from './reveal-ssr-helper';
+
+// Fallback component for SSR when Reveal is not available
+const RevealOrDiv = isFunctionOrClass(Reveal) ? Reveal : (({ children }) => <div>{children}</div>);
 
 const LinksList = props => {
   const { items } = props;
@@ -11,7 +15,7 @@ const LinksList = props => {
 
   return (
     <div className="f3 fw2">
-      <Reveal effect="slideUp" cascade>
+      <RevealOrDiv effect="slideUp" cascade>
         {
           items.map( (l, i) =>
             <a
@@ -34,7 +38,7 @@ const LinksList = props => {
             </a>
           )
         }
-      </Reveal>
+      </RevealOrDiv>
     </div>
   )
 }

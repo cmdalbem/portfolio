@@ -1,15 +1,19 @@
 import React from 'react'
 
 import Reveal from 'react-reveal/Reveal';
+import { isFunctionOrClass } from '../components/reveal-ssr-helper';
+
+// Fallback component for SSR when Reveal is not available
+const RevealOrDiv = isFunctionOrClass(Reveal) ? Reveal : (({ children }) => <div>{children}</div>);
 
 const Speaking = () => (
-  <Reveal effect="slideUp">
-    <div className="bg-black-10" style={{
+  <RevealOrDiv effect="slideUp">
+    {/* <div className="bg-black-10" style={{
         height: '100%',
         width: 1,
         position: 'absolute',
         marginLeft: 16
-    }}/>
+    }}/> */}
     
     <Talk
       title="Revolut"
@@ -81,10 +85,11 @@ const Speaking = () => (
       // context="Engaged in research projects in computing at UFRGS."
       date="Apr 2009 – Jul 2011 (2 yrs 4 mos)"
       link="https://www.inf.ufrgs.br/site/pet/"
-      logo="https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_UFRGS_formato_SVG-01.svg"
+      logo="https://seeklogo.com/images/U/UFRGS-logo-D7FF55A4F5-seeklogo.com.png"
+      class2="bn"
     />
-  </Reveal>
-)
+  </RevealOrDiv>
+) 
 
 class Talk extends React.Component {
   state = {
@@ -92,7 +97,7 @@ class Talk extends React.Component {
   }
 
   render() {
-    const { title, context, link, date, current, desc } = this.props;
+    const { title, context, link, date, current, desc, class2 } = this.props;
     let dateStr;
     
 
@@ -107,7 +112,7 @@ class Talk extends React.Component {
 
     return (
       <a
-        className={`link dark-gray db pv4-ns pv3 relative lh-copy flex justify-between dim`}
+        className={`link dark-gray db pb5-ns pb3 relative lh-copy flex justify-between dim b--light-gray bl bw1 ${class2}`}
         href={link}
         target="_blank"
         rel="noopener noreferrer"
@@ -115,11 +120,12 @@ class Talk extends React.Component {
         {this.props.logo && (
           <img
             src={this.props.logo}
-            className="h2 w2 dib mr3 br2 b--light-gray ba"
+            className="h3 w3 dib mr3 br3 b--light-gray ba bw1"
+            style={{marginLeft: -33}}
           />
         )}
         <div className="w-100">
-          <div className="f4 lh-title">
+          <div className="f6">
             {title}
           </div>
           

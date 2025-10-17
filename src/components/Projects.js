@@ -1,8 +1,22 @@
 import React from 'react'
 import Reveal from 'react-reveal/Reveal';
+import { isFunctionOrClass } from '../components/reveal-ssr-helper';
 
 import ProjectCard from '../components/ProjectCard'
-import { isMobile } from 'react-device-detect';
+
+// Fallback component for SSR when Reveal is not available
+const RevealOrDiv = isFunctionOrClass(Reveal) ? Reveal : (({ children }) => <div>{children}</div>);
+
+// Handle SSR - react-device-detect is nulled during build
+let isMobile = false;
+if (typeof window !== 'undefined') {
+    try {
+        const deviceDetect = require('react-device-detect');
+        isMobile = deviceDetect.isMobile;
+    } catch (e) {
+        // Fail silently during SSR
+    }
+}
 
 class Projects extends React.Component {
     render() {
@@ -22,7 +36,7 @@ class Projects extends React.Component {
         }};
 
         return (
-            <Reveal effect="slideUp" duration={2000}>
+            <RevealOrDiv effect="slideUp" duration={2000}>
                 <div className="mb5" style={gridStyle}> {
                         posts.map(({ node }) => {
                             return (
@@ -36,7 +50,7 @@ class Projects extends React.Component {
                         })
                     }
                 </div>
-            </Reveal>
+            </RevealOrDiv>
         )
     }
 }

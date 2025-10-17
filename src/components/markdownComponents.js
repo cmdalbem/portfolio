@@ -3,9 +3,13 @@ import Fade from 'react-reveal/Fade';
 import rehypeReact from "rehype-react"
 import {navigate} from 'gatsby';
 
-import LinksList from '../components/LinksList'
+import LinksList from './LinksList'
 
-import { slugify } from '../components/utils.js'
+import { slugify } from './utils.js'
+import { isFunctionOrClass } from './reveal-ssr-helper';
+
+// Fallback component for SSR when Fade is not available
+const FadeOrDiv = isFunctionOrClass(Fade) ? Fade : (({ children }) => <div>{children}</div>);
 
 
 class ResultsBanner extends React.Component {
@@ -22,7 +26,7 @@ class ResultsBanner extends React.Component {
             >
                 {
                     Object.keys(dataObj).map((i, n) => (
-                        <Fade bottom duration={1500} delay={n * 500} key={i}>
+                        <FadeOrDiv bottom duration={1500} delay={n * 500} key={i}>
                             <div className="mv0-ns mv3">
                                 <div className="f1-ns f2 fw1 mt0 mb0">
                                     {dataObj[i]}
@@ -31,7 +35,7 @@ class ResultsBanner extends React.Component {
                                     {i}
                                 </div>
                             </div>
-                        </Fade>
+                        </FadeOrDiv>
                     ))
                 }
             </div>
@@ -53,7 +57,7 @@ class ProjectPasswordInput extends React.Component {
             const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
             const slug = pathname.replaceAll('/', '');
             console.debug(slug);
-            navigate(`/.${slug}`);
+            navigate(`/${slug}-hidden`);
         } else {
             this.setState({wrongPassword: true})
         }
@@ -103,18 +107,49 @@ export function markdownRenderer(isFullWidth) {
 
     return new rehypeReact({
         createElement: React.createElement,
+        Fragment: React.Fragment,
+        passThrough: ['link', 'links-list', 'quote', 'jumbo', 'video-container', 'results-banner', 'project-password-input', 'ai-disclaimer', 'insights'],
         components: {
-            h1: props => (
-                // <h1 className={`f3 lh-title dark-gray fw4 mw6-l mt6-l mt5 mb--4-l position-sticky-l h4-l bg-background-color-l`}>
-                <h1 id={slugify(props.children[0])} className={`f2-ns f3 lh-title tracked-tight dark-gray fw4 mt6-l mt5 ${defaultMargins}`}>
-                    {props.children}
-                </h1>
-            ),
-            h2: props => (
-                <h2 id={slugify(props.children[0])} className={`f3-ns f4 lh-title fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
-                    {props.children}
-                </h2>
-            ),
+            h1: props => {
+                // Extract text content safely, handling arrays and nested structures
+                const getText = (children) => {
+                    if (!children) return '';
+                    if (typeof children === 'string') return children;
+                    if (Array.isArray(children)) {
+                        return children.map(c => getText(c)).join('');
+                    }
+                    if (typeof children === 'object' && children.props) {
+                        return getText(children.props.children);
+                    }
+                    return '';
+                };
+                const text = getText(props.children);
+                return (
+                    <h1 id={slugify(text)} className={`f2-ns f3 lh-title tracked-tight dark-gray fw4 mt6-l mt5 ${defaultMargins}`}>
+                        {props.children}
+                    </h1>
+                );
+            },
+            h2: props => {
+                // Extract text content safely, handling arrays and nested structures
+                const getText = (children) => {
+                    if (!children) return '';
+                    if (typeof children === 'string') return children;
+                    if (Array.isArray(children)) {
+                        return children.map(c => getText(c)).join('');
+                    }
+                    if (typeof children === 'object' && children.props) {
+                        return getText(children.props.children);
+                    }
+                    return '';
+                };
+                const text = getText(props.children);
+                return (
+                    <h2 id={slugify(text)} className={`f3-ns f4 lh-title fw4 mt5-ns mt4 mb3-ns mb2 ${defaultMargins}`}>
+                        {props.children}
+                    </h2>
+                );
+            },
             h3: props => (
                 <h3 className={`f4-ns f5 lh-title gray fw6 mt4 ${defaultMargins}`}>
                     {props.children}
@@ -166,6 +201,24 @@ export function markdownRenderer(isFullWidth) {
             ),
             code: props => (
                 <code className="f6 bg-light-gray ph2">{props.children}</code>
+            ),
+            table: props => (
+                <table className={`${defaultMargins} mv4 w-100 ba b--light-gray`}>{props.children}</table>
+            ),
+            thead: props => (
+                <thead>{props.children}</thead>
+            ),
+            tbody: props => (
+                <tbody>{props.children}</tbody>
+            ),
+            tr: props => (
+                <tr className="bb b--light-gray">{props.children}</tr>
+            ),
+            th: props => (
+                <th className="pa2 tl fw6">{props.children}</th>
+            ),
+            td: props => (
+                <td className="pa2">{props.children}</td>
             ),
             "quote": props => (
                 <div className={`mt0 mv5 ${defaultMargins}`}>
@@ -255,7 +308,7 @@ export function markdownRenderer(isFullWidth) {
                         <div className='grid3-4-ns grid2-4-m'>
                         {
                             itemsArray.map((l, i) => (
-                                <Fade duration={1500} delay={i*500 - i*200} key={i}>
+                                <FadeOrDiv duration={1500} delay={i*500 - i*200} key={i}>
                                     {/* <div className="nl3 nr3 pa3 br4" key={i} style={{backgroundColor: 'rgba(0,0,0,0.05)'}}> */}
                                     <div className="mv4">
                                         <div className="f6">
@@ -268,7 +321,7 @@ export function markdownRenderer(isFullWidth) {
                                             {l.description}
                                         </div>
                                     </div>
-                                </Fade>
+                                </FadeOrDiv>
                             ))
                         }
                         </div>
