@@ -112,22 +112,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
-
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html" || stage === "develop-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /react-p5/,
-            use: loaders.null(),
-          },
-          {
-            test: /react-device-detect/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
-  }
-}

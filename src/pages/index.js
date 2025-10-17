@@ -16,7 +16,7 @@ import Social from '../components/Social'
 import HomeSection from '../components/HomeSection'
 import Projects from '../components/Projects'
 
-import P5sketch from '../components/P5sketch.js'
+import P5SketchLoader from '../components/P5SketchLoader'
 
 import { sortPosts } from '../components/utils.js'
 
@@ -61,7 +61,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
          <BrowserView>
-          <P5sketch/>
+          <P5SketchLoader />
         </BrowserView>
 
         <MobileView>
