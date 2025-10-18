@@ -34,7 +34,7 @@ class Header extends React.Component {
       'Sideprojects',
       'About me',
       'Speaking',
-      'Social'
+      'Links'
     ];
     const sectionsSlugs = sections.map( section => section.toLowerCase() );
 

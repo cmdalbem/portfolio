@@ -12,7 +12,7 @@ import Layout from '../components/Layout'
 import Speaking from '../components/Speaking'
 // import Reading from '../components/Reading'
 import Experience from '../components/Experience'
-import Social from '../components/Social'
+import Links from '../components/Links'
 import HomeSection from '../components/HomeSection'
 import Projects from '../components/Projects'
 
@@ -28,7 +28,7 @@ function AnimatedHeader(props) {
       {
         rows.map((r,i) =>
           <div className="overflow-hidden" key={i}>
-            <Fade bottom cascade={!isMobile} duration={900} delay={400*i}>
+            <Fade bottom cascade={!isMobile} duration={1200} delay={400*i}>
               <h1 className={typography} style={{opacity: 0}}>
                 { r }
               </h1>
@@ -196,10 +196,10 @@ class IndexPage extends React.Component {
           </HomeSection> */}
 
           <HomeSection
-            title="Social"
+            title="Links"
             // description="Other places on the web where you can find me."
           >
-            <Social />
+            <Links />
             {/* <section style={{ height: 496, boxShadow: "rgba(142, 151, 158, 0.15) 0px 4px 19px 0px", borderRadius: 16, overflow: "hidden", width: "100%", maxWidth: 650 }} > <iframe src="https://adplist.org/widgets/booking?src=cristiano-dalbem" title="" width="100%" height="100%" loading="lazy" style={{ border: 0 }} /> </section> */}
           </HomeSection>
         </div>
