@@ -101,9 +101,9 @@ class FPSMonitor {
       
       if (logFunction) {
         let message = `Warning: low FPS (${this.currentFPS.toFixed(1)}), reducing complexity `;
-        if (numPoints !== oldNumPoints) message += `(numPoints: ${oldNumPoints}→${numPoints}) `;
-        if (tailSize !== oldTailSize) message += `(tailSize: ${oldTailSize}→${tailSize}) `;
-        if (calcIterations !== oldCalcIterations) message += `(calcIterations: ${oldCalcIterations}→${calcIterations}) `;
+        if (numPoints !== oldNumPoints) message += `(numPoints ${oldNumPoints}→${numPoints}) `;
+        if (tailSize !== oldTailSize) message += `(tailSize ${oldTailSize}→${tailSize}) `;
+        if (calcIterations !== oldCalcIterations) message += `(calcIterations ${oldCalcIterations}→${calcIterations}) `;
         logFunction(message, 'PERF');
       }
     } else if (this.currentFPS > TARGET_FPS * 1.1 && fpsRatio > 1.1) {
@@ -132,9 +132,9 @@ class FPSMonitor {
       
       if (logFunction) {
         let message = `Good FPS (${this.currentFPS.toFixed(1)}), increasing complexity `;
-        if (numPoints !== oldNumPoints) message += `(numPoints: ${oldNumPoints}→${numPoints}) `;
-        if (tailSize !== oldTailSize) message += `(tailSize: ${oldTailSize}→${tailSize}) `;
-        if (calcIterations !== oldCalcIterations) message += `(calcIterations: ${oldCalcIterations}→${calcIterations}) `;
+        if (numPoints !== oldNumPoints) message += `(numPoints ${oldNumPoints}→${numPoints}) `;
+        if (tailSize !== oldTailSize) message += `(tailSize ${oldTailSize}→${tailSize}) `;
+        if (calcIterations !== oldCalcIterations) message += `(calcIterations ${oldCalcIterations}→${calcIterations}) `;
         logFunction(message, 'PERF');
       }
     }
@@ -324,9 +324,9 @@ export default function P5SketchLoader() {
     state.mouseVelocity = p5.createVector(0, 0);
     state.fpsMonitor = new FPSMonitor();
 
-    logFunction(`Initializing Lorenz Attractor: σ=${ATTRACTORS[0].o}, ρ=${ATTRACTORS[0].p}, β=${ATTRACTORS[0].b.toFixed(3)}`, 'INIT');
-    logFunction(`Initial parameters: numPoints: ${numPoints}, tailSize: ${tailSize}, calcIterations: ${calcIterations}`, 'INIT');
-    logFunction(`Canvas size: ${p5.windowWidth}x${p5.windowHeight}px`, 'INIT');
+    logFunction(`Initializing Lorenz Attractor: σ = ${ATTRACTORS[0].o}, ρ = ${ATTRACTORS[0].p}, β = ${ATTRACTORS[0].b.toFixed(3)}`, 'INIT');
+    logFunction(`Initial parameters numPoints = ${numPoints}, tailSize = ${tailSize}, calcIterations = ${calcIterations}`, 'INIT');
+    logFunction(`Canvas size = ${p5.windowWidth}x${p5.windowHeight}px`, 'INIT');
 
     p5.frameRate(60);
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(
@@ -449,7 +449,7 @@ export default function P5SketchLoader() {
       if (magnitude > 0.5) { 
         const now = state.currentFrameNbr;
         if (now - state.lastMouseActivity > 30) { 
-          logFunction(`Mouse: Δ=${magnitude.toFixed(1)}px, pos=(${p5.mouseX},${p5.mouseY}), rotation=${state.mouseRotation.mag().toFixed(3)}`, 'MOUSE');
+          logFunction(`Cursor Δ=${magnitude.toFixed(1)}px, camera rotation=${state.mouseRotation.mag().toFixed(3)}`, 'MOUSE');
           state.lastMouseActivity = now;
         }
       }
@@ -471,7 +471,9 @@ export default function P5SketchLoader() {
 
   const windowResized = (p5) => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
-    logFunction(`Canvas resized: ${p5.windowWidth}x${p5.windowHeight}`, 'CANVAS');
+    // Update perspective projection to maintain correct aspect ratio
+    p5.perspective(p5.PI / 4, p5.width / p5.height, 1, 1000);
+    logFunction(`Canvas resized to ${p5.windowWidth}x${p5.windowHeight}px, aspect ratio = ${(p5.width / p5.height).toFixed(3)}`, 'CANVAS');
   };
 
   return (
