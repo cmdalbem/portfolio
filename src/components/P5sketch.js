@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Sketch from "react-p5";
 
 // Mathematical constants for attractors
@@ -11,6 +11,7 @@ const TARGET_FPS = 30;
 const MIN_FPS = 24;
 const FPS_SAMPLES = 30;
 const SHOW_FPS_DEBUG = false;
+const SHOW_CONSOLE_LOG = true; // Matrix-style console overlay
 
 // Dynamic parameters with ranges
 const PARAMS = {
@@ -59,15 +60,19 @@ class FPSMonitor {
     this.lastTime = currentTime;
   }
 
-  adjustParameters() {
+  adjustParameters(logFunction = null) {
     // Only adjust every 60 frames to avoid constant changes
     if (this.adjustmentCooldown > 0) {
       this.adjustmentCooldown--;
-      return;
+      return false;
     }
 
     const fpsRatio = this.currentFPS / TARGET_FPS;
     const adjustmentSpeed = PARAMS.ADJUSTMENT_SPEED;
+    let adjusted = false;
+    const oldNumPoints = numPoints;
+    const oldTailSize = tailSize;
+    const oldCalcIterations = calcIterations;
 
     if (this.currentFPS < MIN_FPS) {
       // Performance is poor, reduce complexity
@@ -84,6 +89,15 @@ class FPSMonitor {
         calcIterations - Math.round((MIN_FPS - this.currentFPS) * adjustmentSpeed * 2)
       );
       this.adjustmentCooldown = 60;
+      adjusted = true;
+      
+      if (logFunction) {
+        let message = `Low FPS (${this.currentFPS.toFixed(1)}), reducing complexity`;
+        if (numPoints !== oldNumPoints) message += `| numPoints: ${oldNumPoints}→${numPoints}`;
+        if (tailSize !== oldTailSize) message += `| tailSize: ${oldTailSize}→${tailSize}`;
+        if (calcIterations !== oldCalcIterations) message += `| calcIterations: ${oldCalcIterations}→${calcIterations}`;
+        logFunction(message, 'PERF');
+      }
     } else if (this.currentFPS > TARGET_FPS * 1.1 && fpsRatio > 1.1) {
       // Performance is good, we can increase complexity
       numPoints = Math.min(
@@ -99,12 +113,41 @@ class FPSMonitor {
         calcIterations + Math.round((this.currentFPS - TARGET_FPS) * adjustmentSpeed * 0.5)
       );
       this.adjustmentCooldown = 60;
+      adjusted = true;
+      
+      if (logFunction) {
+        let message = `Good FPS (${this.currentFPS.toFixed(1)}), increasing complexity`;
+        if (numPoints !== oldNumPoints) message += `| numPoints: ${oldNumPoints}→${numPoints}`;
+        if (tailSize !== oldTailSize) message += `| tailSize: ${oldTailSize}→${tailSize}`;
+        if (calcIterations !== oldCalcIterations) message += `| calcIterations: ${oldCalcIterations}→${calcIterations}`;
+        logFunction(message, 'PERF');
+      }
     }
+    
+    return adjusted;
   }
 
   getCurrentFPS() {
     return this.currentFPS;
   }
+}
+
+// Helper function to create a log entry
+function createLogEntry(message, category = 'INFO') {
+  const timestamp = new Date().toLocaleTimeString('en-US', { 
+    hour12: false, 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    second: '2-digit',
+    fractionalSecondDigits: 2
+  });
+  
+  return {
+    message,
+    category,
+    timestamp,
+    id: Date.now() + Math.random()
+  };
 }
 
 /**
@@ -196,14 +239,106 @@ class AttractorPoint {
   }
 }
 
+// Console Log Overlay Component
+function ConsoleLogOverlay({ logs }) {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        // bottom: `30%`,
+        // left: 144,
+        right: 0,
+        bottom: 0,
+        width: "800px",
+        maxHeight: "400px",
+        fontFamily: "monospace",
+        fontSize: "11px",
+        color: "rgba(150, 150, 150, 0.4)",
+        zIndex: 1,
+        pointerEvents: "none",
+        lineHeight: "1.4",
+        overflow: "hidden",
+      }}
+    >
+      {logs.map((log, index) => {
+        // Calculate fade out based on position (older = more faded)
+        const opacity = Math.max(0.2, (index + 1) / logs.length);
+        // const opacity = index < 10 ? 0.2 : 1;
+        return (
+          <div
+            key={log.id}
+            style={{
+              opacity: opacity,
+              whiteSpace: "nowrap",
+            }}
+          >
+            <span style={{ color: "rgba(100, 100, 100, 0.5)" }}>
+              [{log.timestamp}]
+            </span>{" "}
+            {log.message}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// FPS Debug Overlay Component
+function FPSDebugOverlay({ debugInfo }) {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 10,
+        left: 10,
+        color: "#ff0000",
+        fontFamily: "monospace",
+        fontSize: "16px",
+        backgroundColor: "rgba(0, 0, 0, 0.9)",
+        padding: "12px",
+        borderRadius: "6px",
+        zIndex: 9999,
+        pointerEvents: "none",
+        border: "2px solid #ff0000",
+      }}
+    >
+      {debugInfo ? (
+        <>
+          <div>FPS: {debugInfo.fps}</div>
+          <div>Points: {debugInfo.points} ({debugInfo.pointsDefault})</div>
+          <div>Tail: {debugInfo.tail} ({debugInfo.tailDefault})</div>
+          <div>Iterations: {debugInfo.iterations} ({debugInfo.iterationsDefault})</div>
+          <div>Iterations: {debugInfo.iterations}</div>
+        </>
+      ) : (
+        <div>Loading debug info...</div>
+      )}
+    </div>
+  );
+}
+
 export default function P5SketchLoader() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [debugInfo, setDebugInfo] = useState(null);
   const [debugUpdateCounter, setDebugUpdateCounter] = useState(0);
+  const [consoleLogs, setConsoleLogs] = useState([]);
   
   // Store the setter function in a ref so it's accessible in the draw function
   const setDebugUpdateCounterRef = useRef(setDebugUpdateCounter);
   setDebugUpdateCounterRef.current = setDebugUpdateCounter;
+  
+  // Log function that adds entries to React state
+  const addLog = useCallback((message, category = 'INFO') => {
+    const newLog = createLogEntry(message, category);
+    setConsoleLogs(prevLogs => {
+      const updatedLogs = [...prevLogs, newLog];
+      // Keep only the last 25 logs
+      return updatedLogs.length > 25 ? updatedLogs.slice(-25) : updatedLogs;
+    });
+  }, []);
+
+  // Create log function - either real logging or no-op
+  const logFunction = SHOW_CONSOLE_LOG ? addLog : () => {};
   
   // Use refs to persist sketch state across renders
   const sketchState = useRef({
@@ -215,6 +350,7 @@ export default function P5SketchLoader() {
     mouseVelocity: null,
     fpsMonitor: null,
     debugInfo: null,
+    lastMouseActivity: 0,
   });
 
   useEffect(() => {
@@ -249,6 +385,9 @@ export default function P5SketchLoader() {
     state.mouseVelocity = p5.createVector(0, 0);
     state.fpsMonitor = new FPSMonitor();
 
+    logFunction('Initializing Lorenz Attractor Sketch', 'INIT');
+    logFunction(`Canvas: ${p5.windowWidth}x${p5.windowHeight}`, 'INIT');
+
     p5.frameRate(60);
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(
       canvasParentRef
@@ -269,6 +408,12 @@ export default function P5SketchLoader() {
 
     state.points = [];
     state.colorSeed = p5.random(0, 100);
+    
+    logFunction(`numPoints: ${numPoints}`, 'INIT');
+    logFunction(`tailSize: ${tailSize}`, 'INIT');
+    logFunction(`calcIterations: ${calcIterations}`, 'INIT');
+    logFunction(`Target FPS: ${TARGET_FPS}`, 'INIT');
+    
     for (let i = 0; i < numPoints; i++) {
       state.points.push(
         new AttractorPoint(
@@ -281,6 +426,8 @@ export default function P5SketchLoader() {
         )
       );
     }
+    
+    logFunction(`Initialized ${numPoints} attractor points`, 'INIT');
   };
 
   const draw = (p5) => {
@@ -291,7 +438,7 @@ export default function P5SketchLoader() {
 
     // Update FPS monitoring
     state.fpsMonitor.update(p5.millis());
-    state.fpsMonitor.adjustParameters();
+    state.fpsMonitor.adjustParameters(logFunction);
 
     state.currentTime++;
 
@@ -299,9 +446,12 @@ export default function P5SketchLoader() {
     const currentNumPoints = state.points.length;
     if (currentNumPoints > numPoints) {
       // Remove excess points
+      const removed = currentNumPoints - numPoints;
       state.points.splice(numPoints);
+      logFunction(`Removed ${removed} excess points (total: ${numPoints})`, 'POINTS');
     } else if (currentNumPoints < numPoints) {
       // Add new points
+      const added = numPoints - currentNumPoints;
       for (let i = currentNumPoints; i < numPoints; i++) {
         state.points.push(
           new AttractorPoint(
@@ -314,21 +464,26 @@ export default function P5SketchLoader() {
           )
         );
       }
+      logFunction(`Added ${added} points (total: ${numPoints})`, 'POINTS');
     }
 
     if (state.currentTime % 30 === 0) {
       // Add random point (replace oldest)
       state.points.shift();
+      const x = p5.random(100, -100);
+      const y = p5.random(100, -100);
+      const z = p5.random(100, -100);
       state.points.push(
         new AttractorPoint(
           p5,
-          p5.random(100, -100),
-          p5.random(100, -100),
-          p5.random(100, -100),
+          x,
+          y,
+          z,
           strokeHue,
           0
         )
       );
+      logFunction(`Inserting new random point at (${x.toFixed(2)}, ${y.toFixed(2)}, ${z.toFixed(2)})`, 'POINTS');
     }
 
     p5.rotateY(state.currentTime / 2000 - p5.PI / 10);
@@ -342,12 +497,25 @@ export default function P5SketchLoader() {
 
     // Mouse control
     if (p5.mouseX !== p5.pmouseX || p5.mouseY !== p5.pmouseY) {
+      const deltaX = p5.mouseX - p5.pmouseX;
+      const deltaY = p5.mouseY - p5.pmouseY;
+      const magnitude = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      
       state.mouseVelocity.add(
-        (p5.mouseX - p5.pmouseX) / 1000,
+        deltaX / 1000,
         (p5.pmouseY - p5.mouseY) / 1000
       );
       state.mouseVelocity.mult(0.02);
       state.mouseRotation.add(state.mouseVelocity);
+      
+      // Log significant mouse movements (throttled)
+      // if (magnitude > 5) {
+      //   const now = state.currentTime;
+      //   if (now - state.lastMouseActivity > 120) { // Log every ~2 seconds
+      //     logFunction(`Mouse interaction detected (Δ: ${magnitude.toFixed(0)}px)`, 'MOUSE');
+      //     state.lastMouseActivity = now;
+      //   }
+      // }
     }
     p5.rotateX(-state.mouseRotation.y);
     p5.rotateY(-state.mouseRotation.x);
@@ -397,36 +565,12 @@ export default function P5SketchLoader() {
       }}
     >
       <Sketch setup={setup} draw={draw} windowResized={windowResized} />
-      {SHOW_FPS_DEBUG && (
-        <div
-          style={{
-            position: "absolute",
-            top: 10,
-            left: 10,
-            color: "#ff0000",
-            fontFamily: "monospace",
-            fontSize: "16px",
-            backgroundColor: "rgba(0, 0, 0, 0.9)",
-            padding: "12px",
-            borderRadius: "6px",
-            zIndex: 9999,
-            pointerEvents: "none",
-            border: "2px solid #ff0000",
-          }}
-        >
-          {debugInfo ? (
-            <>
-              <div>FPS: {debugInfo.fps}</div>
-              <div>Points: {debugInfo.points} ({debugInfo.pointsDefault})</div>
-              <div>Tail: {debugInfo.tail} ({debugInfo.tailDefault})</div>
-              <div>Iterations: {debugInfo.iterations} ({debugInfo.iterationsDefault})</div>
-              <div>Iterations: {debugInfo.iterations}</div>
-            </>
-          ) : (
-            <div>Loading debug info...</div>
-          )}
-        </div>
-      )}
+      
+      {/* Matrix-style console log overlay */}
+      {SHOW_CONSOLE_LOG && <ConsoleLogOverlay logs={consoleLogs} />}
+      
+      {/* FPS Debug overlay */}
+      {SHOW_FPS_DEBUG && <FPSDebugOverlay debugInfo={debugInfo} />}
     </div>
   );
 }
