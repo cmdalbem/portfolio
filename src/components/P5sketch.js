@@ -10,7 +10,6 @@ const ATTRACTORS = [
 const TARGET_FPS = 30;
 const MIN_FPS = 24;
 const FPS_SAMPLES = 30;
-const SHOW_FPS_DEBUG = false;
 const SHOW_CONSOLE_LOG = true; // Matrix-style console overlay
 
 // Dynamic parameters with ranges
@@ -93,9 +92,9 @@ class FPSMonitor {
       
       if (logFunction) {
         let message = `Low FPS (${this.currentFPS.toFixed(1)}), reducing complexity`;
-        if (numPoints !== oldNumPoints) message += `| numPoints: ${oldNumPoints}→${numPoints}`;
-        if (tailSize !== oldTailSize) message += `| tailSize: ${oldTailSize}→${tailSize}`;
-        if (calcIterations !== oldCalcIterations) message += `| calcIterations: ${oldCalcIterations}→${calcIterations}`;
+        if (numPoints !== oldNumPoints) message += ` | numPoints: ${oldNumPoints}→${numPoints}`;
+        if (tailSize !== oldTailSize) message += ` | tailSize: ${oldTailSize}→${tailSize}`;
+        if (calcIterations !== oldCalcIterations) message += ` | calcIterations: ${oldCalcIterations}→${calcIterations}`;
         logFunction(message, 'PERF');
       }
     } else if (this.currentFPS > TARGET_FPS * 1.1 && fpsRatio > 1.1) {
@@ -117,9 +116,9 @@ class FPSMonitor {
       
       if (logFunction) {
         let message = `Good FPS (${this.currentFPS.toFixed(1)}), increasing complexity`;
-        if (numPoints !== oldNumPoints) message += `| numPoints: ${oldNumPoints}→${numPoints}`;
-        if (tailSize !== oldTailSize) message += `| tailSize: ${oldTailSize}→${tailSize}`;
-        if (calcIterations !== oldCalcIterations) message += `| calcIterations: ${oldCalcIterations}→${calcIterations}`;
+        if (numPoints !== oldNumPoints) message += ` | numPoints: ${oldNumPoints}→${numPoints}`;
+        if (tailSize !== oldTailSize) message += ` | tailSize: ${oldTailSize}→${tailSize}`;
+        if (calcIterations !== oldCalcIterations) message += ` | calcIterations: ${oldCalcIterations}→${calcIterations}`;
         logFunction(message, 'PERF');
       }
     }
@@ -239,93 +238,11 @@ class AttractorPoint {
   }
 }
 
-// Console Log Overlay Component
-function ConsoleLogOverlay({ logs }) {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        // bottom: `30%`,
-        // left: 144,
-        right: 0,
-        bottom: 0,
-        width: "800px",
-        maxHeight: "400px",
-        fontFamily: "monospace",
-        fontSize: "11px",
-        color: "rgba(150, 150, 150, 0.4)",
-        zIndex: 1,
-        pointerEvents: "none",
-        lineHeight: "1.4",
-        overflow: "hidden",
-      }}
-    >
-      {logs.map((log, index) => {
-        // Calculate fade out based on position (older = more faded)
-        const opacity = Math.max(0.2, (index + 1) / logs.length);
-        // const opacity = index < 10 ? 0.2 : 1;
-        return (
-          <div
-            key={log.id}
-            style={{
-              opacity: opacity,
-              whiteSpace: "nowrap",
-            }}
-          >
-            <span style={{ color: "rgba(100, 100, 100, 0.5)" }}>
-              [{log.timestamp}]
-            </span>{" "}
-            {log.message}
-          </div>
-        );
-      })}
-    </div>
-  );
-}
 
-// FPS Debug Overlay Component
-function FPSDebugOverlay({ debugInfo }) {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: 10,
-        left: 10,
-        color: "#ff0000",
-        fontFamily: "monospace",
-        fontSize: "16px",
-        backgroundColor: "rgba(0, 0, 0, 0.9)",
-        padding: "12px",
-        borderRadius: "6px",
-        zIndex: 9999,
-        pointerEvents: "none",
-        border: "2px solid #ff0000",
-      }}
-    >
-      {debugInfo ? (
-        <>
-          <div>FPS: {debugInfo.fps}</div>
-          <div>Points: {debugInfo.points} ({debugInfo.pointsDefault})</div>
-          <div>Tail: {debugInfo.tail} ({debugInfo.tailDefault})</div>
-          <div>Iterations: {debugInfo.iterations} ({debugInfo.iterationsDefault})</div>
-          <div>Iterations: {debugInfo.iterations}</div>
-        </>
-      ) : (
-        <div>Loading debug info...</div>
-      )}
-    </div>
-  );
-}
 
 export default function P5SketchLoader() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [debugInfo, setDebugInfo] = useState(null);
-  const [debugUpdateCounter, setDebugUpdateCounter] = useState(0);
   const [consoleLogs, setConsoleLogs] = useState([]);
-  
-  // Store the setter function in a ref so it's accessible in the draw function
-  const setDebugUpdateCounterRef = useRef(setDebugUpdateCounter);
-  setDebugUpdateCounterRef.current = setDebugUpdateCounter;
   
   // Log function that adds entries to React state
   const addLog = useCallback((message, category = 'INFO') => {
@@ -349,7 +266,6 @@ export default function P5SketchLoader() {
     mouseRotation: null,
     mouseVelocity: null,
     fpsMonitor: null,
-    debugInfo: null,
     lastMouseActivity: 0,
   });
 
@@ -372,12 +288,19 @@ export default function P5SketchLoader() {
     }
   }, []);
 
-  // Update debug info state when it changes
+  // Inject console logs into placeholder div
   useEffect(() => {
-    if (SHOW_FPS_DEBUG && sketchState.current.debugInfo) {
-      setDebugInfo(sketchState.current.debugInfo);
+    const placeholder = document.getElementById('consoleLogOverlayPlaceholder');
+    if (placeholder && consoleLogs.length > 0) {
+      placeholder.innerHTML = consoleLogs.map((log, index) => {
+        return `
+          <div style="white-space: nowrap;">
+            <span>[${log.timestamp}]</span> <span style="color: rgba(100, 100, 100, 0.5);">${log.message}</span>
+          </div>
+        `;
+      }).join('');
     }
-  }, [debugUpdateCounter]);
+  }, [consoleLogs]);
 
   const setup = (p5, canvasParentRef) => {
     const state = sketchState.current;
@@ -386,6 +309,7 @@ export default function P5SketchLoader() {
     state.fpsMonitor = new FPSMonitor();
 
     logFunction('Initializing Lorenz Attractor Sketch', 'INIT');
+    logFunction(`Initial parameters: numPoints: ${numPoints}, tailSize: ${tailSize}, calcIterations: ${calcIterations}`, 'INIT');
     logFunction(`Canvas: ${p5.windowWidth}x${p5.windowHeight}`, 'INIT');
 
     p5.frameRate(60);
@@ -408,11 +332,6 @@ export default function P5SketchLoader() {
 
     state.points = [];
     state.colorSeed = p5.random(0, 100);
-    
-    logFunction(`numPoints: ${numPoints}`, 'INIT');
-    logFunction(`tailSize: ${tailSize}`, 'INIT');
-    logFunction(`calcIterations: ${calcIterations}`, 'INIT');
-    logFunction(`Target FPS: ${TARGET_FPS}`, 'INIT');
     
     for (let i = 0; i < numPoints; i++) {
       state.points.push(
@@ -448,7 +367,7 @@ export default function P5SketchLoader() {
       // Remove excess points
       const removed = currentNumPoints - numPoints;
       state.points.splice(numPoints);
-      logFunction(`Removed ${removed} excess points (total: ${numPoints})`, 'POINTS');
+      logFunction(`Removing ${removed} excess points (total: ${numPoints})`, 'POINTS');
     } else if (currentNumPoints < numPoints) {
       // Add new points
       const added = numPoints - currentNumPoints;
@@ -464,7 +383,7 @@ export default function P5SketchLoader() {
           )
         );
       }
-      logFunction(`Added ${added} points (total: ${numPoints})`, 'POINTS');
+      logFunction(`Adding ${added} new points (total: ${numPoints})`, 'POINTS');
     }
 
     if (state.currentTime % 30 === 0) {
@@ -483,7 +402,7 @@ export default function P5SketchLoader() {
           0
         )
       );
-      logFunction(`Inserting new random point at (${x.toFixed(2)}, ${y.toFixed(2)}, ${z.toFixed(2)})`, 'POINTS');
+      logFunction(`Adding new point at random pos (${x.toFixed(2)}, ${y.toFixed(2)}, ${z.toFixed(2)})`, 'POINTS');
     }
 
     p5.rotateY(state.currentTime / 2000 - p5.PI / 10);
@@ -530,23 +449,6 @@ export default function P5SketchLoader() {
     }
     p5.pop();
 
-    // Optional FPS debug display - update HTML overlay
-    if (SHOW_FPS_DEBUG) {
-      // Update debug info in HTML overlay (handled in useEffect)
-      state.debugInfo = {
-        fps: state.fpsMonitor.getCurrentFPS().toFixed(1),
-        points: numPoints,
-        tail: tailSize,
-        iterations: calcIterations,
-        pointsDefault: PARAMS.NUM_POINTS.default,
-        tailDefault: PARAMS.TAIL_SIZE.default,
-        iterationsDefault: PARAMS.CALC_ITERATIONS.default,
-      };
-      // Trigger React re-render every 30 frames
-      if (state.currentTime % 30 === 0) {
-        setDebugUpdateCounterRef.current(prev => prev + 1);
-      }
-    }
   };
 
   const windowResized = (p5) => {
@@ -565,12 +467,6 @@ export default function P5SketchLoader() {
       }}
     >
       <Sketch setup={setup} draw={draw} windowResized={windowResized} />
-      
-      {/* Matrix-style console log overlay */}
-      {SHOW_CONSOLE_LOG && <ConsoleLogOverlay logs={consoleLogs} />}
-      
-      {/* FPS Debug overlay */}
-      {SHOW_FPS_DEBUG && <FPSDebugOverlay debugInfo={debugInfo} />}
     </div>
   );
 }
