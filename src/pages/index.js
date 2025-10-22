@@ -108,7 +108,29 @@ class IndexPage extends React.Component {
                         'digital products for work and for love.'
                   ]}/> 
                 }
-              </div>
+                 
+                 {/* Console Log Overlay placeholder - P5 sketch will inject content here */}
+                 <div style={{
+                    height: '400px',
+                    fontFamily: 'monospace',
+                    fontSize: '11px',
+                    color: 'rgba(150, 150, 150, 0.4)',
+                    pointerEvents: 'none',
+                    lineHeight: '1.4',
+                    position: 'relative',
+                    maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%)',
+                  }}>
+                    <div id="consoleLogOverlayPlaceholder" style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                    }}></div>
+                  </div>
+
+                </div>
+
+              
             </div> 
           </section>
 
