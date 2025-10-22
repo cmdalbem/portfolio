@@ -93,7 +93,7 @@ class IndexPage extends React.Component {
                 />
               </MobileView> */}
 
-              <div className="absolute top-0 mt7-ns mt2">
+              <div className="absolute top-0 mt7-ns mt2 w-100">
                 {
                   isMobile ?
                     <h1 className={titleTypography}>
@@ -110,31 +110,14 @@ class IndexPage extends React.Component {
                 }
                  
                  {/* Console Log Overlay placeholder - P5 sketch will inject content here */}
-                 <div style={{
-                    height: '200px',
-                    fontFamily: 'monospace',
-                    fontSize: '11px',
-                    color: 'rgba(150, 150, 150, 0.4)',
-                    pointerEvents: 'none',
-                    lineHeight: '1.4',
-                    position: 'relative',
-                    maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 100%)',
-                  }}>
-                    <div id="consoleLogOverlayPlaceholder" style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                    }}></div>
+                 <div id="consoleLogOverlayContainer" className="source-code-pro">
+                    <div id="consoleLogOverlayPlaceholder">
+                    </div>
                   </div>
-
                 </div>
-
-              
             </div> 
           </section>
 
-          
           {/* <HomeSection title="About" fullScreen>
               <AnimatedHeader
                   typography="f2-ns f3 lh-copy fw4 dark-gray mv0"

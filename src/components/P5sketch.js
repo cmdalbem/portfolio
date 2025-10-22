@@ -311,7 +311,7 @@ export default function P5SketchLoader() {
       placeholder.innerHTML = consoleLogs.map((log, index) => {
         return `
           <div style="white-space: nowrap;">
-            <span>[${log.timestamp}]</span> <span style="color: rgba(100, 100, 100, 0.5);">${log.message}</span>
+            <span class="o-50">[${log.timestamp}]</span> <span class="">${log.message}</span>
           </div>
         `;
       }).join('');
@@ -324,9 +324,6 @@ export default function P5SketchLoader() {
     state.mouseVelocity = p5.createVector(0, 0);
     state.fpsMonitor = new FPSMonitor();
 
-    logFunction(`Initializing Lorenz Attractor: σ = ${ATTRACTORS[0].o}, ρ = ${ATTRACTORS[0].p}, β = ${ATTRACTORS[0].b.toFixed(3)}`, 'INIT');
-    logFunction(`Initial parameters numPoints = ${numPoints}, tailSize = ${tailSize}, calcIterations = ${calcIterations}`, 'INIT');
-    logFunction(`Canvas size = ${p5.windowWidth}x${p5.windowHeight}px`, 'INIT');
 
     p5.frameRate(60);
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(
@@ -338,31 +335,35 @@ export default function P5SketchLoader() {
     p5.colorMode(p5.HSL);
     p5.camera(0, 0, 70);
 
+    // 1-second delay before initialization
+    setTimeout(() => {
+      // Initialize attractor
+      const type = 0; // Lorenz
+      const s = 20;
+      const x = 1,
+        y = 1,
+        z = 1;
 
-    // Initialize attractor
-    const type = 0; // Lorenz
-    const s = 20;
-    const x = 1,
-      y = 1,
-      z = 1;
-
-    state.points = [];
-    state.colorSeed = p5.random(0, 100);
-    
-    for (let i = 0; i < numPoints; i++) {
-      state.points.push(
-        new AttractorPoint(
-          p5,
-          p5.random(x * s, x * -s),
-          p5.random(y * s, y * -s),
-          p5.random(z * s, z * -s),
-          p5.abs(p5.randomGaussian(state.colorSeed, 5)) % 100,
-          type
-        )
-      );
-    }
-    
-    logFunction(`Initialized ${numPoints} attractor points`, 'INIT');
+      state.points = [];
+      state.colorSeed = p5.random(0, 100);
+      
+      for (let i = 0; i < numPoints; i++) {
+        state.points.push(
+          new AttractorPoint(
+            p5,
+            p5.random(x * s, x * -s),
+            p5.random(y * s, y * -s),
+            p5.random(z * s, z * -s),
+            p5.abs(p5.randomGaussian(state.colorSeed, 5)) % 100,
+            type
+          )
+        );
+      }
+      logFunction(`Initializing Lorenz Attractor: σ = ${ATTRACTORS[0].o}, ρ = ${ATTRACTORS[0].p}, β = ${ATTRACTORS[0].b.toFixed(3)}`, 'INIT');
+      logFunction(`Initial parameters numPoints = ${numPoints}, tailSize = ${tailSize}, calcIterations = ${calcIterations}`, 'INIT');
+      logFunction(`Canvas size = ${p5.windowWidth}x${p5.windowHeight}px`, 'INIT');
+      logFunction(`Initialized ${numPoints} attractor points`, 'INIT');
+    }, 1000);
   };
 
   const draw = (p5) => {
@@ -372,6 +373,12 @@ export default function P5SketchLoader() {
     const strokeLightness = isDarkMode ? 10 : 20;
 
     state.currentFrameNbr++;
+
+    // Don't draw anything until points are initialized
+    if (!state.points || state.points.length === 0) {
+      p5.background(backgroundColor);
+      return;
+    }
 
     // Adjust points array size based on current numPoints
     const currentNumPoints = state.points.length;
@@ -477,16 +484,7 @@ export default function P5SketchLoader() {
   };
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: 0,
-      }}
-    >
+    <div id="p5-container">
       <Sketch setup={setup} draw={draw} windowResized={windowResized} />
     </div>
   );
