@@ -7,15 +7,15 @@ const ATTRACTORS = [
 ];
 
 // Performance monitoring and dynamic calibration
-const TARGET_FPS = 60;
+const TARGET_FPS = 30;
 const MIN_FPS = 24;
 const FPS_SAMPLES = 30;
 const SHOW_FPS_DEBUG = false;
 
 // Dynamic parameters with ranges
 const PARAMS = {
-  NUM_POINTS: { min: 150, max: 300, default: 200 },
-  TAIL_SIZE: { min: 200, max: 500, default: 300 },
+  NUM_POINTS: { min: 50, max: 300, default: 150 },
+  TAIL_SIZE: { min: 20, max: 500, default: 200 },
   CALC_ITERATIONS: { min: 10, max: 20, default: 15 },
   ADJUSTMENT_SPEED: 0.5, // How quickly to adjust parameters (0-1)
 };
