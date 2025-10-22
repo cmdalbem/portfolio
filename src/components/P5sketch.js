@@ -16,7 +16,7 @@ const SHOW_CONSOLE_LOG = true; // Matrix-style console overlay
 const PARAMS = {
   NUM_POINTS: { min: 50, max: 300, default: 150 },
   TAIL_SIZE: { min: 20, max: 500, default: 200 },
-  CALC_ITERATIONS: { min: 10, max: 20, default: 15 },
+  CALC_ITERATIONS: { min: 15, max: 15, default: 15 }, // smoothness <> speed tradeoff
   ADJUSTMENT_SPEED: 0.5, // How quickly to adjust parameters (0-1)
 };
 
@@ -35,6 +35,8 @@ class FPSMonitor {
     this.currentFPS = TARGET_FPS;
     this.adjustmentCooldown = 0;
     this.lastAdjustment = 0;
+    this.hasLoggedLowFPS = false;
+    this.hasLoggedGoodFPS = false;
   }
 
   update(currentTime) {
@@ -74,6 +76,13 @@ class FPSMonitor {
     const oldCalcIterations = calcIterations;
 
     if (this.currentFPS < MIN_FPS) {
+      // Log performance warning only once
+      if (!this.hasLoggedLowFPS && logFunction) {
+        logFunction(`Performance warning: FPS dropped below ${MIN_FPS}`, 'PERF');
+        this.hasLoggedLowFPS = true;
+        this.hasLoggedGoodFPS = false; // Reset good FPS flag
+      }
+      
       // Performance is poor, reduce complexity
       numPoints = Math.max(
         PARAMS.NUM_POINTS.min,
@@ -83,21 +92,28 @@ class FPSMonitor {
         PARAMS.TAIL_SIZE.min,
         tailSize - Math.round((MIN_FPS - this.currentFPS) * adjustmentSpeed * 5)
       );
-      calcIterations = Math.max(
-        PARAMS.CALC_ITERATIONS.min,
-        calcIterations - Math.round((MIN_FPS - this.currentFPS) * adjustmentSpeed * 2)
-      );
+      // calcIterations = Math.max(
+      //   PARAMS.CALC_ITERATIONS.min,
+      //   calcIterations - Math.round((MIN_FPS - this.currentFPS) * adjustmentSpeed * 2)
+      // );
       this.adjustmentCooldown = 60;
       adjusted = true;
       
       if (logFunction) {
-        let message = `Low FPS (${this.currentFPS.toFixed(1)}), reducing complexity`;
-        if (numPoints !== oldNumPoints) message += ` | numPoints: ${oldNumPoints}→${numPoints}`;
-        if (tailSize !== oldTailSize) message += ` | tailSize: ${oldTailSize}→${tailSize}`;
-        if (calcIterations !== oldCalcIterations) message += ` | calcIterations: ${oldCalcIterations}→${calcIterations}`;
+        let message = `Warning: low FPS (${this.currentFPS.toFixed(1)}), reducing complexity `;
+        if (numPoints !== oldNumPoints) message += `(numPoints: ${oldNumPoints}→${numPoints}) `;
+        if (tailSize !== oldTailSize) message += `(tailSize: ${oldTailSize}→${tailSize}) `;
+        if (calcIterations !== oldCalcIterations) message += `(calcIterations: ${oldCalcIterations}→${calcIterations}) `;
         logFunction(message, 'PERF');
       }
     } else if (this.currentFPS > TARGET_FPS * 1.1 && fpsRatio > 1.1) {
+      // Log performance optimal only once
+      if (!this.hasLoggedGoodFPS && logFunction) {
+        logFunction(`Performance optimal: FPS above ${(TARGET_FPS * 1.1).toFixed(1)}`, 'PERF');
+        this.hasLoggedGoodFPS = true;
+        this.hasLoggedLowFPS = false; // Reset low FPS flag
+      }
+      
       // Performance is good, we can increase complexity
       numPoints = Math.min(
         PARAMS.NUM_POINTS.max,
@@ -107,18 +123,18 @@ class FPSMonitor {
         PARAMS.TAIL_SIZE.max,
         tailSize + Math.round((this.currentFPS - TARGET_FPS) * adjustmentSpeed)
       );
-      calcIterations = Math.min(
-        PARAMS.CALC_ITERATIONS.max,
-        calcIterations + Math.round((this.currentFPS - TARGET_FPS) * adjustmentSpeed * 0.5)
-      );
+      // calcIterations = Math.min(
+      //   PARAMS.CALC_ITERATIONS.max,
+      //   calcIterations + Math.round((this.currentFPS - TARGET_FPS) * adjustmentSpeed * 0.5)
+      // );
       this.adjustmentCooldown = 60;
       adjusted = true;
       
       if (logFunction) {
-        let message = `Good FPS (${this.currentFPS.toFixed(1)}), increasing complexity`;
-        if (numPoints !== oldNumPoints) message += ` | numPoints: ${oldNumPoints}→${numPoints}`;
-        if (tailSize !== oldTailSize) message += ` | tailSize: ${oldTailSize}→${tailSize}`;
-        if (calcIterations !== oldCalcIterations) message += ` | calcIterations: ${oldCalcIterations}→${calcIterations}`;
+        let message = `Good FPS (${this.currentFPS.toFixed(1)}), increasing complexity `;
+        if (numPoints !== oldNumPoints) message += `(numPoints: ${oldNumPoints}→${numPoints}) `;
+        if (tailSize !== oldTailSize) message += `(tailSize: ${oldTailSize}→${tailSize}) `;
+        if (calcIterations !== oldCalcIterations) message += `(calcIterations: ${oldCalcIterations}→${calcIterations}) `;
         logFunction(message, 'PERF');
       }
     }
@@ -262,7 +278,7 @@ export default function P5SketchLoader() {
     points: [],
     colorSeed: 0,
     stepSpeed: 0.0002,
-    currentTime: 0,
+    currentFrameNbr: 0,
     mouseRotation: null,
     mouseVelocity: null,
     fpsMonitor: null,
@@ -308,9 +324,9 @@ export default function P5SketchLoader() {
     state.mouseVelocity = p5.createVector(0, 0);
     state.fpsMonitor = new FPSMonitor();
 
-    logFunction('Initializing Lorenz Attractor Sketch', 'INIT');
+    logFunction(`Initializing Lorenz Attractor: σ=${ATTRACTORS[0].o}, ρ=${ATTRACTORS[0].p}, β=${ATTRACTORS[0].b.toFixed(3)}`, 'INIT');
     logFunction(`Initial parameters: numPoints: ${numPoints}, tailSize: ${tailSize}, calcIterations: ${calcIterations}`, 'INIT');
-    logFunction(`Canvas: ${p5.windowWidth}x${p5.windowHeight}`, 'INIT');
+    logFunction(`Canvas size: ${p5.windowWidth}x${p5.windowHeight}px`, 'INIT');
 
     p5.frameRate(60);
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(
@@ -355,11 +371,7 @@ export default function P5SketchLoader() {
     const strokeHue = isDarkMode ? 20 : 220;
     const strokeLightness = isDarkMode ? 10 : 20;
 
-    // Update FPS monitoring
-    state.fpsMonitor.update(p5.millis());
-    state.fpsMonitor.adjustParameters(logFunction);
-
-    state.currentTime++;
+    state.currentFrameNbr++;
 
     // Adjust points array size based on current numPoints
     const currentNumPoints = state.points.length;
@@ -386,8 +398,15 @@ export default function P5SketchLoader() {
       logFunction(`Adding ${added} new points (total: ${numPoints})`, 'POINTS');
     }
 
-    if (state.currentTime % 30 === 0) {
-      // Add random point (replace oldest)
+
+    if (state.currentFrameNbr > 150) {
+      // Update FPS monitoring
+      state.fpsMonitor.update(p5.millis());
+      state.fpsMonitor.adjustParameters(logFunction);
+    }
+ 
+    // Waits for attractor to stabilize and then replaces the oldest point with a new one every few frames
+    if (state.currentFrameNbr > 300 && state.currentFrameNbr % 60 === 0) {
       state.points.shift();
       const x = p5.random(100, -100);
       const y = p5.random(100, -100);
@@ -402,11 +421,11 @@ export default function P5SketchLoader() {
           0
         )
       );
-      logFunction(`Adding new point at random pos (${x.toFixed(2)}, ${y.toFixed(2)}, ${z.toFixed(2)})`, 'POINTS');
+      logFunction(`Replacing oldest point with new one at (${x.toFixed(2)}, ${y.toFixed(2)}, ${z.toFixed(2)})`, 'POINTS');
     }
 
-    p5.rotateY(state.currentTime / 2000 - p5.PI / 10);
-    p5.rotateX(state.currentTime / 1000);
+    p5.rotateY(state.currentFrameNbr / 2000 - p5.PI / 10);
+    p5.rotateX(state.currentFrameNbr / 1000);
     p5.background(backgroundColor);
     p5.blendMode(isDarkMode ? p5.ADD : p5.SUBTRACT);
 
@@ -427,14 +446,13 @@ export default function P5SketchLoader() {
       state.mouseVelocity.mult(0.02);
       state.mouseRotation.add(state.mouseVelocity);
       
-      // Log significant mouse movements (throttled)
-      // if (magnitude > 5) {
-      //   const now = state.currentTime;
-      //   if (now - state.lastMouseActivity > 120) { // Log every ~2 seconds
-      //     logFunction(`Mouse interaction detected (Δ: ${magnitude.toFixed(0)}px)`, 'MOUSE');
-      //     state.lastMouseActivity = now;
-      //   }
-      // }
+      if (magnitude > 0.5) { 
+        const now = state.currentFrameNbr;
+        if (now - state.lastMouseActivity > 30) { 
+          logFunction(`Mouse: Δ=${magnitude.toFixed(1)}px, pos=(${p5.mouseX},${p5.mouseY}), rotation=${state.mouseRotation.mag().toFixed(3)}`, 'MOUSE');
+          state.lastMouseActivity = now;
+        }
+      }
     }
     p5.rotateX(-state.mouseRotation.y);
     p5.rotateY(-state.mouseRotation.x);
@@ -453,6 +471,7 @@ export default function P5SketchLoader() {
 
   const windowResized = (p5) => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    logFunction(`Canvas resized: ${p5.windowWidth}x${p5.windowHeight}`, 'CANVAS');
   };
 
   return (
@@ -463,7 +482,7 @@ export default function P5SketchLoader() {
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: -1,
+        zIndex: 0,
       }}
     >
       <Sketch setup={setup} draw={draw} windowResized={windowResized} />

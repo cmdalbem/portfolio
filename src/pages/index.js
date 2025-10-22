@@ -111,7 +111,7 @@ class IndexPage extends React.Component {
                  
                  {/* Console Log Overlay placeholder - P5 sketch will inject content here */}
                  <div style={{
-                    height: '400px',
+                    height: '200px',
                     fontFamily: 'monospace',
                     fontSize: '11px',
                     color: 'rgba(150, 150, 150, 0.4)',
