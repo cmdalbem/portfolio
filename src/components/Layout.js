@@ -7,6 +7,9 @@ import image from '../images/selfie.png';
 
 import Header from './Header'
 import Footer from './Footer'
+import DotGrid from './DotGrid'
+import { isMobile } from 'react-device-detect';
+
 import './tachyons.min.css'
 import './layout.css'
 
@@ -31,6 +34,14 @@ const Layout = ({ children }) => (
 
       return (
         <div className="parallax">
+          <DotGrid 
+            dotSize={2}
+            columns={isMobile ? 12 : 24}
+            // opacity={1}
+            blendMode="difference"
+            className={isHome ? "dot-grid--offset" : ""}
+          />
+          
           <Helmet>
             <html lang="en"/>
             {/* <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css"/> */}
