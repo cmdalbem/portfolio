@@ -97,7 +97,7 @@ class IndexPage extends React.Component {
                 {
                   isMobile ?
                     <h1 className={titleTypography}>
-                      Trained in code & self-taught in design, for 10 years building impactful, 
+                      Trained in code & self-taught in design, for 10 years building impactful 
                         digital products for work and for love.
                     </h1>
                   : <AnimatedHeader
