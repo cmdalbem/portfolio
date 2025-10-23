@@ -319,11 +319,12 @@ export default function P5SketchLoader() {
   }, [consoleLogs]);
 
   const setup = (p5, canvasParentRef) => {
+    logFunction(`Initial parameters numPoints = ${numPoints}, tailSize = ${tailSize}, calcIterations = ${calcIterations}`, 'INIT');
+    
     const state = sketchState.current;
     state.mouseRotation = p5.createVector(0, 0);
     state.mouseVelocity = p5.createVector(0, 0);
     state.fpsMonitor = new FPSMonitor();
-
 
     p5.frameRate(60);
     p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL).parent(
@@ -337,6 +338,8 @@ export default function P5SketchLoader() {
 
     // 1-second delay before initialization
     setTimeout(() => {
+      logFunction(`Initializing Lorenz Attractor: σ = ${ATTRACTORS[0].o}, ρ = ${ATTRACTORS[0].p}, β = ${ATTRACTORS[0].b.toFixed(3)}`, 'INIT');
+
       // Initialize attractor
       const type = 0; // Lorenz
       const s = 20;
@@ -359,10 +362,8 @@ export default function P5SketchLoader() {
           )
         );
       }
-      logFunction(`Initializing Lorenz Attractor: σ = ${ATTRACTORS[0].o}, ρ = ${ATTRACTORS[0].p}, β = ${ATTRACTORS[0].b.toFixed(3)}`, 'INIT');
-      logFunction(`Initial parameters numPoints = ${numPoints}, tailSize = ${tailSize}, calcIterations = ${calcIterations}`, 'INIT');
-      logFunction(`Canvas size = ${p5.windowWidth}x${p5.windowHeight}px`, 'INIT');
-      logFunction(`Initialized ${numPoints} attractor points`, 'INIT');
+      // logFunction(`Canvas size = ${p5.windowWidth}x${p5.windowHeight}px`, 'INIT');
+      // logFunction(`Initialized ${numPoints} attractor points`, 'INIT');
     }, 1000);
   };
 
