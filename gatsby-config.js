@@ -19,12 +19,12 @@ module.exports = {
       },
     },
     // 'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Syne\:400`]
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`Syne\:400`]
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
