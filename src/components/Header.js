@@ -64,7 +64,7 @@ class Header extends React.Component {
               } */}
             </h1>
         
-            <div className={`${isHome && 'f7 dn db-ns'}`}>
+            <div className={`${isHome && 'f7 dn db-ns nr3'}`}>
               { 
                 isHome ? (
                   <>

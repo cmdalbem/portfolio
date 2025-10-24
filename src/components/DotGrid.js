@@ -41,28 +41,13 @@ const DotGrid = ({
     }
   }, []);
 
-  // Calculate responsive spacing based on screen width and columns
+  // Calculate spacing to ensure exact number of columns
   const calculateSpacing = () => {
     if (screenWidth === 0) return 32; // Default fallback
     
-    // Mobile: 30em = 480px (assuming 16px base font)
-    // Tablet: 60em = 960px
-    // Desktop: above 960px
-    
-    let baseSpacing;
-    if (screenWidth < 480) {
-      // Mobile: smaller spacing, fewer effective columns
-      baseSpacing = screenWidth / (columns * 0.7); // Use 70% of columns for mobile
-    } else if (screenWidth < 960) {
-      // Tablet: medium spacing
-      baseSpacing = screenWidth / (columns * 0.8); // Use 80% of columns for tablet
-    } else {
-      // Desktop: full spacing
-      baseSpacing = screenWidth / columns;
-    }
-    
-    // Ensure minimum spacing of 16px and maximum of 128px
-    return Math.max(16, Math.min(128, baseSpacing));
+    // Calculate exact spacing to fit the desired number of columns
+    // For N columns, we need N-1 gaps between them, plus margins
+    return screenWidth / columns;
   };
 
   const spacing = calculateSpacing();
@@ -73,7 +58,7 @@ const DotGrid = ({
     '--dot-spacing': `${spacing}px`,
     '--dot-opacity': opacity,
     '--dot-blend-mode': blendMode,
-    '--dot-color': isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
+    '--dot-color': isDarkMode ? 'rgba(255,255,255,0.4)' : 'white',
   };
 
   return (

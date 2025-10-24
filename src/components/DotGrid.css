@@ -22,8 +22,3 @@
   background-size: var(--dot-spacing) var(--dot-spacing);
   background-position: 0 0;
 }
-
-/* Offset version for better alignment */
-.dot-grid--offset::before {
-  background-position: calc(var(--dot-spacing) / 2) calc(var(--dot-spacing) / 2);
-}

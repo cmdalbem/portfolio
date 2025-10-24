@@ -35,9 +35,9 @@ const Layout = ({ children }) => (
       return (
         <div className="parallax">
           <DotGrid 
-            dotSize={2}
-            columns={isMobile ? 12 : 24}
-            // opacity={1}
+            dotSize={1}
+            columns={12}
+            opacity={1}
             blendMode="difference"
             className={isHome ? "dot-grid--offset" : ""}
           />
