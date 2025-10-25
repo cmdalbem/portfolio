@@ -37,7 +37,7 @@ const Layout = ({ children }) => (
           <DotGrid 
             dotSize={1}
             columns={12}
-            opacity={1}
+            opacity={0.5}
             blendMode="difference"
             className={isHome ? "dot-grid--offset" : ""}
           />

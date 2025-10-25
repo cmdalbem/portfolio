@@ -14,10 +14,10 @@ const SHOW_CONSOLE_LOG = true; // Matrix-style console overlay
 
 // Dynamic parameters with ranges
 const PARAMS = {
-  NUM_POINTS: { min: 50, max: 300, default: 150 },
+  NUM_POINTS: { min: 50, max: 300, default: 100 },
   TAIL_SIZE: { min: 20, max: 500, default: 200 },
   CALC_ITERATIONS: { min: 15, max: 15, default: 15 }, // smoothness <> speed tradeoff
-  ADJUSTMENT_SPEED: 0.5, // How quickly to adjust parameters (0-1)
+  ADJUSTMENT_SPEED: 0.4, // How quickly to adjust parameters (0-1)
 };
 
 // Initialize with default values
@@ -319,7 +319,7 @@ export default function P5SketchLoader() {
   }, [consoleLogs]);
 
   const setup = (p5, canvasParentRef) => {
-    logFunction(`Initial parameters numPoints = ${numPoints}, tailSize = ${tailSize}, calcIterations = ${calcIterations}`, 'INIT');
+    logFunction(`Initial parameters numPoints = ${numPoints}, tailSize = ${tailSize}`, 'INIT');
     
     const state = sketchState.current;
     state.mouseRotation = p5.createVector(0, 0);
@@ -414,7 +414,7 @@ export default function P5SketchLoader() {
     }
  
     // Waits for attractor to stabilize and then replaces the oldest point with a new one every few frames
-    if (state.currentFrameNbr > 300 && state.currentFrameNbr % 60 === 0) {
+    if (state.currentFrameNbr > 350 && state.currentFrameNbr % 60 === 0) {
       state.points.shift();
       const x = p5.random(100, -100);
       const y = p5.random(100, -100);
