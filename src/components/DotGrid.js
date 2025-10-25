@@ -10,12 +10,14 @@ const DotGrid = ({
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     // Check initial dark mode state and screen width
     if (typeof document !== "undefined") {
       setIsDarkMode(document.body.classList.contains("dark"));
       setScreenWidth(window.innerWidth);
+      setIsReady(true);
 
       // Watch for dark mode changes
       const observer = new MutationObserver(() => {
@@ -60,6 +62,11 @@ const DotGrid = ({
     '--dot-blend-mode': blendMode,
     '--dot-color': isDarkMode ? 'rgba(255,255,255,0.4)' : 'white',
   };
+
+  // Don't render until we have the correct screen width
+  if (!isReady) {
+    return null;
+  }
 
   return (
     <div 
