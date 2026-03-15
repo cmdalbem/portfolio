@@ -216,7 +216,7 @@ class ProjectPage extends React.Component {
             post.frontmatter.team &&
             <div className='dark-gray w-100 mr2 mv0-ns mv2'>
               <h2 className="f5 fw4 gray">
-                Teammates
+                Team
               </h2>
               <span className="f5 lh-copy">
                 {/* {post.frontmatter.team} */}
