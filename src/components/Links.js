@@ -12,11 +12,11 @@ const Links = () => {
       label: "Email",
       url: "mailto:cristiano.dalbem@gmail.com"
     },
-    {
-        label: "Mentorship",
-        url: "https://adplist.org/mentors/cristiano-dalbem/",
-        // description: "Mentorship"
-    },
+    // {
+    //     label: "Mentorship",
+    //     url: "https://adplist.org/mentors/cristiano-dalbem/",
+    //     // description: "Mentorship"
+    // },
     {
         label: "GitHub",
         url: "https://github.com/cmdalbem/",
