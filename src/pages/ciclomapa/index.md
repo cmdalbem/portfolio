@@ -11,7 +11,7 @@ cover: './cover.png'
 # hover: '/covers/ciclomapa.gif'
 team: ["Felipe Alves (OSM Technical Advisor)", "Bernardo Serra (Product Owner)", "Leonardo Veiga (Product Owner)"]
 color: '#4EA76F'
-liveLink: 'https://ciclomapa.org.br/'
+liveLink: 'https://ciclomapa.app/'
 ---
 
 # Overview
@@ -20,7 +20,7 @@ Today in Brazil, we face the immense challenge of not having data on the cycling
 
 ## Strong partners 
 
-I've teamed up with [UCB (Brazil Cyclists Union)](https://uniaodeciclistas.org.br/) and [ITDP (Transport and Development Policy Institute)](https://itdpbrasil.org/), two of the most relevant civil society organizations in Brazil for cycling and urban mobility. We set to design and build the first unified platform of cycling maps, encompassing the entirety of the country's cities.
+I've teamed up with [UCB (Brazil Cyclists Union)](https://uniaodeciclistas.app/) and [ITDP (Transport and Development Policy Institute)](https://itdpbrasil.org/), two of the most relevant civil society organizations in Brazil for cycling and urban mobility. We set to design and build the first unified platform of cycling maps, encompassing the entirety of the country's cities.
 
   
 ## Open data
@@ -265,7 +265,7 @@ I was also responsible for designing social media posts highlighting the differe
 
 Since its launch, CicloMapa has become Brazil's leading platform for bike maps, even without any money spent on advertising it.
 
-We're glad with the organic coverage from different media channels, mainly with [Mobilize](https://www.mobilize.org.br/noticias/11986/um-mapa-com-quase-todas-as-ciclovias-do-brasil.html) and [ArchDaily](https://www.archdaily.com.br/br/933497/ciclomapa-um-mapa-colaborativo-da-infraestrutura-cicloviaria-das-cidades-brasileiras), big portals specialized on mobility. One of ITDP's webinars that presented CicloMapa also got highlighted on [Hacker News's](https://news.ycombinator.com/item?id=30791874) front page, the legendary tech news portal by Y Combinator.
+We're glad with the organic coverage from different media channels, mainly with [Mobilize](https://www.mobilize.app/noticias/11986/um-mapa-com-quase-todas-as-ciclovias-do-brasil.html) and [ArchDaily](https://www.archdaily.com.br/br/933497/ciclomapa-um-mapa-colaborativo-da-infraestrutura-cicloviaria-das-cidades-brasileiras), big portals specialized on mobility. One of ITDP's webinars that presented CicloMapa also got highlighted on [Hacker News's](https://news.ycombinator.com/item?id=30791874) front page, the legendary tech news portal by Y Combinator.
 
 ```grid|1
 ![](./coverage.jpg)
@@ -290,8 +290,8 @@ This success guaranteed yearly budget updates from the client, which always gave
 <links-list
     items='[ 
         {
-            "label": "CicloMapa.org.br",
-            "url": "https://ciclomapa.org.br/"
+            "label": "CicloMapa.app",
+            "url": "https://ciclomapa.app/"
         },
         {
             "label": "GitHub",
@@ -299,11 +299,11 @@ This success guaranteed yearly budget updates from the client, which always gave
         },
         {
             "label": "Presentation video @ FOSS4G, 2021 [En]",
-            "url": "https://ciclomapa.org.br/"
+            "url": "https://ciclomapa.app/"
         },
         {
             "label": "Educational website [Pt]",
-            "url": "https://uniaodeciclistas.org.br/atuacao/ciclomapa/"
+            "url": "https://uniaodeciclistas.app/atuacao/ciclomapa/"
         },
         {
             "label": "Launch webinar video, 2019 [Pt]",
