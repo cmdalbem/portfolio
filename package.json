@@ -33,6 +33,7 @@
     "react-helmet": "^6.1.0",
     "react-p5": "^1.4.1",
     "react-reveal": "^1.2.2",
+    "three": "^0.170.0",
     "react-scrollspy": "^3.4.3",
     "rehype-react": "^7.1.2"
   },

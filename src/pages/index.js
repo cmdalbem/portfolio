@@ -16,7 +16,7 @@ import Links from '../components/Links'
 import HomeSection from '../components/HomeSection'
 import Projects from '../components/Projects'
 
-import P5SketchLoader from '../components/P5SketchLoader'
+import LorenzSketchLoader from '../components/LorenzSketchLoader'
 
 import { sortPosts } from '../components/utils.js'
 
@@ -60,8 +60,8 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-         <BrowserView>
-          <P5SketchLoader />
+        <BrowserView>
+          <LorenzSketchLoader />
         </BrowserView>
 
         <MobileView>
@@ -83,7 +83,7 @@ class IndexPage extends React.Component {
         <div className="layoutMaxWidth center">
           <section className="flex flex-row-ns flex-column ">
             {/* <div className="w-40-ns"> */}
-            <div className="relative vh-75 w-100">
+            <div className="relative vh-75 w-100">  
               {/* <MobileView>
                 <Img
                   style={{position: 'absolute'}}
@@ -109,7 +109,7 @@ class IndexPage extends React.Component {
                   ]}/> 
                 }
                  
-                 {/* Console Log Overlay placeholder - P5 sketch will inject content here */}
+                 {/* Console log overlay placeholder */}
                  <div id="consoleLogOverlayContainer" className="source-code-pro">
                     <div id="consoleLogOverlayPlaceholder">
                     </div>
