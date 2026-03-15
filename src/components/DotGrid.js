@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './DotGrid.css';
 
+// Same as layout.css mobile breakpoint: @media (max-width: 30em)
+const MOBILE_MEDIA_QUERY = '(max-width: 30em)';
+
 const DotGrid = ({ 
   dotSize = 1, 
   columns = 12, // Number of columns for the grid
@@ -10,13 +13,20 @@ const DotGrid = ({
 }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const [isReady, setIsReady] = useState(false);
+
+  const effectiveColumns = isMobile
+    ? Math.max(1, Math.floor(columns / 2))
+    : columns;
 
   useEffect(() => {
     // Check initial dark mode state and screen width
     if (typeof document !== "undefined") {
       setIsDarkMode(document.body.classList.contains("dark"));
       setScreenWidth(window.innerWidth);
+      const mq = window.matchMedia(MOBILE_MEDIA_QUERY);
+      setIsMobile(mq.matches);
       setIsReady(true);
 
       // Watch for dark mode changes
@@ -34,10 +44,13 @@ const DotGrid = ({
         setScreenWidth(window.innerWidth);
       };
 
+      const handleMediaChange = (e) => setIsMobile(e.matches);
+      mq.addEventListener('change', handleMediaChange);
       window.addEventListener('resize', handleResize);
 
       return () => {
         observer.disconnect();
+        mq.removeEventListener('change', handleMediaChange);
         window.removeEventListener('resize', handleResize);
       };
     }
@@ -49,7 +62,7 @@ const DotGrid = ({
     
     // Calculate exact spacing to fit the desired number of columns
     // For N columns, we need N-1 gaps between them, plus margins
-    return screenWidth / columns;
+    return screenWidth / effectiveColumns;
   };
 
   const spacing = calculateSpacing();
