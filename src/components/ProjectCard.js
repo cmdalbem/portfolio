@@ -23,10 +23,13 @@ class ProjectCard extends React.Component {
             dateEnd = null;
         }
  
+        const themeColor = post.frontmatter.color || 'rgb(90,50,50)';
+
         return (
             <Link 
                 className={"project-card link near-black db lh-copy " + (mini ? 'db-ns flex h-100-ns mv2' : 'mt3-ns mb5-ns mv3')}
-                to={post.fields.slug} 
+                to={post.fields.slug}
+                style={{ '--card-shadow-color': themeColor }} 
                 onMouseEnter={() => this.setState({hover: isMobile ? false : true})}
                 onMouseLeave={() => this.setState({hover: isMobile ? false : false})}
             >
