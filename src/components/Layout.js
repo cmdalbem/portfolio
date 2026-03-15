@@ -46,17 +46,17 @@ const Layout = ({ children }) => (
             <html lang="en"/>
             {/* <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css"/> */}
 
-            <title>Cristiano Dalbem — Product Design Portfolio</title>
+            <title>Cristiano Dalbem — Design Engineer Portfolio</title>
 
-            <meta property="og:title" content="Cristiano Dalbem — Product Design Portfolio"/>
-            <meta property="og:site_name" content="Cristiano Dalbem — Product Design Portfolio"/>
+            <meta property="og:title" content="Cristiano Dalbem — Design Engineer Portfolio"/>
+            <meta property="og:site_name" content="Cristiano Dalbem — Design Engineer Portfolio"/>
             <meta property="og:description" content="Portfolio of Cristiano Dalbem, a designer of products and systems, with UX case studies of professional and personal projects."/>
             <meta property="og:image" content={'https://www.cristianodalbem.com' + image}/>
             <meta property="og:url" content="https://www.cristianodalbem.com/"/>
             <meta property="og:type" content="website"/>
 
             <meta name="twitter:card" content="summary_large_image"/>
-            <meta name="twitter:title" content="Cristiano Dalbem — Product Design Portfolio"/>
+            <meta name="twitter:title" content="Cristiano Dalbem — Design Engineer Portfolio"/>
             <meta name="twitter:description" content="Portfolio of Cristiano Dalbem, a designer of products and systems, with UX case studies of professional and personal projects."/>
           </Helmet>
  
