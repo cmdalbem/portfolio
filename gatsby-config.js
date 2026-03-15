@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Cristiano Dalbem — Product Design Portfolio',
+    title: 'Cristiano Dalbem — Design Engineer Portfolio',
     siteUrl: 'https://cristianodalbem.com/',
   },
   plugins: [
@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Cristiano Dalbem — Product Design Portfolio',
+        name: 'Cristiano Dalbem — Design Engineer Portfolio',
         short_name: 'Cristiano Dalbem',
         start_url: '/',
         background_color: '#ffffff',
