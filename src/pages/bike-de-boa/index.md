@@ -11,7 +11,7 @@ team: ["Hannah Kny (urbanist, illustrator, communication)", "Tadeu Saldanha (cyc
 cover: './cover.png'
 # hover: '/covers/bikedeboa.gif'
 color: '#41A65A'
-liveLink: 'https://www.bikedeboa.com.br/'
+# liveLink: 'https://www.bikedeboa.com.br/'
 ---
 
 # Overview
