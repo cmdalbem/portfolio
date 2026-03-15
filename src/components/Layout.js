@@ -8,7 +8,7 @@ import image from '../images/selfie.png';
 import Header from './Header'
 import Footer from './Footer'
 import DotGrid from './DotGrid'
-import { isMobile } from 'react-device-detect';
+import { ThemeProvider } from './ThemeContext'
 
 import './tachyons.min.css'
 import './layout.css'
@@ -33,6 +33,7 @@ const Layout = ({ children }) => (
       const globalPadding = 'ph5-ns ph4-m ph3 ';
 
       return (
+        <ThemeProvider>
         <div className="parallax">
           <DotGrid 
             dotSize={1}
@@ -71,6 +72,7 @@ const Layout = ({ children }) => (
             <Footer/>
           </div>
         </div>
+        </ThemeProvider>
       )
     }}
   />
