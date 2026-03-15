@@ -238,6 +238,7 @@ export default function LorenzSketch({ onLog }) {
   useEffect(() => {
     if (typeof document === "undefined" || !containerRef.current) return;
 
+    const container = containerRef.current;
     stateRef.current.onLog = onLog;
     let renderer;
     try {
@@ -254,7 +255,7 @@ export default function LorenzSketch({ onLog }) {
       renderer.domElement.style.display = "block";
       renderer.domElement.style.width = "100%";
       renderer.domElement.style.height = "100%";
-      containerRef.current.appendChild(renderer.domElement);
+      container.appendChild(renderer.domElement);
 
       const aspect = height > 0 ? width / height : 16 / 9;
       const camera = new THREE.PerspectiveCamera(45, aspect, 1, 1000);
@@ -635,15 +636,15 @@ export default function LorenzSketch({ onLog }) {
       stateRef.current.injectMaterial?.dispose();
       copyMaterial.dispose();
       copyQuad.geometry.dispose();
-      if (containerRef.current?.contains(renderer.domElement)) {
-        containerRef.current.removeChild(renderer.domElement);
+      if (container?.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
       }
     };
     } catch (err) {
       console.error("LorenzSketch setup error:", err);
       return () => {};
     }
-  }, [isDarkMode]);
+  }, [isDarkMode, onLog]);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
