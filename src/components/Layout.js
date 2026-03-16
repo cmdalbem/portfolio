@@ -34,44 +34,42 @@ const Layout = ({ children }) => (
 
       return (
         <ThemeProvider>
-        <div className="parallax">
-          <DotGrid 
-            dotSize={1}
-            columns={12}
-            opacity={0.5}
-            blendMode="difference"
-            className={isHome ? "dot-grid--offset" : ""}
-          />
-          
-          <Helmet>
-            <html lang="en"/>
-            {/* <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css"/> */}
+          <div className="parallax">
+            <DotGrid 
+              dotSize={1}
+              columns={12}
+              opacity={0.5}
+              blendMode="difference"
+              className={isHome ? "dot-grid--offset" : ""}
+            />
+            
+            <Helmet>
+              <html lang="en"/>
 
-            <title>Cristiano Dalbem — Design Engineer Portfolio</title>
+              <title>Cristiano Dalbem — Design Engineer Portfolio</title>
 
-            <meta property="og:title" content="Cristiano Dalbem — Design Engineer Portfolio"/>
-            <meta property="og:site_name" content="Cristiano Dalbem — Design Engineer Portfolio"/>
-            <meta property="og:description" content="Portfolio of Cristiano Dalbem, a designer of products and systems, with UX case studies of professional and personal projects."/>
-            <meta property="og:image" content={'https://www.cristianodalbem.com' + image}/>
-            <meta property="og:url" content="https://www.cristianodalbem.com/"/>
-            <meta property="og:type" content="website"/>
+              <meta property="og:title" content="Cristiano Dalbem — Design Engineer Portfolio"/>
+              <meta property="og:site_name" content="Cristiano Dalbem — Design Engineer Portfolio"/>
+              <meta property="og:description" content="Portfolio of Cristiano Dalbem, a designer of products and systems, with UX case studies of professional and personal projects."/>
+              <meta property="og:image" content={'https://www.cristianodalbem.com' + image}/>
+              <meta property="og:url" content="https://www.cristianodalbem.com/"/>
+              <meta property="og:type" content="website"/>
 
-            <meta name="twitter:card" content="summary_large_image"/>
-            <meta name="twitter:title" content="Cristiano Dalbem — Design Engineer Portfolio"/>
-            <meta name="twitter:description" content="Portfolio of Cristiano Dalbem, a designer of products and systems, with UX case studies of professional and personal projects."/>
-          </Helmet>
- 
-          <Header globalPadding={globalPadding}/>
+              <meta name="twitter:card" content="summary_large_image"/>
+              <meta name="twitter:title" content="Cristiano Dalbem — Design Engineer Portfolio"/>
+              <meta name="twitter:description" content="Portfolio of Cristiano Dalbem, a designer of products and systems, with UX case studies of professional and personal projects."/>
+            </Helmet>
+  
+            <Header globalPadding={globalPadding}/>
 
-          <div className={globalPadding}>
-            {/* <AnimatedChildren/> */}
-            {children}
+            <div className={globalPadding}>
+              {children}
+            </div>
+
+            <div className={`${globalPadding} bg-light-gray`}>
+              <Footer/>
+            </div>
           </div>
-
-          <div className={`${globalPadding} bg-light-gray`}>
-            <Footer/>
-          </div>
-        </div>
         </ThemeProvider>
       )
     }}

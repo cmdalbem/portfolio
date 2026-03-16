@@ -191,8 +191,11 @@ body {
   }
 
   #header {
-    left: 1rem;
-    right: 1rem;
+    left: 0;
+    right: 0;
+
+    max-width: calc(100% - 2rem);
+    overflow-x: clip !important;
   }
 }
 

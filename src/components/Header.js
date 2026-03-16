@@ -27,7 +27,7 @@ class Header extends React.Component {
     let headerClasses = this.props.className || '';
     headerClasses += ' flex pt4 pb3 center ';
     // headerClasses += isHome ? ` fixed-ns top-0 left-0 right-0 bg-background-color z-2 relative` : '';
-    headerClasses += isHome ? ` layoutMaxWidth fixed-ns top-0 left-0 right-0 z-2 relative` : globalPadding;
+    headerClasses += isHome ? ` layoutMaxWidth fixed-ns top-0 left-0 right-0 z-2 relative` : `center flex pb3 ph0 ph4-m ph5-ns pt4`;
     
     let sections = [
       'Projects',
