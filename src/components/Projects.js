@@ -6,7 +6,7 @@ import { isMobile } from 'react-device-detect';
 
 class Projects extends React.Component {
     render() {
-        const { mini, posts } = this.props;
+        const { mini, miniColumns = 2, posts } = this.props;
         if (posts.length === 0) {
             return <div></div>;
         }
@@ -14,12 +14,13 @@ class Projects extends React.Component {
         const classes = "w-100 animatable";
         
         let gridStyle = {};
-        if (mini & !isMobile) {
+        if (mini && !isMobile) {
             gridStyle = {
                 display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
+                gridTemplateColumns: `repeat(${miniColumns}, 1fr)`,
                 gap: '32px'
-        }};
+            };
+        }
 
         return (
             <Reveal effect="slideUp" duration={2000}>

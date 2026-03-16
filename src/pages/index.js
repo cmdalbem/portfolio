@@ -143,13 +143,13 @@ class IndexPage extends React.Component {
           <HomeSection title="Projects" fullScreen
             description="The stories behind some of the work I've done for businesses and other clients.">
             <Projects posts={projectsHighlights}/> 
-            <Projects mini posts={projects} />
+            <Projects mini miniColumns={2} posts={projects} />
           </HomeSection>
 
           <HomeSection title="Sideprojects" fullScreen
             description="Things I built to help solve people's problems, learn something new, or just for fun.">
             <Projects posts={personalHighlights} />
-            <Projects mini posts={personal} />
+            <Projects mini miniColumns={3} posts={personal} />
           </HomeSection> 
 
           <HomeSection title="About me" fullScreen> 
