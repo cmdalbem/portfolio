@@ -233,6 +233,7 @@ export default function LorenzSketch({ onLog }) {
     mouseVelocity: { x: 0, y: 0 },
     frameCount: 0,
     animationId: null,
+    lastFrameTime: 0,
   });
 
   useEffect(() => {
@@ -507,9 +508,24 @@ export default function LorenzSketch({ onLog }) {
       }
     };
 
-    function animate() {
+    const targetFrameMs = 1000 / 30; // 30 FPS cap
+
+    function animate(now) {
       const s = stateRef.current;
       if (!s.renderer || !s.lineScene) return;
+
+      // Frame pacing: only run the heavy simulation/render logic ~30 times per second.
+      if (typeof now === "number") {
+        if (!s.lastFrameTime) {
+          s.lastFrameTime = now;
+        }
+        const delta = now - s.lastFrameTime;
+        if (delta < targetFrameMs) {
+          s.animationId = requestAnimationFrame(animate);
+          return;
+        }
+        s.lastFrameTime = now;
+      }
       try {
         s.frameCount++;
         const time = s.frameCount * 0.001;
@@ -607,7 +623,8 @@ export default function LorenzSketch({ onLog }) {
       s.animationId = requestAnimationFrame(animate);
     }
 
-    animate();
+    stateRef.current.lastFrameTime = 0;
+    stateRef.current.animationId = requestAnimationFrame(animate);
 
     const resizeTimeout = setTimeout(onResize, 0);
     window.addEventListener("resize", onResize);
