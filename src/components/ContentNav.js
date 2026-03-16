@@ -69,14 +69,17 @@ class ContentNav extends React.Component {
             return null;
         }
 
-        const tabItemClasses = 'bn tl ph0 pv1 mb1 f6 db dim bg-transparent';
+        const tabItemClasses = 'bn tl ph0 pv1 mb0 f7 db dim bg-transparent';
 
         let lastH1SectionIndex = -1;
+        let h1Number = 0;
         sections.forEach((s, i) => {
             s.slug = slugify(s.title);
             if (s.tag === 'h1') {
                 lastH1SectionIndex = i;
                 s.subsections = [];
+                h1Number += 1;
+                s.h1Number = h1Number;
             } else {
                 sections[lastH1SectionIndex].subsections.push(s);
             }
@@ -93,6 +96,7 @@ class ContentNav extends React.Component {
                     height: '500px'
                 }}
             >
+                {/* <div className="f7 ttu tracked gray o-20 mb2">TABLE OF CONTENTS</div> */}
                 <div className="flex flex-column">
                     {sections.map((s, i) => (
                         s.tag === 'h1' &&
@@ -100,30 +104,32 @@ class ContentNav extends React.Component {
                             {/* H1 headings */}
                             <button
                                 className={`
-                                    ${tabItemClasses}
+                                    ${tabItemClasses} flex items-baseline
                                     ${this.state.activeH1 === s.slug && s.subsections.length==0 ? 'dark-gray' : 'silver'
                                 }`}
                                 onClick={() => this.scrollToSection(s.slug)}
                                 ref={(ref) => this.sectionsRefs[i] = document.getElementById(s.slug)}
                             >
-                                {s.title}
+                                <span className="f8 gray o-40 tr mr2" style={{ width: '1rem', minWidth: '1rem' }}>{s.h1Number}</span>
+                                <span className="flex-auto tl">{s.title}</span>
                             </button>
 
                             {/* H2 headings */}
                             {
                                 s.subsections.length > 0 &&
-                                <div className={`pl3 bl b--light-gray mb2 ${this.state.activeH1 === s.slug ? 'db' : 'dn'}`}>
+                                <div className={`pl3 ml3 bl b--light-gray mb2 ${this.state.activeH1 === s.slug ? 'db' : 'dn'}`}>
                                     {s.subsections.map((ss, j) => (
                                         <button
                                             className={
-                                                `${tabItemClasses} mb1 
+                                                `${tabItemClasses} flex items-baseline
                                                 ${this.state.activeH2 === ss.slug ? 'dark-gray' : 'silver'
                                             }`}
                                             onClick={() => this.scrollToSection(ss.slug)}
                                             key={ss.title}
                                             ref={(ref) => this.sectionsRefs[i + j + 1] = document.getElementById(ss.slug)}
                                         >
-                                            {ss.title}
+                                            {/* <span className="f8 gray o-40 tr mr2" style={{ width: '1.75rem', minWidth: '1.75rem' }}>{s.h1Number}.{j + 1}</span> */}
+                                            <span className="flex-auto tl">{ss.title}</span>
                                         </button>
                                     ))}
                                 </div>
