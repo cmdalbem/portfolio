@@ -18,7 +18,7 @@ class ResultsBanner extends React.Component {
 
         return (
             <div
-                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa7-ns pv6 bg-near-white flex flex-row-l flex-column justify-around relative"
+                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa7-ns pv6 ph3 bg-near-white flex flex-row-l flex-column justify-around relative"
             >
                 {
                     Object.keys(dataObj).map((i, n) => (
