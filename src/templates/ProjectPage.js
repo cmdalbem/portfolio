@@ -85,7 +85,7 @@ class ProjectPage extends React.Component {
                   
                   {
                     post.frontmatter.description &&
-                    <div className="mb3 f3-ns f4 dark-gray lh-copy">
+                    <div className="mb3 f3-ns f5 dark-gray lh-copy">
                       {post.frontmatter.description}
                     </div>
                   }
@@ -120,7 +120,7 @@ class ProjectPage extends React.Component {
                     // </div>
                     <a
                       href={post.frontmatter.liveLink} target="_blank" rel="noopener noreferrer"
-                      className="dib mt5-ns mb4-ns mv2 f5 fw6 link pv3 ph4 ba dim br-pill b--orange"
+                      className="dib mt5-ns mb4-ns pv3-ns ph4-ns pv2 ph3 f5-ns f6 fw6 link mv2 ba dim br-pill b--orange"
                       style={{ 
                           // backgroundColor: post.frontmatter.color,
                           borderColor: post.frontmatter.color,
@@ -258,7 +258,7 @@ class ProjectPage extends React.Component {
         </div> 
 
       {/* Other projects */}
-      <div className="flex flex-column bg-near-white mt6 nl6-ns nr6-ns nl3 nr3 ph6-ns ph3 pb6 relative z-2">
+      <div className="flex flex-column bg-near-white mt6 nl6-ns nr6-ns ph6-ns ph3 pb6 relative z-2">
           {
             (previous || next) &&
             <div className="w-100 tc f2 mv6">
@@ -295,7 +295,7 @@ class ProjectPage extends React.Component {
           </div>
 
           <div className="w-100 tc mt6">
-            <Link to="/#projects" className="dim f4 fw5 link ph4 pv3 br2 orange br-pill ba b--orange">
+            <Link to="/#projects" className="f4-ns f5 ph4-ns pv3-ns ph3-ns pv2 ph2 dim fw5 link br2 orange br-pill ba b--orange">
               View all projects
             </Link>
           </div>

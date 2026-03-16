@@ -18,7 +18,7 @@ class ResultsBanner extends React.Component {
 
         return (
             <div
-                className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa7-ns pv6 ph3 bg-near-white flex flex-row-l flex-column justify-around relative"
+                className="nl6-ns nr6-ns nl4-m nr4-m mv6 pa7-ns pv6 ph3 bg-near-white flex flex-row-l flex-column justify-around relative"
             >
                 {
                     Object.keys(dataObj).map((i, n) => (
@@ -241,7 +241,7 @@ export function markdownRenderer(isFullWidth) {
                 let itemsArray = arrayObj.map(i => i);
                 
                 return (
-                    <div className="nl6-ns nr6-ns nl4-m nr4-m nl3 nr3 mv6 pa6-ns pa3 pv6-ns pv4 bg-near-white z-2 relative">
+                    <div className="nl6-ns nr6-ns nl4-m nr4-m mv6 pa6-ns pa3 pv6-ns pv4 bg-near-white z-2 relative">
                         <div className='mw6 mb6-ns b2'>
                             <h3 className="f3 f4 lh-title fw4 mv2-ns mb2 dark-gray">
                                 { title }
