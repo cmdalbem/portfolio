@@ -250,7 +250,8 @@ export default function LorenzSketch({ onLog }) {
       const height = containerRef.current.offsetHeight || window.innerHeight;
 
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      // Clamp pixel ratio to 1 to reduce GPU load on weaker machines
+      renderer.setPixelRatio(1);
       renderer.setSize(width, height);
       renderer.setClearColor(0x000000, 0);
       renderer.domElement.style.display = "block";
