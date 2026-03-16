@@ -473,7 +473,7 @@ export default function LorenzSketch({ onLog }) {
     };
 
     onLog?.(
-      `Initial parameters numPoints = ${numPoints}, tailSize = ${TAIL_SIZE}, σ = ${SIGMA}, ρ = ${RHO}, β = ${BETA.toFixed(3)}`,
+      `Lorenz v2.2.1 – numPoints = ${numPoints}, tailSize = ${TAIL_SIZE}, σ = ${SIGMA}, ρ = ${RHO}, β = ${BETA.toFixed(3)}`,
       "INIT"
     );
 
