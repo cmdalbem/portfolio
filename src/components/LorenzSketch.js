@@ -259,6 +259,29 @@ export default function LorenzSketch({ onLog }) {
       renderer.domElement.style.height = "100%";
       container.appendChild(renderer.domElement);
 
+      // Probe WebGL capabilities to help tune performance profiles on different GPUs.
+      try {
+        const gl = renderer.getContext();
+        if (gl) {
+          const maxTextureSize = gl.getParameter(gl.MAX_TEXTURE_SIZE);
+          const maxRenderbufferSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
+          const maxVertexUniforms = gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS);
+          const maxFragmentUniforms = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS);
+          const floatExt =
+            gl.getExtension("EXT_color_buffer_float") ||
+            gl.getExtension("WEBGL_color_buffer_float") ||
+            gl.getExtension("OES_texture_float");
+          const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+
+          onLog?.(
+            `GL caps – maxTex=${maxTextureSize}, maxRB=${maxRenderbufferSize}, vUniforms=${maxVertexUniforms}, fUniforms=${maxFragmentUniforms}, floatRT=${!!floatExt}`,
+            "CAPS"
+          );
+        }
+      } catch (capsErr) {
+        onLog?.(`Failed to probe WebGL caps: ${capsErr}`, "CAPS");
+      }
+
       const aspect = height > 0 ? width / height : 16 / 9;
       const camera = new THREE.PerspectiveCamera(45, aspect, 1, 1000);
       camera.position.z = 70;
@@ -473,7 +496,7 @@ export default function LorenzSketch({ onLog }) {
     };
 
     onLog?.(
-      `Lorenz v2.2.1 – numPoints = ${numPoints}, tailSize = ${TAIL_SIZE}, σ = ${SIGMA}, ρ = ${RHO}, β = ${BETA.toFixed(3)}`,
+      `Lorenz v2.1.2 – numPoints = ${numPoints}, tailSize = ${TAIL_SIZE}, σ = ${SIGMA}, ρ = ${RHO}, β = ${BETA.toFixed(3)}`,
       "INIT"
     );
 
