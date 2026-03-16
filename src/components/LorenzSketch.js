@@ -248,10 +248,10 @@ export default function LorenzSketch({ onLog }) {
       const width = containerRef.current.offsetWidth || window.innerWidth;
       const height = containerRef.current.offsetHeight || window.innerHeight;
 
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setSize(width, height);
-      renderer.setClearColor(isDarkMode ? 0x1c2222 : 0xffffff, 1);
+      renderer.setClearColor(0x000000, 0);
       renderer.domElement.style.display = "block";
       renderer.domElement.style.width = "100%";
       renderer.domElement.style.height = "100%";
@@ -597,7 +597,7 @@ export default function LorenzSketch({ onLog }) {
           s.camera.aspect = w / h;
           s.camera.updateProjectionMatrix();
         }
-        s.renderer.setClearColor(isDarkMode ? 0x1c2222 : 0xffffff, 1);
+        s.renderer.setClearColor(0x000000, 0);
         s.renderer.clear();
         s.renderer.render(s.lineScene, s.camera);
       } catch (err) {
@@ -662,7 +662,7 @@ export default function LorenzSketch({ onLog }) {
   useEffect(() => {
     const s = stateRef.current;
     if (!s?.lineMaterial) return;
-    const hue = isDarkMode ? 20 / 360 : 30 / 360; // orange in both modes
+    const hue = isDarkMode ? 20 / 360 : 40 / 360; // orange in both modes
     const lightness = isDarkMode ? 0.1 : 0.55; // dark orange glow on dark bg, visible orange on light bg
     const alpha = isDarkMode ? 0.3 : 0.1; // dark: solid for strong glow; light: transparent so overlaps accumulate
     s.lineMaterial.uniforms.uHue.value = hue;
@@ -676,15 +676,6 @@ export default function LorenzSketch({ onLog }) {
     <div
       id="lorenz-container"
       ref={containerRef}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        zIndex: -1,
-        pointerEvents: "auto",
-      }}
     />
   );
 }
