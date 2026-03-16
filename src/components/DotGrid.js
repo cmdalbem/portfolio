@@ -67,11 +67,13 @@ const DotGrid = ({
 
   const spacing = calculateSpacing();
 
+  const effectiveOpacity = isMobile ? Math.min(opacity, 0.3) : opacity;
+
   // CSS custom properties with responsive spacing
   const dotGridStyles = {
     '--dot-size': `${dotSize}px`,
     '--dot-spacing': `${spacing}px`,
-    '--dot-opacity': opacity,
+    '--dot-opacity': effectiveOpacity,
     '--dot-blend-mode': blendMode,
     '--dot-color': isDarkMode ? 'rgba(255,255,255,0.4)' : 'white',
   };
