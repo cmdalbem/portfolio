@@ -1,5 +1,5 @@
 ---
-projectType: 'projectHighlight'
+projectType: 'project'
 date: "2024-06"
 date2: "2025-04"
 lastUpdated: "2025-06"
