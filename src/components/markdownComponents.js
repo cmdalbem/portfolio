@@ -131,12 +131,12 @@ export function markdownRenderer(isFullWidth) {
                 </div>
             ),
             ul: props => (
-                <ul className={`${defaultMargins}`} style={{paddingInlineStart: 0}}>
+                <ul className={`${defaultMargins}`} style={{paddingInlineStart: "1rem"}}>
                     {props.children}
                 </ul>
             ),
             ol: props => (
-                <ol className={`${defaultMargins}`} style={{paddingInlineStart: 0}}>
+                <ol className={`${defaultMargins}`} style={{paddingInlineStart: "1rem"}}>
                     {props.children}
                 </ol>
             ),
