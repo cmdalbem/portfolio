@@ -15,11 +15,11 @@ import * as THREE from "three";
 const SIGMA = 10;
 const RHO = 28;
 const BETA = 8 / 3;
-const STEP_SPEED = 0.00005;
+const STEP_SPEED = 0.0005;
 const CALC_ITERATIONS = 8;
 const NUM_POINTS = 300;
-const TAIL_SIZE = 500;
-const ROTATION_SPEED = 0.1;
+const TAIL_SIZE = 100;
+const ROTATION_SPEED = 0.5;
 const INJECT_INTERVAL = 60;
 const INJECT_START_FRAME = 300;
 
