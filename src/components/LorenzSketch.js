@@ -22,6 +22,11 @@ const TAIL_SIZE = 100;
 const ROTATION_SPEED = 0.5;
 const INJECT_INTERVAL = 60;
 const INJECT_START_FRAME = 300;
+const TARGET_FPS_DEFAULT = 60;
+const TARGET_FPS_LOW_POWER = 20;
+const ADAPTIVE_FPS_MIN_SAMPLES = 60; // about 2 seconds at 30 FPS
+const ADAPTIVE_FPS_MAX_SAMPLES = 240;
+const ADAPTIVE_FPS_SLOW_THRESHOLD_MS = 30; // slower than ~22 FPS → switch to low-power mode
 
 // Shader: one Lorenz step per fragment (state texture: numPoints × 1)
 const lorenzVertexShader = `
@@ -234,6 +239,10 @@ export default function LorenzSketch({ onLog }) {
     frameCount: 0,
     animationId: null,
     lastFrameTime: 0,
+    targetFrameMs: 1000 / TARGET_FPS_DEFAULT,
+    frameTimeSum: 0,
+    frameTimeCount: 0,
+    adaptiveFpsDecided: false,
   });
 
   useEffect(() => {
@@ -258,29 +267,6 @@ export default function LorenzSketch({ onLog }) {
       renderer.domElement.style.width = "100%";
       renderer.domElement.style.height = "100%";
       container.appendChild(renderer.domElement);
-
-      // Probe WebGL capabilities to help tune performance profiles on different GPUs.
-      try {
-        const gl = renderer.getContext();
-        if (gl) {
-          const maxTextureSize = gl.getParameter(gl.MAX_TEXTURE_SIZE);
-          const maxRenderbufferSize = gl.getParameter(gl.MAX_RENDERBUFFER_SIZE);
-          const maxVertexUniforms = gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS);
-          const maxFragmentUniforms = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS);
-          const floatExt =
-            gl.getExtension("EXT_color_buffer_float") ||
-            gl.getExtension("WEBGL_color_buffer_float") ||
-            gl.getExtension("OES_texture_float");
-          const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
-
-          onLog?.(
-            `GL caps – maxTex=${maxTextureSize}, maxRB=${maxRenderbufferSize}, vUniforms=${maxVertexUniforms}, fUniforms=${maxFragmentUniforms}, floatRT=${!!floatExt}`,
-            "CAPS"
-          );
-        }
-      } catch (capsErr) {
-        onLog?.(`Failed to probe WebGL caps: ${capsErr}`, "CAPS");
-      }
 
       const aspect = height > 0 ? width / height : 16 / 9;
       const camera = new THREE.PerspectiveCamera(45, aspect, 1, 1000);
@@ -496,7 +482,12 @@ export default function LorenzSketch({ onLog }) {
     };
 
     onLog?.(
-      `Lorenz v2.1.2 – numPoints = ${numPoints}, tailSize = ${TAIL_SIZE}, σ = ${SIGMA}, ρ = ${RHO}, β = ${BETA.toFixed(3)}`,
+      `Initializing Lorenz v2.1.3`,
+      "INIT"
+    );
+
+    onLog?.(
+      `NumPoints = ${numPoints}, tailSize = ${TAIL_SIZE}, σ = ${SIGMA}, ρ = ${RHO}, β = ${BETA.toFixed(3)}`,
       "INIT"
     );
 
@@ -532,8 +523,6 @@ export default function LorenzSketch({ onLog }) {
       }
     };
 
-    const targetFrameMs = 1000 / 30; // 30 FPS cap
-
     function animate(now) {
       const s = stateRef.current;
       if (!s.renderer || !s.lineScene) return;
@@ -544,11 +533,43 @@ export default function LorenzSketch({ onLog }) {
           s.lastFrameTime = now;
         }
         const delta = now - s.lastFrameTime;
-        if (delta < targetFrameMs) {
+        if (delta < s.targetFrameMs) {
           s.animationId = requestAnimationFrame(animate);
           return;
         }
         s.lastFrameTime = now;
+
+        // Collect a small rolling sample of actual frame times and, once,
+        // decide whether to keep ~30 FPS or relax to ~20 FPS on weaker GPUs.
+        if (!s.adaptiveFpsDecided) {
+          s.frameTimeSum += delta;
+          s.frameTimeCount += 1;
+          const minSamples = ADAPTIVE_FPS_MIN_SAMPLES;
+          const maxSamples = ADAPTIVE_FPS_MAX_SAMPLES;
+          if (s.frameTimeCount >= minSamples) {
+            const avg = s.frameTimeSum / s.frameTimeCount;
+            const slowThresholdMs = ADAPTIVE_FPS_SLOW_THRESHOLD_MS;
+            if (avg > slowThresholdMs) {
+              s.targetFrameMs = 1000 / TARGET_FPS_LOW_POWER; // low-power mode
+              s.onLog?.(
+                `Performance: avg frame ${avg.toFixed(
+                  1
+                )}ms → switching to low-power ~20 FPS mode`,
+                "PERF"
+              );
+            } else {
+              s.onLog?.(
+                `Performance: avg frame ${avg.toFixed(
+                  1
+                )}ms → keeping standard ~30 FPS mode`,
+                "PERF"
+              );
+            }
+            s.adaptiveFpsDecided = true;
+          } else if (s.frameTimeCount >= maxSamples) {
+            s.adaptiveFpsDecided = true;
+          }
+        }
       }
       try {
         s.frameCount++;
@@ -648,6 +669,10 @@ export default function LorenzSketch({ onLog }) {
     }
 
     stateRef.current.lastFrameTime = 0;
+    stateRef.current.targetFrameMs = 1000 / TARGET_FPS_DEFAULT;
+    stateRef.current.frameTimeSum = 0;
+    stateRef.current.frameTimeCount = 0;
+    stateRef.current.adaptiveFpsDecided = false;
     stateRef.current.animationId = requestAnimationFrame(animate);
 
     const resizeTimeout = setTimeout(onResize, 0);
